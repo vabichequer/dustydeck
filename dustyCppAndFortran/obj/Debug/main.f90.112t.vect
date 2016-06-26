@@ -1,0 +1,2241 @@
+
+;; Function trig (trig_, funcdef_no=0, decl_uid=1811, cgraph_uid=0)
+
+trig (integer(kind=4) & restrict i, integer(kind=4) & restrict j)
+{
+  real(kind=8) z;
+  real(kind=8) y;
+  real(kind=8) x;
+  real(kind=8) __result_trig.28;
+  integer(kind=4) _3;
+  real(kind=8) _4;
+  integer(kind=4) _6;
+  real(kind=8) _7;
+  real(kind=8) _10;
+  real(kind=8) _11;
+  real(kind=8) _12;
+  real(kind=8) _13;
+  real(kind=8) _14;
+  real(kind=8) _15;
+  real(kind=8) _17;
+  real(kind=8) _18;
+  real(kind=8) _19;
+  real(kind=8) _20;
+  real(kind=8) _21;
+  real(kind=8) _22;
+  real(kind=8) _23;
+  real(kind=8) _24;
+  real(kind=8) _25;
+  real(kind=8) _26;
+  real(kind=8) _27;
+  real(kind=8) _28;
+  real(kind=8) _29;
+
+  <bb 2>:
+  # DEBUG pi => 3.1415927410125732421875e+0
+  _3 = *i_2(D);
+  _4 = (real(kind=8)) _3;
+  _6 = *j_5(D);
+  _7 = (real(kind=8)) _6;
+  x_8 = _4 - _7;
+  # DEBUG x => x_8
+  y_9 = _4 + _7;
+  # DEBUG y => y_9
+  _10 = x_8 * x_8;
+  _11 = y_9 * y_9;
+  _12 = _10 + _11;
+  _13 = __builtin_sqrt (_12);
+  _14 = _13 * 3.1415927410125732421875e+0;
+  _15 = __builtin_sin (_14);
+  z_16 = __builtin_exp (_15);
+  # DEBUG z => z_16
+  _17 = x_8 + y_9;
+  _18 = z_16 + 1.0e+0;
+  _19 = x_8 * y_9;
+  _20 = _19 * z_16;
+  _21 = ((_20));
+  _22 = _18 + _21;
+  _23 = ABS_EXPR <_22>;
+  _24 = __builtin_log10 (_23);
+  _25 = ABS_EXPR <x_8>;
+  _26 = ABS_EXPR <y_9>;
+  _27 = _25 + _26;
+  _28 = ((_27));
+  _29 = _24 / _28;
+  __result_trig.28_30 = _17 + _29;
+  # DEBUG __result_trig => __result_trig.28_30
+  return __result_trig.28_30;
+
+}
+
+
+
+;; Function idcheck (idcheck_, funcdef_no=1, decl_uid=1822, cgraph_uid=1)
+
+idcheck (integer(kind=4) & restrict n, real(kind=8) & restrict check, real(kind=8)[0:] * restrict av, real(kind=8)[0:] * restrict bv, real(kind=8)[0:] * restrict id)
+{
+  real(kind=8) M.11;
+  real(kind=8) M.12;
+  unsigned int countm1.9;
+  unsigned int countm1.7;
+  unsigned int countm1.5;
+  unsigned int countm1.3;
+  real(kind=8) __var_2;
+  real(kind=8) __var_1;
+  real(kind=8) pastc;
+  real(kind=8) pastb;
+  real(kind=8) pasta;
+  real(kind=8) l2;
+  integer(kind=4) k;
+  integer(kind=4) j;
+  integer(kind=4) offset.2;
+  integer(kind=4) stride.1;
+  integer(kind=4) ubound.0;
+  integer(kind=4) i;
+  real(kind=8) d;
+  real(kind=8) check2;
+  real(kind=8) c;
+  integer(kind=4) aux;
+  unsigned int k.36;
+  unsigned int k.34;
+  unsigned int k.32;
+  unsigned int k.30;
+  integer(kind=4) _88;
+  integer(kind=4) _89;
+  integer(kind=4) _90;
+  real(kind=4) _101;
+  real(kind=4) _102;
+  real(kind=4) _104;
+  real(kind=8) _105;
+  real(kind=8) _106;
+  real(kind=8) _107;
+  real(kind=8) _108;
+  real(kind=8) _109;
+  integer(kind=4) _115;
+  real(kind=8) _117;
+  integer(kind=4) _118;
+  real(kind=8) _120;
+  integer(kind=4) _123;
+  real(kind=8) _124;
+  integer(kind=4) _125;
+  integer(kind=4) _126;
+  integer(kind=4) _127;
+  integer(kind=4) _129;
+  integer(kind=4) _130;
+  integer(kind=4) _131;
+  integer(kind=4) _136;
+  real(kind=8) _137;
+  real(kind=8) _138;
+  integer(kind=4) _143;
+  real(kind=8) _144;
+  real(kind=8) _145;
+  integer(kind=4) _150;
+  real(kind=8) _151;
+  real(kind=8) _152;
+  integer(kind=4) _156;
+  real(kind=8) _157;
+  real(kind=8) _158;
+  integer(kind=4) _168;
+  integer(kind=4) _169;
+  unsigned int _171;
+  unsigned int _173;
+  integer(kind=4) _180;
+  integer(kind=4) _181;
+  integer(kind=4) _182;
+  real(kind=8) _183;
+  real(kind=8) _184;
+  integer(kind=4) _194;
+  integer(kind=4) _195;
+  integer(kind=4) _196;
+  unsigned int _198;
+  unsigned int _200;
+  integer(kind=4) _209;
+  real(kind=8) _210;
+  real(kind=8) _211;
+  integer(kind=4) _221;
+  integer(kind=4) _222;
+  integer(kind=4) _223;
+  unsigned int _225;
+  unsigned int _227;
+  integer(kind=4) _236;
+  real(kind=8) _237;
+  real(kind=8) _238;
+  integer(kind=4) _248;
+  real(kind=8) _249;
+  real(kind=8) _250;
+  integer(kind=4) _259;
+  integer(kind=4) _260;
+  integer(kind=4) _261;
+  unsigned int _263;
+  unsigned int _265;
+  integer(kind=4) _272;
+  integer(kind=4) _273;
+  integer(kind=4) _274;
+  real(kind=8) _275;
+  real(kind=8) _276;
+  real(kind=8) _286;
+  real(kind=8) _287;
+  real(kind=8) _288;
+  real(kind=8) _289;
+  real(kind=8) _290;
+  real(kind=8) _292;
+  real(kind=8) _293;
+  real(kind=8) _295;
+  real(kind=8) _296;
+  real(kind=8) _297;
+  real(kind=8) _298;
+  real(kind=8) _299;
+  real(kind=8) _300;
+  real(kind=8) _302;
+  real(kind=8) _303;
+  real(kind=8) _305;
+  real(kind=8) _306;
+  real(kind=8) _307;
+  real(kind=8) _308;
+  real(kind=8) _310;
+  real(kind=8) _311;
+  real(kind=8) _314;
+  real(kind=8) _315;
+  real(kind=8) _316;
+  real(kind=8) _317;
+  real(kind=8) _319;
+  real(kind=8) _320;
+  logical(kind=4) _325;
+  logical(kind=4) _326;
+  logical(kind=4) _328;
+  logical(kind=4) _329;
+  logical(kind=4) _332;
+  real(kind=8) _333;
+  real(kind=8) pretmp_434;
+  real(kind=8) prephitmp_435;
+  real(kind=8) pretmp_436;
+  real(kind=4) pretmp_440;
+  real(kind=4) pretmp_442;
+  real(kind=4) pretmp_443;
+  real(kind=4) pretmp_445;
+  real(kind=8) pretmp_446;
+  real(kind=8) pretmp_447;
+  real(kind=8) _448;
+  integer(kind=4) pretmp_479;
+  integer(kind=4) prephitmp_480;
+  integer(kind=4) pretmp_486;
+  real(kind=8) pretmp_487;
+  integer(kind=4) pretmp_488;
+  real(kind=8) pretmp_489;
+  real(kind=8) pretmp_490;
+  integer(kind=4) pretmp_491;
+  real(kind=8) pretmp_492;
+  integer(kind=4) pretmp_493;
+  real(kind=8) pretmp_494;
+  real(kind=8) pretmp_495;
+  integer(kind=4) pretmp_496;
+  integer(kind=4) pretmp_497;
+  real(kind=8) pretmp_498;
+  real(kind=8) pretmp_500;
+  integer(kind=4) pretmp_501;
+  integer(kind=4) pretmp_502;
+  integer(kind=4) pretmp_503;
+  integer(kind=4) pretmp_504;
+  real(kind=8) pretmp_505;
+  integer(kind=4) pretmp_506;
+  real(kind=8) pretmp_507;
+  real(kind=8) pretmp_508;
+  integer(kind=4) pretmp_509;
+  integer(kind=4) pretmp_510;
+  integer(kind=4) pretmp_511;
+  real(kind=8) pretmp_512;
+  integer(kind=4) pretmp_513;
+  real(kind=8) pretmp_514;
+  real(kind=8) pretmp_515;
+
+  <bb 2>:
+  ubound.0_85 = *n_84(D);
+  # DEBUG ubound.0 => ubound.0_85
+  # DEBUG twopi => 6.283185482025146484375e+0
+  # DEBUG i => 1
+  if (ubound.0_85 > 0)
+    goto <bb 3>;
+  else
+    goto <bb 74>;
+
+  <bb 3>:
+  stride.1_86 = MAX_EXPR <ubound.0_85, 0>;
+  offset.2_87 = ~stride.1_86;
+  pretmp_436 = *check_91(D);
+  pretmp_440 = (real(kind=4)) ubound.0_85;
+
+  <bb 4>:
+  # i_26 = PHI <1(3), i_113(8)>
+  # DEBUG i => i_26
+  # DEBUG j => 1
+  pretmp_442 = (real(kind=4)) i_26;
+  pretmp_443 = pretmp_442 * 6.283185482025146484375e+0;
+  pretmp_445 = pretmp_443 / pretmp_440;
+  pretmp_446 = (real(kind=8)) pretmp_445;
+  pretmp_447 = pretmp_436 + pretmp_446;
+  _448 = __builtin_cos (pretmp_447);
+
+  <bb 5>:
+  # j_36 = PHI <1(4), j_112(6)>
+  # DEBUG j => j_36
+  _88 = j_36 * stride.1_86;
+  _89 = _88 + offset.2_87;
+  _90 = _89 + i_26;
+  _101 = (real(kind=4)) j_36;
+  _102 = _101 * 6.283185482025146484375e+0;
+  _104 = _102 / pretmp_440;
+  _105 = (real(kind=8)) _104;
+  _106 = _105 + pretmp_436;
+  _107 = __builtin_sin (_106);
+  _108 = _107 * 2.0e+0;
+  _109 = _108 + _448;
+  *id_110(D)[_90] = _109;
+  j_112 = j_36 + 1;
+  # DEBUG j => j_112
+  if (j_36 == ubound.0_85)
+    goto <bb 7>;
+  else
+    goto <bb 6>;
+
+  <bb 6>:
+  goto <bb 5>;
+
+  <bb 7>:
+  i_113 = i_26 + 1;
+  # DEBUG i => i_113
+  if (i_26 == ubound.0_85)
+    goto <bb 9>;
+  else
+    goto <bb 8>;
+
+  <bb 8>:
+  goto <bb 4>;
+
+  <bb 9>:
+
+  <bb 10>:
+  # i_27 = PHI <1(9), i_134(17)>
+  # j_37 = PHI <1(9), j_133(17)>
+  # DEBUG j => j_37
+  # DEBUG i => i_27
+  _115 = i_27 + -1;
+  _117 = *av_116(D)[_115];
+  if (_117 < 0.0)
+    goto <bb 11>;
+  else
+    goto <bb 12>;
+
+  <bb 11>:
+  _118 = j_37 + -1;
+  _120 = *bv_119(D)[_118];
+  if (_120 > 0.0)
+    goto <bb 14>;
+  else
+    goto <bb 12>;
+
+  <bb 12>:
+  if (_117 > 0.0)
+    goto <bb 13>;
+  else
+    goto <bb 15>;
+
+  <bb 13>:
+  _123 = j_37 + -1;
+  _124 = *bv_119(D)[_123];
+  if (_124 < 0.0)
+    goto <bb 14>;
+  else
+    goto <bb 15>;
+
+  <bb 14>:
+  _129 = j_37 * stride.1_86;
+  _130 = _129 + offset.2_87;
+  _131 = _130 + i_27;
+  *id_110(D)[_131] = -1.0e+0;
+  goto <bb 16>;
+
+  <bb 15>:
+  _125 = j_37 * stride.1_86;
+  _126 = _125 + offset.2_87;
+  _127 = _126 + i_27;
+  *id_110(D)[_127] = 1.0e+0;
+
+  <bb 16>:
+  j_133 = j_37 + 1;
+  # DEBUG j => j_133
+  i_134 = i_27 + 1;
+  # DEBUG i => i_134
+  if (i_27 == ubound.0_85)
+    goto <bb 18>;
+  else
+    goto <bb 17>;
+
+  <bb 17>:
+  goto <bb 10>;
+
+  <bb 18>:
+
+  <bb 19>:
+  # i_28 = PHI <1(18), i_140(20)>
+  # l2_46 = PHI <0.0(18), l2_139(20)>
+  # DEBUG l2 => l2_46
+  # DEBUG i => i_28
+  _136 = i_28 + -1;
+  _137 = *av_116(D)[_136];
+  _138 = _137 * _137;
+  l2_139 = _138 + l2_46;
+  # DEBUG l2 => l2_139
+  i_140 = i_28 + 1;
+  # DEBUG i => i_140
+  if (i_28 == ubound.0_85)
+    goto <bb 88>;
+  else
+    goto <bb 20>;
+
+  <bb 20>:
+  goto <bb 19>;
+
+  <bb 21>:
+
+  <bb 22>:
+  # i_29 = PHI <1(88), i_147(21)>
+  # DEBUG i => i_29
+  _143 = i_29 + -1;
+  _144 = *av_116(D)[_143];
+  _145 = _144 / l2_381;
+  *av_116(D)[_143] = _145;
+  i_147 = i_29 + 1;
+  # DEBUG i => i_147
+  if (i_29 == ubound.0_85)
+    goto <bb 23>;
+  else
+    goto <bb 21>;
+
+  <bb 23>:
+
+  <bb 24>:
+  # i_30 = PHI <1(23), i_154(25)>
+  # l2_48 = PHI <0.0(23), l2_153(25)>
+  # DEBUG l2 => l2_48
+  # DEBUG i => i_30
+  _150 = i_30 + -1;
+  _151 = *bv_119(D)[_150];
+  _152 = _151 * _151;
+  l2_153 = _152 + l2_48;
+  # DEBUG l2 => l2_153
+  i_154 = i_30 + 1;
+  # DEBUG i => i_154
+  if (i_30 == ubound.0_85)
+    goto <bb 89>;
+  else
+    goto <bb 25>;
+
+  <bb 25>:
+  goto <bb 24>;
+
+  <bb 26>:
+
+  <bb 27>:
+  # i_31 = PHI <1(89), i_160(26)>
+  # DEBUG i => i_31
+  _156 = i_31 + -1;
+  _157 = *bv_119(D)[_156];
+  _158 = _157 / l2_121;
+  *bv_119(D)[_156] = _158;
+  i_160 = i_31 + 1;
+  # DEBUG i => i_160
+  if (i_31 == ubound.0_85)
+    goto <bb 28>;
+  else
+    goto <bb 26>;
+
+  <bb 28>:
+
+  <bb 29>:
+  # pasta_1 = PHI <0.0(28), pasta_432(38)>
+  # i_32 = PHI <1(28), i_190(38)>
+  # pasta_50 = PHI <pasta_166(D)(28), pasta_422(38)>
+  # DEBUG pasta => pasta_50
+  # DEBUG i => i_32
+  # DEBUG a => pasta_1
+  # DEBUG j => 1
+
+  <bb 30>:
+  # pasta_2 = PHI <pasta_1(29), pasta_4(36)>
+  # j_38 = PHI <1(29), j_189(36)>
+  # pasta_51 = PHI <pasta_50(29), pasta_52(36)>
+  # DEBUG pasta => pasta_51
+  # DEBUG j => j_38
+  # DEBUG a => pasta_2
+  _168 = j_38 + i_32;
+  _169 = _168 & 3;
+  k_170 = 4 - _169;
+  # DEBUG k => k_170
+  if (ubound.0_85 < k_170)
+    goto <bb 35>;
+  else
+    goto <bb 31>;
+
+  <bb 31>:
+  _171 = (unsigned int) ubound.0_85;
+  k.30_172 = (unsigned int) k_170;
+  _173 = _171 - k.30_172;
+  countm1.3_174 = _173 >> 2;
+  pretmp_511 = i_32 + -1;
+  pretmp_512 = *av_116(D)[pretmp_511];
+  pretmp_513 = j_38 + -1;
+  pretmp_514 = *bv_119(D)[pretmp_513];
+  pretmp_515 = pretmp_512 * pretmp_514;
+
+  <bb 32>:
+  # pasta_3 = PHI <pasta_2(31), pasta_185(33)>
+  # k_42 = PHI <k_170(31), k_186(33)>
+  # countm1.3_65 = PHI <countm1.3_174(31), countm1.3_188(33)>
+  # DEBUG k => k_42
+  # DEBUG a => pasta_3
+  # DEBUG pasta => pasta_3
+  _180 = k_42 * stride.1_86;
+  _181 = _180 + offset.2_87;
+  _182 = _181 + j_38;
+  _183 = *id_110(D)[_182];
+  _184 = _183 * pretmp_515;
+  pasta_185 = _184 + pasta_3;
+  # DEBUG a => pasta_185
+  k_186 = k_42 + 4;
+  # DEBUG k => k_186
+  countm1.3_188 = countm1.3_65 + 4294967295;
+  if (countm1.3_65 == 0)
+    goto <bb 34>;
+  else
+    goto <bb 33>;
+
+  <bb 33>:
+  goto <bb 32>;
+
+  <bb 34>:
+  # pasta_433 = PHI <pasta_3(32)>
+  # pasta_414 = PHI <pasta_185(32)>
+
+  <bb 35>:
+  # pasta_4 = PHI <pasta_2(30), pasta_414(34)>
+  # pasta_52 = PHI <pasta_51(30), pasta_433(34)>
+  # DEBUG pasta => pasta_52
+  # DEBUG a => pasta_4
+  j_189 = j_38 + 1;
+  # DEBUG j => j_189
+  if (j_38 == ubound.0_85)
+    goto <bb 37>;
+  else
+    goto <bb 36>;
+
+  <bb 36>:
+  goto <bb 30>;
+
+  <bb 37>:
+  # pasta_432 = PHI <pasta_4(35)>
+  # pasta_422 = PHI <pasta_52(35)>
+  # DEBUG pasta => pasta_422
+  # DEBUG a => pasta_432
+  i_190 = i_32 + 1;
+  # DEBUG i => i_190
+  if (i_32 == ubound.0_85)
+    goto <bb 39>;
+  else
+    goto <bb 38>;
+
+  <bb 38>:
+  goto <bb 29>;
+
+  <bb 39>:
+  # pasta_431 = PHI <pasta_432(37)>
+  # pasta_421 = PHI <pasta_422(37)>
+
+  <bb 40>:
+  # pastb_7 = PHI <0.0(39), pastb_429(49)>
+  # i_33 = PHI <1(39), i_217(49)>
+  # pastb_55 = PHI <pastb_192(D)(39), pastb_420(49)>
+  # DEBUG pastb => pastb_55
+  # DEBUG i => i_33
+  # DEBUG b => pastb_7
+  # DEBUG j => 1
+
+  <bb 41>:
+  # pastb_8 = PHI <pastb_7(40), pastb_10(47)>
+  # j_39 = PHI <1(40), j_216(47)>
+  # pastb_56 = PHI <pastb_55(40), pastb_57(47)>
+  # DEBUG pastb => pastb_56
+  # DEBUG j => j_39
+  # DEBUG b => pastb_8
+  _194 = j_39 + i_33;
+  _195 = _194 + -1;
+  _196 = _195 & 3;
+  k_197 = 4 - _196;
+  # DEBUG k => k_197
+  if (ubound.0_85 < k_197)
+    goto <bb 46>;
+  else
+    goto <bb 42>;
+
+  <bb 42>:
+  _198 = (unsigned int) ubound.0_85;
+  k.32_199 = (unsigned int) k_197;
+  _200 = _198 - k.32_199;
+  countm1.5_201 = _200 >> 2;
+  pretmp_504 = j_39 + -1;
+  pretmp_505 = *av_116(D)[pretmp_504];
+  pretmp_506 = i_33 + -1;
+  pretmp_507 = *bv_119(D)[pretmp_506];
+  pretmp_508 = pretmp_505 * pretmp_507;
+  pretmp_509 = j_39 * stride.1_86;
+  pretmp_510 = offset.2_87 + pretmp_509;
+
+  <bb 43>:
+  # pastb_9 = PHI <pastb_8(42), pastb_212(44)>
+  # k_43 = PHI <k_197(42), k_213(44)>
+  # countm1.5_66 = PHI <countm1.5_201(42), countm1.5_215(44)>
+  # DEBUG k => k_43
+  # DEBUG b => pastb_9
+  # DEBUG pastb => pastb_9
+  _209 = k_43 + pretmp_510;
+  _210 = *id_110(D)[_209];
+  _211 = _210 * pretmp_508;
+  pastb_212 = _211 + pastb_9;
+  # DEBUG b => pastb_212
+  k_213 = k_43 + 4;
+  # DEBUG k => k_213
+  countm1.5_215 = countm1.5_66 + 4294967295;
+  if (countm1.5_66 == 0)
+    goto <bb 45>;
+  else
+    goto <bb 44>;
+
+  <bb 44>:
+  goto <bb 43>;
+
+  <bb 45>:
+  # pastb_430 = PHI <pastb_9(43)>
+  # pastb_413 = PHI <pastb_212(43)>
+
+  <bb 46>:
+  # pastb_10 = PHI <pastb_8(41), pastb_413(45)>
+  # pastb_57 = PHI <pastb_56(41), pastb_430(45)>
+  # DEBUG pastb => pastb_57
+  # DEBUG b => pastb_10
+  j_216 = j_39 + 1;
+  # DEBUG j => j_216
+  if (j_39 == ubound.0_85)
+    goto <bb 48>;
+  else
+    goto <bb 47>;
+
+  <bb 47>:
+  goto <bb 41>;
+
+  <bb 48>:
+  # pastb_429 = PHI <pastb_10(46)>
+  # pastb_420 = PHI <pastb_57(46)>
+  # DEBUG pastb => pastb_420
+  # DEBUG b => pastb_429
+  i_217 = i_33 + 1;
+  # DEBUG i => i_217
+  if (i_33 == ubound.0_85)
+    goto <bb 50>;
+  else
+    goto <bb 49>;
+
+  <bb 49>:
+  goto <bb 40>;
+
+  <bb 50>:
+  # pastb_428 = PHI <pastb_429(48)>
+  # pastb_419 = PHI <pastb_420(48)>
+
+  <bb 51>:
+  # pastc_13 = PHI <0.0(50), pastc_426(61)>
+  # i_34 = PHI <1(50), i_256(61)>
+  # pastc_60 = PHI <pastc_219(D)(50), pastc_418(61)>
+  # DEBUG pastc => pastc_60
+  # DEBUG i => i_34
+  # DEBUG c => pastc_13
+  # DEBUG j => 1
+
+  <bb 52>:
+  # pastc_14 = PHI <pastc_13(51), pastc_16(59)>
+  # j_40 = PHI <1(51), prephitmp_480(59)>
+  # pastc_61 = PHI <pastc_60(51), pastc_62(59)>
+  # DEBUG pastc => pastc_61
+  # DEBUG j => j_40
+  # DEBUG c => pastc_14
+  _221 = j_40 + i_34;
+  _222 = _221 + -2;
+  _223 = _222 & 3;
+  k_224 = 4 - _223;
+  # DEBUG k => k_224
+  if (ubound.0_85 < k_224)
+    goto <bb 53>;
+  else
+    goto <bb 54>;
+
+  <bb 53>:
+  pretmp_479 = j_40 + 1;
+  goto <bb 58>;
+
+  <bb 54>:
+  _225 = (unsigned int) ubound.0_85;
+  k.34_226 = (unsigned int) k_224;
+  _227 = _225 - k.34_226;
+  countm1.7_228 = _227 >> 2;
+  pretmp_491 = i_34 + -1;
+  pretmp_492 = *av_116(D)[pretmp_491];
+  pretmp_493 = j_40 + -1;
+  pretmp_494 = *bv_119(D)[pretmp_493];
+  pretmp_495 = pretmp_492 * pretmp_494;
+  pretmp_496 = j_40 * stride.1_86;
+  pretmp_497 = offset.2_87 + pretmp_496;
+  pretmp_498 = *bv_119(D)[j_40];
+  pretmp_500 = pretmp_492 * pretmp_498;
+  pretmp_501 = j_40 + 1;
+  pretmp_502 = stride.1_86 * pretmp_501;
+  pretmp_503 = offset.2_87 + pretmp_502;
+
+  <bb 55>:
+  # pastc_15 = PHI <pastc_14(54), pastc_251(56)>
+  # k_44 = PHI <k_224(54), k_247(56)>
+  # countm1.7_67 = PHI <countm1.7_228(54), countm1.7_254(56)>
+  # DEBUG k => k_44
+  # DEBUG c => pastc_15
+  # DEBUG pastc => pastc_15
+  _236 = k_44 + pretmp_497;
+  _237 = *id_110(D)[_236];
+  _238 = _237 * pretmp_495;
+  c_239 = pastc_15 - _238;
+  # DEBUG c => c_239
+  k_247 = k_44 + 4;
+  _248 = k_247 + pretmp_503;
+  _249 = *id_110(D)[_248];
+  _250 = _249 * pretmp_500;
+  pastc_251 = c_239 - _250;
+  # DEBUG c => pastc_251
+  # DEBUG k => k_247
+  countm1.7_254 = countm1.7_67 + 4294967295;
+  if (countm1.7_67 == 0)
+    goto <bb 57>;
+  else
+    goto <bb 56>;
+
+  <bb 56>:
+  goto <bb 55>;
+
+  <bb 57>:
+  # pastc_427 = PHI <pastc_15(55)>
+  # pastc_412 = PHI <pastc_251(55)>
+
+  <bb 58>:
+  # pastc_16 = PHI <pastc_14(53), pastc_412(57)>
+  # pastc_62 = PHI <pastc_61(53), pastc_427(57)>
+  # prephitmp_480 = PHI <pretmp_479(53), pretmp_501(57)>
+  # DEBUG pastc => pastc_62
+  # DEBUG c => pastc_16
+  # DEBUG j => prephitmp_480
+  if (j_40 == ubound.0_85)
+    goto <bb 60>;
+  else
+    goto <bb 59>;
+
+  <bb 59>:
+  goto <bb 52>;
+
+  <bb 60>:
+  # pastc_426 = PHI <pastc_16(58)>
+  # pastc_418 = PHI <pastc_62(58)>
+  # DEBUG pastc => pastc_418
+  # DEBUG c => pastc_426
+  i_256 = i_34 + 1;
+  # DEBUG i => i_256
+  if (i_34 == ubound.0_85)
+    goto <bb 62>;
+  else
+    goto <bb 61>;
+
+  <bb 61>:
+  goto <bb 51>;
+
+  <bb 62>:
+  # pastc_425 = PHI <pastc_426(60)>
+  # pastc_417 = PHI <pastc_418(60)>
+
+  <bb 63>:
+  # d_20 = PHI <0.0(62), d_424(72)>
+  # i_35 = PHI <1(62), i_282(72)>
+  # DEBUG i => i_35
+  # DEBUG d => d_20
+  # DEBUG j => 1
+
+  <bb 64>:
+  # d_21 = PHI <d_20(63), d_23(70)>
+  # j_41 = PHI <1(63), j_281(70)>
+  # DEBUG j => j_41
+  # DEBUG d => d_21
+  _259 = j_41 + i_35;
+  _260 = _259 + 1;
+  _261 = _260 & 3;
+  k_262 = 4 - _261;
+  # DEBUG k => k_262
+  if (ubound.0_85 < k_262)
+    goto <bb 69>;
+  else
+    goto <bb 65>;
+
+  <bb 65>:
+  _263 = (unsigned int) ubound.0_85;
+  k.36_264 = (unsigned int) k_262;
+  _265 = _263 - k.36_264;
+  countm1.9_266 = _265 >> 2;
+  pretmp_486 = j_41 + -1;
+  pretmp_487 = *av_116(D)[pretmp_486];
+  pretmp_488 = i_35 + -1;
+  pretmp_489 = *bv_119(D)[pretmp_488];
+  pretmp_490 = pretmp_487 * pretmp_489;
+
+  <bb 66>:
+  # d_22 = PHI <d_21(65), d_277(67)>
+  # k_45 = PHI <k_262(65), k_278(67)>
+  # countm1.9_68 = PHI <countm1.9_266(65), countm1.9_280(67)>
+  # DEBUG k => k_45
+  # DEBUG d => d_22
+  _272 = k_45 * stride.1_86;
+  _273 = _272 + offset.2_87;
+  _274 = _273 + j_41;
+  _275 = *id_110(D)[_274];
+  _276 = _275 * pretmp_490;
+  d_277 = d_22 - _276;
+  # DEBUG d => d_277
+  k_278 = k_45 + 4;
+  # DEBUG k => k_278
+  countm1.9_280 = countm1.9_68 + 4294967295;
+  if (countm1.9_68 == 0)
+    goto <bb 68>;
+  else
+    goto <bb 67>;
+
+  <bb 67>:
+  goto <bb 66>;
+
+  <bb 68>:
+  # d_411 = PHI <d_277(66)>
+
+  <bb 69>:
+  # d_23 = PHI <d_21(64), d_411(68)>
+  # DEBUG d => d_23
+  j_281 = j_41 + 1;
+  # DEBUG j => j_281
+  if (j_41 == ubound.0_85)
+    goto <bb 71>;
+  else
+    goto <bb 70>;
+
+  <bb 70>:
+  goto <bb 64>;
+
+  <bb 71>:
+  # d_424 = PHI <d_23(69)>
+  # DEBUG d => d_424
+  i_282 = i_35 + 1;
+  # DEBUG i => i_282
+  if (i_35 == ubound.0_85)
+    goto <bb 73>;
+  else
+    goto <bb 72>;
+
+  <bb 72>:
+  goto <bb 63>;
+
+  <bb 73>:
+  # d_423 = PHI <d_424(71)>
+
+  <bb 74>:
+  # d_25 = PHI <0.0(2), d_423(73)>
+  # pasta_283 = PHI <0.0(2), pasta_431(73)>
+  # pastb_241 = PHI <0.0(2), pastb_428(73)>
+  # pastc_258 = PHI <0.0(2), pastc_425(73)>
+  # pasta_253 = PHI <pasta_166(D)(2), pasta_421(73)>
+  # pastb_163 = PHI <pastb_192(D)(2), pastb_419(73)>
+  # pastc_165 = PHI <pastc_219(D)(2), pastc_417(73)>
+  # DEBUG d => d_25
+  aux_284 = ubound.0_85 * 3;
+  # DEBUG aux => aux_284
+  aux_285 = aux_284 % 4;
+  # DEBUG aux => aux_285
+  if (aux_285 == 0)
+    goto <bb 75>;
+  else
+    goto <bb 76>;
+
+  <bb 75>:
+  _286 = pastb_241 * pastb_241;
+  _287 = pastc_258 * pastc_258;
+  _288 = _286 + _287;
+  _289 = __builtin_sqrt (_288);
+  _290 = _289 + pasta_283;
+  *check_91(D) = _290;
+  _292 = pasta_253 + pastb_241;
+  _293 = _292 + pastc_258;
+  check2_294 = _293 + d_25;
+  # DEBUG check2 => check2_294
+  goto <bb 83>;
+
+  <bb 76>:
+  if (aux_285 == 1)
+    goto <bb 77>;
+  else
+    goto <bb 78>;
+
+  <bb 77>:
+  _295 = pastb_163 * pastb_163;
+  _296 = pastc_258 * pastc_258;
+  _297 = _295 + _296;
+  _298 = __builtin_sqrt (_297);
+  _299 = _298 + pasta_283;
+  _300 = _299 - pastb_241;
+  *check_91(D) = _300;
+  _302 = pasta_253 + pastb_163;
+  _303 = _302 + pastc_258;
+  check2_304 = _303 + d_25;
+  # DEBUG check2 => check2_304
+  goto <bb 83>;
+
+  <bb 78>:
+  if (aux_285 == 2)
+    goto <bb 79>;
+  else
+    goto <bb 80>;
+
+  <bb 79>:
+  _305 = pastb_241 * pastb_241;
+  _306 = pastc_258 * pastc_258;
+  _307 = _305 + _306;
+  _308 = __builtin_sqrt (_307);
+  *check_91(D) = _308;
+  _310 = pasta_253 + pastb_163;
+  _311 = _310 + pastc_165;
+  check2_312 = _311 + d_25;
+  # DEBUG check2 => check2_312
+  goto <bb 83>;
+
+  <bb 80>:
+  if (aux_285 == 3)
+    goto <bb 82>;
+  else
+    goto <bb 81>;
+
+  <bb 81>:
+  pretmp_434 = *check_91(D);
+  goto <bb 83>;
+
+  <bb 82>:
+  _314 = pastb_241 * pastb_241;
+  _315 = pastc_258 * pastc_258;
+  _316 = _314 + _315;
+  _317 = __builtin_sqrt (_316);
+  *check_91(D) = _317;
+  _319 = pasta_283 + pastb_241;
+  _320 = _319 + pastc_258;
+  check2_321 = _320 + d_25;
+  # DEBUG check2 => check2_321
+
+  <bb 83>:
+  # check2_19 = PHI <check2_294(75), check2_304(77), check2_312(79), check2_313(D)(81), check2_321(82)>
+  # prephitmp_435 = PHI <_290(75), _300(77), _308(79), pretmp_434(81), _317(82)>
+  # DEBUG check2 => check2_19
+  __var_2_323 = ABS_EXPR <prephitmp_435>;
+  # DEBUG __var_2 => __var_2_323
+  __var_1_324 = ABS_EXPR <check2_19>;
+  # DEBUG __var_1 => __var_1_324
+  _325 = __var_2_323 < __var_1_324;
+  _326 = __var_1_324 unord __var_1_324;
+  _328 = _326 | _325;
+  if (_328 != 0)
+    goto <bb 84>;
+  else
+    goto <bb 85>;
+
+  <bb 84>:
+
+  <bb 85>:
+  # M.11_69 = PHI <__var_1_324(83), __var_2_323(84)>
+  _329 = __var_2_323 > __var_1_324;
+  _332 = _329 | _326;
+  if (_332 != 0)
+    goto <bb 86>;
+  else
+    goto <bb 87>;
+
+  <bb 86>:
+
+  <bb 87>:
+  # M.12_70 = PHI <__var_1_324(85), __var_2_323(86)>
+  _333 = M.11_69 / M.12_70;
+  *check_91(D) = _333;
+  return;
+
+  <bb 88>:
+  # l2_416 = PHI <l2_139(19)>
+  # DEBUG l2 => l2_416
+  l2_381 = __builtin_sqrt (l2_416);
+  # DEBUG l2 => l2_381
+  # DEBUG i => 1
+  # DEBUG l2 => l2_381
+  # DEBUG i => 1
+  goto <bb 22>;
+
+  <bb 89>:
+  # l2_415 = PHI <l2_153(24)>
+  # DEBUG l2 => l2_415
+  l2_121 = __builtin_sqrt (l2_415);
+  # DEBUG l2 => l2_121
+  # DEBUG i => 1
+  # DEBUG l2 => l2_121
+  # DEBUG i => 1
+  goto <bb 27>;
+
+}
+
+
+
+;; Function dusty (MAIN__, funcdef_no=2, decl_uid=1941, cgraph_uid=2) (executed once)
+
+dusty ()
+{
+  integer(kind=4) ia_I_lsm.208;
+  real(kind=8) cm_I_lsm.207;
+  real(kind=8) trace3_lsm.206;
+  real(kind=8) D.2094;
+  struct __st_parameter_dt dt_parm.18;
+  struct __st_parameter_dt dt_parm.17;
+  unsigned int countm1.13;
+  real(kind=8) trace3;
+  real(kind=8) totalsum;
+  real(kind=8) top;
+  real(kind=8) start;
+  real(kind=8) op[2500];
+  integer(kind=4) n;
+  integer(kind=4) k;
+  integer(kind=4) j;
+  integer(kind=4) ival;
+  real(kind=8) id[2500];
+  integer(kind=4) ia[50];
+  integer(kind=4) i;
+  real(kind=8) holdb;
+  real(kind=8) holda;
+  real(kind=8) finish;
+  real(kind=8) dm[2500];
+  real(kind=8) cv[50];
+  real(kind=8) cm[2500];
+  real(kind=8) check;
+  real(kind=8) bv[50];
+  real(kind=8) bot;
+  real(kind=8) bm[2500];
+  real(kind=8) av[50];
+  real(kind=8) am[2500];
+  real(kind=8) start.43;
+  real(kind=8) finish.42;
+  real(kind=8) trace3.41;
+  real(kind=8) trace3.40;
+  real(kind=8) check.39;
+  real(kind=8) check.38;
+  integer(kind=4) _86;
+  real(kind=4) _88;
+  real(kind=4) _90;
+  real(kind=4) _91;
+  integer(kind=4) _92;
+  integer(kind=4) _93;
+  integer(kind=4) _94;
+  real(kind=4) _95;
+  real(kind=4) _96;
+  real(kind=4) _97;
+  real(kind=8) _98;
+  real(kind=8) _99;
+  integer(kind=4) _102;
+  real(kind=4) _104;
+  real(kind=4) _106;
+  real(kind=4) _107;
+  integer(kind=4) _108;
+  integer(kind=4) _109;
+  integer(kind=4) _110;
+  real(kind=4) _111;
+  real(kind=4) _112;
+  real(kind=4) _113;
+  real(kind=8) _114;
+  real(kind=8) _115;
+  integer(kind=4) _120;
+  real(kind=8) _121;
+  real(kind=8) _122;
+  real(kind=8) _123;
+  unsigned int ivtmp_129;
+  integer(kind=4) _132;
+  integer(kind=4) _133;
+  integer(kind=4) _134;
+  unsigned int ivtmp_135;
+  real(kind=8) _136;
+  integer(kind=4) _137;
+  real(kind=8) _138;
+  real(kind=8) _139;
+  real(kind=8) _140;
+  real(kind=8) _141;
+  integer(kind=4) _143;
+  integer(kind=4) _144;
+  integer(kind=4) _145;
+  integer(kind=4) _146;
+  real(kind=8) _147;
+  unsigned int ivtmp_148;
+  real(kind=8) _149;
+  real(kind=8) _150;
+  real(kind=8) _151;
+  real(kind=8) _152;
+  unsigned int ivtmp_155;
+  unsigned int ivtmp_158;
+  unsigned int _159;
+  integer(kind=4) _162;
+  integer(kind=4) _163;
+  integer(kind=4) _164;
+  integer(kind=4) _165;
+  integer(kind=4) _171;
+  integer(kind=4) _172;
+  integer(kind=4) _173;
+  real(kind=8) _174;
+  real(kind=8) _175;
+  real(kind=8) _176;
+  real(kind=8) _177;
+  real(kind=8) _179;
+  unsigned int ivtmp_182;
+  integer(kind=4) _184;
+  real(kind=8) _185;
+  integer(kind=4) _186;
+  real(kind=8) _187;
+  real(kind=8) _188;
+  real(kind=8) _189;
+  real(kind=8) _190;
+  unsigned int ivtmp_193;
+  integer(kind=4) _195;
+  integer(kind=4) _197;
+  integer(kind=4) _198;
+  integer(kind=4) _199;
+  integer(kind=4) _201;
+  real(kind=8) _202;
+  real(kind=8) _203;
+  real(kind=8) _205;
+  real(kind=8) _206;
+  real(kind=8) _207;
+  real(kind=8) _208;
+  integer(kind=4) _209;
+  integer(kind=4) _210;
+  real(kind=8) _211;
+  real(kind=8) _212;
+  real(kind=8) _213;
+  integer(kind=4) _215;
+  real(kind=8) _216;
+  real(kind=8) _217;
+  real(kind=8) _218;
+  integer(kind=4) * _220;
+  integer(kind=4) * _221;
+  real(kind=8) _222;
+  real(kind=8) _223;
+  real(kind=8) _225;
+  real(kind=8) _226;
+  integer(kind=4) _228;
+  integer(kind=4) _229;
+  integer(kind=4) _230;
+  integer(kind=4) _232;
+  real(kind=8) _233;
+  real(kind=8) _234;
+  real(kind=8) _237;
+  real(kind=8) _238;
+  real(kind=8) _239;
+  real(kind=8) _240;
+  integer(kind=4) _241;
+  real(kind=8) _242;
+  real(kind=8) _243;
+  real(kind=8) _244;
+  real(kind=8) _246;
+  real(kind=8) _247;
+  integer(kind=4) _248;
+  integer(kind=4) _249;
+  real(kind=8) _250;
+  real(kind=8) _251;
+  real(kind=8) _252;
+  integer(kind=4) * _254;
+  integer(kind=4) * _255;
+  real(kind=8) _256;
+  real(kind=8) _257;
+  real(kind=8) _259;
+  real(kind=8) _260;
+  integer(kind=4) _264;
+  integer(kind=4) _266;
+  integer(kind=4) _267;
+  integer(kind=4) _268;
+  integer(kind=4) _274;
+  integer(kind=4) _275;
+  integer(kind=4) _276;
+  real(kind=8) _277;
+  integer(kind=4) _278;
+  integer(kind=4) _279;
+  real(kind=8) _280;
+  real(kind=8) _281;
+  real(kind=8) _283;
+  real(kind=8) _284;
+  integer(kind=4) _289;
+  integer(kind=4) _290;
+  integer(kind=4) _291;
+  real(kind=8) _292;
+  integer(kind=4) _293;
+  integer(kind=4) _294;
+  real(kind=8) _295;
+  real(kind=8) _296;
+  real(kind=8) _298;
+  real(kind=8) _299;
+  real(kind=8) cstore_300;
+  integer(kind=4) _306;
+  integer(kind=4) _307;
+  integer(kind=4) _308;
+  real(kind=8) _309;
+  integer(kind=4) _311;
+  integer(kind=4) _312;
+  real(kind=8) _313;
+  real(kind=8) _314;
+  integer(kind=4) _317;
+  integer(kind=4) _318;
+  integer(kind=4) _319;
+  integer(kind=4) _324;
+  integer(kind=4) _325;
+  integer(kind=4) _326;
+  real(kind=8) _327;
+  integer(kind=4) _334;
+  integer(kind=4) _335;
+  integer(kind=4) _336;
+  real(kind=8) _337;
+  integer(kind=4) _339;
+  integer(kind=4) _340;
+  real(kind=8) _341;
+  real(kind=8) _342;
+  integer(kind=4) _345;
+  integer(kind=4) _346;
+  integer(kind=4) _347;
+  integer(kind=4) _356;
+  integer(kind=4) _357;
+  integer(kind=4) _358;
+  real(kind=8) _359;
+  logical(kind=4) _361;
+  logical(kind=4) _362;
+  logical(kind=4) _364;
+  real(kind=8) _368;
+  logical(kind=4) _370;
+  logical(kind=4) _371;
+  logical(kind=4) _373;
+  integer(kind=4) _378;
+  integer(kind=4) _379;
+  integer(kind=4) _380;
+  integer(kind=4) _381;
+  real(kind=8) _382;
+  real(kind=8) _387;
+  real(kind=8) _388;
+  real(kind=8) _393;
+  real(kind=8) _394;
+  real(kind=8) _395;
+  real(kind=8) _398;
+  real(kind=8) _423;
+  real(kind=8) _481;
+  real(kind=8) _482;
+  integer(kind=4) prephitmp_591;
+  real(kind=8) pretmp_605;
+  real(kind=8) prephitmp_606;
+  unsigned int ivtmp_608;
+  integer(kind=4) prephitmp_609;
+  integer(kind=4) pretmp_612;
+  integer(kind=4) prephitmp_613;
+  integer(kind=4) pretmp_614;
+  integer(kind=4) prephitmp_615;
+  integer(kind=4) pretmp_616;
+  integer(kind=4) prephitmp_617;
+  real(kind=8) prephitmp_627;
+  real(kind=8) pretmp_670;
+  real(kind=8) pretmp_671;
+  real(kind=8) prephitmp_672;
+  integer(kind=4) pretmp_687;
+  integer(kind=4) pretmp_695;
+  integer(kind=4) prephitmp_696;
+  integer(kind=4) pretmp_699;
+
+  <bb 2>:
+  n = 50;
+  _gfortran_cpu_time_8 (&start);
+  _gfortran_srand (&C.1978);
+  # DEBUG i => 1
+
+  <bb 3>:
+  # i_9 = PHI <1(2), i_101(4)>
+  # ivtmp_135 = PHI <50(2), ivtmp_193(4)>
+  # DEBUG i => i_9
+  _86 = i_9 + -1;
+  _88 = _gfortran_rand (0B);
+  _90 = _gfortran_rand (0B);
+  _91 = _90 * 1.0e+1;
+  _92 = (integer(kind=4)) _91;
+  _93 = _92 % 50;
+  _94 = _gfortran_pow_i4_i4 (-1, _93);
+  _95 = (real(kind=4)) _94;
+  _96 = _88 * _95;
+  _97 = ((_96));
+  _98 = (real(kind=8)) _97;
+  _99 = __builtin_jn (0, _98);
+  av[_86] = _99;
+  i_101 = i_9 + 1;
+  # DEBUG i => i_101
+  ivtmp_193 = ivtmp_135 - 1;
+  if (ivtmp_193 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 4>;
+
+  <bb 4>:
+  goto <bb 3>;
+
+  <bb 5>:
+
+  <bb 6>:
+  # i_10 = PHI <1(5), i_117(7)>
+  # ivtmp_182 = PHI <50(5), ivtmp_148(7)>
+  # DEBUG i => i_10
+  _102 = i_10 + -1;
+  _104 = _gfortran_rand (0B);
+  _106 = _gfortran_rand (0B);
+  _107 = _106 * 1.0e+1;
+  _108 = (integer(kind=4)) _107;
+  _109 = _108 % 50;
+  _110 = _gfortran_pow_i4_i4 (-1, _109);
+  _111 = (real(kind=4)) _110;
+  _112 = _104 * _111;
+  _113 = ((_112));
+  _114 = (real(kind=8)) _113;
+  _115 = __builtin_jn (1, _114);
+  bv[_102] = _115;
+  i_117 = i_10 + 1;
+  # DEBUG i => i_117
+  ivtmp_148 = ivtmp_182 - 1;
+  if (ivtmp_148 == 0)
+    goto <bb 8>;
+  else
+    goto <bb 7>;
+
+  <bb 7>:
+  goto <bb 6>;
+
+  <bb 8>:
+  check = 0.0;
+  # DEBUG i => 1
+
+  <bb 9>:
+  # i_11 = PHI <1(8), i_128(10)>
+  # prephitmp_606 = PHI <0.0(8), pretmp_605(10)>
+  # ivtmp_158 = PHI <50(8), ivtmp_608(10)>
+  # DEBUG i => i_11
+  ival = 50;
+  _120 = i_11 + -1;
+  _121 = av[_120];
+  _122 = bv[_120];
+  _123 = _121 * _122;
+  check.39_125 = _123 + prephitmp_606;
+  check = check.39_125;
+  idcheck (&ival, &check, &av, &bv, &id);
+  i_128 = i_11 + 1;
+  # DEBUG i => i_128
+  ivtmp_608 = ivtmp_158 - 1;
+  if (ivtmp_608 == 0)
+    goto <bb 11>;
+  else
+    goto <bb 10>;
+
+  <bb 10>:
+  pretmp_605 = check;
+  goto <bb 9>;
+
+  <bb 11>:
+
+  <bb 12>:
+  # i_12 = PHI <1(11), i_157(22)>
+  # prephitmp_609 = PHI <50(11), prephitmp_613(22)>
+  # ivtmp_129 = PHI <50(11), ivtmp_155(22)>
+  # DEBUG i => i_12
+  # DEBUG j => 1
+  if (prephitmp_609 > 0)
+    goto <bb 14>;
+  else
+    goto <bb 13>;
+
+  <bb 13>:
+  pretmp_695 = i_12 + -1;
+  goto <bb 21>;
+
+  <bb 14>:
+  pretmp_699 = i_12 + -1;
+
+  <bb 15>:
+  # j_23 = PHI <1(14), j_154(19)>
+  # DEBUG j => j_23
+  idcheck (&n, &check, &av, &bv, &id);
+  check.38_131 = check;
+  if (check.38_131 > 5.0e-1)
+    goto <bb 16>;
+  else
+    goto <bb 17>;
+
+  <bb 16>:
+  _132 = j_23 * 50;
+  _133 = _132 + i_12;
+  _134 = _133 + -51;
+  _136 = av[pretmp_699];
+  _137 = j_23 + -1;
+  _138 = bv[_137];
+  _139 = _136 * _138;
+  _140 = bv[pretmp_699];
+  _141 = _139 / _140;
+  op[_134] = _141;
+  goto <bb 18>;
+
+  <bb 17>:
+  _143 = j_23 * 50;
+  _144 = _143 + i_12;
+  _145 = _144 + -51;
+  _146 = j_23 + -1;
+  _147 = av[_146];
+  _149 = bv[pretmp_699];
+  _150 = _147 * _149;
+  _151 = bv[_146];
+  _152 = _150 / _151;
+  op[_145] = _152;
+
+  <bb 18>:
+  j_154 = j_23 + 1;
+  # DEBUG j => j_154
+  if (j_23 == prephitmp_609)
+    goto <bb 20>;
+  else
+    goto <bb 19>;
+
+  <bb 19>:
+  goto <bb 15>;
+
+  <bb 20>:
+  pretmp_612 = n;
+
+  <bb 21>:
+  # prephitmp_613 = PHI <prephitmp_609(13), pretmp_612(20)>
+  # prephitmp_696 = PHI <pretmp_695(13), pretmp_699(20)>
+  ia[prephitmp_696] = i_12;
+  i_157 = i_12 + 1;
+  # DEBUG i => i_157
+  ivtmp_155 = ivtmp_129 - 1;
+  if (ivtmp_155 == 0)
+    goto <bb 23>;
+  else
+    goto <bb 22>;
+
+  <bb 22>:
+  goto <bb 12>;
+
+  <bb 23>:
+  # prephitmp_591 = PHI <prephitmp_613(21)>
+  # DEBUG i => 1
+  if (prephitmp_591 > 0)
+    goto <bb 24>;
+  else
+    goto <bb 34>;
+
+  <bb 24>:
+
+  <bb 25>:
+  # i_13 = PHI <1(24), i_169(29)>
+  # DEBUG i => i_13
+  # DEBUG j => 0
+  _159 = (unsigned int) i_13;
+  countm1.13_160 = _159 >> 3;
+  pretmp_687 = i_13 + -1;
+
+  <bb 26>:
+  # j_24 = PHI <0(25), j_167(27)>
+  # countm1.13_38 = PHI <countm1.13_160(25), countm1.13_168(27)>
+  # DEBUG j => j_24
+  _162 = i_13 + j_24;
+  _163 = _162 % prephitmp_591;
+  _164 = _163 % prephitmp_591;
+  _165 = _164 + 1;
+  j_167 = j_24 + 8;
+  # DEBUG j => j_167
+  countm1.13_168 = countm1.13_38 + 4294967295;
+  if (countm1.13_38 == 0)
+    goto <bb 28>;
+  else
+    goto <bb 27>;
+
+  <bb 27>:
+  goto <bb 26>;
+
+  <bb 28>:
+  # ia_I_lsm.208_584 = PHI <_165(26)>
+  ia[pretmp_687] = ia_I_lsm.208_584;
+  i_169 = i_13 + 1;
+  # DEBUG i => i_169
+  if (i_13 == prephitmp_591)
+    goto <bb 30>;
+  else
+    goto <bb 29>;
+
+  <bb 29>:
+  goto <bb 25>;
+
+  <bb 30>:
+
+  <bb 31>:
+  # i_14 = PHI <1(30), i_181(32)>
+  # DEBUG i => i_14
+  idcheck (&n, &check, &av, &bv, &id);
+  _171 = i_14 + -1;
+  _172 = ia[_171];
+  _173 = _172 + -1;
+  _174 = av[_173];
+  _175 = bv[_173];
+  _176 = _174 + _175;
+  _177 = ((_176));
+  check.38_178 = check;
+  _179 = _177 / check.38_178;
+  cv[_173] = _179;
+  i_181 = i_14 + 1;
+  # DEBUG i => i_181
+  if (i_14 == prephitmp_591)
+    goto <bb 33>;
+  else
+    goto <bb 32>;
+
+  <bb 32>:
+  goto <bb 31>;
+
+  <bb 33>:
+  pretmp_614 = n;
+
+  <bb 34>:
+  # prephitmp_615 = PHI <prephitmp_591(23), pretmp_614(33)>
+  # DEBUG i => 2
+  if (prephitmp_615 > 1)
+    goto <bb 35>;
+  else
+    goto <bb 39>;
+
+  <bb 35>:
+
+  <bb 36>:
+  # i_15 = PHI <2(35), i_192(37)>
+  # DEBUG i => i_15
+  idcheck (&n, &check, &av, &bv, &id);
+  _184 = i_15 + -2;
+  _185 = av[_184];
+  _186 = i_15 + -1;
+  _187 = bv[_186];
+  _188 = _185 * _187;
+  _189 = cv[_186];
+  _190 = _188 + _189;
+  av[_186] = _190;
+  i_192 = i_15 + 1;
+  # DEBUG i => i_192
+  if (i_15 == prephitmp_615)
+    goto <bb 38>;
+  else
+    goto <bb 37>;
+
+  <bb 37>:
+  goto <bb 36>;
+
+  <bb 38>:
+  pretmp_616 = n;
+
+  <bb 39>:
+  # prephitmp_617 = PHI <prephitmp_615(34), pretmp_616(38)>
+  # DEBUG i => 1
+  if (prephitmp_617 > 0)
+    goto <bb 40>;
+  else
+    goto <bb 98>;
+
+  <bb 40>:
+
+  <bb 41>:
+  # i_16 = PHI <1(40), i_263(50)>
+  # DEBUG i => i_16
+  idcheck (&n, &check, &av, &bv, &id);
+  _195 = n;
+  # DEBUG j => 1
+  if (_195 > 0)
+    goto <bb 43>;
+  else
+    goto <bb 42>;
+
+  <bb 42>:
+  i_263 = i_16 + 1;
+  # DEBUG i => i_263
+  if (i_16 == prephitmp_617)
+    goto <bb 51>;
+  else
+    goto <bb 50>;
+
+  <bb 43>:
+  check.38_196 = check;
+  _209 = i_16 + -1;
+  _210 = _209 * 51;
+  _248 = i_16 + -1;
+  _249 = _248 * 51;
+
+  <bb 44>:
+  # j_25 = PHI <1(43), j_262(49)>
+  # DEBUG j => j_25
+  if (check.38_196 > 5.0e-1)
+    goto <bb 45>;
+  else
+    goto <bb 46>;
+
+  <bb 45>:
+  _197 = j_25 * 50;
+  _198 = _197 + i_16;
+  _199 = _198 + -51;
+  bot_200 = op[_199];
+  # DEBUG bot => bot_200
+  _201 = j_25 + -1;
+  _202 = av[_201];
+  _203 = bv[_201];
+  top_204 = _202 * _203;
+  # DEBUG top => top_204
+  # DEBUG holda => _202
+  _205 = cv[_201];
+  _206 = top_204 - bot_200;
+  _207 = ((_206));
+  _208 = _205 / _207;
+  _211 = id[_210];
+  _212 = _208 * _211;
+  _213 = _203 + _212;
+  av[_201] = _213;
+  _215 = _201 * 51;
+  _216 = id[_215];
+  _217 = _208 * _216;
+  _218 = _202 + _217;
+  bv[_201] = _218;
+  _220 = &ia[_201];
+  _221 = &ia[_209];
+  _222 = trig (_221, _220);
+  _223 = _213 * _222;
+  am[_199] = _223;
+  _225 = trig (_220, _221);
+  _226 = _218 * _225;
+  bm[_199] = _226;
+  goto <bb 47>;
+
+  <bb 46>:
+  _228 = j_25 * 50;
+  _229 = _228 + i_16;
+  _230 = _229 + -51;
+  bot_231 = op[_230];
+  # DEBUG bot => bot_231
+  _232 = j_25 + -1;
+  _233 = av[_232];
+  _234 = bv[_232];
+  top_235 = _233 * _234;
+  # DEBUG top => top_235
+  # DEBUG holda => _233
+  _237 = cv[_232];
+  _238 = top_235 - bot_231;
+  _239 = ((_238));
+  _240 = _237 / _239;
+  _241 = _232 * 51;
+  _242 = id[_241];
+  _243 = _240 * _242;
+  _244 = _234 - _243;
+  av[_232] = _244;
+  _246 = cv[_232];
+  _247 = _246 / _239;
+  _250 = id[_249];
+  _251 = _247 * _250;
+  _252 = _233 - _251;
+  bv[_232] = _252;
+  _254 = &ia[_232];
+  _255 = &ia[_248];
+  _256 = trig (_255, _254);
+  _257 = _244 / _256;
+  am[_230] = _257;
+  _259 = trig (_254, _255);
+  _260 = _252 / _259;
+  bm[_230] = _260;
+
+  <bb 47>:
+  j_262 = j_25 + 1;
+  # DEBUG j => j_262
+  if (j_25 == _195)
+    goto <bb 48>;
+  else
+    goto <bb 49>;
+
+  <bb 48>:
+  goto <bb 42>;
+
+  <bb 49>:
+  goto <bb 44>;
+
+  <bb 50>:
+  goto <bb 41>;
+
+  <bb 51>:
+  _264 = n;
+  # DEBUG i => 1
+  if (_264 > 0)
+    goto <bb 52>;
+  else
+    goto <bb 98>;
+
+  <bb 52>:
+  check.38_282 = check;
+  check.38_297 = check;
+
+  <bb 53>:
+  # i_17 = PHI <1(52), i_303(63)>
+  # DEBUG i => i_17
+  # DEBUG j => 1
+
+  <bb 54>:
+  # j_26 = PHI <1(53), j_302(61)>
+  # DEBUG j => j_26
+  _266 = j_26 * 50;
+  _267 = _266 + i_17;
+  _268 = _267 + -51;
+  cm[_268] = 0.0;
+  # DEBUG k => 1
+
+  <bb 55>:
+  # k_31 = PHI <1(54), k_301(59)>
+  # prephitmp_627 = PHI <0.0(54), cstore_300(59)>
+  # DEBUG k => k_31
+  if (i_17 < j_26)
+    goto <bb 56>;
+  else
+    goto <bb 57>;
+
+  <bb 56>:
+  _274 = k_31 * 50;
+  _275 = _274 + i_17;
+  _276 = _275 + -51;
+  _277 = am[_276];
+  _278 = k_31 + _266;
+  _279 = _278 + -51;
+  _280 = bm[_279];
+  _281 = _277 * _280;
+  _283 = _281 / check.38_282;
+  _284 = prephitmp_627 - _283;
+  goto <bb 58>;
+
+  <bb 57>:
+  _289 = k_31 * 50;
+  _290 = _289 + i_17;
+  _291 = _290 + -51;
+  _292 = am[_291];
+  _293 = k_31 + _266;
+  _294 = _293 + -51;
+  _295 = bm[_294];
+  _296 = _292 * _295;
+  _298 = _296 / check.38_297;
+  _299 = _298 + prephitmp_627;
+
+  <bb 58>:
+  # cstore_300 = PHI <_284(56), _299(57)>
+  k_301 = k_31 + 1;
+  # DEBUG k => k_301
+  if (k_31 == _264)
+    goto <bb 60>;
+  else
+    goto <bb 59>;
+
+  <bb 59>:
+  goto <bb 55>;
+
+  <bb 60>:
+  # cm_I_lsm.207_582 = PHI <cstore_300(58)>
+  cm[_268] = cm_I_lsm.207_582;
+  j_302 = j_26 + 1;
+  # DEBUG j => j_302
+  if (j_26 == _264)
+    goto <bb 62>;
+  else
+    goto <bb 61>;
+
+  <bb 61>:
+  goto <bb 54>;
+
+  <bb 62>:
+  i_303 = i_17 + 1;
+  # DEBUG i => i_303
+  if (i_17 == _264)
+    goto <bb 64>;
+  else
+    goto <bb 63>;
+
+  <bb 63>:
+  goto <bb 53>;
+
+  <bb 64>:
+
+  <bb 65>:
+  # i_18 = PHI <1(64), i_322(72)>
+  # DEBUG i => i_18
+  # DEBUG j => 1
+
+  <bb 66>:
+  # j_27 = PHI <1(65), j_321(70)>
+  # DEBUG j => j_27
+  # DEBUG totalsum => 0.0
+  # DEBUG k => 1
+
+  <bb 67>:
+  # k_32 = PHI <1(66), k_316(68)>
+  # totalsum_34 = PHI <0.0(66), totalsum_315(68)>
+  # DEBUG totalsum => totalsum_34
+  # DEBUG k => k_32
+  _306 = k_32 * 50;
+  _307 = _306 + i_18;
+  _308 = _307 + -51;
+  _309 = cm[_308];
+  _311 = j_27 + _306;
+  _312 = _311 + -51;
+  _313 = am[_312];
+  _314 = _309 * _313;
+  totalsum_315 = _314 + totalsum_34;
+  # DEBUG totalsum => totalsum_315
+  k_316 = k_32 + 1;
+  # DEBUG k => k_316
+  if (k_32 == _264)
+    goto <bb 69>;
+  else
+    goto <bb 68>;
+
+  <bb 68>:
+  goto <bb 67>;
+
+  <bb 69>:
+  # totalsum_593 = PHI <totalsum_315(67)>
+  # DEBUG totalsum => totalsum_593
+  _317 = j_27 * 50;
+  _318 = _317 + i_18;
+  _319 = _318 + -51;
+  dm[_319] = totalsum_593;
+  j_321 = j_27 + 1;
+  # DEBUG j => j_321
+  if (j_27 == _264)
+    goto <bb 71>;
+  else
+    goto <bb 70>;
+
+  <bb 70>:
+  goto <bb 66>;
+
+  <bb 71>:
+  i_322 = i_18 + 1;
+  # DEBUG i => i_322
+  if (i_18 == _264)
+    goto <bb 73>;
+  else
+    goto <bb 72>;
+
+  <bb 72>:
+  goto <bb 65>;
+
+  <bb 73>:
+
+  <bb 74>:
+  # i_19 = PHI <1(73), i_330(78)>
+  # DEBUG i => i_19
+  # DEBUG j => 1
+
+  <bb 75>:
+  # j_28 = PHI <1(74), j_329(76)>
+  # DEBUG j => j_28
+  _324 = j_28 * 50;
+  _325 = _324 + i_19;
+  _326 = _325 + -51;
+  _327 = dm[_326];
+  cm[_326] = _327;
+  j_329 = j_28 + 1;
+  # DEBUG j => j_329
+  if (j_28 == _264)
+    goto <bb 77>;
+  else
+    goto <bb 76>;
+
+  <bb 76>:
+  goto <bb 75>;
+
+  <bb 77>:
+  i_330 = i_19 + 1;
+  # DEBUG i => i_330
+  if (i_19 == _264)
+    goto <bb 79>;
+  else
+    goto <bb 78>;
+
+  <bb 78>:
+  goto <bb 74>;
+
+  <bb 79>:
+
+  <bb 80>:
+  # i_20 = PHI <1(79), i_350(87)>
+  # DEBUG i => i_20
+  # DEBUG j => 1
+
+  <bb 81>:
+  # j_29 = PHI <1(80), j_349(85)>
+  # DEBUG j => j_29
+  # DEBUG totalsum => 0.0
+  # DEBUG k => 1
+
+  <bb 82>:
+  # k_33 = PHI <1(81), k_344(83)>
+  # totalsum_36 = PHI <0.0(81), totalsum_343(83)>
+  # DEBUG totalsum => totalsum_36
+  # DEBUG k => k_33
+  _334 = k_33 * 50;
+  _335 = _334 + i_20;
+  _336 = _335 + -51;
+  _337 = cm[_336];
+  _339 = j_29 + _334;
+  _340 = _339 + -51;
+  _341 = bm[_340];
+  _342 = _337 * _341;
+  totalsum_343 = totalsum_36 - _342;
+  # DEBUG totalsum => totalsum_343
+  k_344 = k_33 + 1;
+  # DEBUG k => k_344
+  if (k_33 == _264)
+    goto <bb 84>;
+  else
+    goto <bb 83>;
+
+  <bb 83>:
+  goto <bb 82>;
+
+  <bb 84>:
+  # totalsum_592 = PHI <totalsum_343(82)>
+  # DEBUG totalsum => totalsum_592
+  _345 = j_29 * 50;
+  _346 = _345 + i_20;
+  _347 = _346 + -51;
+  dm[_347] = totalsum_592;
+  j_349 = j_29 + 1;
+  # DEBUG j => j_349
+  if (j_29 == _264)
+    goto <bb 86>;
+  else
+    goto <bb 85>;
+
+  <bb 85>:
+  goto <bb 81>;
+
+  <bb 86>:
+  i_350 = i_20 + 1;
+  # DEBUG i => i_350
+  if (i_20 == _264)
+    goto <bb 97>;
+  else
+    goto <bb 87>;
+
+  <bb 87>:
+  goto <bb 80>;
+
+  <bb 88>:
+
+  <bb 89>:
+  # holda_1 = PHI <holda_484(97), holda_597(88)>
+  # holdb_5 = PHI <holdb_483(97), holdb_595(88)>
+  # i_21 = PHI <1(97), i_375(88)>
+  # DEBUG i => i_21
+  # DEBUG holdb => holdb_5
+  # DEBUG holda => holda_1
+  # DEBUG j => 1
+
+  <bb 90>:
+  # holda_2 = PHI <holda_1(89), holda_39(91)>
+  # holdb_6 = PHI <holdb_5(89), holdb_40(91)>
+  # j_30 = PHI <1(89), j_374(91)>
+  # DEBUG j => NULL
+  # DEBUG holdb => NULL
+  # DEBUG holda => NULL
+  _356 = j_30 * 50;
+  _357 = _356 + i_21;
+  _358 = _357 + -51;
+  _359 = am[_358];
+  holda_360 = ABS_EXPR <_359>;
+  _361 = holda_2 < holda_360;
+  _362 = holda_2 unord holda_2;
+  _364 = _361 | _362;
+  holda_39 = _364 ? holda_360 : holda_2;
+  # DEBUG holda => NULL
+  _368 = bm[_358];
+  holdb_369 = ABS_EXPR <_368>;
+  _370 = holdb_6 < holdb_369;
+  _371 = holdb_6 unord holdb_6;
+  _373 = _370 | _371;
+  holdb_40 = _373 ? holdb_369 : holdb_6;
+  # DEBUG holdb => holdb_40
+  j_374 = j_30 + 1;
+  # DEBUG j => j_374
+  if (j_30 == _264)
+    goto <bb 92>;
+  else
+    goto <bb 91>;
+
+  <bb 91>:
+  goto <bb 90>;
+
+  <bb 92>:
+  # holda_597 = PHI <holda_39(90)>
+  # holdb_595 = PHI <holdb_40(90)>
+  # DEBUG holdb => holdb_595
+  # DEBUG holda => holda_597
+  i_375 = i_21 + 1;
+  # DEBUG i => i_375
+  if (i_21 == _264)
+    goto <bb 99>;
+  else
+    goto <bb 88>;
+
+  <bb 93>:
+
+  <bb 94>:
+  # i_22 = PHI <1(99), i_402(93)>
+  # prephitmp_672 = PHI <0.0(99), trace3.41_400(93)>
+  # DEBUG i => i_22
+  _378 = i_22 + -1;
+  _379 = ia[_378];
+  _380 = _379 + -1;
+  _381 = _380 * 51;
+  _382 = am[_381];
+  _387 = bm[_381];
+  _388 = _382 + _387;
+  _393 = dm[_381];
+  _394 = _388 - _393;
+  _395 = ((_394));
+  _398 = _395 / pretmp_671;
+  trace3.41_400 = _398 + prephitmp_672;
+  i_402 = i_22 + 1;
+  # DEBUG i => i_402
+  if (i_22 == _264)
+    goto <bb 95>;
+  else
+    goto <bb 93>;
+
+  <bb 95>:
+  # trace3_lsm.206_583 = PHI <trace3.41_400(94)>
+  trace3 = trace3_lsm.206_583;
+
+  <bb 96>:
+  _gfortran_cpu_time_8 (&finish);
+  dt_parm.17.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.17.common.line = 234;
+  dt_parm.17.common.flags = 128;
+  dt_parm.17.common.unit = 6;
+  _gfortran_st_write (&dt_parm.17);
+  _gfortran_transfer_character_write (&dt_parm.17, &"Final trace = "[1]{lb: 1 sz: 1}, 14);
+  _gfortran_transfer_real_write (&dt_parm.17, &trace3, 8);
+  _gfortran_transfer_character_write (&dt_parm.17, &" and IDCHECK "[1]{lb: 1 sz: 1}, 13);
+  _gfortran_transfer_real_write (&dt_parm.17, &check, 8);
+  _gfortran_st_write_done (&dt_parm.17);
+  dt_parm.17 ={v} {CLOBBER};
+  dt_parm.18.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.18.common.line = 235;
+  dt_parm.18.common.flags = 128;
+  dt_parm.18.common.unit = 6;
+  _gfortran_st_write (&dt_parm.18);
+  _gfortran_transfer_character_write (&dt_parm.18, &"-- RUNTIME -> "[1]{lb: 1 sz: 1}, 14);
+  finish.42_421 = finish;
+  start.43_422 = start;
+  _423 = finish.42_421 - start.43_422;
+  D.2094 = _423;
+  _gfortran_transfer_real_write (&dt_parm.18, &D.2094, 8);
+  D.2094 ={v} {CLOBBER};
+  _gfortran_transfer_character_write (&dt_parm.18, &" seconds"[1]{lb: 1 sz: 1}, 8);
+  _gfortran_st_write_done (&dt_parm.18);
+  dt_parm.18 ={v} {CLOBBER};
+  am ={v} {CLOBBER};
+  av ={v} {CLOBBER};
+  bm ={v} {CLOBBER};
+  bv ={v} {CLOBBER};
+  check ={v} {CLOBBER};
+  cm ={v} {CLOBBER};
+  cv ={v} {CLOBBER};
+  dm ={v} {CLOBBER};
+  finish ={v} {CLOBBER};
+  ia ={v} {CLOBBER};
+  id ={v} {CLOBBER};
+  ival ={v} {CLOBBER};
+  n ={v} {CLOBBER};
+  op ={v} {CLOBBER};
+  start ={v} {CLOBBER};
+  trace3 ={v} {CLOBBER};
+  return;
+
+  <bb 97>:
+  _481 = am[0];
+  holda_484 = ABS_EXPR <_481>;
+  # DEBUG holda => holda_484
+  _482 = bm[0];
+  holdb_483 = ABS_EXPR <_482>;
+  # DEBUG holdb => holdb_483
+  # DEBUG i => 1
+  # DEBUG holda => holda_484
+  # DEBUG holdb => holdb_483
+  # DEBUG i => 1
+  goto <bb 89>;
+
+  <bb 98>:
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG D#7 => am[0]
+  # DEBUG D#6 => ABS_EXPR <D#7>
+  # DEBUG holda => D#6
+  # DEBUG D#5 => bm[0]
+  # DEBUG D#4 => ABS_EXPR <D#5>
+  # DEBUG holdb => D#4
+  # DEBUG i => 1
+  # DEBUG holda => D#6
+  # DEBUG holdb => D#4
+  # DEBUG i => 1
+  # DEBUG holdb => NULL
+  # DEBUG holda => NULL
+  trace3 = 0.0;
+  # DEBUG i => 1
+  goto <bb 96>;
+
+  <bb 99>:
+  # holda_596 = PHI <holda_597(92)>
+  # holdb_594 = PHI <holdb_595(92)>
+  # DEBUG holdb => holdb_594
+  # DEBUG holda => holda_596
+  trace3 = 0.0;
+  # DEBUG i => 1
+  # DEBUG holdb => holdb_594
+  # DEBUG holda => holda_596
+  # DEBUG i => 1
+  pretmp_670 = holda_596 * holdb_594;
+  pretmp_671 = ((pretmp_670));
+  goto <bb 94>;
+
+}
+
+
+
+;; Function main (main, funcdef_no=3, decl_uid=2096, cgraph_uid=3) (executed once)
+
+main (integer(kind=4) argc, character(kind=1) * * argv)
+{
+  static integer(kind=4) options.19[7] = {68, 1023, 0, 0, 1, 1, 0};
+
+  <bb 2>:
+  _gfortran_set_args (argc_2(D), argv_3(D));
+  _gfortran_set_options (7, &options.19[0]);
+  dusty ();
+  return 0;
+
+}
+
+
+
+;; Function writetofile (writetofile_, funcdef_no=4, decl_uid=2101, cgraph_uid=4)
+
+writetofile (real(kind=4) & restrict a, real(kind=4) & restrict b, real(kind=4) & restrict c, real(kind=4) & restrict d, real(kind=4) & restrict check, real(kind=4) & restrict check2)
+{
+  struct __st_parameter_close close_parm.27;
+  struct __st_parameter_dt dt_parm.26;
+  struct __st_parameter_dt dt_parm.25;
+  struct __st_parameter_dt dt_parm.24;
+  struct __st_parameter_dt dt_parm.23;
+  struct __st_parameter_dt dt_parm.22;
+  struct __st_parameter_dt dt_parm.21;
+  struct __st_parameter_open open_parm.20;
+
+  <bb 2>:
+  open_parm.20.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  open_parm.20.common.line = 438;
+  open_parm.20.file = &"output-fileold.txt"[1]{lb: 1 sz: 1};
+  open_parm.20.file_len = 18;
+  open_parm.20.status = &"unknown"[1]{lb: 1 sz: 1};
+  open_parm.20.status_len = 7;
+  open_parm.20.access = &"append"[1]{lb: 1 sz: 1};
+  open_parm.20.access_len = 6;
+  open_parm.20.common.flags = 1792;
+  open_parm.20.common.unit = 10;
+  _gfortran_st_open (&open_parm.20);
+  open_parm.20 ={v} {CLOBBER};
+  dt_parm.21.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.21.common.line = 439;
+  dt_parm.21.common.flags = 128;
+  dt_parm.21.common.unit = 10;
+  _gfortran_st_write (&dt_parm.21);
+  _gfortran_transfer_real_write (&dt_parm.21, a_19(D), 4);
+  _gfortran_st_write_done (&dt_parm.21);
+  dt_parm.21 ={v} {CLOBBER};
+  dt_parm.22.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.22.common.line = 440;
+  dt_parm.22.common.flags = 128;
+  dt_parm.22.common.unit = 10;
+  _gfortran_st_write (&dt_parm.22);
+  _gfortran_transfer_real_write (&dt_parm.22, b_28(D), 4);
+  _gfortran_st_write_done (&dt_parm.22);
+  dt_parm.22 ={v} {CLOBBER};
+  dt_parm.23.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.23.common.line = 441;
+  dt_parm.23.common.flags = 128;
+  dt_parm.23.common.unit = 10;
+  _gfortran_st_write (&dt_parm.23);
+  _gfortran_transfer_real_write (&dt_parm.23, c_37(D), 4);
+  _gfortran_st_write_done (&dt_parm.23);
+  dt_parm.23 ={v} {CLOBBER};
+  dt_parm.24.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.24.common.line = 442;
+  dt_parm.24.common.flags = 128;
+  dt_parm.24.common.unit = 10;
+  _gfortran_st_write (&dt_parm.24);
+  _gfortran_transfer_real_write (&dt_parm.24, d_46(D), 4);
+  _gfortran_st_write_done (&dt_parm.24);
+  dt_parm.24 ={v} {CLOBBER};
+  dt_parm.25.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.25.common.line = 443;
+  dt_parm.25.common.flags = 128;
+  dt_parm.25.common.unit = 10;
+  _gfortran_st_write (&dt_parm.25);
+  _gfortran_transfer_real_write (&dt_parm.25, check_55(D), 4);
+  _gfortran_st_write_done (&dt_parm.25);
+  dt_parm.25 ={v} {CLOBBER};
+  dt_parm.26.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  dt_parm.26.common.line = 444;
+  dt_parm.26.common.flags = 128;
+  dt_parm.26.common.unit = 10;
+  _gfortran_st_write (&dt_parm.26);
+  _gfortran_transfer_real_write (&dt_parm.26, check2_64(D), 4);
+  _gfortran_st_write_done (&dt_parm.26);
+  dt_parm.26 ={v} {CLOBBER};
+  close_parm.27.common.filename = &"C:\\Users\\Vicenzo Abichequer\\Documents\\dustydeck\\dustyFortran\\main.f90"[1]{lb: 1 sz: 1};
+  close_parm.27.common.line = 445;
+  close_parm.27.common.flags = 0;
+  close_parm.27.common.unit = 10;
+  _gfortran_st_close (&close_parm.27);
+  close_parm.27 ={v} {CLOBBER};
+  return;
+
+}
+
+

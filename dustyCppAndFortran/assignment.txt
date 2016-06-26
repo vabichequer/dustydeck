@@ -1,0 +1,31 @@
+- man gcov
+
+- man gprof
+
+Dusty deck:
+check the professor's website for information about optimization
+
+[done, improved results] (NOPRECISIONLOSS) look into the code for precision losses, like mixing floating point and double precision
+[done] modify the code to fortran 90, from fortran 77
+
+1. [done] (ONE) Page 46: expensive operations
+2. [done, but has errors beyond what seems the real world] (TWO) Page 47: Common subexpressions
+3. [done, but don't seem to work] O options on the compiler
+4. [DONE. FUCKING DONE.] (FOUR) Take the if statements out of the loops and general bad code rewriting
+5. Strided access or loop interchange: Remember to change the i and j on the row calling of matrices in C and fortran, which may 
+have a difference on performance, regarding memory addressing
+
+ (Try to index the arrays so that memory references are contiguous 
+(for multiply-dimensioned arrays, this means attempting to vectorize on the leftmost index).)
+6. Vectorization: I have to turn -O2 on to turn the vectorizer on. Also, set at least 3 operations in the loop to get it vectorized. If there is only one operation, it probably won't vectorize.
+
+7. [DONE] Definitely try "man gcc" and search for "-march" and "-mtune", on the i386 section. It's got a whole lot of commands.
+	- use -march=haswell OR -mtune=haswell
+	- lscpu can tell me the cpu I'm using. 
+	- https://wiki.gentoo.org/wiki/GCC_optimization#-march --> gcc -c -Q -march=native --help=target
+
+8. Blocking (tiling)
+
+9. 
+
+Remember that I should use "git commit/push"

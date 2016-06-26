@@ -1,0 +1,556 @@
+        -:    0:Source:mainf.f90
+        -:    0:Graph:mainf.gcno
+        -:    0:Data:mainf.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        1:    1:program dusty   
+        -:    2:implicit none 
+        -:    3: 
+        -:    4:    real (kind=8) :: seed
+        -:    5:
+        -:    6:    interface
+        -:    7:        real (kind=8) function conrand(seed)
+        -:    8:          real (kind=8) :: seed
+        -:    9:        end function conrand    
+        -:   10:    end interface  
+        -:   11:  
+        -:   12:      integer MAXDIM
+        -:   13:      parameter (MAXDIM = 50)   
+        -:   14:
+        -:   15:      integer IA(MAXDIM), N, i, j, k, ival
+        -:   16:      double precision AV(MAXDIM), BV(MAXDIM), CV(MAXDIM)
+        -:   17:      double precision OP(MAXDIM, MAXDIM), ID(MAXDIM, MAXDIM)
+        -:   18:      double precision AM(MAXDIM, MAXDIM), BM(MAXDIM, MAXDIM)
+        -:   19:      double precision CM(MAXDIM, MAXDIM), DM(MAXDIM, MAXDIM)
+        -:   20:      double precision check, BOT, TOP, HOLDA, HOLDB, TRACE3
+        -:   21:      double precision sub, jn, jn1, jn2
+        -:   22:	  
+        -:   23:#ifdef NOPRECISIONLOSS
+        -:   24:      double precision start, finish, sum
+        -:   25:#else
+        -:   26:      real start, finish, sum
+        -:   27:#endif
+        -:   28:
+        -:   29:      double precision trig
+        -:   30:      external trig
+        -:   31:
+        1:   32:      N = MAXDIM
+        1:   33:      seed = 1.0
+        1:   34:      call cpu_time(start)
+        -:   35:      !call srand(1)
+        -:   36:
+        -:   37:!     Fill arrays
+        -:   38:
+        -:   39:! Loop 10 Series -- Filling Arrays
+        -:   40:
+       51:   41:      do i = 1, N
+       50:   42:        jn1 = conrand(seed)
+       50:   43:        jn2 = conrand(seed)
+       50:   44:        jn = jn1 * (-1) ** (mod(int(10 * jn2), N))
+       50:   45:		CV(i) = 0
+       50:   46:        AV(i) = bessel_jn(0, jn)
+        -:   47:      end do 
+        -:   48:	  
+       51:   49:      do i = 1, N
+       50:   50:        jn1 = conrand(seed)
+       50:   51:        jn2 = conrand(seed)
+       50:   52:        jn = jn1 * (-1) ** (mod(int(10 * jn2), N))
+       50:   53:        BV(i) = bessel_jn(1, jn)
+        -:   54:      end do
+        -:   55:     
+        1:   56:      check = 0.0
+        -:   57:
+       51:   58:      do i = 1, N
+       50:   59:        ival = N
+       50:   60:        check = check + AV(i) * BV(i)
+       50:   61:        call idcheck(ival, check, AV, BV, ID)
+        -:   62:      end do
+        -:   63:
+        -:   64:! Compute |AV><BV|
+        -:   65:#ifdef STRIDEACCESS
+       51:   66:    do j = 1, N
+     2550:   67:        do i = 1, N
+     2500:   68:          call idcheck(N,check,AV,BV,ID)
+     2500:   69:          if (check > 0.5) then
+    #####:   70:             OP(i,j) = AV(i) * BV(j) / BV(i)
+        -:   71:          else
+     2500:   72:             OP(i,j) = AV(j) * BV(i) / BV(j) 
+        -:   73:          endif
+        -:   74:       end do
+        -:   75:	   !print *, i
+       50:   76:       IA(i) = i
+        -:   77:    end do
+        -:   78:#else
+        -:   79:    do i = 1, N
+        -:   80:        do j = 1, N
+        -:   81:          call idcheck(N,check,AV,BV,ID)
+        -:   82:          if (check > 0.5) then
+        -:   83:             OP(i,j) = AV(i) * BV(j) / BV(i)
+        -:   84:          else
+        -:   85:             OP(i,j) = AV(j) * BV(i) / BV(j) 
+        -:   86:          endif
+        -:   87:       end do
+        -:   88:	   !print *, i
+        -:   89:       IA(i) = i
+        -:   90:    end do
+        -:   91:#endif
+        -:   92:
+        -:   93:	!loop 10
+        -:   94:		
+       51:   95:    do i = 1, N
+      238:   96:        do j = 0, i, 8
+      188:   97:            IA(I) = mod(mod(i+j,N),N)+1 !eliminar um mod
+        -:   98:			!print *, IA(I) 
+        -:   99:        end do
+        -:  100:    end do
+        -:  101:
+        -:  102:! Loop 20
+       51:  103:    do i = 1, N
+       50:  104:        call idcheck(N,check,AV,BV,ID)
+       50:  105:        CV(IA(I)) = (AV(IA(I)) + BV(IA(I))) / check
+        -:  106:		!print *, CV(IA(I))
+        -:  107:    end do
+        -:  108:
+        -:  109:
+        -:  110:! Loop 30
+        -:  111:
+       50:  112:    do i = 2, N
+       49:  113:        call idcheck(N,check,AV,BV,ID)
+       49:  114:        AV(i) = AV(i-1) * BV(i) + CV(i)
+        -:  115:		!print *, AV(i)
+        -:  116:    end do
+        -:  117:
+        -:  118:! Loop 40
+       51:  119:    do i = 1, N
+       50:  120:        call idcheck(N,check,AV,BV,ID)
+     2550:  121:        do j = 1, N
+     2500:  122:           if (check > 0.5) then
+      200:  123:              BOT = OP(i,j)
+      200:  124:              TOP = AV(j) * BV(j)
+      200:  125:              HOLDA = AV(j)
+      200:  126:              AV(j) = BV(j) + CV(j) / (TOP-BOT) * ID(i,i)
+      200:  127:              BV(j) = HOLDA + CV(j) / (TOP-BOT) * ID(j,j)
+      200:  128:              AM(i,j) = AV(j) * trig(IA(i), IA(j))
+      200:  129:              BM(i,j) = BV(j) * trig(IA(j), IA(i))
+        -:  130:           else
+     2300:  131:              BOT = OP(i,j)
+     2300:  132:              TOP = AV(j) * BV(j)
+     2300:  133:              HOLDA = AV(j)
+     2300:  134:              AV(j) = BV(j) - CV(j) / (TOP-BOT) * ID(j,j)
+     2300:  135:              BV(j) = HOLDA - CV(j) / (TOP-BOT) * ID(i,i)
+     2300:  136:              AM(i,j) = AV(j) / trig(IA(i), IA(j))
+     2300:  137:              BM(i,j) = BV(j) / trig(IA(j), IA(i))
+        -:  138:           endif
+        -:  139:        end do
+        -:  140:    end do
+        -:  141:
+        -:  142:#ifdef FOUR
+        -:  143:! Loop 50
+       51:  144:      do i = 1, N
+     1275:  145:         do  j = i + 1, N
+     1225:  146:            CM(i, j) = 0.0
+    62475:  147:            do k = 1, N
+    61250:  148:                CM(i, j) = CM(i, j) - AM(i, k) * BM(k, j) / check
+        -:  149:            end do
+        -:  150:         end do
+        -:  151:      end do
+        -:  152:
+        -:  153:
+       51:  154:      do i = 1, N
+     1325:  155:         do  j = 1, i
+     1275:  156:            CM(i, j) = 0.0
+    65025:  157:            do k = 1, N
+    63750:  158:                CM(i, j) = CM(i, j) + AM(i, k) * BM(k, j) / check
+        -:  159:            end do
+        -:  160:         end do
+        -:  161:      end do
+        -:  162:#else
+        -:  163:! Loop 50
+        -:  164:      do i = 1, N
+        -:  165:         do  j = 1, N
+        -:  166:            CM(i, j) = 0.0
+        -:  167:            do k = 1, N
+        -:  168:               if (i < j) then
+        -:  169:                  CM(i, j) = CM(i, j) - AM(i, k) * BM(k, j) / check
+        -:  170:               else
+        -:  171:                  CM(i, j) = CM(i, j) + AM(i, k) * BM(k, j) / check
+        -:  172:               endif
+        -:  173:            end do
+        -:  174:         end do
+        -:  175:      end do
+        -:  176:#endif
+        -:  177:
+        -:  178:! Loop 60
+        -:  179:#ifdef STRIDEACCESS
+       51:  180:      do j = 1, N
+     2550:  181:         do i = 1, N
+     2500:  182:            sum = 0.0
+   127500:  183:            do k = 1, N
+   125000:  184:               sum = sum + CM(i, k) * AM (j, k)
+        -:  185:            end do
+     2500:  186:            DM(i, j) = sum			
+        -:  187:         end do
+        -:  188:      end do
+        -:  189:
+       51:  190:      do j = 1, N
+     2550:  191:        do i = 1, N
+     2500:  192:           CM(i, j) = DM(i, j)
+        -:  193:        end do
+        -:  194:      end do
+        -:  195:#else
+        -:  196:      do i = 1, N
+        -:  197:         do j = 1, N
+        -:  198:            sum = 0.0
+        -:  199:            do k = 1, N
+        -:  200:               sum = sum + CM(i, k) * AM (j, k)
+        -:  201:            end do
+        -:  202:            DM(i, j) = sum			
+        -:  203:         end do
+        -:  204:      end do
+        -:  205:
+        -:  206:      do i = 1, N
+        -:  207:        do j = 1, N
+        -:  208:           CM(i, j) = DM(i, j)
+        -:  209:        end do
+        -:  210:      end do
+        -:  211:#endif
+        -:  212:
+        -:  213:
+        -:  214:! Loop 70
+        -:  215:#ifdef STRIDEACCESS
+       51:  216:	  do j = 1, N
+     2550:  217:		   do i = 1, N
+     2500:  218:			sum = 0.0
+   127500:  219:			do k = 1, N
+   125000:  220:			  sum = sum - CM(i, k) * BM (j, k)
+        -:  221:			end do
+     2500:  222:			DM(i,j) = sum
+        -:  223:		   end do
+        -:  224:	  end do
+        -:  225:#else
+        -:  226:	  do i = 1, N
+        -:  227:		   do j = 1, N
+        -:  228:			sum = 0.0
+        -:  229:			do k = 1, N
+        -:  230:			  sum = sum - CM(i, k) * BM (j, k)
+        -:  231:			end do
+        -:  232:			DM(i,j) = sum
+        -:  233:		   end do
+        -:  234:	  end do
+        -:  235:#endif
+        -:  236:
+        -:  237:
+        1:  238:      HOLDA = abs(AM(1, 1))
+        1:  239:      HOLDB = abs(BM(1, 1))
+       51:  240:      do i = 1, N
+     2550:  241:        do j = 1, N
+     2500:  242:          HOLDA = max(HOLDA, abs(AM(i, j)))
+     2500:  243:          HOLDB = max(HOLDB, abs(BM(i, j)))
+        -:  244:        end do
+        -:  245:      end do
+        -:  246:
+        1:  247:      TRACE3 = 0.0
+        -:  248:
+        -:  249:! Loop 80
+        -:  250:#ifdef TWO
+        1:  251:        sub = HOLDA * HOLDB
+        -:  252:#else
+        -:  253:#endif
+       51:  254:      do i = 1, N
+        -:  255:#ifdef TWO
+       50:  256:        TRACE3 = TRACE3 + (AM(IA(i),IA(i)) + BM(IA(i),IA(i)) - DM(IA(i),IA(i))) / sub
+        -:  257:#else
+        -:  258:        TRACE3 = TRACE3 + (AM(IA(i),IA(i)) + BM(IA(i),IA(i)) - DM(IA(i),IA(i))) / (HOLDA * HOLDB)
+        -:  259:#endif
+        -:  260:      end do
+        -:  261:
+        1:  262:      call cpu_time(finish)
+        1:  263:    print *, 'Final trace = ', trace3, ' and IDCHECK ', check
+        1:  264:    print *, '-- RUNTIME -> ', finish-start, ' seconds'
+        1:  265:    end
+        -:  266:
+        -:  267:
+    10000:  268:      double precision function trig (i,j)
+        -:  269:      double precision x, y, z
+        -:  270:#ifdef NOPRECISIONLOSS
+        -:  271:      double precision pi 
+        -:  272:#else
+        -:  273:      real pi
+        -:  274:#endif
+     5000:  275:      pi = acos(-1.0)
+     5000:  276:      x = dble(i) - dble(j)
+     5000:  277:      y = dble(i) + dble(j)
+        -:  278:#ifdef ONE
+     5000:  279:      z = exp(sin(sqrt(x*x + y*y) * pi))
+        -:  280:#else
+        -:  281:      z = exp(sin(sqrt(x ** 2 + y ** 2) * pi))
+        -:  282:#endif
+     5000:  283:      trig = x + y + log10(abs(1 + z + (x * y * z))) / (abs(x) + abs(y))
+        -:  284:      return
+        -:  285:      end
+        -:  286:
+     2699:  287:      subroutine idcheck(N,check,AV,BV,ID)
+        -:  288:
+        -:  289:      double precision AV(*), BV(*), ID(N,*)
+        -:  290:      double precision l2
+        -:  291:      double precision check, check2
+        -:  292:      double precision a, b, c, d, pastA, pastB, pastC, sub
+        -:  293:      integer aux
+        -:  294:	  
+        -:  295:      real twoPi
+     2699:  296:      twoPi = 2.0 * acos(-1.0)
+        -:  297:
+     2699:  298:      pastA = 0
+     2699:  299:      pastB = 0
+     2699:  300:      pastC = 0
+     2699:  301:      check2 = 0
+        -:  302:	  
+        -:  303:#ifdef FOUR
+        -:  304:#ifdef STRIDEACCESS
+   137649:  305:      do j = 1, N
+  6882450:  306:        do i = 1, N
+  6747500:  307:            ID(i,j) =  cos(check + i * twoPi / N) + 2.0 * sin(check + j * twoPi / N)
+        -:  308:        end do
+        -:  309:      end do
+        -:  310:#else
+        -:  311:      do i = 1, N
+        -:  312:        do j = 1, N
+        -:  313:            ID(i,j) =  cos(check + i * twoPi / N) + 2.0 * sin(check + j * twoPi / N)
+        -:  314:        end do
+        -:  315:      end do
+        -:  316:#endif
+        -:  317:
+     2699:  318:      j = 1
+   137649:  319:      do i = 1, N
+   191506:  320:        if (((AV(i) < 0) .and. (BV(j) > 0 )) .or. ((AV(i) > 0) .and. (BV(j) < 0 ))) then
+    56556:  321:            ID(i,j) = -1.0
+        -:  322:        else
+    78394:  323:            ID(i,j) = 1.0
+        -:  324:        endif
+   134950:  325:        j = j + 1;
+        -:  326:      end do
+        -:  327:#else
+        -:  328:#ifdef STRIDEACCESS
+        -:  329:      do j = 1, N
+        -:  330:        do i = 1, N
+        -:  331:          if ( i == j ) then
+        -:  332:             if ((AV(i) < 0) .and. (BV(j) < 0)) then
+        -:  333:               ID(i,j) = 1.0
+        -:  334:             elseif ((AV(i) < 0) .and. (BV(j) > 0 )) then
+        -:  335:               ID(i,j) = -1.0
+        -:  336:             elseif ((AV(i) > 0) .and. (BV(j) < 0 )) then
+        -:  337:               ID(i,j) = -1.0
+        -:  338:             else
+        -:  339:               ID(i,j) = 1.0
+        -:  340:             endif
+        -:  341:          elseif (i /= j) then
+        -:  342:            ID(i,j) =  cos(check + i * twoPi / N) + 2.0 * sin(check + j * twoPi / N)
+        -:  343:          endif
+        -:  344:        end do
+        -:  345:      end do
+        -:  346:#else
+        -:  347:      do i = 1, N
+        -:  348:        do j = 1, N
+        -:  349:          if ( i == j ) then
+        -:  350:             if ((AV(i) < 0) .and. (BV(j) < 0)) then
+        -:  351:               ID(i,j) = 1.0
+        -:  352:             elseif ((AV(i) < 0) .and. (BV(j) > 0 )) then
+        -:  353:               ID(i,j) = -1.0
+        -:  354:             elseif ((AV(i) > 0) .and. (BV(j) < 0 )) then
+        -:  355:               ID(i,j) = -1.0
+        -:  356:             else
+        -:  357:               ID(i,j) = 1.0
+        -:  358:             endif
+        -:  359:          elseif (i /= j) then
+        -:  360:            ID(i,j) =  cos(check + i * twoPi / N) + 2.0 * sin(check + j * twoPi / N)
+        -:  361:          endif
+        -:  362:        end do
+        -:  363:      end do
+        -:  364:#endif
+        -:  365:#endif
+        -:  366:
+     2699:  367:      l2 = 0.0
+        -:  368:#ifdef ONE
+   137649:  369:      do i = 1, N
+   134950:  370:        l2 = l2 + AV(i)*AV(i)
+        -:  371:		!print *, "--- AV(i) ---", AV(i), "--- l2 ---", l2
+        -:  372:      end do
+        -:  373:#else
+        -:  374:      do i = 1, N
+        -:  375:        l2 = l2 + AV(i)**2
+        -:  376:      end do
+        -:  377:#endif
+        -:  378:
+        -:  379:	  !print *, "--- l2 ---", l2, "--- sqrt(l2) ---", sqrt(l2)
+     2699:  380:      l2 = sqrt(l2)
+   137649:  381:      do i = 1, N
+        -:  382:		!print *, "-->AV(i)", AV(i), "-->l2", l2 
+   134950:  383:        AV(i) = AV(i) / l2
+        -:  384:      end do
+        -:  385:
+     2699:  386:      l2 = 0.0
+   137649:  387:      do i = 1, N
+        -:  388:#ifdef ONE
+   134950:  389:      l2 = l2 + BV(i)*BV(i)
+        -:  390:#else
+        -:  391:      l2 = l2 + BV(i)**2
+        -:  392:#endif
+        -:  393:      end do
+        -:  394:
+     2699:  395:      l2 = sqrt(l2)
+   137649:  396:      do i = 1, N
+   134950:  397:        BV(i) = BV(i) / l2
+        -:  398:      end do
+        -:  399:	  
+        -:  400:#ifdef FOUR
+     2699:  401:      a = 0.0
+     2699:  402:      b = 0.0
+     2699:  403:      c = 0.0
+     2699:  404:      d = 0.0  
+        -:  405:! 0
+   137649:  406:          do i = 1, N
+  6882450:  407:            do j = 1, N
+        -:  408:#ifdef TWO
+  6747500:  409:				sub = AV(i) * BV(j)
+        -:  410:#else 
+        -:  411:#endif 
+ 91093949:  412:              do k = 4 - int(mod(j + i, 4)), N, 4 
+ 84346449:  413:                pastA = a  
+        -:  414:#ifdef TWO
+ 84346449:  415:                a = a + sub * ID(j, k)
+        -:  416:#else
+        -:  417:                a = a + AV(i) * BV(j) * ID(j, k)
+        -:  418:#endif 
+        -:  419:			end do
+        -:  420:        end do
+        -:  421:      end do
+        -:  422:! 1
+   137649:  423:          do i = 1, N
+  6882450:  424:            do j = 1, N
+        -:  425:#ifdef TWO
+  6747500:  426:            sub = AV(j) * BV(i)
+        -:  427:#else
+        -:  428:#endif 
+ 91093949:  429:          do k = 4 - int(mod(j + i - 1, 4)), N, 4
+ 84346449:  430:            pastB = b
+        -:  431:#ifdef TWO
+ 84346449:  432:            b = b + sub * ID(k, j)
+        -:  433:#else
+        -:  434:            b = b + AV(j) * BV(i) * ID(k, j)
+        -:  435:#endif
+        -:  436:          end do
+        -:  437:        end do
+        -:  438:      end do
+        -:  439:
+        -:  440:! 2
+   137649:  441:          do i = 1, N
+  6882450:  442:            do j = 1, N
+        -:  443:#ifdef TWO
+  6747500:  444:            sub = AV(i) * BV(j)
+        -:  445:#else
+        -:  446:#endif
+ 91088551:  447:          do k = 4 - int(mod(j + i - 2, 4)), N, 4
+ 84341051:  448:            pastC = c
+        -:  449:#ifdef TWO
+ 84341051:  450:            c = c - sub * ID(k, j)
+        -:  451:#else
+        -:  452:            c = c - AV(i) * BV(j) * ID(k, j)
+        -:  453:#endif
+        -:  454:          end do
+        -:  455:        end do
+        -:  456:      end do
+        -:  457:
+        -:  458:! 3
+   137649:  459:          do i = 1, N
+  6882450:  460:            do j = 1, N
+        -:  461:#ifdef TWO
+  6747500:  462:            sub = AV(j) * BV(i)
+        -:  463:#else
+        -:  464:#endif
+ 91088551:  465:          do k = 4 - int(mod(j + i + 1, 4)), N, 4
+        -:  466:#ifdef TWO
+ 84341051:  467:            d = d - sub * ID(j, k)
+        -:  468:#else
+        -:  469:            d = d - AV(j) * BV(i) * ID(j, k)
+        -:  470:#endif
+        -:  471:          end do
+        -:  472:        end do
+        -:  473:      end do
+        -:  474:
+     2699:  475:      aux = 3 * N
+     2699:  476:      aux = int(mod(aux, 4))
+     8097:  477:      if (aux == 0) then
+    #####:  478:        check = sqrt(b*b + c*c) + a
+    #####:  479:        check2 = pastA + b + c + d
+        -:  480:      else if (aux == 1) then
+    #####:  481:        check = sqrt(pastB*pastB + c*c) + a - b
+    #####:  482:        check2 = pastA + pastB + c + d
+        -:  483:      else if (aux == 2) then
+     2699:  484:        check = sqrt(b*b + c*c)
+     2699:  485:        check2 = pastA + pastB + pastC + d
+        -:  486:      else if (aux == 3) then
+    #####:  487:        check = sqrt(b*b + c*c)
+    #####:  488:        check2 = a + b + c + d
+        -:  489:      end if
+        -:  490:#else
+        -:  491:      a = 0.0
+        -:  492:      b = 0.0
+        -:  493:      c = 0.0
+        -:  494:      d = 0.0
+        -:  495:
+        -:  496:      do i = 1, N
+        -:  497:        do j = 1, N
+        -:  498:          do k = 1, N
+        -:  499:            aux = int(mod(i + j + k, 4))
+        -:  500:            if (aux == 0) then
+        -:  501:                a  = a +  AV(i) * BV(j) * ID(j, k)
+        -:  502:                check = check + a
+        -:  503:            else if (aux == 1) then
+        -:  504:                b  = b +  AV(j) * BV(i) * ID(k, j)
+        -:  505:                check = check - b
+        -:  506:            else if (aux == 2) then
+        -:  507:                c  = c -  AV(i) * BV(j) * ID(k, j)
+        -:  508:#ifdef ONE
+        -:  509:                check = sqrt(b*b + c*c)
+        -:  510:#else
+        -:  511:                check = sqrt(b**2 + c**2)
+        -:  512:#endif
+        -:  513:            else if (aux == 3) then
+        -:  514:                d  = d -  AV(j) * BV(i) * ID(j, k)
+        -:  515:                check2 = a + b + c + d
+        -:  516:            else
+        -:  517:            end if
+        -:  518:          end do
+        -:  519:        end do
+        -:  520:      end do
+        -:  521:#endif
+        -:  522:
+     2699:  523:		check = min(abs(check2), abs(check)) / max(abs(check2), abs(check))
+        -:  524:
+        -:  525:      return
+     2699:  526:      end subroutine
+        -:  527:
+      400:  528:    real (kind=8) function conrand(seed)
+        -:  529:    !
+        -:  530:    ! Function to generate a sequence of random numbers.
+        -:  531:    ! Adapted from the  "Minimal Standard Method, real version 1 in Pascal"
+        -:  532:    ! Park, S, Miller, K. "Random Number Generators: Good Ones are
+        -:  533:    ! Hard to Find".  Communications of the ACM. vol 31, number 10,
+        -:  534:    ! October 1988. pp. 1192-1201.
+        -:  535:    !
+        -:  536:    ! Fortran 2003 Version tested on 64 Bit Linux, gfortran compiler
+        -:  537:    ! Andrew J. Pounds, Ph.D.
+        -:  538:    ! Departments of Chemistry and Computer Science
+        -:  539:    ! Mercer University
+        -:  540:    ! Fall 2011
+        -:  541:    !
+        -:  542:        real (kind=8) :: seed
+        -:  543:        real (kind=8) :: a, m
+        -:  544:        real (kind=8) :: temp
+      200:  545:        a = 16807.0D0
+      200:  546:        m = 2147483647.0D0
+      200:  547:        temp = a*seed
+      200:  548:        seed = temp - m * int(temp/m)
+      200:  549:        conrand = seed / m
+        -:  550:    return
+        -:  551:    end function conrand

@@ -1,0 +1,3407 @@
+
+;; Function conrand (conrand_)
+
+conrand (real(kind=8) & seed)
+{
+  integer(kind=8) PROF_edge_counter.33;
+  real(kind=8) __result_conrand;
+  real(kind=8) temp;
+  real(kind=8) D.2274D.2274;
+  real(kind=8) __result_conrand.32;
+  real(kind=8) D.2272D.2272;
+  real(kind=8) D.2271D.2271;
+  real(kind=8) D.2270D.2270;
+  integer(kind=4) D.2269D.2269;
+  real(kind=8) D.2268D.2268;
+  real(kind=8) D.2267D.2267;
+
+<bb 2>:
+  PROF_edge_counter.33_1 = *.LPBX1[0];
+  PROF_edge_counter.33_2 = PROF_edge_counter.33_1 + 1;
+  *.LPBX1[0] = PROF_edge_counter.33_2;
+  D.2267D.2267_6 = *seed_5(D);
+  temp_7 = D.2267D.2267_6 * 1.6807e+4;
+  D.2268D.2268_8 = temp_7 / 2.147483647e+9;
+  D.2269D.2269_9 = (integer(kind=4)) D.2268D.2268_8;
+  D.2270D.2270_10 = (real(kind=8)) D.2269D.2269_9;
+  D.2271D.2271_11 = D.2270D.2270_10 * 2.147483647e+9;
+  D.2272D.2272_12 = temp_7 - D.2271D.2271_11;
+  *seed_5(D) = D.2272D.2272_12;
+  __result_conrand.32_14 = D.2272D.2272_12 / 2.147483647e+9;
+  return __result_conrand.32_14;
+
+}
+
+
+
+;; Function idcheck (idcheck_)
+
+
+mainf.f90:465: note: not vectorized: data ref analysis failed D.2162D.2162_406 = (*id_112(D))[D.2161D.2161_405];
+
+mainf.f90:447: note: not vectorized: unsupported use in stmt.
+mainf.f90:429: note: not vectorized: unsupported use in stmt.
+mainf.f90:412: note: not vectorized: data ref analysis failed D.2162D.2162_266 = (*id_112(D))[D.2161D.2161_265];
+
+mainf.f90:396: note: dependence distance  = 0.
+mainf.f90:396: note: accesses have the same alignment.
+mainf.f90:396: note: dependence distance modulo vf == 0 between (*bv_137(D))[D.2114D.2114_226] and (*bv_137(D))[D.2114D.2114_226]
+mainf.f90:396: note: Alignment of access forced using peeling.
+mainf.f90:396: note: vect_model_load_cost: aligned.
+mainf.f90:396: note: vect_model_load_cost: inside_cost = 1, outside_cost = 0 .
+mainf.f90:396: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainf.f90:396: note: vect_model_store_cost: inside_cost = 1, outside_cost = 0 .
+mainf.f90:396: note: cost model: prologue peel iters set to vf/2.
+mainf.f90:396: note: cost model: epilogue peel iters set to vf/2 because peeling for alignment is unknown .
+mainf.f90:396: note: Cost model analysis: 
+  Vector inside of loop cost: 3
+  Vector outside of loop cost: 15
+  Scalar iteration cost: 3
+  Scalar outside cost: 7
+  prologue iterations: 1
+  epilogue iterations: 1
+  Calculated minimum iters for profitability: 4
+
+mainf.f90:396: note:   Profitability threshold = 3
+
+mainf.f90:396: note: Vectorization may not be profitable.
+
+Symbols to be put in SSA form
+
+{ *.LPBX1 PARM_NOALIAS.76 SMT.79 }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 122
+Number of blocks to update: 121 ( 99%)
+
+
+
+
+mainf.f90:396: note: LOOP VECTORIZED.
+mainf.f90:387: note: not vectorized: unsupported use in stmt.
+mainf.f90:381: note: dependence distance  = 0.
+mainf.f90:381: note: accesses have the same alignment.
+mainf.f90:381: note: dependence distance modulo vf == 0 between (*av_130(D))[D.2114D.2114_194] and (*av_130(D))[D.2114D.2114_194]
+mainf.f90:381: note: Alignment of access forced using peeling.
+mainf.f90:381: note: vect_model_load_cost: aligned.
+mainf.f90:381: note: vect_model_load_cost: inside_cost = 1, outside_cost = 0 .
+mainf.f90:381: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainf.f90:381: note: vect_model_store_cost: inside_cost = 1, outside_cost = 0 .
+mainf.f90:381: note: cost model: prologue peel iters set to vf/2.
+mainf.f90:381: note: cost model: epilogue peel iters set to vf/2 because peeling for alignment is unknown .
+mainf.f90:381: note: Cost model analysis: 
+  Vector inside of loop cost: 3
+  Vector outside of loop cost: 15
+  Scalar iteration cost: 3
+  Scalar outside cost: 7
+  prologue iterations: 1
+  epilogue iterations: 1
+  Calculated minimum iters for profitability: 4
+
+mainf.f90:381: note:   Profitability threshold = 3
+
+mainf.f90:381: note: Vectorization may not be profitable.
+
+Symbols to be put in SSA form
+
+{ *.LPBX1 PARM_NOALIAS.75 SMT.79 }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 139
+Number of blocks to update: 138 ( 99%)
+
+
+
+
+mainf.f90:381: note: LOOP VECTORIZED.
+mainf.f90:369: note: not vectorized: unsupported use in stmt.
+mainf.f90:287: note: vectorized 2 loops in function.
+Merging blocks 23 and 126
+Merging blocks 33 and 109
+Merging blocks 108 and 116
+Merging blocks 112 and 36
+Removing basic block 113
+Removing basic block 120
+Merging blocks 125 and 133
+Merging blocks 129 and 26
+Removing basic block 130
+Removing basic block 137
+Created preheader block for loop 22
+Created preheader block for loop 20
+idcheck (integer(kind=4) & n, real(kind=8) & check, real(kind=8)[0:] * av, real(kind=8)[0:] * bv, real(kind=8)[0:] * id)
+{
+  character(kind=4) ivtmp.311;
+  real(kind=8)[0:] * D.2663D.2663;
+  vector real(kind=8) * vect_p.310;
+  <unnamed-unsigned:64> D.2659D.2659;
+  <unnamed-unsigned:64> D.2660D.2660;
+  <unnamed-unsigned:64> base_off.308;
+  vector real(kind=8) * vect_p.306;
+  vector real(kind=8) vect_cst_.305;
+  vector real(kind=8) vect_var_.304;
+  vector real(kind=8) vect_var_.303;
+  real(kind=8)[0:] * D.2650D.2650;
+  vector real(kind=8) * vect_p.302;
+  <unnamed-unsigned:64> D.2646D.2646;
+  <unnamed-unsigned:64> D.2647D.2647;
+  <unnamed-unsigned:64> base_off.300;
+  vector real(kind=8) * vect_p.298;
+  integer(kind=8) D.2642D.2642;
+  integer(kind=8) tmp.297;
+  integer(kind=4) D.2640D.2640;
+  integer(kind=4) tmp.296;
+  logical(kind=4) D.2638D.2638;
+  logical(kind=4) D.2637D.2637;
+  character(kind=4) ratio_mult_vf.295;
+  character(kind=4) bnd.294;
+  character(kind=4) D.2633D.2633;
+  character(kind=4) D.2634D.2634;
+  character(kind=4) niters.293;
+  character(kind=4) ivtmp.292;
+  logical(kind=4) D.2630D.2630;
+  logical(kind=4) D.2629D.2629;
+  character(kind=4) prologue_after_cost_adjust.291;
+  character(kind=4) D.2625D.2625;
+  character(kind=4) D.2626D.2626;
+  logical(kind=4) D.2627D.2627;
+  <unnamed-unsigned:64> D.2619D.2619;
+  <unnamed-unsigned:64> D.2620D.2620;
+  <unnamed-unsigned:64> D.2621D.2621;
+  <unnamed-unsigned:64> D.2622D.2622;
+  character(kind=4) D.2623D.2623;
+  character(kind=4) D.2624D.2624;
+  character(kind=4) prolog_loop_niters.290;
+  vector real(kind=8) * D.2617D.2617;
+  vector real(kind=8) * vect_p.289;
+  character(kind=4) D.2612D.2612;
+  character(kind=4) niters.285;
+  character(kind=4) ivtmp.284;
+  real(kind=8)[0:] * D.2603D.2603;
+  vector real(kind=8) * vect_p.283;
+  <unnamed-unsigned:64> D.2599D.2599;
+  <unnamed-unsigned:64> D.2600D.2600;
+  <unnamed-unsigned:64> base_off.281;
+  vector real(kind=8) * vect_p.279;
+  vector real(kind=8) vect_cst_.278;
+  vector real(kind=8) vect_var_.277;
+  vector real(kind=8) vect_var_.276;
+  real(kind=8)[0:] * D.2590D.2590;
+  vector real(kind=8) * vect_p.275;
+  <unnamed-unsigned:64> D.2586D.2586;
+  <unnamed-unsigned:64> D.2587D.2587;
+  <unnamed-unsigned:64> base_off.273;
+  vector real(kind=8) * vect_p.271;
+  integer(kind=8) D.2582D.2582;
+  integer(kind=8) tmp.270;
+  integer(kind=4) D.2580D.2580;
+  integer(kind=4) tmp.269;
+  logical(kind=4) D.2578D.2578;
+  logical(kind=4) D.2577D.2577;
+  character(kind=4) ratio_mult_vf.268;
+  character(kind=4) bnd.267;
+  character(kind=4) D.2573D.2573;
+  character(kind=4) D.2574D.2574;
+  character(kind=4) niters.266;
+  character(kind=4) ivtmp.265;
+  logical(kind=4) D.2570D.2570;
+  logical(kind=4) D.2569D.2569;
+  character(kind=4) prologue_after_cost_adjust.264;
+  character(kind=4) D.2565D.2565;
+  character(kind=4) D.2566D.2566;
+  logical(kind=4) D.2567D.2567;
+  <unnamed-unsigned:64> D.2559D.2559;
+  <unnamed-unsigned:64> D.2560D.2560;
+  <unnamed-unsigned:64> D.2561D.2561;
+  <unnamed-unsigned:64> D.2562D.2562;
+  character(kind=4) D.2563D.2563;
+  character(kind=4) D.2564D.2564;
+  character(kind=4) prolog_loop_niters.263;
+  vector real(kind=8) * D.2557D.2557;
+  vector real(kind=8) * vect_p.262;
+  character(kind=4) D.2552D.2552;
+  character(kind=4) niters.258;
+  integer(kind=8) D.2540D.2540;
+  character(kind=4) D.2541D.2541;
+  character(kind=4) D.2542D.2542;
+  integer(kind=8) D.2543D.2543;
+  integer(kind=8) D.2536D.2536;
+  character(kind=4) D.2537D.2537;
+  character(kind=4) D.2538D.2538;
+  integer(kind=8) D.2539D.2539;
+  integer(kind=8) D.2532D.2532;
+  character(kind=4) D.2533D.2533;
+  character(kind=4) D.2534D.2534;
+  integer(kind=8) D.2535D.2535;
+  integer(kind=8) D.2528D.2528;
+  character(kind=4) D.2529D.2529;
+  character(kind=4) D.2530D.2530;
+  integer(kind=8) D.2531D.2531;
+  integer(kind=8) D.2524D.2524;
+  character(kind=4) D.2525D.2525;
+  character(kind=4) D.2526D.2526;
+  integer(kind=8) D.2527D.2527;
+  integer(kind=8) D.2521D.2521;
+  character(kind=4) D.2522D.2522;
+  integer(kind=8) D.2523D.2523;
+  integer(kind=8) D.2518D.2518;
+  character(kind=4) D.2519D.2519;
+  integer(kind=8) D.2520D.2520;
+  integer(kind=8) D.2515D.2515;
+  character(kind=4) D.2516D.2516;
+  integer(kind=8) D.2517D.2517;
+  integer(kind=8) D.2512D.2512;
+  character(kind=4) D.2513D.2513;
+  integer(kind=8) D.2514D.2514;
+  integer(kind=8) *.LPBX1_I_lsm.257;
+  integer(kind=8) *.LPBX1_I_lsm.256;
+  integer(kind=8) *.LPBX1_I_lsm.255;
+  integer(kind=8) *.LPBX1_I_lsm.254;
+  integer(kind=8) *.LPBX1_I_lsm.253;
+  integer(kind=8) *.LPBX1_I_lsm.252;
+  integer(kind=8) *.LPBX1_I_lsm.251;
+  integer(kind=8) *.LPBX1_I_lsm.250;
+  integer(kind=8) *.LPBX1_I_lsm.249;
+  real(kind=8) prephitmp.238;
+  real(kind=8) pretmp.237;
+  integer(kind=8) prephitmp.236;
+  integer(kind=8) pretmp.235;
+  integer(kind=4) pretmp.234;
+  integer(kind=8) pretmp.233;
+  real(kind=8) pretmp.231;
+  integer(kind=8) pretmp.230;
+  integer(kind=4) pretmp.229;
+  real(kind=8) pretmp.228;
+  integer(kind=8) pretmp.227;
+  integer(kind=8) pretmp.223;
+  integer(kind=4) pretmp.222;
+  integer(kind=8) pretmp.221;
+  real(kind=8) pretmp.219;
+  integer(kind=8) pretmp.218;
+  real(kind=8) pretmp.216;
+  integer(kind=8) pretmp.215;
+  integer(kind=8) pretmp.211;
+  real(kind=8) prephitmp.210;
+  real(kind=8) pretmp.209;
+  integer(kind=8) pretmp.208;
+  integer(kind=8) pretmp.206;
+  integer(kind=8) pretmp.204;
+  integer(kind=8) prephitmp.202;
+  integer(kind=8) pretmp.201;
+  real(kind=8) D.2449D.2449;
+  real(kind=8) pretmp.195;
+  real(kind=4) pretmp.194;
+  integer(kind=8) pretmp.193;
+  real(kind=8) prephitmp.191;
+  real(kind=8) pretmp.190;
+  logical(kind=4) prephitmp.188;
+  logical(kind=4) pretmp.187;
+  real(kind=8) prephitmp.186;
+  real(kind=8) pretmp.185;
+  integer(kind=8) PROF_edge_counter.34;
+  real(kind=8) M.26;
+  character(kind=4) countm1.25;
+  character(kind=4) countm1.24;
+  character(kind=4) countm1.23;
+  character(kind=4) countm1.22;
+  real(kind=8) sub;
+  real(kind=8) pastc;
+  real(kind=8) pastb;
+  real(kind=8) pasta;
+  real(kind=8) l2;
+  integer(kind=4) k;
+  integer(kind=4) j;
+  integer(kind=8) offset.21;
+  integer(kind=8) stride.20;
+  integer(kind=8) D.1978D.1978;
+  integer(kind=4) i;
+  real(kind=8) d;
+  real(kind=8) check2;
+  real(kind=8) c;
+  real(kind=8) b;
+  integer(kind=4) aux;
+  real(kind=8) a;
+  real(kind=8) D.2258D.2258;
+  logical(kind=4) D.2254D.2254;
+  logical(kind=4) D.2252D.2252;
+  logical(kind=4) D.2248D.2248;
+  logical(kind=4) D.2246D.2246;
+  real(kind=8) D.2244D.2244;
+  real(kind=8) D.2243D.2243;
+  real(kind=8) D.2239D.2239;
+  real(kind=8) D.2235D.2235;
+  real(kind=8) D.2234D.2234;
+  real(kind=8) D.2233D.2233;
+  real(kind=8) D.2232D.2232;
+  real(kind=8) D.2231D.2231;
+  real(kind=8) D.2230D.2230;
+  real(kind=8) D.2229D.2229;
+  real(kind=8) D.2225D.2225;
+  real(kind=8) D.2224D.2224;
+  real(kind=8) D.2223D.2223;
+  real(kind=8) D.2222D.2222;
+  real(kind=8) D.2221D.2221;
+  real(kind=8) D.2220D.2220;
+  real(kind=8) D.2219D.2219;
+  character(kind=4) D.2212D.2212;
+  integer(kind=4) D.2211D.2211;
+  integer(kind=4) D.2209D.2209;
+  integer(kind=4) D.2208D.2208;
+  character(kind=4) D.2197D.2197;
+  integer(kind=4) D.2196D.2196;
+  integer(kind=4) D.2194D.2194;
+  integer(kind=4) D.2193D.2193;
+  real(kind=8) D.2183D.2183;
+  real(kind=8) D.2182D.2182;
+  integer(kind=8) D.2181D.2181;
+  integer(kind=8) D.2180D.2180;
+  character(kind=4) D.2178D.2178;
+  integer(kind=4) D.2177D.2177;
+  integer(kind=4) D.2175D.2175;
+  integer(kind=4) D.2174D.2174;
+  real(kind=8) D.2163D.2163;
+  real(kind=8) D.2162D.2162;
+  integer(kind=8) D.2161D.2161;
+  integer(kind=8) D.2160D.2160;
+  integer(kind=8) D.2159D.2159;
+  integer(kind=8) D.2158D.2158;
+  character(kind=4) D.2156D.2156;
+  integer(kind=4) D.2155D.2155;
+  integer(kind=4) D.2153D.2153;
+  integer(kind=4) D.2152D.2152;
+  real(kind=8) D.2144D.2144;
+  real(kind=8) D.2139D.2139;
+  real(kind=8) D.2138D.2138;
+  real(kind=8) D.2133D.2133;
+  real(kind=8) D.2128D.2128;
+  logical(kind=4) D.2123D.2123;
+  logical(kind=4) D.2121D.2121;
+  logical(kind=4) D.2120D.2120;
+  real(kind=8) D.2119D.2119;
+  integer(kind=8) D.2118D.2118;
+  logical(kind=4) D.2116D.2116;
+  real(kind=8) D.2115D.2115;
+  integer(kind=8) D.2114D.2114;
+  real(kind=8) D.2104D.2104;
+  real(kind=8) D.2103D.2103;
+  real(kind=8) D.2096D.2096;
+  real(kind=8) D.2095D.2095;
+  real(kind=8) D.2094D.2094;
+  real(kind=4) D.2093D.2093;
+  real(kind=4) D.2091D.2091;
+  real(kind=4) D.2090D.2090;
+  real(kind=8) D.2089D.2089;
+  integer(kind=8) D.2088D.2088;
+  integer(kind=8) D.2087D.2087;
+  integer(kind=8) D.2086D.2086;
+  integer(kind=8) D.2085D.2085;
+  integer(kind=8) D.2084D.2084;
+  integer(kind=4) D.2077D.2077;
+
+<bb 2>:
+  D.2077D.2077_72 = *n_71(D);
+  D.1978D.1978_73 = (integer(kind=8)) D.2077D.2077_72;
+  stride.20_75 = MAX_EXPR <D.1978D.1978_73, 0>;
+  offset.21_76 = ~stride.20_75;
+  if (D.2077D.2077_72 > 0)
+    goto <bb 3>;
+  else
+    goto <bb 110>;
+
+<bb 3>:
+  pretmp.190_808 = *check_91(D);
+  *.LPBX1_I_lsm.257_469 = *.LPBX1[1];
+
+<bb 4>:
+  # j_36 = PHI <1(3), j_120(8)>
+  # prephitmp.191_809 = PHI <pretmp.190_808(3), D.2089D.2089_875(8)>
+  # *.LPBX1_I_lsm.257_19 = PHI <*.LPBX1_I_lsm.257_469(3), *.LPBX1_I_lsm.257_474(8)>
+  pretmp.193_812 = (integer(kind=8)) j_36;
+  pretmp.193_813 = stride.20_75 * pretmp.193_812;
+  pretmp.193_814 = offset.21_76 + pretmp.193_813;
+  pretmp.194_815 = (real(kind=4)) j_36;
+  pretmp.194_816 = pretmp.194_815 * 6.283185482025146484375e+0;
+  pretmp.194_817 = (real(kind=4)) D.2077D.2077_72;
+  pretmp.194_818 = pretmp.194_816 / pretmp.194_817;
+  pretmp.195_819 = (real(kind=8)) pretmp.194_818;
+  pretmp.195_820 = prephitmp.191_809 + pretmp.195_819;
+  D.2449D.2449_821 = __builtin_sin (pretmp.195_820);
+  D.2103D.2103_110 = D.2449D.2449_821 * 2.0e+0;
+
+<bb 5>:
+  # i_26 = PHI <1(4), i_114(6)>
+  D.2084D.2084_86 = (integer(kind=8)) i_26;
+  D.2088D.2088_90 = D.2084D.2084_86 + pretmp.193_814;
+  D.2090D.2090_93 = (real(kind=4)) i_26;
+  D.2091D.2091_94 = D.2090D.2090_93 * 6.283185482025146484375e+0;
+  D.2093D.2093_97 = D.2091D.2091_94 / pretmp.194_817;
+  D.2094D.2094_98 = (real(kind=8)) D.2093D.2093_97;
+  D.2095D.2095_99 = D.2094D.2094_98 + pretmp.190_808;
+  D.2096D.2096_100 = __builtin_cos (D.2095D.2095_99);
+  D.2104D.2104_111 = D.2096D.2096_100 + D.2103D.2103_110;
+  (*id_112(D))[D.2088D.2088_90] = D.2104D.2104_111;
+  i_114 = i_26 + 1;
+  if (i_26 == D.2077D.2077_72)
+    goto <bb 7>;
+  else
+    goto <bb 6>;
+
+<bb 6>:
+  PROF_edge_counter.34_115 = *.LPBX1[2];
+  PROF_edge_counter.34_116 = PROF_edge_counter.34_115 + 1;
+  *.LPBX1[2] = PROF_edge_counter.34_116;
+  goto <bb 5>;
+
+<bb 7>:
+  # D.2089D.2089_875 = PHI <pretmp.190_808(5)>
+  PROF_edge_counter.34_117 = *.LPBX1_I_lsm.257_19;
+  PROF_edge_counter.34_118 = PROF_edge_counter.34_117 + 1;
+  *.LPBX1_I_lsm.257_474 = PROF_edge_counter.34_118;
+  if (j_36 == D.2077D.2077_72)
+    goto <bb 9>;
+  else
+    goto <bb 8>;
+
+<bb 8>:
+  j_120 = j_36 + 1;
+  PROF_edge_counter.34_121 = *.LPBX1[4];
+  PROF_edge_counter.34_122 = PROF_edge_counter.34_121 + 1;
+  *.LPBX1[4] = PROF_edge_counter.34_122;
+  goto <bb 4>;
+
+<bb 9>:
+  D.2540D.2540_833 = *.LPBX1_I_lsm.257_469 + 1;
+  D.2541D.2541_832 = (character(kind=4)) D.2077D.2077_72;
+  D.2542D.2542_831 = D.2541D.2541_832 + 4294967295;
+  D.2543D.2543_829 = (integer(kind=8)) D.2542D.2542_831;
+  *.LPBX1_I_lsm.257_264 = D.2540D.2540_833 + D.2543D.2543_829;
+  *.LPBX1[1] = *.LPBX1_I_lsm.257_264;
+  PROF_edge_counter.34_123 = *.LPBX1[3];
+  PROF_edge_counter.34_124 = PROF_edge_counter.34_123 + 1;
+  *.LPBX1[3] = PROF_edge_counter.34_124;
+
+<bb 10>:
+  # i_27 = PHI <1(9), i_168(19)>
+  # j_37 = PHI <1(9), j_166(19)>
+  D.2084D.2084_128 = (integer(kind=8)) i_27;
+  D.2114D.2114_129 = D.2084D.2084_128 + -1;
+  D.2115D.2115_131 = (*av_130(D))[D.2114D.2114_129];
+  D.2116D.2116_132 = D.2115D.2115_131 < 0.0;
+  if (D.2116D.2116_132 != 0)
+    goto <bb 12>;
+  else
+    goto <bb 11>;
+
+<bb 11>:
+  pretmp.235_922 = (integer(kind=8)) j_37;
+  goto <bb 13>;
+
+<bb 12>:
+  PROF_edge_counter.34_133 = *.LPBX1[5];
+  PROF_edge_counter.34_134 = PROF_edge_counter.34_133 + 1;
+  *.LPBX1[5] = PROF_edge_counter.34_134;
+  D.2085D.2085_135 = (integer(kind=8)) j_37;
+  D.2118D.2118_136 = D.2085D.2085_135 + -1;
+  D.2119D.2119_138 = (*bv_137(D))[D.2118D.2118_136];
+  D.2120D.2120_139 = D.2119D.2119_138 > 0.0;
+  if (D.2120D.2120_139 != 0)
+    goto <bb 15>;
+  else
+    goto <bb 13>;
+
+<bb 13>:
+  # prephitmp.236_923 = PHI <pretmp.235_922(11), D.2085D.2085_135(12)>
+  D.2121D.2121_143 = D.2115D.2115_131 > 0.0;
+  if (D.2121D.2121_143 != 0)
+    goto <bb 14>;
+  else
+    goto <bb 17>;
+
+<bb 14>:
+  PROF_edge_counter.34_144 = *.LPBX1[6];
+  PROF_edge_counter.34_145 = PROF_edge_counter.34_144 + 1;
+  *.LPBX1[6] = PROF_edge_counter.34_145;
+  D.2118D.2118_147 = prephitmp.236_923 + -1;
+  D.2119D.2119_148 = (*bv_137(D))[D.2118D.2118_147];
+  D.2123D.2123_149 = D.2119D.2119_148 < 0.0;
+  if (D.2123D.2123_149 != 0)
+    goto <bb 15>;
+  else
+    goto <bb 16>;
+
+<bb 15>:
+  # prephitmp.236_921 = PHI <D.2085D.2085_135(12), prephitmp.236_923(14)>
+  D.2086D.2086_161 = stride.20_75 * prephitmp.236_921;
+  D.2087D.2087_162 = D.2084D.2084_128 + offset.21_76;
+  D.2088D.2088_163 = D.2087D.2087_162 + D.2086D.2086_161;
+  (*id_112(D))[D.2088D.2088_163] = -1.0e+0;
+  PROF_edge_counter.34_164 = *.LPBX1[8];
+  PROF_edge_counter.34_165 = PROF_edge_counter.34_164 + 1;
+  *.LPBX1[8] = PROF_edge_counter.34_165;
+  goto <bb 18>;
+
+<bb 16>:
+  PROF_edge_counter.34_150 = *.LPBX1[7];
+  PROF_edge_counter.34_151 = PROF_edge_counter.34_150 + 1;
+  *.LPBX1[7] = PROF_edge_counter.34_151;
+
+<bb 17>:
+  D.2086D.2086_154 = stride.20_75 * prephitmp.236_923;
+  D.2087D.2087_155 = D.2084D.2084_128 + offset.21_76;
+  D.2088D.2088_156 = D.2087D.2087_155 + D.2086D.2086_154;
+  (*id_112(D))[D.2088D.2088_156] = 1.0e+0;
+  PROF_edge_counter.34_157 = *.LPBX1[9];
+  PROF_edge_counter.34_158 = PROF_edge_counter.34_157 + 1;
+  *.LPBX1[9] = PROF_edge_counter.34_158;
+
+<bb 18>:
+  if (i_27 == D.2077D.2077_72)
+    goto <bb 124>;
+  else
+    goto <bb 19>;
+
+<bb 19>:
+  j_166 = j_37 + 1;
+  i_168 = i_27 + 1;
+  PROF_edge_counter.34_169 = *.LPBX1[10];
+  PROF_edge_counter.34_170 = PROF_edge_counter.34_169 + 1;
+  *.LPBX1[10] = PROF_edge_counter.34_170;
+  goto <bb 10>;
+
+<bb 20>:
+
+<bb 21>:
+  # l2_285 = PHI <l2_181(20), l2_221(125)>
+  # i_332 = PHI <i_183(20), 2(125)>
+  # prephitmp.202_835 = PHI <PROF_edge_counter.34_185(20), pretmp.201_834(125)>
+  PROF_edge_counter.34_185 = prephitmp.202_835 + 1;
+  *.LPBX1_I_lsm.256_411 = PROF_edge_counter.34_185;
+  D.2084D.2084_177 = (integer(kind=8)) i_332;
+  D.2114D.2114_178 = D.2084D.2084_177 + -1;
+  D.2115D.2115_179 = (*av_130(D))[D.2114D.2114_178];
+  D.2128D.2128_180 = D.2115D.2115_179 * D.2115D.2115_179;
+  l2_181 = D.2128D.2128_180 + l2_285;
+  i_183 = i_332 + 1;
+  if (D.2077D.2077_72 == i_332)
+    goto <bb 22>;
+  else
+    goto <bb 20>;
+
+<bb 22>:
+  # l2_337 = PHI <l2_181(21)>
+  D.2536D.2536_841 = pretmp.201_834 + 1;
+  D.2537D.2537_838 = (character(kind=4)) D.2077D.2077_72;
+  D.2538D.2538_837 = D.2537D.2537_838 + 4294967294;
+  D.2539D.2539_836 = (integer(kind=8)) D.2538D.2538_837;
+  *.LPBX1_I_lsm.256_271 = D.2536D.2536_841 + D.2539D.2539_836;
+  *.LPBX1[12] = *.LPBX1_I_lsm.256_271;
+  PROF_edge_counter.34_186 = *.LPBX1[11];
+  PROF_edge_counter.34_187 = PROF_edge_counter.34_186 + 1;
+  *.LPBX1[11] = PROF_edge_counter.34_187;
+  l2_717 = __builtin_sqrt (l2_337);
+  D.2133D.2133_142 = D.2115D.2115_204 / l2_717;
+  (*av_130(D))[0] = D.2133D.2133_142;
+  if (D.2077D.2077_72 == 1)
+    goto <bb 127>;
+  else
+    goto <bb 23>;
+
+<bb 23>:
+Invalid sum of outgoing probabilities 200.0%
+  pretmp.204_839 = *.LPBX1[14];
+  *.LPBX1_I_lsm.255_388 = *.LPBX1[14];
+  D.2612D.2612_1008 = (character(kind=4)) D.2077D.2077_72;
+  niters.285_1009 = D.2612D.2612_1008 + 4294967295;
+  D.2617D.2617_1010 = (vector real(kind=8) *) av_130(D);
+  vect_p.289_1011 = D.2617D.2617_1010 + 8;
+  D.2619D.2619_1012 = (<unnamed-unsigned:64>) vect_p.289_1011;
+  D.2620D.2620_1013 = D.2619D.2619_1012 & 15;
+  D.2621D.2621_1014 = D.2620D.2620_1013 >> 3;
+  D.2622D.2622_1015 = 2 - D.2621D.2621_1014;
+  D.2623D.2623_1016 = (character(kind=4)) D.2622D.2622_1015;
+  D.2624D.2624_1017 = D.2623D.2623_1016 & 1;
+  prolog_loop_niters.290_1018 = MIN_EXPR <D.2624D.2624_1017, niters.285_1009>;
+  D.2625D.2625_1031 = (character(kind=4)) D.2077D.2077_72;
+  D.2626D.2626_1032 = D.2625D.2625_1031 + 4294967295;
+  D.2627D.2627_1033 = D.2626D.2626_1032 <= 3;
+  if (D.2627D.2627_1033 != 0)
+    goto <bb 24>;
+  else
+    goto <bb 25>;
+
+<bb 24>:
+  prologue_after_cost_adjust.291_1034 = D.2625D.2625_1031 + 4294967295;
+
+<bb 25>:
+  # prologue_after_cost_adjust.291_1035 = PHI <prologue_after_cost_adjust.291_1034(24), prolog_loop_niters.290_1018(23)>
+  D.2629D.2629_1036 = prolog_loop_niters.290_1018 == 0;
+  if (D.2629D.2629_1036 != 0)
+    goto <bb 29>;
+  else
+    goto <bb 26>;
+
+<bb 26>:
+  # i_1101 = PHI <2(25)>
+  # prephitmp.202_1104 = PHI <pretmp.204_839(25)>
+  # ivtmp.292_1105 = PHI <0(25)>
+
+<bb 129>:
+  # i_1019 = PHI <i_1101(26), i_1030(27)>
+  # prephitmp.202_1022 = PHI <prephitmp.202_1104(26), PROF_edge_counter.34_1023(27)>
+  # ivtmp.292_1044 = PHI <ivtmp.292_1105(26), ivtmp.292_1045(27)>
+  PROF_edge_counter.34_1023 = prephitmp.202_1022 + 1;
+  *.LPBX1_I_lsm.255_1024 = PROF_edge_counter.34_1023;
+  D.2084D.2084_1025 = (integer(kind=8)) i_1019;
+  D.2114D.2114_1026 = D.2084D.2084_1025 + -1;
+  D.2115D.2115_1027 = (*av_130(D))[D.2114D.2114_1026];
+  D.2133D.2133_1028 = D.2115D.2115_1027 / l2_717;
+  (*av_130(D))[D.2114D.2114_1026] = D.2133D.2133_1028;
+  i_1030 = i_1019 + 1;
+  ivtmp.292_1045 = ivtmp.292_1044 + 1;
+  if (ivtmp.292_1045 >= prolog_loop_niters.290_1018)
+    goto <bb 28>;
+  else
+    goto <bb 27>;
+
+<bb 27>:
+  goto <bb 129>;
+
+<bb 28>:
+  # i_1038 = PHI <i_1030(129)>
+  # prephitmp.202_1042 = PHI <PROF_edge_counter.34_1023(129)>
+  D.2630D.2630_1043 = niters.285_1009 == prolog_loop_niters.290_1018;
+  if (D.2630D.2630_1043 != 0)
+    goto <bb 38>;
+  else
+    goto <bb 29>;
+
+<bb 29>:
+  # i_1037 = PHI <i_1038(28), 2(25)>
+  # prephitmp.202_1041 = PHI <prephitmp.202_1042(28), pretmp.204_839(25)>
+  D.2633D.2633_1046 = (character(kind=4)) D.2077D.2077_72;
+  D.2634D.2634_1047 = D.2633D.2633_1046 - prolog_loop_niters.290_1018;
+  niters.293_1048 = D.2634D.2634_1047 + 4294967295;
+  bnd.294_1049 = niters.293_1048 >> 1;
+  ratio_mult_vf.295_1050 = bnd.294_1049 << 1;
+  D.2637D.2637_1063 = ratio_mult_vf.295_1050 == 0;
+  if (D.2637D.2637_1063 != 0)
+    goto <bb 33>;
+  else
+    goto <bb 30>;
+
+<bb 30>:
+  D.2646D.2646_1075 = (<unnamed-unsigned:64>) prolog_loop_niters.290_1018;
+  D.2647D.2647_1076 = D.2646D.2646_1075 + 1;
+  base_off.300_1077 = D.2647D.2647_1076 * 8;
+  D.2650D.2650_1078 = av_130(D) + base_off.300_1077;
+  vect_p.302_1079 = (vector real(kind=8) *) D.2650D.2650_1078;
+  vect_p.298_1080 = vect_p.302_1079;
+  vect_cst_.305_1084 = {l2_717, l2_717};
+  D.2659D.2659_1086 = (<unnamed-unsigned:64>) prolog_loop_niters.290_1018;
+  D.2660D.2660_1087 = D.2659D.2659_1086 + 1;
+  base_off.308_1088 = D.2660D.2660_1087 * 8;
+  D.2663D.2663_1089 = av_130(D) + base_off.308_1088;
+  vect_p.310_1090 = (vector real(kind=8) *) D.2663D.2663_1089;
+  vect_p.306_1091 = vect_p.310_1090;
+
+<bb 31>:
+  # i_612 = PHI <i_198(36), i_1037(30)>
+  # prephitmp.202_840 = PHI <PROF_edge_counter.34_200(36), prephitmp.202_1041(30)>
+  # vect_p.298_1081 = PHI <vect_p.298_1082(36), vect_p.298_1080(30)>
+  # vect_p.306_1092 = PHI <vect_p.306_1093(36), vect_p.306_1091(30)>
+  # ivtmp.311_1094 = PHI <ivtmp.311_1095(36), 0(30)>
+  PROF_edge_counter.34_200 = prephitmp.202_840 + 1;
+  *.LPBX1_I_lsm.255_385 = PROF_edge_counter.34_200;
+  D.2084D.2084_193 = (integer(kind=8)) i_612;
+  D.2114D.2114_194 = D.2084D.2084_193 + -1;
+  vect_var_.303_1083 = *vect_p.298_1081;
+  D.2115D.2115_195 = (*av_130(D))[D.2114D.2114_194];
+  vect_var_.304_1085 = vect_var_.303_1083 / vect_cst_.305_1084;
+  D.2133D.2133_196 = D.2115D.2115_195 / l2_717;
+  *vect_p.306_1092 = vect_var_.304_1085;
+  i_198 = i_612 + 1;
+  vect_p.298_1082 = vect_p.298_1081 + 16;
+  vect_p.306_1093 = vect_p.306_1092 + 16;
+  ivtmp.311_1095 = ivtmp.311_1094 + 1;
+  if (ivtmp.311_1095 >= bnd.294_1049)
+    goto <bb 32>;
+  else
+    goto <bb 36>;
+
+<bb 32>:
+  # i_1065 = PHI <i_198(31)>
+  # prephitmp.202_1069 = PHI <PROF_edge_counter.34_200(31)>
+  D.2638D.2638_1070 = niters.293_1048 == ratio_mult_vf.295_1050;
+  D.2640D.2640_1071 = (integer(kind=4)) ratio_mult_vf.295_1050;
+  tmp.296_1072 = i_1037 + D.2640D.2640_1071;
+  D.2642D.2642_1073 = (integer(kind=8)) ratio_mult_vf.295_1050;
+  tmp.297_1074 = D.2642D.2642_1073 + prephitmp.202_1041;
+  if (D.2638D.2638_1070 != 0)
+    goto <bb 37>;
+  else
+    goto <bb 33>;
+
+<bb 33>:
+  # i_1064 = PHI <tmp.296_1072(32), i_1037(29)>
+  # prephitmp.202_1068 = PHI <tmp.297_1074(32), prephitmp.202_1041(29)>
+
+<bb 34>:
+  # i_1051 = PHI <i_1062(35), i_1064(33)>
+  # prephitmp.202_1054 = PHI <PROF_edge_counter.34_1055(35), prephitmp.202_1068(33)>
+  PROF_edge_counter.34_1055 = prephitmp.202_1054 + 1;
+  *.LPBX1_I_lsm.255_1056 = PROF_edge_counter.34_1055;
+  D.2084D.2084_1057 = (integer(kind=8)) i_1051;
+  D.2114D.2114_1058 = D.2084D.2084_1057 + -1;
+  D.2115D.2115_1059 = (*av_130(D))[D.2114D.2114_1058];
+  D.2133D.2133_1060 = D.2115D.2115_1059 / l2_717;
+  (*av_130(D))[D.2114D.2114_1058] = D.2133D.2133_1060;
+  i_1062 = i_1051 + 1;
+  if (D.2077D.2077_72 == i_1051)
+    goto <bb 37>;
+  else
+    goto <bb 35>;
+
+<bb 35>:
+  goto <bb 34>;
+
+<bb 36>:
+  goto <bb 31>;
+
+<bb 37>:
+
+<bb 38>:
+  D.2532D.2532_847 = pretmp.204_839 + 1;
+  D.2533D.2533_846 = (character(kind=4)) D.2077D.2077_72;
+  D.2534D.2534_843 = D.2533D.2533_846 + 4294967294;
+  D.2535D.2535_842 = (integer(kind=8)) D.2534D.2534_843;
+  *.LPBX1_I_lsm.255_290 = D.2532D.2532_847 + D.2535D.2535_842;
+  *.LPBX1[14] = *.LPBX1_I_lsm.255_290;
+  PROF_edge_counter.34_201 = *.LPBX1[13];
+  PROF_edge_counter.34_202 = PROF_edge_counter.34_201 + 1;
+  *.LPBX1[13] = PROF_edge_counter.34_202;
+  D.2138D.2138_203 = (*bv_137(D))[0];
+  D.2139D.2139_288 = D.2138D.2138_203 * D.2138D.2138_203;
+  l2_236 = D.2139D.2139_288 + 0.0;
+  if (D.2077D.2077_72 == 1)
+    goto <bb 39>;
+  else
+    goto <bb 40>;
+
+<bb 39>:
+  pretmp.237_924 = (*av_130(D))[0];
+  goto <bb 128>;
+
+<bb 40>:
+  pretmp.206_844 = *.LPBX1[16];
+  *.LPBX1_I_lsm.254_386 = *.LPBX1[16];
+
+<bb 41>:
+  # l2_395 = PHI <l2_213(42), l2_236(40)>
+  # i_538 = PHI <i_215(42), 2(40)>
+  # prephitmp.202_845 = PHI <PROF_edge_counter.34_217(42), pretmp.206_844(40)>
+  PROF_edge_counter.34_217 = prephitmp.202_845 + 1;
+  *.LPBX1_I_lsm.254_387 = PROF_edge_counter.34_217;
+  D.2084D.2084_209 = (integer(kind=8)) i_538;
+  D.2114D.2114_210 = D.2084D.2084_209 + -1;
+  D.2138D.2138_211 = (*bv_137(D))[D.2114D.2114_210];
+  D.2139D.2139_212 = D.2138D.2138_211 * D.2138D.2138_211;
+  l2_213 = D.2139D.2139_212 + l2_395;
+  i_215 = i_538 + 1;
+  if (D.2077D.2077_72 == i_538)
+    goto <bb 43>;
+  else
+    goto <bb 42>;
+
+<bb 42>:
+  goto <bb 41>;
+
+<bb 43>:
+  # l2_340 = PHI <l2_213(41)>
+  D.2528D.2528_109 = pretmp.206_844 + 1;
+  D.2529D.2529_856 = (character(kind=4)) D.2077D.2077_72;
+  D.2530D.2530_855 = D.2529D.2529_856 + 4294967294;
+  D.2531D.2531_848 = (integer(kind=8)) D.2530D.2530_855;
+  *.LPBX1_I_lsm.254_292 = D.2528D.2528_109 + D.2531D.2531_848;
+  *.LPBX1[16] = *.LPBX1_I_lsm.254_292;
+  PROF_edge_counter.34_218 = *.LPBX1[15];
+  PROF_edge_counter.34_219 = PROF_edge_counter.34_218 + 1;
+  *.LPBX1[15] = PROF_edge_counter.34_219;
+  l2_714 = __builtin_sqrt (l2_340);
+  D.2144D.2144_503 = D.2138D.2138_203 / l2_714;
+  (*bv_137(D))[0] = D.2144D.2144_503;
+  if (D.2077D.2077_72 == 1)
+    goto <bb 44>;
+  else
+    goto <bb 45>;
+
+<bb 44>:
+  pretmp.237_927 = (*av_130(D))[0];
+  goto <bb 61>;
+
+<bb 45>:
+Invalid sum of outgoing probabilities 200.0%
+  pretmp.208_849 = *.LPBX1[18];
+  *.LPBX1_I_lsm.253_358 = *.LPBX1[18];
+  D.2552D.2552_861 = (character(kind=4)) D.2077D.2077_72;
+  niters.258_857 = D.2552D.2552_861 + 4294967295;
+  D.2557D.2557_871 = (vector real(kind=8) *) bv_137(D);
+  vect_p.262_860 = D.2557D.2557_871 + 8;
+  D.2559D.2559_872 = (<unnamed-unsigned:64>) vect_p.262_860;
+  D.2560D.2560_873 = D.2559D.2559_872 & 15;
+  D.2561D.2561_874 = D.2560D.2560_873 >> 3;
+  D.2562D.2562_49 = 2 - D.2561D.2561_874;
+  D.2563D.2563_630 = (character(kind=4)) D.2562D.2562_49;
+  D.2564D.2564_172 = D.2563D.2563_630 & 1;
+  prolog_loop_niters.263_82 = MIN_EXPR <D.2564D.2564_172, niters.258_857>;
+  D.2565D.2565_938 = (character(kind=4)) D.2077D.2077_72;
+  D.2566D.2566_939 = D.2565D.2565_938 + 4294967295;
+  D.2567D.2567_940 = D.2566D.2566_939 <= 3;
+  if (D.2567D.2567_940 != 0)
+    goto <bb 46>;
+  else
+    goto <bb 47>;
+
+<bb 46>:
+  prologue_after_cost_adjust.264_941 = D.2565D.2565_938 + 4294967295;
+
+<bb 47>:
+  # prologue_after_cost_adjust.264_942 = PHI <prologue_after_cost_adjust.264_941(46), prolog_loop_niters.263_82(45)>
+  D.2569D.2569_943 = prolog_loop_niters.263_82 == 0;
+  if (D.2569D.2569_943 != 0)
+    goto <bb 51>;
+  else
+    goto <bb 48>;
+
+<bb 48>:
+  # i_1106 = PHI <2(47)>
+  # prephitmp.202_1109 = PHI <pretmp.208_849(47)>
+  # ivtmp.265_1110 = PHI <0(47)>
+
+<bb 130>:
+  # i_379 = PHI <i_1106(48), i_937(49)>
+  # prephitmp.202_827 = PHI <prephitmp.202_1109(48), PROF_edge_counter.34_826(49)>
+  # ivtmp.265_951 = PHI <ivtmp.265_1110(48), ivtmp.265_952(49)>
+  PROF_edge_counter.34_826 = prephitmp.202_827 + 1;
+  *.LPBX1_I_lsm.253_825 = PROF_edge_counter.34_826;
+  D.2084D.2084_824 = (integer(kind=8)) i_379;
+  D.2114D.2114_823 = D.2084D.2084_824 + -1;
+  D.2138D.2138_811 = (*bv_137(D))[D.2114D.2114_823];
+  D.2144D.2144_810 = D.2138D.2138_811 / l2_714;
+  (*bv_137(D))[D.2114D.2114_823] = D.2144D.2144_810;
+  i_937 = i_379 + 1;
+  ivtmp.265_952 = ivtmp.265_951 + 1;
+  if (ivtmp.265_952 >= prolog_loop_niters.263_82)
+    goto <bb 50>;
+  else
+    goto <bb 49>;
+
+<bb 49>:
+  goto <bb 130>;
+
+<bb 50>:
+  # i_945 = PHI <i_937(130)>
+  # prephitmp.202_949 = PHI <PROF_edge_counter.34_826(130)>
+  D.2570D.2570_950 = prolog_loop_niters.263_82 == niters.258_857;
+  if (D.2570D.2570_950 != 0)
+    goto <bb 60>;
+  else
+    goto <bb 51>;
+
+<bb 51>:
+  # i_944 = PHI <i_945(50), 2(47)>
+  # prephitmp.202_948 = PHI <prephitmp.202_949(50), pretmp.208_849(47)>
+  D.2573D.2573_953 = (character(kind=4)) D.2077D.2077_72;
+  D.2574D.2574_954 = D.2573D.2573_953 - prolog_loop_niters.263_82;
+  niters.266_955 = D.2574D.2574_954 + 4294967295;
+  bnd.267_956 = niters.266_955 >> 1;
+  ratio_mult_vf.268_957 = bnd.267_956 << 1;
+  D.2577D.2577_970 = ratio_mult_vf.268_957 == 0;
+  if (D.2577D.2577_970 != 0)
+    goto <bb 55>;
+  else
+    goto <bb 52>;
+
+<bb 52>:
+  D.2586D.2586_982 = (<unnamed-unsigned:64>) prolog_loop_niters.263_82;
+  D.2587D.2587_983 = D.2586D.2586_982 + 1;
+  base_off.273_984 = D.2587D.2587_983 * 8;
+  D.2590D.2590_985 = bv_137(D) + base_off.273_984;
+  vect_p.275_986 = (vector real(kind=8) *) D.2590D.2590_985;
+  vect_p.271_987 = vect_p.275_986;
+  vect_cst_.278_991 = {l2_714, l2_714};
+  D.2599D.2599_993 = (<unnamed-unsigned:64>) prolog_loop_niters.263_82;
+  D.2600D.2600_994 = D.2599D.2599_993 + 1;
+  base_off.281_995 = D.2600D.2600_994 * 8;
+  D.2603D.2603_996 = bv_137(D) + base_off.281_995;
+  vect_p.283_997 = (vector real(kind=8) *) D.2603D.2603_996;
+  vect_p.279_998 = vect_p.283_997;
+
+<bb 53>:
+  # i_499 = PHI <i_230(58), i_944(52)>
+  # prephitmp.202_850 = PHI <PROF_edge_counter.34_232(58), prephitmp.202_948(52)>
+  # vect_p.271_988 = PHI <vect_p.271_989(58), vect_p.271_987(52)>
+  # vect_p.279_999 = PHI <vect_p.279_1000(58), vect_p.279_998(52)>
+  # ivtmp.284_1001 = PHI <ivtmp.284_1002(58), 0(52)>
+  PROF_edge_counter.34_232 = prephitmp.202_850 + 1;
+  *.LPBX1_I_lsm.253_341 = PROF_edge_counter.34_232;
+  D.2084D.2084_225 = (integer(kind=8)) i_499;
+  D.2114D.2114_226 = D.2084D.2084_225 + -1;
+  vect_var_.276_990 = *vect_p.271_988;
+  D.2138D.2138_227 = (*bv_137(D))[D.2114D.2114_226];
+  vect_var_.277_992 = vect_var_.276_990 / vect_cst_.278_991;
+  D.2144D.2144_228 = D.2138D.2138_227 / l2_714;
+  *vect_p.279_999 = vect_var_.277_992;
+  i_230 = i_499 + 1;
+  vect_p.271_989 = vect_p.271_988 + 16;
+  vect_p.279_1000 = vect_p.279_999 + 16;
+  ivtmp.284_1002 = ivtmp.284_1001 + 1;
+  if (ivtmp.284_1002 >= bnd.267_956)
+    goto <bb 54>;
+  else
+    goto <bb 58>;
+
+<bb 54>:
+  # i_972 = PHI <i_230(53)>
+  # prephitmp.202_976 = PHI <PROF_edge_counter.34_232(53)>
+  D.2578D.2578_977 = niters.266_955 == ratio_mult_vf.268_957;
+  D.2580D.2580_978 = (integer(kind=4)) ratio_mult_vf.268_957;
+  tmp.269_979 = i_944 + D.2580D.2580_978;
+  D.2582D.2582_980 = (integer(kind=8)) ratio_mult_vf.268_957;
+  tmp.270_981 = D.2582D.2582_980 + prephitmp.202_948;
+  if (D.2578D.2578_977 != 0)
+    goto <bb 59>;
+  else
+    goto <bb 55>;
+
+<bb 55>:
+  # i_971 = PHI <tmp.269_979(54), i_944(51)>
+  # prephitmp.202_975 = PHI <tmp.270_981(54), prephitmp.202_948(51)>
+
+<bb 56>:
+  # i_958 = PHI <i_969(57), i_971(55)>
+  # prephitmp.202_961 = PHI <PROF_edge_counter.34_962(57), prephitmp.202_975(55)>
+  PROF_edge_counter.34_962 = prephitmp.202_961 + 1;
+  *.LPBX1_I_lsm.253_963 = PROF_edge_counter.34_962;
+  D.2084D.2084_964 = (integer(kind=8)) i_958;
+  D.2114D.2114_965 = D.2084D.2084_964 + -1;
+  D.2138D.2138_966 = (*bv_137(D))[D.2114D.2114_965];
+  D.2144D.2144_967 = D.2138D.2138_966 / l2_714;
+  (*bv_137(D))[D.2114D.2114_965] = D.2144D.2144_967;
+  i_969 = i_958 + 1;
+  if (D.2077D.2077_72 == i_958)
+    goto <bb 59>;
+  else
+    goto <bb 57>;
+
+<bb 57>:
+  goto <bb 56>;
+
+<bb 58>:
+  goto <bb 53>;
+
+<bb 59>:
+
+<bb 60>:
+  D.2524D.2524_103 = pretmp.208_849 + 1;
+  D.2525D.2525_106 = (character(kind=4)) D.2077D.2077_72;
+  D.2526D.2526_107 = D.2525D.2525_106 + 4294967294;
+  D.2527D.2527_108 = (integer(kind=8)) D.2526D.2526_107;
+  *.LPBX1_I_lsm.253_294 = D.2524D.2524_103 + D.2527D.2527_108;
+  *.LPBX1[18] = *.LPBX1_I_lsm.253_294;
+  pretmp.209_851 = (*bv_137(D))[0];
+  pretmp.237_926 = (*av_130(D))[0];
+
+<bb 61>:
+  # prephitmp.210_852 = PHI <pretmp.209_851(60), D.2144D.2144_503(44), D.2144D.2144_486(128)>
+  # prephitmp.238_928 = PHI <pretmp.237_926(60), pretmp.237_927(44), prephitmp.238_925(128)>
+  PROF_edge_counter.34_233 = *.LPBX1[17];
+  PROF_edge_counter.34_234 = PROF_edge_counter.34_233 + 1;
+  *.LPBX1[17] = PROF_edge_counter.34_234;
+
+<bb 62>:
+  # a_1 = PHI <0.0(61), a_911(72)>
+  # i_32 = PHI <1(61), i_280(72)>
+  # pasta_50 = PHI <0.0(61), pasta_888(72)>
+  # prephitmp.238_930 = PHI <prephitmp.238_928(61), pretmp.237_929(72)>
+
+<bb 63>:
+  # a_2 = PHI <a_1(62), a_4(70)>
+  # j_38 = PHI <1(62), j_274(70)>
+  # pasta_51 = PHI <pasta_50(62), pasta_52(70)>
+  # prephitmp.210_865 = PHI <prephitmp.210_852(62), pretmp.216_864(70)>
+  D.2085D.2085_246 = (integer(kind=8)) j_38;
+  D.2152D.2152_250 = j_38 + i_32;
+  D.2153D.2153_251 = D.2152D.2152_250 & 3;
+  k_252 = 4 - D.2153D.2153_251;
+  if (D.2077D.2077_72 < k_252)
+    goto <bb 69>;
+  else
+    goto <bb 64>;
+
+<bb 64>:
+  sub_249 = prephitmp.210_865 * prephitmp.238_930;
+  D.2155D.2155_255 = D.2077D.2077_72 - k_252;
+  D.2156D.2156_256 = (character(kind=4)) D.2155D.2155_255;
+  countm1.22_257 = D.2156D.2156_256 >> 2;
+  PROF_edge_counter.34_258 = *.LPBX1[19];
+  PROF_edge_counter.34_259 = PROF_edge_counter.34_258 + 1;
+  *.LPBX1[19] = PROF_edge_counter.34_259;
+  D.2158D.2158_59 = (integer(kind=8)) k_252;
+  D.2159D.2159_12 = D.2158D.2158_59 * stride.20_75;
+  D.2160D.2160_642 = D.2085D.2085_246 + offset.21_76;
+  D.2161D.2161_641 = D.2160D.2160_642 + D.2159D.2159_12;
+  D.2162D.2162_639 = (*id_112(D))[D.2161D.2161_641];
+  D.2163D.2163_512 = D.2162D.2162_639 * sub_249;
+  a_53 = a_2 + D.2163D.2163_512;
+  if (countm1.22_257 == 0)
+    goto <bb 69>;
+  else
+    goto <bb 65>;
+
+<bb 65>:
+  k_5 = k_252 + 4;
+  pretmp.235_919 = *.LPBX1[20];
+  *.LPBX1_I_lsm.252_92 = *.LPBX1[20];
+
+<bb 66>:
+  # countm1.22_254 = PHI <countm1.22_270(67), countm1.22_257(65)>
+  # a_301 = PHI <a_268(67), a_53(65)>
+  # k_476 = PHI <k_269(67), k_5(65)>
+  # prephitmp.236_920 = PHI <PROF_edge_counter.34_272(67), pretmp.235_919(65)>
+  countm1.22_270 = countm1.22_254 + 4294967295;
+  PROF_edge_counter.34_272 = prephitmp.236_920 + 1;
+  *.LPBX1_I_lsm.252_146 = PROF_edge_counter.34_272;
+  D.2158D.2158_262 = (integer(kind=8)) k_476;
+  D.2159D.2159_263 = D.2158D.2158_262 * stride.20_75;
+  D.2161D.2161_265 = D.2159D.2159_263 + D.2160D.2160_642;
+  D.2162D.2162_266 = (*id_112(D))[D.2161D.2161_265];
+  D.2163D.2163_267 = D.2162D.2162_266 * sub_249;
+  a_268 = D.2163D.2163_267 + a_301;
+  k_269 = k_476 + 4;
+  if (countm1.22_270 == 0)
+    goto <bb 68>;
+  else
+    goto <bb 67>;
+
+<bb 67>:
+  goto <bb 66>;
+
+<bb 68>:
+  # a_343 = PHI <a_268(66)>
+  # a_318 = PHI <a_301(66)>
+  D.2521D.2521_89 = pretmp.235_919 + 1;
+  D.2522D.2522_96 = countm1.22_257 + 4294967295;
+  D.2523D.2523_102 = (integer(kind=8)) D.2522D.2522_96;
+  *.LPBX1_I_lsm.252_336 = D.2521D.2521_89 + D.2523D.2523_102;
+  *.LPBX1[20] = *.LPBX1_I_lsm.252_336;
+
+<bb 69>:
+  # a_4 = PHI <a_2(63), a_343(68), a_53(64)>
+  # pasta_52 = PHI <pasta_51(63), a_318(68), a_2(64)>
+  if (j_38 == D.2077D.2077_72)
+    goto <bb 71>;
+  else
+    goto <bb 70>;
+
+<bb 70>:
+  j_274 = j_38 + 1;
+  PROF_edge_counter.34_275 = *.LPBX1[22];
+  PROF_edge_counter.34_276 = PROF_edge_counter.34_275 + 1;
+  *.LPBX1[22] = PROF_edge_counter.34_276;
+  pretmp.215_862 = (integer(kind=8)) j_274;
+  pretmp.215_863 = pretmp.215_862 + -1;
+  pretmp.216_864 = (*bv_137(D))[pretmp.215_863];
+  goto <bb 63>;
+
+<bb 71>:
+  # a_911 = PHI <a_4(69)>
+  # pasta_888 = PHI <pasta_52(69)>
+  PROF_edge_counter.34_277 = *.LPBX1[21];
+  PROF_edge_counter.34_278 = PROF_edge_counter.34_277 + 1;
+  *.LPBX1[21] = PROF_edge_counter.34_278;
+  if (i_32 == D.2077D.2077_72)
+    goto <bb 73>;
+  else
+    goto <bb 72>;
+
+<bb 72>:
+  i_280 = i_32 + 1;
+  PROF_edge_counter.34_281 = *.LPBX1[24];
+  PROF_edge_counter.34_282 = PROF_edge_counter.34_281 + 1;
+  *.LPBX1[24] = PROF_edge_counter.34_282;
+  pretmp.211_853 = (integer(kind=8)) i_280;
+  pretmp.211_854 = pretmp.211_853 + -1;
+  pretmp.237_929 = (*av_130(D))[pretmp.211_854];
+  goto <bb 62>;
+
+<bb 73>:
+  # a_906 = PHI <a_911(71)>
+  # pasta_887 = PHI <pasta_888(71)>
+  PROF_edge_counter.34_283 = *.LPBX1[23];
+  PROF_edge_counter.34_284 = PROF_edge_counter.34_283 + 1;
+  *.LPBX1[23] = PROF_edge_counter.34_284;
+
+<bb 74>:
+  # b_7 = PHI <0.0(73), b_905(84)>
+  # i_33 = PHI <1(73), i_327(84)>
+  # pastb_55 = PHI <0.0(73), pastb_886(84)>
+  # prephitmp.210_870 = PHI <prephitmp.210_852(73), pretmp.219_869(84)>
+  pretmp.222_880 = i_33 + -1;
+
+<bb 75>:
+  # b_8 = PHI <b_7(74), b_10(82)>
+  # j_39 = PHI <1(74), j_321(82)>
+  # pastb_56 = PHI <pastb_55(74), pastb_57(82)>
+  # prephitmp.238_932 = PHI <prephitmp.238_928(74), pretmp.237_931(82)>
+  D.2085D.2085_289 = (integer(kind=8)) j_39;
+  D.2174D.2174_297 = j_39 + pretmp.222_880;
+  D.2175D.2175_298 = D.2174D.2174_297 & 3;
+  k_299 = 4 - D.2175D.2175_298;
+  if (D.2077D.2077_72 < k_299)
+    goto <bb 81>;
+  else
+    goto <bb 76>;
+
+<bb 76>:
+  sub_295 = prephitmp.210_870 * prephitmp.238_932;
+  D.2177D.2177_302 = D.2077D.2077_72 - k_299;
+  D.2178D.2178_303 = (character(kind=4)) D.2177D.2177_302;
+  countm1.23_304 = D.2178D.2178_303 >> 2;
+  PROF_edge_counter.34_305 = *.LPBX1[25];
+  PROF_edge_counter.34_306 = PROF_edge_counter.34_305 + 1;
+  *.LPBX1[25] = PROF_edge_counter.34_306;
+  D.2158D.2158_524 = (integer(kind=8)) k_299;
+  D.2086D.2086_63 = D.2085D.2085_289 * stride.20_75;
+  D.2180D.2180_17 = D.2086D.2086_63 + offset.21_76;
+  D.2181D.2181_238 = D.2180D.2180_17 + D.2158D.2158_524;
+  D.2182D.2182_286 = (*id_112(D))[D.2181D.2181_238];
+  D.2183D.2183_235 = D.2182D.2182_286 * sub_295;
+  b_690 = b_8 + D.2183D.2183_235;
+  if (countm1.23_304 == 0)
+    goto <bb 81>;
+  else
+    goto <bb 77>;
+
+<bb 77>:
+  k_633 = k_299 + 4;
+  pretmp.235_917 = *.LPBX1[26];
+  *.LPBX1_I_lsm.251_859 = *.LPBX1[26];
+
+<bb 78>:
+  # countm1.23_644 = PHI <countm1.23_317(79), countm1.23_304(77)>
+  # b_518 = PHI <b_315(79), b_690(77)>
+  # k_58 = PHI <k_316(79), k_633(77)>
+  # prephitmp.236_918 = PHI <PROF_edge_counter.34_319(79), pretmp.235_917(77)>
+  countm1.23_317 = countm1.23_644 + 4294967295;
+  PROF_edge_counter.34_319 = prephitmp.236_918 + 1;
+  *.LPBX1_I_lsm.251_878 = PROF_edge_counter.34_319;
+  D.2158D.2158_308 = (integer(kind=8)) k_58;
+  D.2181D.2181_312 = D.2180D.2180_17 + D.2158D.2158_308;
+  D.2182D.2182_313 = (*id_112(D))[D.2181D.2181_312];
+  D.2183D.2183_314 = D.2182D.2182_313 * sub_295;
+  b_315 = D.2183D.2183_314 + b_518;
+  k_316 = k_58 + 4;
+  if (countm1.23_317 == 0)
+    goto <bb 80>;
+  else
+    goto <bb 79>;
+
+<bb 79>:
+  goto <bb 78>;
+
+<bb 80>:
+  # b_311 = PHI <b_315(78)>
+  # b_248 = PHI <b_518(78)>
+  D.2518D.2518_160 = pretmp.235_917 + 1;
+  D.2519D.2519_87 = countm1.23_304 + 4294967295;
+  D.2520D.2520_88 = (integer(kind=8)) D.2519D.2519_87;
+  *.LPBX1_I_lsm.251_243 = D.2518D.2518_160 + D.2520D.2520_88;
+  *.LPBX1[26] = *.LPBX1_I_lsm.251_243;
+
+<bb 81>:
+  # b_10 = PHI <b_8(75), b_311(80), b_690(76)>
+  # pastb_57 = PHI <pastb_56(75), b_248(80), b_8(76)>
+  if (j_39 == D.2077D.2077_72)
+    goto <bb 83>;
+  else
+    goto <bb 82>;
+
+<bb 82>:
+  j_321 = j_39 + 1;
+  PROF_edge_counter.34_322 = *.LPBX1[28];
+  PROF_edge_counter.34_323 = PROF_edge_counter.34_322 + 1;
+  *.LPBX1[28] = PROF_edge_counter.34_323;
+  pretmp.221_876 = (integer(kind=8)) j_321;
+  pretmp.221_877 = pretmp.221_876 + -1;
+  pretmp.237_931 = (*av_130(D))[pretmp.221_877];
+  goto <bb 75>;
+
+<bb 83>:
+  # b_905 = PHI <b_10(81)>
+  # pastb_886 = PHI <pastb_57(81)>
+  PROF_edge_counter.34_324 = *.LPBX1[27];
+  PROF_edge_counter.34_325 = PROF_edge_counter.34_324 + 1;
+  *.LPBX1[27] = PROF_edge_counter.34_325;
+  if (i_33 == D.2077D.2077_72)
+    goto <bb 85>;
+  else
+    goto <bb 84>;
+
+<bb 84>:
+  i_327 = i_33 + 1;
+  PROF_edge_counter.34_328 = *.LPBX1[30];
+  PROF_edge_counter.34_329 = PROF_edge_counter.34_328 + 1;
+  *.LPBX1[30] = PROF_edge_counter.34_329;
+  pretmp.218_867 = (integer(kind=8)) i_327;
+  pretmp.218_868 = pretmp.218_867 + -1;
+  pretmp.219_869 = (*bv_137(D))[pretmp.218_868];
+  goto <bb 74>;
+
+<bb 85>:
+  # b_904 = PHI <b_905(83)>
+  # pastb_885 = PHI <pastb_886(83)>
+  PROF_edge_counter.34_330 = *.LPBX1[29];
+  PROF_edge_counter.34_331 = PROF_edge_counter.34_330 + 1;
+  *.LPBX1[29] = PROF_edge_counter.34_331;
+
+<bb 86>:
+  # c_13 = PHI <0.0(85), c_903(96)>
+  # i_34 = PHI <1(85), i_374(96)>
+  # pastc_60 = PHI <0.0(85), pastc_884(96)>
+  # prephitmp.238_934 = PHI <prephitmp.238_928(85), pretmp.237_933(96)>
+  pretmp.229_897 = i_34 + -2;
+
+<bb 87>:
+  # c_14 = PHI <c_13(86), c_16(94)>
+  # j_40 = PHI <1(86), j_368(94)>
+  # pastc_61 = PHI <pastc_60(86), pastc_62(94)>
+  # prephitmp.210_896 = PHI <prephitmp.210_852(86), pretmp.228_895(94)>
+  D.2085D.2085_339 = (integer(kind=8)) j_40;
+  D.2193D.2193_344 = j_40 + pretmp.229_897;
+  D.2194D.2194_345 = D.2193D.2193_344 & 3;
+  k_346 = 4 - D.2194D.2194_345;
+  if (D.2077D.2077_72 < k_346)
+    goto <bb 93>;
+  else
+    goto <bb 88>;
+
+<bb 88>:
+  sub_342 = prephitmp.210_896 * prephitmp.238_934;
+  D.2196D.2196_349 = D.2077D.2077_72 - k_346;
+  D.2197D.2197_350 = (character(kind=4)) D.2196D.2196_349;
+  countm1.24_351 = D.2197D.2197_350 >> 2;
+  PROF_edge_counter.34_352 = *.LPBX1[31];
+  PROF_edge_counter.34_353 = PROF_edge_counter.34_352 + 1;
+  *.LPBX1[31] = PROF_edge_counter.34_353;
+  D.2158D.2158_513 = (integer(kind=8)) k_346;
+  D.2086D.2086_54 = D.2085D.2085_339 * stride.20_75;
+  D.2180D.2180_6 = D.2086D.2086_54 + offset.21_76;
+  D.2181D.2181_505 = D.2180D.2180_6 + D.2158D.2158_513;
+  D.2182D.2182_501 = (*id_112(D))[D.2181D.2181_505];
+  D.2183D.2183_101 = D.2182D.2182_501 * sub_342;
+  c_95 = c_14 - D.2183D.2183_101;
+  if (countm1.24_351 == 0)
+    goto <bb 93>;
+  else
+    goto <bb 89>;
+
+<bb 89>:
+  k_140 = k_346 + 4;
+  pretmp.235_915 = *.LPBX1[32];
+  *.LPBX1_I_lsm.250_889 = *.LPBX1[32];
+
+<bb 90>:
+  # countm1.24_159 = PHI <countm1.24_364(91), countm1.24_351(89)>
+  # c_530 = PHI <c_362(91), c_95(89)>
+  # k_24 = PHI <k_363(91), k_140(89)>
+  # prephitmp.236_916 = PHI <PROF_edge_counter.34_366(91), pretmp.235_915(89)>
+  countm1.24_364 = countm1.24_159 + 4294967295;
+  PROF_edge_counter.34_366 = prephitmp.236_916 + 1;
+  *.LPBX1_I_lsm.250_890 = PROF_edge_counter.34_366;
+  D.2158D.2158_355 = (integer(kind=8)) k_24;
+  D.2181D.2181_359 = D.2180D.2180_6 + D.2158D.2158_355;
+  D.2182D.2182_360 = (*id_112(D))[D.2181D.2181_359];
+  D.2183D.2183_361 = D.2182D.2182_360 * sub_342;
+  c_362 = c_530 - D.2183D.2183_361;
+  k_363 = k_24 + 4;
+  if (countm1.24_364 == 0)
+    goto <bb 92>;
+  else
+    goto <bb 91>;
+
+<bb 91>:
+  goto <bb 90>;
+
+<bb 92>:
+  # c_291 = PHI <c_362(90)>
+  # c_245 = PHI <c_530(90)>
+  D.2515D.2515_199 = pretmp.235_915 + 1;
+  D.2516D.2516_184 = countm1.24_351 + 4294967295;
+  D.2517D.2517_153 = (integer(kind=8)) D.2516D.2516_184;
+  *.LPBX1_I_lsm.250_244 = D.2515D.2515_199 + D.2517D.2517_153;
+  *.LPBX1[32] = *.LPBX1_I_lsm.250_244;
+
+<bb 93>:
+  # c_16 = PHI <c_14(87), c_291(92), c_95(88)>
+  # pastc_62 = PHI <pastc_61(87), c_245(92), c_14(88)>
+  if (j_40 == D.2077D.2077_72)
+    goto <bb 95>;
+  else
+    goto <bb 94>;
+
+<bb 94>:
+  j_368 = j_40 + 1;
+  PROF_edge_counter.34_369 = *.LPBX1[34];
+  PROF_edge_counter.34_370 = PROF_edge_counter.34_369 + 1;
+  *.LPBX1[34] = PROF_edge_counter.34_370;
+  pretmp.227_893 = (integer(kind=8)) j_368;
+  pretmp.227_894 = pretmp.227_893 + -1;
+  pretmp.228_895 = (*bv_137(D))[pretmp.227_894];
+  goto <bb 87>;
+
+<bb 95>:
+  # c_903 = PHI <c_16(93)>
+  # pastc_884 = PHI <pastc_62(93)>
+  PROF_edge_counter.34_371 = *.LPBX1[33];
+  PROF_edge_counter.34_372 = PROF_edge_counter.34_371 + 1;
+  *.LPBX1[33] = PROF_edge_counter.34_372;
+  if (i_34 == D.2077D.2077_72)
+    goto <bb 97>;
+  else
+    goto <bb 96>;
+
+<bb 96>:
+  i_374 = i_34 + 1;
+  PROF_edge_counter.34_375 = *.LPBX1[36];
+  PROF_edge_counter.34_376 = PROF_edge_counter.34_375 + 1;
+  *.LPBX1[36] = PROF_edge_counter.34_376;
+  pretmp.223_882 = (integer(kind=8)) i_374;
+  pretmp.223_883 = pretmp.223_882 + -1;
+  pretmp.237_933 = (*av_130(D))[pretmp.223_883];
+  goto <bb 86>;
+
+<bb 97>:
+  # c_898 = PHI <c_903(95)>
+  # pastc_881 = PHI <pastc_884(95)>
+  PROF_edge_counter.34_377 = *.LPBX1[35];
+  PROF_edge_counter.34_378 = PROF_edge_counter.34_377 + 1;
+  *.LPBX1[35] = PROF_edge_counter.34_378;
+
+<bb 98>:
+  # d_20 = PHI <0.0(97), d_892(108)>
+  # i_35 = PHI <1(97), pretmp.234_912(108)>
+  # prephitmp.210_902 = PHI <prephitmp.210_852(97), pretmp.231_901(108)>
+  pretmp.234_912 = i_35 + 1;
+
+<bb 99>:
+  # d_21 = PHI <d_20(98), d_23(106)>
+  # j_41 = PHI <1(98), j_414(106)>
+  # prephitmp.238_936 = PHI <prephitmp.238_928(98), pretmp.237_935(106)>
+  D.2085D.2085_383 = (integer(kind=8)) j_41;
+  D.2208D.2208_391 = j_41 + pretmp.234_912;
+  D.2209D.2209_392 = D.2208D.2208_391 & 3;
+  k_393 = 4 - D.2209D.2209_392;
+  if (D.2077D.2077_72 < k_393)
+    goto <bb 105>;
+  else
+    goto <bb 100>;
+
+<bb 100>:
+  sub_389 = prephitmp.210_902 * prephitmp.238_936;
+  D.2211D.2211_396 = D.2077D.2077_72 - k_393;
+  D.2212D.2212_397 = (character(kind=4)) D.2211D.2211_396;
+  countm1.25_398 = D.2212D.2212_397 >> 2;
+  PROF_edge_counter.34_399 = *.LPBX1[37];
+  PROF_edge_counter.34_400 = PROF_edge_counter.34_399 + 1;
+  *.LPBX1[37] = PROF_edge_counter.34_400;
+  D.2158D.2158_205 = (integer(kind=8)) k_393;
+  D.2159D.2159_382 = D.2158D.2158_205 * stride.20_75;
+  D.2160D.2160_380 = D.2085D.2085_383 + offset.21_76;
+  D.2161D.2161_237 = D.2160D.2160_380 + D.2159D.2159_382;
+  D.2162D.2162_354 = (*id_112(D))[D.2161D.2161_237];
+  D.2163D.2163_470 = D.2162D.2162_354 * sub_389;
+  d_307 = d_21 - D.2163D.2163_470;
+  if (countm1.25_398 == 0)
+    goto <bb 105>;
+  else
+    goto <bb 101>;
+
+<bb 101>:
+  k_481 = k_393 + 4;
+  pretmp.235_913 = *.LPBX1[38];
+  *.LPBX1_I_lsm.249_910 = *.LPBX1[38];
+
+<bb 102>:
+  # countm1.25_348 = PHI <countm1.25_410(103), countm1.25_398(101)>
+  # d_401 = PHI <d_408(103), d_307(101)>
+  # k_425 = PHI <k_409(103), k_481(101)>
+  # prephitmp.236_914 = PHI <PROF_edge_counter.34_412(103), pretmp.235_913(101)>
+  countm1.25_410 = countm1.25_348 + 4294967295;
+  PROF_edge_counter.34_412 = prephitmp.236_914 + 1;
+  *.LPBX1_I_lsm.249_390 = PROF_edge_counter.34_412;
+  D.2158D.2158_402 = (integer(kind=8)) k_425;
+  D.2159D.2159_403 = D.2158D.2158_402 * stride.20_75;
+  D.2161D.2161_405 = D.2160D.2160_380 + D.2159D.2159_403;
+  D.2162D.2162_406 = (*id_112(D))[D.2161D.2161_405];
+  D.2163D.2163_407 = D.2162D.2162_406 * sub_389;
+  d_408 = d_401 - D.2163D.2163_407;
+  k_409 = k_425 + 4;
+  if (countm1.25_410 == 0)
+    goto <bb 104>;
+  else
+    goto <bb 103>;
+
+<bb 103>:
+  goto <bb 102>;
+
+<bb 104>:
+  # d_296 = PHI <d_408(102)>
+  D.2512D.2512_247 = pretmp.235_913 + 1;
+  D.2513D.2513_231 = countm1.25_398 + 4294967295;
+  D.2514D.2514_216 = (integer(kind=8)) D.2513D.2513_231;
+  *.LPBX1_I_lsm.249_293 = D.2512D.2512_247 + D.2514D.2514_216;
+  *.LPBX1[38] = *.LPBX1_I_lsm.249_293;
+
+<bb 105>:
+  # d_23 = PHI <d_21(99), d_296(104), d_307(100)>
+  if (j_41 == D.2077D.2077_72)
+    goto <bb 107>;
+  else
+    goto <bb 106>;
+
+<bb 106>:
+  j_414 = j_41 + 1;
+  PROF_edge_counter.34_415 = *.LPBX1[40];
+  PROF_edge_counter.34_416 = PROF_edge_counter.34_415 + 1;
+  *.LPBX1[40] = PROF_edge_counter.34_416;
+  pretmp.233_907 = (integer(kind=8)) j_414;
+  pretmp.233_908 = pretmp.233_907 + -1;
+  pretmp.237_935 = (*av_130(D))[pretmp.233_908];
+  goto <bb 99>;
+
+<bb 107>:
+  # d_892 = PHI <d_23(105)>
+  D.2152D.2152_866 = pretmp.234_912;
+  PROF_edge_counter.34_417 = *.LPBX1[39];
+  PROF_edge_counter.34_418 = PROF_edge_counter.34_417 + 1;
+  *.LPBX1[39] = PROF_edge_counter.34_418;
+  if (i_35 == D.2077D.2077_72)
+    goto <bb 109>;
+  else
+    goto <bb 108>;
+
+<bb 108>:
+  PROF_edge_counter.34_421 = *.LPBX1[42];
+  PROF_edge_counter.34_422 = PROF_edge_counter.34_421 + 1;
+  *.LPBX1[42] = PROF_edge_counter.34_422;
+  pretmp.230_899 = (integer(kind=8)) D.2152D.2152_866;
+  pretmp.230_900 = pretmp.230_899 + -1;
+  pretmp.231_901 = (*bv_137(D))[pretmp.230_900];
+  goto <bb 98>;
+
+<bb 109>:
+  # d_891 = PHI <d_892(107)>
+  PROF_edge_counter.34_423 = *.LPBX1[41];
+  PROF_edge_counter.34_424 = PROF_edge_counter.34_423 + 1;
+  *.LPBX1[41] = PROF_edge_counter.34_424;
+
+<bb 110>:
+  # d_25 = PHI <0.0(2), d_891(109)>
+  # a_646 = PHI <0.0(2), a_906(109)>
+  # b_648 = PHI <0.0(2), b_904(109)>
+  # c_649 = PHI <0.0(2), c_898(109)>
+  # pasta_650 = PHI <0.0(2), pasta_887(109)>
+  # pastb_651 = PHI <0.0(2), pastb_885(109)>
+  # pastc_632 = PHI <0.0(2), pastc_881(109)>
+  aux_426 = D.2077D.2077_72 * 3;
+  aux_427 = aux_426 % 4;
+  if (aux_427 == 0)
+    goto <bb 111>;
+  else
+    goto <bb 112>;
+
+<bb 111>:
+  D.2219D.2219_428 = b_648 * b_648;
+  D.2220D.2220_429 = c_649 * c_649;
+  D.2221D.2221_430 = D.2219D.2219_428 + D.2220D.2220_429;
+  D.2222D.2222_431 = __builtin_sqrt (D.2221D.2221_430);
+  D.2223D.2223_432 = D.2222D.2222_431 + a_646;
+  *check_91(D) = D.2223D.2223_432;
+  D.2224D.2224_433 = pasta_650 + b_648;
+  D.2225D.2225_434 = D.2224D.2224_433 + c_649;
+  check2_435 = D.2225D.2225_434 + d_25;
+  PROF_edge_counter.34_436 = *.LPBX1[43];
+  PROF_edge_counter.34_437 = PROF_edge_counter.34_436 + 1;
+  *.LPBX1[43] = PROF_edge_counter.34_437;
+  pretmp.185_795 = ABS_EXPR <check2_435>;
+  pretmp.187_802 = pretmp.185_795 unord pretmp.185_795;
+  goto <bb 119>;
+
+<bb 112>:
+  if (aux_427 == 1)
+    goto <bb 113>;
+  else
+    goto <bb 114>;
+
+<bb 113>:
+  D.2229D.2229_438 = pastb_651 * pastb_651;
+  D.2220D.2220_439 = c_649 * c_649;
+  D.2230D.2230_440 = D.2229D.2229_438 + D.2220D.2220_439;
+  D.2231D.2231_441 = __builtin_sqrt (D.2230D.2230_440);
+  D.2232D.2232_442 = D.2231D.2231_441 + a_646;
+  D.2233D.2233_443 = D.2232D.2232_442 - b_648;
+  *check_91(D) = D.2233D.2233_443;
+  D.2234D.2234_444 = pasta_650 + pastb_651;
+  D.2235D.2235_445 = D.2234D.2234_444 + c_649;
+  check2_446 = D.2235D.2235_445 + d_25;
+  PROF_edge_counter.34_447 = *.LPBX1[44];
+  PROF_edge_counter.34_448 = PROF_edge_counter.34_447 + 1;
+  *.LPBX1[44] = PROF_edge_counter.34_448;
+  pretmp.185_796 = ABS_EXPR <check2_446>;
+  pretmp.187_803 = pretmp.185_796 unord pretmp.185_796;
+  goto <bb 119>;
+
+<bb 114>:
+  if (aux_427 == 2)
+    goto <bb 115>;
+  else
+    goto <bb 116>;
+
+<bb 115>:
+  D.2219D.2219_449 = b_648 * b_648;
+  D.2220D.2220_450 = c_649 * c_649;
+  D.2221D.2221_451 = D.2219D.2219_449 + D.2220D.2220_450;
+  D.2222D.2222_452 = __builtin_sqrt (D.2221D.2221_451);
+  *check_91(D) = D.2222D.2222_452;
+  D.2234D.2234_453 = pasta_650 + pastb_651;
+  D.2239D.2239_454 = D.2234D.2234_453 + pastc_632;
+  check2_455 = D.2239D.2239_454 + d_25;
+  PROF_edge_counter.34_456 = *.LPBX1[46];
+  PROF_edge_counter.34_457 = PROF_edge_counter.34_456 + 1;
+  *.LPBX1[46] = PROF_edge_counter.34_457;
+  pretmp.185_797 = ABS_EXPR <check2_455>;
+  pretmp.187_804 = pretmp.185_797 unord pretmp.185_797;
+  goto <bb 119>;
+
+<bb 116>:
+  PROF_edge_counter.34_458 = *.LPBX1[45];
+  PROF_edge_counter.34_459 = PROF_edge_counter.34_458 + 1;
+  *.LPBX1[45] = PROF_edge_counter.34_459;
+  if (aux_427 == 3)
+    goto <bb 118>;
+  else
+    goto <bb 117>;
+
+<bb 117>:
+  pretmp.185_800 = *check_91(D);
+  goto <bb 119>;
+
+<bb 118>:
+  D.2219D.2219_460 = b_648 * b_648;
+  D.2220D.2220_461 = c_649 * c_649;
+  D.2221D.2221_462 = D.2219D.2219_460 + D.2220D.2220_461;
+  D.2222D.2222_463 = __builtin_sqrt (D.2221D.2221_462);
+  *check_91(D) = D.2222D.2222_463;
+  D.2243D.2243_464 = a_646 + b_648;
+  D.2244D.2244_465 = D.2243D.2243_464 + c_649;
+  check2_466 = D.2244D.2244_465 + d_25;
+  PROF_edge_counter.34_467 = *.LPBX1[47];
+  PROF_edge_counter.34_468 = PROF_edge_counter.34_467 + 1;
+  *.LPBX1[47] = PROF_edge_counter.34_468;
+  pretmp.185_798 = ABS_EXPR <check2_466>;
+  pretmp.187_805 = pretmp.185_798 unord pretmp.185_798;
+
+<bb 119>:
+  # prephitmp.186_799 = PHI <pretmp.185_795(111), pretmp.185_796(113), pretmp.185_797(115), 0.0(117), pretmp.185_798(118)>
+  # prephitmp.186_801 = PHI <D.2223D.2223_432(111), D.2233D.2233_443(113), D.2222D.2222_452(115), pretmp.185_800(117), D.2222D.2222_463(118)>
+  # prephitmp.188_806 = PHI <pretmp.187_802(111), pretmp.187_803(113), pretmp.187_804(115), 0(117), pretmp.187_805(118)>
+  M.26_472 = ABS_EXPR <prephitmp.186_801>;
+  D.2246D.2246_473 = M.26_472 < prephitmp.186_799;
+  D.2248D.2248_475 = D.2246D.2246_473 | prephitmp.188_806;
+  if (D.2248D.2248_475 != 0)
+    goto <bb 120>;
+  else
+    goto <bb 121>;
+
+<bb 120>:
+  PROF_edge_counter.34_477 = *.LPBX1[48];
+  PROF_edge_counter.34_478 = PROF_edge_counter.34_477 + 1;
+  *.LPBX1[48] = PROF_edge_counter.34_478;
+
+<bb 121>:
+  # M.26_69 = PHI <prephitmp.186_799(119), M.26_472(120)>
+  D.2252D.2252_483 = M.26_472 > prephitmp.186_799;
+  D.2254D.2254_485 = D.2252D.2252_483 | prephitmp.188_806;
+  if (D.2254D.2254_485 != 0)
+    goto <bb 122>;
+  else
+    goto <bb 123>;
+
+<bb 122>:
+  PROF_edge_counter.34_487 = *.LPBX1[49];
+  PROF_edge_counter.34_488 = PROF_edge_counter.34_487 + 1;
+  *.LPBX1[49] = PROF_edge_counter.34_488;
+
+<bb 123>:
+  # M.26_70 = PHI <prephitmp.186_799(121), M.26_472(122)>
+  D.2258D.2258_489 = M.26_69 / M.26_70;
+  *check_91(D) = D.2258D.2258_489;
+  return;
+
+<bb 124>:
+  D.2115D.2115_204 = (*av_130(D))[0];
+  D.2128D.2128_220 = D.2115D.2115_204 * D.2115D.2115_204;
+  l2_221 = D.2128D.2128_220 + 0.0;
+  if (D.2077D.2077_72 == 1)
+    goto <bb 126>;
+  else
+    goto <bb 125>;
+
+<bb 125>:
+  pretmp.201_834 = *.LPBX1[12];
+  *.LPBX1_I_lsm.256_420 = *.LPBX1[12];
+  goto <bb 21>;
+
+<bb 126>:
+  PROF_edge_counter.34_84 = *.LPBX1[11];
+  PROF_edge_counter.34_528 = PROF_edge_counter.34_84 + 1;
+  *.LPBX1[11] = PROF_edge_counter.34_528;
+  l2_45 = __builtin_sqrt (l2_221);
+  D.2133D.2133_127 = D.2115D.2115_204 / l2_45;
+  (*av_130(D))[0] = D.2133D.2133_127;
+
+<bb 127>:
+  # prephitmp.191_830 = PHI <D.2133D.2133_127(126), D.2133D.2133_142(22)>
+  PROF_edge_counter.34_15 = *.LPBX1[13];
+  PROF_edge_counter.34_18 = PROF_edge_counter.34_15 + 1;
+  *.LPBX1[13] = PROF_edge_counter.34_18;
+  D.2138D.2138_516 = (*bv_137(D))[0];
+  D.2139D.2139_66 = D.2138D.2138_516 * D.2138D.2138_516;
+  l2_43 = D.2139D.2139_66 + 0.0;
+
+<bb 128>:
+  # l2_645 = PHI <l2_43(127), l2_236(39)>
+  # D.2138D.2138_31 = PHI <D.2138D.2138_516(127), D.2138D.2138_203(39)>
+  # prephitmp.238_925 = PHI <prephitmp.191_830(127), pretmp.237_924(39)>
+  PROF_edge_counter.34_697 = *.LPBX1[15];
+  PROF_edge_counter.34_173 = PROF_edge_counter.34_697 + 1;
+  *.LPBX1[15] = PROF_edge_counter.34_173;
+  l2_65 = __builtin_sqrt (l2_645);
+  D.2144D.2144_486 = D.2138D.2138_31 / l2_65;
+  (*bv_137(D))[0] = D.2144D.2144_486;
+  goto <bb 61>;
+
+}
+
+
+
+;; Function trig (trig_)
+
+trig (integer(kind=4) & i, integer(kind=4) & j)
+{
+  integer(kind=8) PROF_edge_counter.35;
+  real(kind=8) __result_trig;
+  real(kind=8) z;
+  real(kind=8) y;
+  real(kind=8) x;
+  real(kind=8) D.1961D.1961;
+  real(kind=8) __result_trig.18;
+  real(kind=8) D.1959D.1959;
+  real(kind=8) D.1958D.1958;
+  real(kind=8) D.1957D.1957;
+  real(kind=8) D.1956D.1956;
+  real(kind=8) D.1955D.1955;
+  real(kind=8) D.1954D.1954;
+  real(kind=8) D.1953D.1953;
+  real(kind=8) D.1952D.1952;
+  real(kind=8) D.1951D.1951;
+  real(kind=8) D.1950D.1950;
+  real(kind=8) D.1949D.1949;
+  real(kind=8) D.1948D.1948;
+  real(kind=8) D.1947D.1947;
+  real(kind=8) D.1946D.1946;
+  real(kind=8) D.1945D.1945;
+  real(kind=8) D.1943D.1943;
+  real(kind=8) D.1942D.1942;
+  real(kind=8) D.1941D.1941;
+  real(kind=8) D.1940D.1940;
+  real(kind=8) D.1939D.1939;
+  integer(kind=4) D.1938D.1938;
+  real(kind=8) D.1937D.1937;
+  integer(kind=4) D.1936D.1936;
+
+<bb 2>:
+  PROF_edge_counter.35_1 = *.LPBX1[50];
+  PROF_edge_counter.35_2 = PROF_edge_counter.35_1 + 1;
+  *.LPBX1[50] = PROF_edge_counter.35_2;
+  D.1936D.1936_5 = *i_4(D);
+  D.1937D.1937_6 = (real(kind=8)) D.1936D.1936_5;
+  D.1938D.1938_8 = *j_7(D);
+  D.1939D.1939_9 = (real(kind=8)) D.1938D.1938_8;
+  x_10 = D.1937D.1937_6 - D.1939D.1939_9;
+  y_15 = D.1937D.1937_6 + D.1939D.1939_9;
+  D.1940D.1940_16 = x_10 * x_10;
+  D.1941D.1941_17 = y_15 * y_15;
+  D.1942D.1942_18 = D.1940D.1940_16 + D.1941D.1941_17;
+  D.1943D.1943_19 = __builtin_sqrt (D.1942D.1942_18);
+  D.1945D.1945_21 = D.1943D.1943_19 * 3.1415927410125732421875e+0;
+  D.1946D.1946_22 = __builtin_sin (D.1945D.1945_21);
+  z_23 = __builtin_exp (D.1946D.1946_22);
+  D.1947D.1947_24 = x_10 + y_15;
+  D.1948D.1948_25 = z_23 + 1.0e+0;
+  D.1949D.1949_26 = x_10 * y_15;
+  D.1950D.1950_27 = D.1949D.1949_26 * z_23;
+  D.1951D.1951_28 = ((D.1950D.1950_27));
+  D.1952D.1952_29 = D.1948D.1948_25 + D.1951D.1951_28;
+  D.1953D.1953_30 = ABS_EXPR <D.1952D.1952_29>;
+  D.1954D.1954_31 = __builtin_log10 (D.1953D.1953_30);
+  D.1955D.1955_32 = ABS_EXPR <x_10>;
+  D.1956D.1956_33 = ABS_EXPR <y_15>;
+  D.1957D.1957_34 = D.1955D.1955_32 + D.1956D.1956_33;
+  D.1958D.1958_35 = ((D.1957D.1957_34));
+  D.1959D.1959_36 = D.1954D.1954_31 / D.1958D.1958_35;
+  __result_trig.18_37 = D.1947D.1947_24 + D.1959D.1959_36;
+  return __result_trig.18_37;
+
+}
+
+
+
+;; Function dusty (MAIN__)
+
+
+mainf.f90:254: note: not vectorized: data ref analysis failed D.1912D.1912_721 = am[D.1911D.1911_720];
+
+mainf.f90:219: note: not vectorized: unsupported use in stmt.
+mainf.f90:191: note: not vectorized: can't calculate alignment for data ref.
+mainf.f90:183: note: not vectorized: unsupported use in stmt.
+mainf.f90:157: note: not vectorized: unsupported use in stmt.
+mainf.f90:147: note: not vectorized: unsupported use in stmt.
+mainf.f90:96: note: not vectorized: value used after loop.
+mainf.f90:1: note: vectorized 0 loops in function.
+dusty ()
+{
+  integer(kind=8) D.3545D.3545;
+  character(kind=4) D.3546D.3546;
+  character(kind=4) D.3547D.3547;
+  integer(kind=8) D.3548D.3548;
+  integer(kind=8) D.3542D.3542;
+  character(kind=4) D.3543D.3543;
+  integer(kind=8) D.3544D.3544;
+  integer(kind=8) D.3538D.3538;
+  character(kind=4) D.3539D.3539;
+  character(kind=4) D.3540D.3540;
+  integer(kind=8) D.3541D.3541;
+  integer(kind=8) D.3534D.3534;
+  character(kind=4) D.3535D.3535;
+  character(kind=4) D.3536D.3536;
+  integer(kind=8) D.3537D.3537;
+  integer(kind=8) D.3530D.3530;
+  character(kind=4) D.3531D.3531;
+  character(kind=4) D.3532D.3532;
+  integer(kind=8) D.3533D.3533;
+  integer(kind=8) D.3526D.3526;
+  character(kind=4) D.3527D.3527;
+  character(kind=4) D.3528D.3528;
+  integer(kind=8) D.3529D.3529;
+  integer(kind=8) D.3522D.3522;
+  character(kind=4) D.3523D.3523;
+  character(kind=4) D.3524D.3524;
+  integer(kind=8) D.3525D.3525;
+  integer(kind=8) D.3518D.3518;
+  character(kind=4) D.3519D.3519;
+  character(kind=4) D.3520D.3520;
+  integer(kind=8) D.3521D.3521;
+  integer(kind=8) D.3514D.3514;
+  character(kind=4) D.3515D.3515;
+  character(kind=4) D.3516D.3516;
+  integer(kind=8) D.3517D.3517;
+  integer(kind=8) *.LPBX1_I_lsm.1052;
+  integer(kind=4) ia_I_lsm.1051;
+  integer(kind=8) *.LPBX1_I_lsm.1050;
+  integer(kind=8) *.LPBX1_I_lsm.1049;
+  real(kind=8) cm_I_lsm.1048;
+  integer(kind=8) *.LPBX1_I_lsm.1047;
+  real(kind=8) cm_I_lsm.1046;
+  integer(kind=8) *.LPBX1_I_lsm.1045;
+  integer(kind=8) *.LPBX1_I_lsm.1044;
+  integer(kind=8) *.LPBX1_I_lsm.1043;
+  integer(kind=8) *.LPBX1_I_lsm.1042;
+  real(kind=8) trace3_lsm.1041;
+  integer(kind=8) *.LPBX1_I_lsm.1040;
+  real(kind=8) pretmp.1027;
+  integer(kind=8) prephitmp.1024;
+  integer(kind=8) pretmp.1023;
+  integer(kind=4) prephitmp.1020;
+  integer(kind=4) pretmp.1019;
+  integer(kind=8) prephitmp.1017;
+  integer(kind=8) pretmp.1016;
+  integer(kind=4) prephitmp.1015;
+  integer(kind=4) pretmp.1014;
+  real(kind=8) prephitmp.1013;
+  real(kind=8) pretmp.1012;
+  integer(kind=4) prephitmp.1010;
+  integer(kind=4) pretmp.1009;
+  integer(kind=8) prephitmp.1002;
+  integer(kind=8) pretmp.1001;
+  integer(kind=8) pretmp.999;
+  integer(kind=8) pretmp.997;
+  real(kind=8) prephitmp.996;
+  real(kind=8) pretmp.995;
+  integer(kind=8) prephitmp.994;
+  integer(kind=8) pretmp.993;
+  real(kind=8) prephitmp.991;
+  integer(kind=8) pretmp.990;
+  integer(kind=8) pretmp.988;
+  integer(kind=8) prephitmp.986;
+  integer(kind=8) pretmp.985;
+  integer(kind=8) pretmp.983;
+  real(kind=8) pretmp.981;
+  integer(kind=8) pretmp.980;
+  real(kind=8) pretmp.978;
+  real(kind=8) pretmp.976;
+  integer(kind=8) pretmp.975;
+  integer(kind=8) pretmp.973;
+  integer(kind=8) pretmp.971;
+  real(kind=8) pretmp.970;
+  integer(kind=8) pretmp.969;
+  integer(kind=8) pretmp.963;
+  real(kind=8) pretmp.962;
+  integer(kind=8) pretmp.961;
+  integer(kind=8) pretmp.957;
+  real(kind=8) pretmp.956;
+  integer(kind=8) pretmp.955;
+  real(kind=8) prephitmp.952;
+  integer(kind=8) prephitmp.949;
+  integer(kind=8) pretmp.948;
+  real(kind=8) prephitmp.946;
+  integer(kind=4) prephitmp.944;
+  integer(kind=4) pretmp.943;
+  integer(kind=8) PROF_edge_counter.36;
+  real(kind=4) D.1679D.1679;
+  struct __st_parameter_dt dt_parm.5;
+  struct __st_parameter_dt dt_parm.4;
+  integer(kind=4) D.1673D.1673;
+  integer(kind=4) D.1604D.1604;
+  integer(kind=4) D.1598D.1598;
+  integer(kind=4) D.1587D.1587;
+  character(kind=4) countm1.1;
+  integer(kind=4) D.1579D.1579;
+  integer(kind=4) D.1571D.1571;
+  integer(kind=4) D.1557D.1557;
+  static integer(kind=4) options.0[8] = {68, 255, 0, 0, 0, 1, 0, 1};
+  real(kind=8) trace3;
+  real(kind=8) top;
+  real(kind=4) sum;
+  real(kind=8) sub;
+  real(kind=4) start;
+  real(kind=8) seed;
+  real(kind=8) op[2500];
+  integer(kind=4) n;
+  integer(kind=4) k;
+  real(kind=8) jn2;
+  real(kind=8) jn1;
+  real(kind=8) jn;
+  integer(kind=4) j;
+  integer(kind=4) ival;
+  real(kind=8) id[2500];
+  integer(kind=4) ia[50];
+  integer(kind=4) i;
+  real(kind=8) holdb;
+  real(kind=8) holda;
+  real(kind=4) finish;
+  real(kind=8) dm[2500];
+  real(kind=8) cv[50];
+  real(kind=8) cm[2500];
+  real(kind=8) check;
+  real(kind=8) bv[50];
+  real(kind=8) bot;
+  real(kind=8) bm[2500];
+  real(kind=8) av[50];
+  real(kind=8) am[2500];
+  real(kind=4) D.1924D.1924;
+  real(kind=4) start.17;
+  real(kind=4) finish.16;
+  real(kind=8) trace3.15;
+  real(kind=8) D.1918D.1918;
+  real(kind=8) D.1917D.1917;
+  real(kind=8) D.1916D.1916;
+  real(kind=8) D.1915D.1915;
+  real(kind=8) D.1914D.1914;
+  real(kind=8) D.1913D.1913;
+  real(kind=8) D.1912D.1912;
+  integer(kind=8) D.1911D.1911;
+  logical(kind=4) D.1902D.1902;
+  logical(kind=4) D.1901D.1901;
+  logical(kind=4) D.1900D.1900;
+  logical(kind=4) D.1895D.1895;
+  logical(kind=4) D.1894D.1894;
+  logical(kind=4) D.1893D.1893;
+  real(kind=8) D.1885D.1885;
+  real(kind=8) D.1884D.1884;
+  real(kind=8) D.1880D.1880;
+  real(kind=8) D.1879D.1879;
+  real(kind=8) D.1878D.1878;
+  real(kind=8) D.1866D.1866;
+  real(kind=8) D.1856D.1856;
+  real(kind=8) D.1855D.1855;
+  real(kind=8) D.1854D.1854;
+  integer(kind=8) D.1853D.1853;
+  real(kind=8) D.1851D.1851;
+  real(kind=8) D.1850D.1850;
+  real(kind=8) D.1837D.1837;
+  real(kind=8) D.1824D.1824;
+  real(kind=8) D.1823D.1823;
+  real(kind=8) D.1822D.1822;
+  real(kind=8) D.1821D.1821;
+  integer(kind=8) D.1820D.1820;
+  real(kind=8) D.1818D.1818;
+  integer(kind=8) D.1817D.1817;
+  integer(kind=8) D.1815D.1815;
+  integer(kind=8) D.1814D.1814;
+  real(kind=8) D.1801D.1801;
+  real(kind=8) D.1800D.1800;
+  real(kind=8) D.1799D.1799;
+  real(kind=8) D.1798D.1798;
+  real(kind=8) D.1797D.1797;
+  real(kind=8) D.1796D.1796;
+  real(kind=8) D.1794D.1794;
+  real(kind=8) D.1793D.1793;
+  real(kind=8) D.1792D.1792;
+  real(kind=8) D.1791D.1791;
+  integer(kind=4) * D.1790D.1790;
+  integer(kind=4) * D.1789D.1789;
+  real(kind=8) D.1788D.1788;
+  real(kind=8) D.1787D.1787;
+  real(kind=8) D.1786D.1786;
+  integer(kind=8) D.1785D.1785;
+  real(kind=8) D.1784D.1784;
+  real(kind=8) D.1783D.1783;
+  real(kind=8) D.1782D.1782;
+  integer(kind=8) D.1781D.1781;
+  real(kind=8) D.1780D.1780;
+  real(kind=8) D.1779D.1779;
+  real(kind=8) D.1778D.1778;
+  real(kind=8) D.1777D.1777;
+  real(kind=8) D.1767D.1767;
+  real(kind=8) D.1766D.1766;
+  real(kind=8) D.1765D.1765;
+  real(kind=8) D.1764D.1764;
+  integer(kind=8) D.1763D.1763;
+  integer(kind=8) D.1762D.1762;
+  integer(kind=4) D.1761D.1761;
+  real(kind=8) D.1756D.1756;
+  real(kind=8) D.1755D.1755;
+  real(kind=8) D.1754D.1754;
+  real(kind=8) D.1753D.1753;
+  real(kind=8) D.1752D.1752;
+  integer(kind=8) D.1751D.1751;
+  integer(kind=8) D.1750D.1750;
+  integer(kind=4) D.1749D.1749;
+  integer(kind=4) D.1743D.1743;
+  integer(kind=4) D.1742D.1742;
+  integer(kind=4) D.1741D.1741;
+  integer(kind=4) D.1740D.1740;
+  character(kind=4) D.1738D.1738;
+  real(kind=8) D.1731D.1731;
+  real(kind=8) D.1730D.1730;
+  real(kind=8) D.1729D.1729;
+  real(kind=8) D.1727D.1727;
+  real(kind=8) D.1726D.1726;
+  real(kind=8) D.1725D.1725;
+  integer(kind=8) D.1724D.1724;
+  integer(kind=8) D.1723D.1723;
+  integer(kind=8) D.1722D.1722;
+  integer(kind=8) D.1721D.1721;
+  integer(kind=8) D.1720D.1720;
+  logical(kind=4) D.1717D.1717;
+  real(kind=8) check.12;
+  real(kind=8) check.11;
+  real(kind=8) D.1707D.1707;
+  real(kind=8) D.1706D.1706;
+  real(kind=8) D.1705D.1705;
+  real(kind=8) D.1700D.1700;
+  real(kind=8) D.1693D.1693;
+  integer(kind=8) D.1692D.1692;
+  integer(kind=8) D.1691D.1691;
+  real(kind=8) D.1690D.1690;
+  integer(kind=4) D.1689D.1689;
+  integer(kind=4) D.1688D.1688;
+  integer(kind=4) n.8;
+  integer(kind=4) D.1686D.1686;
+  real(kind=8) D.1685D.1685;
+
+<bb 2>:
+  PROF_edge_counter.36_45 = *.LPBX1[51];
+  PROF_edge_counter.36_46 = PROF_edge_counter.36_45 + 1;
+  *.LPBX1[51] = PROF_edge_counter.36_46;
+  _gfortran_set_options (8, &options.0);
+  PROF_edge_counter.36_47 = *.LPBX1[52];
+  PROF_edge_counter.36_48 = PROF_edge_counter.36_47 + 1;
+  *.LPBX1[52] = PROF_edge_counter.36_48;
+  n = 50;
+  seed = 1.0e+0;
+  _gfortran_cpu_time_4 (&start);
+  PROF_edge_counter.36_49 = *.LPBX1[53];
+  PROF_edge_counter.36_50 = PROF_edge_counter.36_49 + 1;
+  *.LPBX1[53] = PROF_edge_counter.36_50;
+  D.1557D.1557_51 = n;
+  if (D.1557D.1557_51 > 0)
+    goto <bb 3>;
+  else
+    goto <bb 133>;
+
+<bb 3>:
+
+<bb 4>:
+  # i_9 = PHI <1(3), i_798(5)>
+  jn1_775 = conrand (&seed);
+  PROF_edge_counter.36_776 = *.LPBX1[54];
+  PROF_edge_counter.36_777 = PROF_edge_counter.36_776 + 1;
+  *.LPBX1[54] = PROF_edge_counter.36_777;
+  jn2_779 = conrand (&seed);
+  PROF_edge_counter.36_780 = *.LPBX1[55];
+  PROF_edge_counter.36_781 = PROF_edge_counter.36_780 + 1;
+  *.LPBX1[55] = PROF_edge_counter.36_781;
+  D.1685D.1685_783 = jn2_779 * 1.0e+1;
+  D.1686D.1686_784 = (integer(kind=4)) D.1685D.1685_783;
+  n.8_785 = n;
+  D.1688D.1688_786 = D.1686D.1686_784 % n.8_785;
+  D.1689D.1689_787 = _gfortran_pow_i4_i4 (-1, D.1688D.1688_786);
+  PROF_edge_counter.36_788 = *.LPBX1[56];
+  PROF_edge_counter.36_789 = PROF_edge_counter.36_788 + 1;
+  *.LPBX1[56] = PROF_edge_counter.36_789;
+  D.1690D.1690_790 = (real(kind=8)) D.1689D.1689_787;
+  jn_791 = jn1_775 * D.1690D.1690_790;
+  D.1691D.1691_792 = (integer(kind=8)) i_9;
+  D.1692D.1692_793 = D.1691D.1691_792 + -1;
+  cv[D.1692D.1692_793] = 0.0;
+  D.1693D.1693_796 = __builtin_jn (0, jn_791);
+  av[D.1692D.1692_793] = D.1693D.1693_796;
+  i_798 = i_9 + 1;
+  if (i_9 == D.1557D.1557_51)
+    goto <bb 6>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  PROF_edge_counter.36_799 = *.LPBX1[57];
+  PROF_edge_counter.36_800 = PROF_edge_counter.36_799 + 1;
+  *.LPBX1[57] = PROF_edge_counter.36_800;
+  goto <bb 4>;
+
+<bb 6>:
+  # n.8_1528 = PHI <n.8_785(4)>
+  if (n.8_1528 > 0)
+    goto <bb 7>;
+  else
+    goto <bb 133>;
+
+<bb 7>:
+  PROF_edge_counter.36_55 = *.LPBX1[58];
+  PROF_edge_counter.36_56 = PROF_edge_counter.36_55 + 1;
+  *.LPBX1[58] = PROF_edge_counter.36_56;
+
+<bb 8>:
+  # i_10 = PHI <1(7), i_78(9)>
+  jn1_57 = conrand (&seed);
+  PROF_edge_counter.36_58 = *.LPBX1[59];
+  PROF_edge_counter.36_59 = PROF_edge_counter.36_58 + 1;
+  *.LPBX1[59] = PROF_edge_counter.36_59;
+  jn2_61 = conrand (&seed);
+  PROF_edge_counter.36_62 = *.LPBX1[60];
+  PROF_edge_counter.36_63 = PROF_edge_counter.36_62 + 1;
+  *.LPBX1[60] = PROF_edge_counter.36_63;
+  D.1685D.1685_65 = jn2_61 * 1.0e+1;
+  D.1686D.1686_66 = (integer(kind=4)) D.1685D.1685_65;
+  n.8_67 = n;
+  D.1688D.1688_68 = D.1686D.1686_66 % n.8_67;
+  D.1689D.1689_69 = _gfortran_pow_i4_i4 (-1, D.1688D.1688_68);
+  PROF_edge_counter.36_70 = *.LPBX1[61];
+  PROF_edge_counter.36_71 = PROF_edge_counter.36_70 + 1;
+  *.LPBX1[61] = PROF_edge_counter.36_71;
+  D.1690D.1690_72 = (real(kind=8)) D.1689D.1689_69;
+  jn_73 = jn1_57 * D.1690D.1690_72;
+  D.1691D.1691_74 = (integer(kind=8)) i_10;
+  D.1692D.1692_75 = D.1691D.1691_74 + -1;
+  D.1700D.1700_76 = __builtin_jn (1, jn_73);
+  bv[D.1692D.1692_75] = D.1700D.1700_76;
+  i_78 = i_10 + 1;
+  if (i_10 == n.8_1528)
+    goto <bb 10>;
+  else
+    goto <bb 9>;
+
+<bb 9>:
+  PROF_edge_counter.36_79 = *.LPBX1[62];
+  PROF_edge_counter.36_80 = PROF_edge_counter.36_79 + 1;
+  *.LPBX1[62] = PROF_edge_counter.36_80;
+  goto <bb 8>;
+
+<bb 10>:
+  # n.8_1541 = PHI <n.8_67(8)>
+  check = 0.0;
+  if (n.8_1541 > 0)
+    goto <bb 11>;
+  else
+    goto <bb 134>;
+
+<bb 11>:
+  PROF_edge_counter.36_83 = *.LPBX1[63];
+  PROF_edge_counter.36_84 = PROF_edge_counter.36_83 + 1;
+  *.LPBX1[63] = PROF_edge_counter.36_84;
+
+<bb 12>:
+  # i_11 = PHI <1(11), i_98(13)>
+  # prephitmp.1010_1598 = PHI <n.8_1541(11), pretmp.1009_1597(13)>
+  # prephitmp.1013_1602 = PHI <0.0(11), pretmp.1012_1601(13)>
+  ival = prephitmp.1010_1598;
+  D.1691D.1691_86 = (integer(kind=8)) i_11;
+  D.1692D.1692_87 = D.1691D.1691_86 + -1;
+  D.1705D.1705_88 = av[D.1692D.1692_87];
+  D.1706D.1706_91 = bv[D.1692D.1692_87];
+  D.1707D.1707_92 = D.1705D.1705_88 * D.1706D.1706_91;
+  check.12_94 = D.1707D.1707_92 + prephitmp.1013_1602;
+  check = check.12_94;
+  idcheck (&ival, &check, &av, &bv, &id);
+  PROF_edge_counter.36_95 = *.LPBX1[64];
+  PROF_edge_counter.36_96 = PROF_edge_counter.36_95 + 1;
+  *.LPBX1[64] = PROF_edge_counter.36_96;
+  i_98 = i_11 + 1;
+  if (i_11 == n.8_1541)
+    goto <bb 14>;
+  else
+    goto <bb 13>;
+
+<bb 13>:
+  PROF_edge_counter.36_99 = *.LPBX1[65];
+  PROF_edge_counter.36_100 = PROF_edge_counter.36_99 + 1;
+  *.LPBX1[65] = PROF_edge_counter.36_100;
+  pretmp.1009_1597 = n;
+  pretmp.1012_1601 = check;
+  goto <bb 12>;
+
+<bb 14>:
+  D.1571D.1571_101 = n;
+  if (D.1571D.1571_101 > 0)
+    goto <bb 15>;
+  else
+    goto <bb 135>;
+
+<bb 15>:
+
+<bb 16>:
+  # j_25 = PHI <1(15), j_152(25)>
+  # prephitmp.1015_1605 = PHI <D.1571D.1571_101(15), pretmp.1014_1604(25)>
+  if (prephitmp.1015_1605 > 0)
+    goto <bb 17>;
+  else
+    goto <bb 24>;
+
+<bb 17>:
+  PROF_edge_counter.36_105 = *.LPBX1[66];
+  PROF_edge_counter.36_106 = PROF_edge_counter.36_105 + 1;
+  *.LPBX1[66] = PROF_edge_counter.36_106;
+  D.1720D.1720_132 = (integer(kind=8)) j_25;
+  D.1721D.1721_133 = D.1720D.1720_132 * 50;
+  D.1722D.1722_134 = D.1721D.1721_133 + -51;
+  D.1720D.1720_114 = (integer(kind=8)) j_25;
+  D.1721D.1721_115 = D.1720D.1720_114 * 50;
+  D.1722D.1722_116 = D.1721D.1721_115 + -51;
+
+<bb 18>:
+  # i_12 = PHI <1(17), i_110(23)>
+  idcheck (&n, &check, &av, &bv, &id);
+  check.11_107 = check;
+  D.1717D.1717_108 = check.11_107 > 5.0e-1;
+  if (D.1717D.1717_108 != 0)
+    goto <bb 19>;
+  else
+    goto <bb 20>;
+
+<bb 19>:
+  D.1691D.1691_131 = (integer(kind=8)) i_12;
+  D.1723D.1723_135 = D.1722D.1722_134 + D.1691D.1691_131;
+  D.1692D.1692_137 = D.1691D.1691_131 + -1;
+  D.1705D.1705_138 = av[D.1692D.1692_137];
+  D.1724D.1724_140 = D.1720D.1720_132 + -1;
+  D.1725D.1725_141 = bv[D.1724D.1724_140];
+  D.1726D.1726_142 = D.1705D.1705_138 * D.1725D.1725_141;
+  D.1706D.1706_145 = bv[D.1692D.1692_137];
+  D.1727D.1727_146 = D.1726D.1726_142 / D.1706D.1706_145;
+  op[D.1723D.1723_135] = D.1727D.1727_146;
+  PROF_edge_counter.36_147 = *.LPBX1[67];
+  PROF_edge_counter.36_148 = PROF_edge_counter.36_147 + 1;
+  *.LPBX1[67] = PROF_edge_counter.36_148;
+  goto <bb 21>;
+
+<bb 20>:
+  D.1691D.1691_113 = (integer(kind=8)) i_12;
+  D.1723D.1723_117 = D.1722D.1722_116 + D.1691D.1691_113;
+  D.1724D.1724_119 = D.1720D.1720_114 + -1;
+  D.1729D.1729_120 = av[D.1724D.1724_119];
+  D.1692D.1692_122 = D.1691D.1691_113 + -1;
+  D.1706D.1706_123 = bv[D.1692D.1692_122];
+  D.1730D.1730_124 = D.1729D.1729_120 * D.1706D.1706_123;
+  D.1725D.1725_127 = bv[D.1724D.1724_119];
+  D.1731D.1731_128 = D.1730D.1730_124 / D.1725D.1725_127;
+  op[D.1723D.1723_117] = D.1731D.1731_128;
+  PROF_edge_counter.36_129 = *.LPBX1[68];
+  PROF_edge_counter.36_130 = PROF_edge_counter.36_129 + 1;
+  *.LPBX1[68] = PROF_edge_counter.36_130;
+
+<bb 21>:
+  i_110 = i_12 + 1;
+  if (i_12 == prephitmp.1015_1605)
+    goto <bb 22>;
+  else
+    goto <bb 23>;
+
+<bb 22>:
+  i_1540 = prephitmp.1015_1605 + 1;
+  pretmp.1016_1607 = (integer(kind=8)) i_1540;
+  pretmp.1016_1609 = pretmp.1016_1607 + -1;
+  goto <bb 24>;
+
+<bb 23>:
+  PROF_edge_counter.36_111 = *.LPBX1[69];
+  PROF_edge_counter.36_112 = PROF_edge_counter.36_111 + 1;
+  *.LPBX1[69] = PROF_edge_counter.36_112;
+  goto <bb 18>;
+
+<bb 24>:
+  # i_13 = PHI <1(16), i_1540(22)>
+  # prephitmp.1017_1610 = PHI <0(16), pretmp.1016_1609(22)>
+  ia[prephitmp.1017_1610] = i_13;
+  if (j_25 == D.1571D.1571_101)
+    goto <bb 26>;
+  else
+    goto <bb 25>;
+
+<bb 25>:
+  j_152 = j_25 + 1;
+  PROF_edge_counter.36_153 = *.LPBX1[71];
+  PROF_edge_counter.36_154 = PROF_edge_counter.36_153 + 1;
+  *.LPBX1[71] = PROF_edge_counter.36_154;
+  pretmp.1014_1604 = n;
+  goto <bb 16>;
+
+<bb 26>:
+  PROF_edge_counter.36_155 = *.LPBX1[70];
+  PROF_edge_counter.36_156 = PROF_edge_counter.36_155 + 1;
+  *.LPBX1[70] = PROF_edge_counter.36_156;
+  D.1579D.1579_157 = n;
+  if (D.1579D.1579_157 > 0)
+    goto <bb 27>;
+  else
+    goto <bb 136>;
+
+<bb 27>:
+  n.8_168 = n;
+  pretmp.1019_1614 = n;
+  *.LPBX1_I_lsm.1050_238 = *.LPBX1[72];
+
+<bb 28>:
+  # i_14 = PHI <1(27), i_178(34)>
+  # prephitmp.1020_1615 = PHI <D.1579D.1579_157(27), pretmp.1019_1614(34)>
+  # *.LPBX1_I_lsm.1050_214 = PHI <*.LPBX1_I_lsm.1050_238(27), *.LPBX1_I_lsm.1050_53(34)>
+  D.1738D.1738_161 = (character(kind=4)) i_14;
+  countm1.1_162 = D.1738D.1738_161 >> 3;
+  PROF_edge_counter.36_163 = *.LPBX1_I_lsm.1050_214;
+  PROF_edge_counter.36_164 = PROF_edge_counter.36_163 + 1;
+  *.LPBX1_I_lsm.1050_53 = PROF_edge_counter.36_164;
+  D.1691D.1691_393 = (integer(kind=8)) i_14;
+  D.1692D.1692_392 = D.1691D.1691_393 + -1;
+  D.1741D.1741_389 = i_14 % prephitmp.1020_1615;
+  D.1742D.1742_308 = D.1741D.1741_389 % prephitmp.1020_1615;
+  D.1743D.1743_309 = D.1742D.1742_308 + 1;
+  ia[D.1692D.1692_392] = D.1743D.1743_309;
+  if (countm1.1_162 == 0)
+    goto <bb 33>;
+  else
+    goto <bb 29>;
+
+<bb 29>:
+  pretmp.1023_1622 = *.LPBX1[73];
+  ia_I_lsm.1051_81 = ia[D.1692D.1692_392];
+  *.LPBX1_I_lsm.1052_302 = *.LPBX1[73];
+
+<bb 30>:
+  # countm1.1_313 = PHI <countm1.1_174(31), countm1.1_162(29)>
+  # j_319 = PHI <j_173(31), 8(29)>
+  # prephitmp.1024_1623 = PHI <PROF_edge_counter.36_176(31), pretmp.1023_1622(29)>
+  countm1.1_174 = countm1.1_313 + 4294967295;
+  PROF_edge_counter.36_176 = prephitmp.1024_1623 + 1;
+  *.LPBX1_I_lsm.1052_103 = PROF_edge_counter.36_176;
+  D.1740D.1740_167 = j_319 + i_14;
+  D.1741D.1741_169 = D.1740D.1740_167 % n.8_168;
+  D.1742D.1742_171 = D.1741D.1741_169 % n.8_168;
+  D.1743D.1743_172 = D.1742D.1742_171 + 1;
+  ia_I_lsm.1051_541 = D.1743D.1743_172;
+  j_173 = j_319 + 8;
+  if (countm1.1_174 == 0)
+    goto <bb 32>;
+  else
+    goto <bb 31>;
+
+<bb 31>:
+  goto <bb 30>;
+
+<bb 32>:
+  # ia_I_lsm.1051_458 = PHI <ia_I_lsm.1051_541(30)>
+  D.3542D.3542_1469 = pretmp.1023_1622 + 1;
+  D.3543D.3543_1468 = countm1.1_162 + 4294967295;
+  D.3544D.3544_1467 = (integer(kind=8)) D.3543D.3543_1468;
+  *.LPBX1_I_lsm.1052_436 = D.3542D.3542_1469 + D.3544D.3544_1467;
+  ia[D.1692D.1692_392] = ia_I_lsm.1051_458;
+  *.LPBX1[73] = *.LPBX1_I_lsm.1052_436;
+
+<bb 33>:
+  if (i_14 == D.1579D.1579_157)
+    goto <bb 35>;
+  else
+    goto <bb 34>;
+
+<bb 34>:
+  i_178 = i_14 + 1;
+  PROF_edge_counter.36_179 = *.LPBX1[75];
+  PROF_edge_counter.36_180 = PROF_edge_counter.36_179 + 1;
+  *.LPBX1[75] = PROF_edge_counter.36_180;
+  goto <bb 28>;
+
+<bb 35>:
+  D.3545D.3545_1466 = *.LPBX1_I_lsm.1050_238 + 1;
+  D.3546D.3546_1463 = (character(kind=4)) D.1579D.1579_157;
+  D.3547D.3547_1461 = D.3546D.3546_1463 + 4294967295;
+  D.3548D.3548_1460 = (integer(kind=8)) D.3547D.3547_1461;
+  *.LPBX1_I_lsm.1050_613 = D.3545D.3545_1466 + D.3548D.3548_1460;
+  *.LPBX1[72] = *.LPBX1_I_lsm.1050_613;
+  PROF_edge_counter.36_181 = *.LPBX1[74];
+  PROF_edge_counter.36_182 = PROF_edge_counter.36_181 + 1;
+  *.LPBX1[74] = PROF_edge_counter.36_182;
+  D.1587D.1587_183 = n;
+  if (D.1587D.1587_183 > 0)
+    goto <bb 36>;
+  else
+    goto <bb 40>;
+
+<bb 36>:
+  PROF_edge_counter.36_185 = *.LPBX1[76];
+  PROF_edge_counter.36_186 = PROF_edge_counter.36_185 + 1;
+  *.LPBX1[76] = PROF_edge_counter.36_186;
+
+<bb 37>:
+  # i_15 = PHI <1(36), i_211(39)>
+  idcheck (&n, &check, &av, &bv, &id);
+  PROF_edge_counter.36_187 = *.LPBX1[77];
+  PROF_edge_counter.36_188 = PROF_edge_counter.36_187 + 1;
+  *.LPBX1[77] = PROF_edge_counter.36_188;
+  D.1691D.1691_194 = (integer(kind=8)) i_15;
+  D.1692D.1692_195 = D.1691D.1691_194 + -1;
+  D.1749D.1749_196 = ia[D.1692D.1692_195];
+  D.1750D.1750_197 = (integer(kind=8)) D.1749D.1749_196;
+  D.1751D.1751_198 = D.1750D.1750_197 + -1;
+  D.1752D.1752_199 = av[D.1751D.1751_198];
+  D.1753D.1753_205 = bv[D.1751D.1751_198];
+  D.1754D.1754_206 = D.1752D.1752_199 + D.1753D.1753_205;
+  D.1755D.1755_207 = ((D.1754D.1754_206));
+  check.11_208 = check;
+  D.1756D.1756_209 = D.1755D.1755_207 / check.11_208;
+  cv[D.1751D.1751_198] = D.1756D.1756_209;
+  i_211 = i_15 + 1;
+  if (i_15 == D.1587D.1587_183)
+    goto <bb 38>;
+  else
+    goto <bb 39>;
+
+<bb 38>:
+  pretmp.943_1456 = n;
+  goto <bb 40>;
+
+<bb 39>:
+  PROF_edge_counter.36_212 = *.LPBX1[78];
+  PROF_edge_counter.36_213 = PROF_edge_counter.36_212 + 1;
+  *.LPBX1[78] = PROF_edge_counter.36_213;
+  goto <bb 37>;
+
+<bb 40>:
+  # prephitmp.944_1457 = PHI <D.1587D.1587_183(35), pretmp.943_1456(38), prephitmp.944_1450(136)>
+  if (prephitmp.944_1457 > 1)
+    goto <bb 41>;
+  else
+    goto <bb 45>;
+
+<bb 41>:
+  PROF_edge_counter.36_216 = *.LPBX1[79];
+  PROF_edge_counter.36_217 = PROF_edge_counter.36_216 + 1;
+  *.LPBX1[79] = PROF_edge_counter.36_217;
+
+<bb 42>:
+  # i_16 = PHI <2(41), i_235(44)>
+  idcheck (&n, &check, &av, &bv, &id);
+  PROF_edge_counter.36_218 = *.LPBX1[80];
+  PROF_edge_counter.36_219 = PROF_edge_counter.36_218 + 1;
+  *.LPBX1[80] = PROF_edge_counter.36_219;
+  D.1761D.1761_222 = i_16 + -1;
+  D.1762D.1762_223 = (integer(kind=8)) D.1761D.1761_222;
+  D.1763D.1763_224 = D.1762D.1762_223 + -1;
+  D.1764D.1764_225 = av[D.1763D.1763_224];
+  D.1691D.1691_226 = (integer(kind=8)) i_16;
+  D.1692D.1692_227 = D.1691D.1691_226 + -1;
+  D.1706D.1706_228 = bv[D.1692D.1692_227];
+  D.1765D.1765_229 = D.1764D.1764_225 * D.1706D.1706_228;
+  D.1766D.1766_232 = cv[D.1692D.1692_227];
+  D.1767D.1767_233 = D.1765D.1765_229 + D.1766D.1766_232;
+  av[D.1692D.1692_227] = D.1767D.1767_233;
+  i_235 = i_16 + 1;
+  if (i_16 == prephitmp.944_1457)
+    goto <bb 43>;
+  else
+    goto <bb 44>;
+
+<bb 43>:
+  pretmp.943_1458 = n;
+  goto <bb 45>;
+
+<bb 44>:
+  PROF_edge_counter.36_236 = *.LPBX1[81];
+  PROF_edge_counter.36_237 = PROF_edge_counter.36_236 + 1;
+  *.LPBX1[81] = PROF_edge_counter.36_237;
+  goto <bb 42>;
+
+<bb 45>:
+  # prephitmp.944_1459 = PHI <prephitmp.944_1457(40), pretmp.943_1458(43)>
+  if (prephitmp.944_1459 > 0)
+    goto <bb 46>;
+  else
+    goto <bb 72>;
+
+<bb 46>:
+  PROF_edge_counter.36_240 = *.LPBX1[82];
+  PROF_edge_counter.36_241 = PROF_edge_counter.36_240 + 1;
+  *.LPBX1[82] = PROF_edge_counter.36_241;
+
+<bb 47>:
+  # i_17 = PHI <1(46), i_247(56)>
+  idcheck (&n, &check, &av, &bv, &id);
+  PROF_edge_counter.36_242 = *.LPBX1[83];
+  PROF_edge_counter.36_243 = PROF_edge_counter.36_242 + 1;
+  *.LPBX1[83] = PROF_edge_counter.36_243;
+  D.1598D.1598_244 = n;
+  if (D.1598D.1598_244 > 0)
+    goto <bb 48>;
+  else
+    goto <bb 55>;
+
+<bb 48>:
+  D.1691D.1691_254 = (integer(kind=8)) i_17;
+  D.1692D.1692_282 = D.1691D.1691_254 + -1;
+  D.1781D.1781_283 = D.1692D.1692_282 * 51;
+  D.1790D.1790_314 = &ia[D.1692D.1692_282];
+  D.1691D.1691_339 = (integer(kind=8)) i_17;
+  D.1692D.1692_381 = D.1691D.1691_339 + -1;
+  D.1781D.1781_382 = D.1692D.1692_381 * 51;
+  D.1790D.1790_399 = &ia[D.1692D.1692_381];
+
+<bb 49>:
+  # j_27 = PHI <1(48), j_423(53)>
+  check.11_250 = check;
+  D.1717D.1717_251 = check.11_250 > 5.0e-1;
+  if (D.1717D.1717_251 != 0)
+    goto <bb 50>;
+  else
+    goto <bb 51>;
+
+<bb 50>:
+  PROF_edge_counter.36_252 = *.LPBX1[84];
+  PROF_edge_counter.36_253 = PROF_edge_counter.36_252 + 1;
+  *.LPBX1[84] = PROF_edge_counter.36_253;
+  D.1720D.1720_255 = (integer(kind=8)) j_27;
+  D.1721D.1721_256 = D.1720D.1720_255 * 50;
+  D.1722D.1722_257 = D.1691D.1691_254 + -51;
+  D.1723D.1723_258 = D.1722D.1722_257 + D.1721D.1721_256;
+  bot_259 = op[D.1723D.1723_258];
+  D.1724D.1724_261 = D.1720D.1720_255 + -1;
+  D.1729D.1729_262 = av[D.1724D.1724_261];
+  D.1725D.1725_265 = bv[D.1724D.1724_261];
+  top_266 = D.1729D.1729_262 * D.1725D.1725_265;
+  D.1777D.1777_277 = cv[D.1724D.1724_261];
+  D.1778D.1778_278 = top_266 - bot_259;
+  D.1779D.1779_279 = ((D.1778D.1778_278));
+  D.1780D.1780_280 = D.1777D.1777_277 / D.1779D.1779_279;
+  D.1782D.1782_284 = id[D.1781D.1781_283];
+  D.1783D.1783_285 = D.1780D.1780_280 * D.1782D.1782_284;
+  D.1784D.1784_286 = D.1725D.1725_265 + D.1783D.1783_285;
+  av[D.1724D.1724_261] = D.1784D.1784_286;
+  D.1785D.1785_297 = D.1724D.1724_261 * 51;
+  D.1786D.1786_298 = id[D.1785D.1785_297];
+  D.1787D.1787_299 = D.1780D.1780_280 * D.1786D.1786_298;
+  D.1788D.1788_300 = D.1729D.1729_262 + D.1787D.1787_299;
+  bv[D.1724D.1724_261] = D.1788D.1788_300;
+  D.1789D.1789_311 = &ia[D.1724D.1724_261];
+  D.1791D.1791_315 = trig (D.1790D.1790_314, D.1789D.1789_311);
+  PROF_edge_counter.36_316 = *.LPBX1[86];
+  PROF_edge_counter.36_317 = PROF_edge_counter.36_316 + 1;
+  *.LPBX1[86] = PROF_edge_counter.36_317;
+  D.1792D.1792_318 = D.1784D.1784_286 * D.1791D.1791_315;
+  am[D.1723D.1723_258] = D.1792D.1792_318;
+  D.1725D.1725_326 = bv[D.1724D.1724_261];
+  D.1793D.1793_333 = trig (D.1789D.1789_311, D.1790D.1790_314);
+  D.1794D.1794_334 = D.1725D.1725_326 * D.1793D.1793_333;
+  bm[D.1723D.1723_258] = D.1794D.1794_334;
+  PROF_edge_counter.36_335 = *.LPBX1[87];
+  PROF_edge_counter.36_336 = PROF_edge_counter.36_335 + 1;
+  *.LPBX1[87] = PROF_edge_counter.36_336;
+  goto <bb 52>;
+
+<bb 51>:
+  PROF_edge_counter.36_337 = *.LPBX1[85];
+  PROF_edge_counter.36_338 = PROF_edge_counter.36_337 + 1;
+  *.LPBX1[85] = PROF_edge_counter.36_338;
+  D.1720D.1720_340 = (integer(kind=8)) j_27;
+  D.1721D.1721_341 = D.1720D.1720_340 * 50;
+  D.1722D.1722_342 = D.1691D.1691_339 + -51;
+  D.1723D.1723_343 = D.1722D.1722_342 + D.1721D.1721_341;
+  bot_344 = op[D.1723D.1723_343];
+  D.1724D.1724_346 = D.1720D.1720_340 + -1;
+  D.1729D.1729_347 = av[D.1724D.1724_346];
+  D.1725D.1725_350 = bv[D.1724D.1724_346];
+  top_351 = D.1729D.1729_347 * D.1725D.1725_350;
+  D.1777D.1777_362 = cv[D.1724D.1724_346];
+  D.1778D.1778_363 = top_351 - bot_344;
+  D.1779D.1779_364 = ((D.1778D.1778_363));
+  D.1780D.1780_365 = D.1777D.1777_362 / D.1779D.1779_364;
+  D.1785D.1785_368 = D.1724D.1724_346 * 51;
+  D.1786D.1786_369 = id[D.1785D.1785_368];
+  D.1787D.1787_370 = D.1780D.1780_365 * D.1786D.1786_369;
+  D.1796D.1796_371 = D.1725D.1725_350 - D.1787D.1787_370;
+  av[D.1724D.1724_346] = D.1796D.1796_371;
+  D.1782D.1782_383 = id[D.1781D.1781_382];
+  D.1783D.1783_384 = D.1780D.1780_365 * D.1782D.1782_383;
+  D.1797D.1797_385 = D.1729D.1729_347 - D.1783D.1783_384;
+  bv[D.1724D.1724_346] = D.1797D.1797_385;
+  D.1789D.1789_396 = &ia[D.1724D.1724_346];
+  D.1798D.1798_400 = trig (D.1790D.1790_399, D.1789D.1789_396);
+  PROF_edge_counter.36_401 = *.LPBX1[88];
+  PROF_edge_counter.36_402 = PROF_edge_counter.36_401 + 1;
+  *.LPBX1[88] = PROF_edge_counter.36_402;
+  D.1799D.1799_403 = D.1796D.1796_371 / D.1798D.1798_400;
+  am[D.1723D.1723_343] = D.1799D.1799_403;
+  D.1725D.1725_411 = bv[D.1724D.1724_346];
+  D.1800D.1800_418 = trig (D.1789D.1789_396, D.1790D.1790_399);
+  D.1801D.1801_419 = D.1725D.1725_411 / D.1800D.1800_418;
+  bm[D.1723D.1723_343] = D.1801D.1801_419;
+  PROF_edge_counter.36_420 = *.LPBX1[89];
+  PROF_edge_counter.36_421 = PROF_edge_counter.36_420 + 1;
+  *.LPBX1[89] = PROF_edge_counter.36_421;
+
+<bb 52>:
+  if (j_27 == D.1598D.1598_244)
+    goto <bb 54>;
+  else
+    goto <bb 53>;
+
+<bb 53>:
+  j_423 = j_27 + 1;
+  PROF_edge_counter.36_424 = *.LPBX1[90];
+  PROF_edge_counter.36_425 = PROF_edge_counter.36_424 + 1;
+  *.LPBX1[90] = PROF_edge_counter.36_425;
+  goto <bb 49>;
+
+<bb 54>:
+
+<bb 55>:
+  if (i_17 == prephitmp.944_1459)
+    goto <bb 57>;
+  else
+    goto <bb 56>;
+
+<bb 56>:
+  i_247 = i_17 + 1;
+  PROF_edge_counter.36_248 = *.LPBX1[91];
+  PROF_edge_counter.36_249 = PROF_edge_counter.36_248 + 1;
+  *.LPBX1[91] = PROF_edge_counter.36_249;
+  goto <bb 47>;
+
+<bb 57>:
+  D.1604D.1604_426 = n;
+  if (D.1604D.1604_426 > 0)
+    goto <bb 58>;
+  else
+    goto <bb 72>;
+
+<bb 58>:
+  pretmp.1027_1629 = check;
+
+<bb 59>:
+  # i_18 = PHI <1(58), j_428(70)>
+  j_428 = i_18 + 1;
+  if (D.1604D.1604_426 >= j_428)
+    goto <bb 60>;
+  else
+    goto <bb 69>;
+
+<bb 60>:
+  pretmp.993_1566 = (integer(kind=8)) i_18;
+  pretmp.993_1567 = pretmp.993_1566 + -1;
+  pretmp.995_1568 = am[pretmp.993_1567];
+  pretmp.997_1570 = pretmp.993_1566 + -51;
+
+<bb 61>:
+  # j_28 = PHI <j_428(60), j_472(67)>
+  D.1720D.1720_432 = (integer(kind=8)) j_28;
+  D.1721D.1721_433 = D.1720D.1720_432 * 50;
+  D.1723D.1723_435 = D.1721D.1721_433 + pretmp.997_1570;
+  D.1820D.1820_294 = D.1721D.1721_433 + -50;
+  D.1821D.1821_295 = bm[D.1820D.1820_294];
+  D.1822D.1822_296 = D.1821D.1821_295 * pretmp.995_1568;
+  D.1823D.1823_306 = D.1822D.1822_296 / pretmp.1027_1629;
+  D.1824D.1824_303 = 0.0 - D.1823D.1823_306;
+  cm[D.1723D.1723_435] = D.1824D.1824_303;
+  if (D.1604D.1604_426 == 1)
+    goto <bb 66>;
+  else
+    goto <bb 62>;
+
+<bb 62>:
+  pretmp.999_1576 = D.1721D.1721_433 + -51;
+  pretmp.1001_1578 = *.LPBX1[93];
+  cm_I_lsm.1048_689 = cm[D.1723D.1723_435];
+  *.LPBX1_I_lsm.1049_669 = *.LPBX1[93];
+
+<bb 63>:
+  # k_305 = PHI <k_466(64), 2(62)>
+  # prephitmp.996_1573 = PHI <D.1824D.1824_464(64), D.1824D.1824_303(62)>
+  # prephitmp.1002_1579 = PHI <PROF_edge_counter.36_468(64), pretmp.1001_1578(62)>
+  PROF_edge_counter.36_468 = prephitmp.1002_1579 + 1;
+  *.LPBX1_I_lsm.1049_670 = PROF_edge_counter.36_468;
+  D.1814D.1814_450 = (integer(kind=8)) k_305;
+  D.1815D.1815_451 = D.1814D.1814_450 * 50;
+  D.1817D.1817_453 = D.1815D.1815_451 + pretmp.997_1570;
+  D.1818D.1818_454 = am[D.1817D.1817_453];
+  D.1820D.1820_459 = D.1814D.1814_450 + pretmp.999_1576;
+  D.1821D.1821_460 = bm[D.1820D.1820_459];
+  D.1822D.1822_461 = D.1818D.1818_454 * D.1821D.1821_460;
+  D.1823D.1823_463 = D.1822D.1822_461 / pretmp.1027_1629;
+  D.1824D.1824_464 = prephitmp.996_1573 - D.1823D.1823_463;
+  cm_I_lsm.1048_671 = D.1824D.1824_464;
+  k_466 = k_305 + 1;
+  if (k_305 == D.1604D.1604_426)
+    goto <bb 65>;
+  else
+    goto <bb 64>;
+
+<bb 64>:
+  goto <bb 63>;
+
+<bb 65>:
+  # cm_I_lsm.1048_150 = PHI <cm_I_lsm.1048_671(63)>
+  D.3538D.3538_1485 = pretmp.1001_1578 + 1;
+  D.3539D.3539_1484 = (character(kind=4)) D.1604D.1604_426;
+  D.3540D.3540_1483 = D.3539D.3539_1484 + 4294967294;
+  D.3541D.3541_1481 = (integer(kind=8)) D.3540D.3540_1483;
+  *.LPBX1_I_lsm.1049_149 = D.3538D.3538_1485 + D.3541D.3541_1481;
+  cm[D.1723D.1723_435] = cm_I_lsm.1048_150;
+  *.LPBX1[93] = *.LPBX1_I_lsm.1049_149;
+
+<bb 66>:
+  PROF_edge_counter.36_469 = *.LPBX1[92];
+  PROF_edge_counter.36_470 = PROF_edge_counter.36_469 + 1;
+  *.LPBX1[92] = PROF_edge_counter.36_470;
+  if (j_28 == D.1604D.1604_426)
+    goto <bb 68>;
+  else
+    goto <bb 67>;
+
+<bb 67>:
+  j_472 = j_28 + 1;
+  PROF_edge_counter.36_473 = *.LPBX1[95];
+  PROF_edge_counter.36_474 = PROF_edge_counter.36_473 + 1;
+  *.LPBX1[95] = PROF_edge_counter.36_474;
+  goto <bb 61>;
+
+<bb 68>:
+  PROF_edge_counter.36_475 = *.LPBX1[94];
+  PROF_edge_counter.36_476 = PROF_edge_counter.36_475 + 1;
+  *.LPBX1[94] = PROF_edge_counter.36_476;
+
+<bb 69>:
+  if (i_18 == D.1604D.1604_426)
+    goto <bb 71>;
+  else
+    goto <bb 70>;
+
+<bb 70>:
+  PROF_edge_counter.36_479 = *.LPBX1[97];
+  PROF_edge_counter.36_480 = PROF_edge_counter.36_479 + 1;
+  *.LPBX1[97] = PROF_edge_counter.36_480;
+  goto <bb 59>;
+
+<bb 71>:
+  PROF_edge_counter.36_481 = *.LPBX1[96];
+  PROF_edge_counter.36_482 = PROF_edge_counter.36_481 + 1;
+  *.LPBX1[96] = PROF_edge_counter.36_482;
+  goto <bb 73>;
+
+<bb 72>:
+Invalid sum of outgoing probabilities 27.0%
+  D.1884D.1884_660 = am[0];
+  holda_661 = ABS_EXPR <D.1884D.1884_660>;
+  D.1885D.1885_662 = bm[0];
+  holdb_663 = ABS_EXPR <D.1885D.1885_662>;
+  goto <bb 124>;
+
+<bb 73>:
+  # i_19 = PHI <1(71), i_534(82)>
+  pretmp.955_1478 = (integer(kind=8)) i_19;
+  pretmp.955_1479 = pretmp.955_1478 + -1;
+  pretmp.956_1480 = am[pretmp.955_1479];
+  pretmp.957_1482 = pretmp.955_1478 + -51;
+
+<bb 74>:
+  # j_29 = PHI <1(73), j_528(80)>
+  D.1720D.1720_488 = (integer(kind=8)) j_29;
+  D.1721D.1721_489 = D.1720D.1720_488 * 50;
+  D.1723D.1723_491 = D.1721D.1721_489 + pretmp.957_1482;
+  D.1820D.1820_407 = D.1721D.1721_489 + -50;
+  D.1821D.1821_492 = bm[D.1820D.1820_407];
+  D.1822D.1822_409 = D.1821D.1821_492 * pretmp.956_1480;
+  D.1823D.1823_544 = D.1822D.1822_409 / pretmp.1027_1629;
+  D.1837D.1837_415 = D.1823D.1823_544 + 0.0;
+  cm[D.1723D.1723_491] = D.1837D.1837_415;
+  if (D.1604D.1604_426 == 1)
+    goto <bb 79>;
+  else
+    goto <bb 75>;
+
+<bb 75>:
+  pretmp.990_1562 = D.1721D.1721_489 + -51;
+  pretmp.993_1564 = *.LPBX1[99];
+  cm_I_lsm.1046_644 = cm[D.1723D.1723_491];
+  *.LPBX1_I_lsm.1047_645 = *.LPBX1[99];
+
+<bb 76>:
+  # k_615 = PHI <k_522(77), 2(75)>
+  # prephitmp.991_1559 = PHI <D.1837D.1837_520(77), D.1837D.1837_415(75)>
+  # prephitmp.994_1565 = PHI <PROF_edge_counter.36_524(77), pretmp.993_1564(75)>
+  PROF_edge_counter.36_524 = prephitmp.994_1565 + 1;
+  *.LPBX1_I_lsm.1047_638 = PROF_edge_counter.36_524;
+  D.1814D.1814_506 = (integer(kind=8)) k_615;
+  D.1815D.1815_507 = D.1814D.1814_506 * 50;
+  D.1817D.1817_509 = D.1815D.1815_507 + pretmp.957_1482;
+  D.1818D.1818_510 = am[D.1817D.1817_509];
+  D.1820D.1820_515 = D.1814D.1814_506 + pretmp.990_1562;
+  D.1821D.1821_516 = bm[D.1820D.1820_515];
+  D.1822D.1822_517 = D.1818D.1818_510 * D.1821D.1821_516;
+  D.1823D.1823_519 = D.1822D.1822_517 / pretmp.1027_1629;
+  D.1837D.1837_520 = D.1823D.1823_519 + prephitmp.991_1559;
+  cm_I_lsm.1046_624 = D.1837D.1837_520;
+  k_522 = k_615 + 1;
+  if (D.1604D.1604_426 == k_615)
+    goto <bb 78>;
+  else
+    goto <bb 77>;
+
+<bb 77>:
+  goto <bb 76>;
+
+<bb 78>:
+  # cm_I_lsm.1046_291 = PHI <cm_I_lsm.1046_624(76)>
+  D.3534D.3534_1489 = pretmp.993_1564 + 1;
+  D.3535D.3535_1488 = (character(kind=4)) D.1604D.1604_426;
+  D.3536D.3536_1487 = D.3535D.3535_1488 + 4294967294;
+  D.3537D.3537_1486 = (integer(kind=8)) D.3536D.3536_1487;
+  *.LPBX1_I_lsm.1047_390 = D.3534D.3534_1489 + D.3537D.3537_1486;
+  cm[D.1723D.1723_491] = cm_I_lsm.1046_291;
+  *.LPBX1[99] = *.LPBX1_I_lsm.1047_390;
+
+<bb 79>:
+  PROF_edge_counter.36_525 = *.LPBX1[98];
+  PROF_edge_counter.36_526 = PROF_edge_counter.36_525 + 1;
+  *.LPBX1[98] = PROF_edge_counter.36_526;
+  if (i_19 == j_29)
+    goto <bb 81>;
+  else
+    goto <bb 80>;
+
+<bb 80>:
+  j_528 = j_29 + 1;
+  PROF_edge_counter.36_529 = *.LPBX1[101];
+  PROF_edge_counter.36_530 = PROF_edge_counter.36_529 + 1;
+  *.LPBX1[101] = PROF_edge_counter.36_530;
+  goto <bb 74>;
+
+<bb 81>:
+  PROF_edge_counter.36_531 = *.LPBX1[100];
+  PROF_edge_counter.36_532 = PROF_edge_counter.36_531 + 1;
+  *.LPBX1[100] = PROF_edge_counter.36_532;
+  if (i_19 == D.1604D.1604_426)
+    goto <bb 83>;
+  else
+    goto <bb 82>;
+
+<bb 82>:
+  i_534 = i_19 + 1;
+  PROF_edge_counter.36_535 = *.LPBX1[103];
+  PROF_edge_counter.36_536 = PROF_edge_counter.36_535 + 1;
+  *.LPBX1[103] = PROF_edge_counter.36_536;
+  goto <bb 73>;
+
+<bb 83>:
+  PROF_edge_counter.36_537 = *.LPBX1[102];
+  PROF_edge_counter.36_538 = PROF_edge_counter.36_537 + 1;
+  *.LPBX1[102] = PROF_edge_counter.36_538;
+
+<bb 84>:
+  # j_30 = PHI <1(83), j_581(93)>
+  pretmp.961_1490 = (integer(kind=8)) j_30;
+  pretmp.961_1491 = pretmp.961_1490 + -1;
+  pretmp.962_1492 = am[pretmp.961_1491];
+  pretmp.963_1495 = pretmp.961_1490 * 50;
+  pretmp.963_1496 = pretmp.963_1495 + -51;
+
+<bb 85>:
+  # i_20 = PHI <1(84), i_575(91)>
+  D.1691D.1691_540 = (integer(kind=8)) i_20;
+  D.1817D.1817_883 = D.1691D.1691_540 + -1;
+  D.1851D.1851_679 = cm[D.1817D.1817_883];
+  D.1855D.1855_879 = D.1851D.1851_679 * pretmp.962_1492;
+  D.1856D.1856_686 = D.1855D.1855_879 + 0.0;
+  sum_735 = (real(kind=4)) D.1856D.1856_686;
+  if (D.1604D.1604_426 == 1)
+    goto <bb 90>;
+  else
+    goto <bb 86>;
+
+<bb 86>:
+  pretmp.988_1554 = D.1691D.1691_540 + -51;
+  pretmp.988_1555 = pretmp.961_1490 + -51;
+  pretmp.990_1557 = *.LPBX1[105];
+  *.LPBX1_I_lsm.1045_946 = *.LPBX1[105];
+
+<bb 87>:
+  # sum_873 = PHI <sum_561(88), sum_735(86)>
+  # k_501 = PHI <k_563(88), 2(86)>
+  # prephitmp.986_1558 = PHI <PROF_edge_counter.36_565(88), pretmp.990_1557(86)>
+  PROF_edge_counter.36_565 = prephitmp.986_1558 + 1;
+  *.LPBX1_I_lsm.1045_413 = PROF_edge_counter.36_565;
+  D.1850D.1850_546 = (real(kind=8)) sum_873;
+  D.1814D.1814_548 = (integer(kind=8)) k_501;
+  D.1815D.1815_549 = D.1814D.1814_548 * 50;
+  D.1817D.1817_551 = D.1815D.1815_549 + pretmp.988_1554;
+  D.1851D.1851_552 = cm[D.1817D.1817_551];
+  D.1853D.1853_557 = D.1815D.1815_549 + pretmp.988_1555;
+  D.1854D.1854_558 = am[D.1853D.1853_557];
+  D.1855D.1855_559 = D.1851D.1851_552 * D.1854D.1854_558;
+  D.1856D.1856_560 = D.1850D.1850_546 + D.1855D.1855_559;
+  sum_561 = (real(kind=4)) D.1856D.1856_560;
+  k_563 = k_501 + 1;
+  if (D.1604D.1604_426 == k_501)
+    goto <bb 89>;
+  else
+    goto <bb 88>;
+
+<bb 88>:
+  goto <bb 87>;
+
+<bb 89>:
+  # sum_434 = PHI <sum_561(87)>
+  D.3530D.3530_1498 = pretmp.990_1557 + 1;
+  D.3531D.3531_1497 = (character(kind=4)) D.1604D.1604_426;
+  D.3532D.3532_1494 = D.3531D.3531_1497 + 4294967294;
+  D.3533D.3533_1493 = (integer(kind=8)) D.3532D.3532_1494;
+  *.LPBX1_I_lsm.1045_467 = D.3530D.3530_1498 + D.3533D.3533_1493;
+  *.LPBX1[105] = *.LPBX1_I_lsm.1045_467;
+
+<bb 90>:
+  # sum_376 = PHI <sum_434(89), sum_735(85)>
+  PROF_edge_counter.36_566 = *.LPBX1[104];
+  PROF_edge_counter.36_567 = PROF_edge_counter.36_566 + 1;
+  *.LPBX1[104] = PROF_edge_counter.36_567;
+  D.1723D.1723_572 = D.1691D.1691_540 + pretmp.963_1496;
+  D.1850D.1850_573 = (real(kind=8)) sum_376;
+  dm[D.1723D.1723_572] = D.1850D.1850_573;
+  if (i_20 == D.1604D.1604_426)
+    goto <bb 92>;
+  else
+    goto <bb 91>;
+
+<bb 91>:
+  i_575 = i_20 + 1;
+  PROF_edge_counter.36_576 = *.LPBX1[107];
+  PROF_edge_counter.36_577 = PROF_edge_counter.36_576 + 1;
+  *.LPBX1[107] = PROF_edge_counter.36_577;
+  goto <bb 85>;
+
+<bb 92>:
+  PROF_edge_counter.36_578 = *.LPBX1[106];
+  PROF_edge_counter.36_579 = PROF_edge_counter.36_578 + 1;
+  *.LPBX1[106] = PROF_edge_counter.36_579;
+  if (j_30 == D.1604D.1604_426)
+    goto <bb 94>;
+  else
+    goto <bb 93>;
+
+<bb 93>:
+  j_581 = j_30 + 1;
+  PROF_edge_counter.36_582 = *.LPBX1[109];
+  PROF_edge_counter.36_583 = PROF_edge_counter.36_582 + 1;
+  *.LPBX1[109] = PROF_edge_counter.36_583;
+  goto <bb 84>;
+
+<bb 94>:
+  PROF_edge_counter.36_584 = *.LPBX1[108];
+  PROF_edge_counter.36_585 = PROF_edge_counter.36_584 + 1;
+  *.LPBX1[108] = PROF_edge_counter.36_585;
+
+<bb 95>:
+  # j_31 = PHI <1(94), j_608(101)>
+  D.1720D.1720_878 = (integer(kind=8)) j_31;
+  D.1721D.1721_934 = D.1720D.1720_878 * 50;
+  D.1723D.1723_688 = D.1721D.1721_934 + -50;
+  D.1866D.1866_687 = dm[D.1723D.1723_688];
+  cm[D.1723D.1723_688] = D.1866D.1866_687;
+  if (D.1604D.1604_426 == 1)
+    goto <bb 100>;
+  else
+    goto <bb 96>;
+
+<bb 96>:
+  pretmp.985_1548 = D.1721D.1721_934 + -51;
+  pretmp.988_1550 = *.LPBX1[111];
+  *.LPBX1_I_lsm.1044_598 = *.LPBX1[111];
+
+<bb 97>:
+  # i_936 = PHI <i_602(98), 2(96)>
+  # prephitmp.986_1551 = PHI <PROF_edge_counter.36_604(98), pretmp.988_1550(96)>
+  PROF_edge_counter.36_604 = prephitmp.986_1551 + 1;
+  *.LPBX1_I_lsm.1044_570 = PROF_edge_counter.36_604;
+  D.1691D.1691_595 = (integer(kind=8)) i_936;
+  D.1723D.1723_599 = D.1691D.1691_595 + pretmp.985_1548;
+  D.1866D.1866_600 = dm[D.1723D.1723_599];
+  cm[D.1723D.1723_599] = D.1866D.1866_600;
+  i_602 = i_936 + 1;
+  if (D.1604D.1604_426 == i_936)
+    goto <bb 99>;
+  else
+    goto <bb 98>;
+
+<bb 98>:
+  goto <bb 97>;
+
+<bb 99>:
+  D.3526D.3526_1502 = pretmp.988_1550 + 1;
+  D.3527D.3527_1501 = (character(kind=4)) D.1604D.1604_426;
+  D.3528D.3528_1500 = D.3527D.3527_1501 + 4294967294;
+  D.3529D.3529_1499 = (integer(kind=8)) D.3528D.3528_1500;
+  *.LPBX1_I_lsm.1044_387 = D.3526D.3526_1502 + D.3529D.3529_1499;
+  *.LPBX1[111] = *.LPBX1_I_lsm.1044_387;
+
+<bb 100>:
+  PROF_edge_counter.36_605 = *.LPBX1[110];
+  PROF_edge_counter.36_606 = PROF_edge_counter.36_605 + 1;
+  *.LPBX1[110] = PROF_edge_counter.36_606;
+  if (j_31 == D.1604D.1604_426)
+    goto <bb 102>;
+  else
+    goto <bb 101>;
+
+<bb 101>:
+  j_608 = j_31 + 1;
+  PROF_edge_counter.36_609 = *.LPBX1[113];
+  PROF_edge_counter.36_610 = PROF_edge_counter.36_609 + 1;
+  *.LPBX1[113] = PROF_edge_counter.36_610;
+  goto <bb 95>;
+
+<bb 102>:
+  PROF_edge_counter.36_611 = *.LPBX1[112];
+  PROF_edge_counter.36_612 = PROF_edge_counter.36_611 + 1;
+  *.LPBX1[112] = PROF_edge_counter.36_612;
+
+<bb 103>:
+  # j_32 = PHI <1(102), j_655(112)>
+  pretmp.969_1509 = (integer(kind=8)) j_32;
+  pretmp.969_1510 = pretmp.969_1509 + -1;
+  pretmp.970_1511 = bm[pretmp.969_1510];
+  pretmp.971_1513 = pretmp.969_1509 * 50;
+  pretmp.971_1514 = pretmp.971_1513 + -51;
+
+<bb 104>:
+  # i_22 = PHI <1(103), i_649(110)>
+  D.1691D.1691_697 = (integer(kind=8)) i_22;
+  D.1817D.1817_945 = D.1691D.1691_697 + -1;
+  D.1851D.1851_882 = cm[D.1817D.1817_945];
+  D.1879D.1879_410 = D.1851D.1851_882 * pretmp.970_1511;
+  D.1880D.1880_941 = 0.0 - D.1879D.1879_410;
+  sum_890 = (real(kind=4)) D.1880D.1880_941;
+  if (D.1604D.1604_426 == 1)
+    goto <bb 109>;
+  else
+    goto <bb 105>;
+
+<bb 105>:
+  pretmp.983_1542 = D.1691D.1691_697 + -51;
+  pretmp.983_1543 = pretmp.969_1509 + -51;
+  pretmp.985_1545 = *.LPBX1[115];
+  *.LPBX1_I_lsm.1043_564 = *.LPBX1[115];
+
+<bb 106>:
+  # sum_39 = PHI <sum_635(107), sum_890(105)>
+  # k_731 = PHI <k_637(107), 2(105)>
+  # prephitmp.986_1546 = PHI <PROF_edge_counter.36_639(107), pretmp.985_1545(105)>
+  PROF_edge_counter.36_639 = prephitmp.986_1546 + 1;
+  *.LPBX1_I_lsm.1043_550 = PROF_edge_counter.36_639;
+  D.1850D.1850_620 = (real(kind=8)) sum_39;
+  D.1814D.1814_622 = (integer(kind=8)) k_731;
+  D.1815D.1815_623 = D.1814D.1814_622 * 50;
+  D.1817D.1817_625 = D.1815D.1815_623 + pretmp.983_1542;
+  D.1851D.1851_626 = cm[D.1817D.1817_625];
+  D.1853D.1853_631 = D.1815D.1815_623 + pretmp.983_1543;
+  D.1878D.1878_632 = bm[D.1853D.1853_631];
+  D.1879D.1879_633 = D.1851D.1851_626 * D.1878D.1878_632;
+  D.1880D.1880_634 = D.1850D.1850_620 - D.1879D.1879_633;
+  sum_635 = (real(kind=4)) D.1880D.1880_634;
+  k_637 = k_731 + 1;
+  if (D.1604D.1604_426 == k_731)
+    goto <bb 108>;
+  else
+    goto <bb 107>;
+
+<bb 107>:
+  goto <bb 106>;
+
+<bb 108>:
+  # sum_175 = PHI <sum_635(106)>
+  D.3522D.3522_1506 = pretmp.985_1545 + 1;
+  D.3523D.3523_1505 = (character(kind=4)) D.1604D.1604_426;
+  D.3524D.3524_1504 = D.3523D.3523_1505 + 4294967294;
+  D.3525D.3525_1503 = (integer(kind=8)) D.3524D.3524_1504;
+  *.LPBX1_I_lsm.1043_431 = D.3522D.3522_1506 + D.3525D.3525_1503;
+  *.LPBX1[115] = *.LPBX1_I_lsm.1043_431;
+
+<bb 109>:
+  # sum_377 = PHI <sum_175(108), sum_890(104)>
+  PROF_edge_counter.36_640 = *.LPBX1[114];
+  PROF_edge_counter.36_641 = PROF_edge_counter.36_640 + 1;
+  *.LPBX1[114] = PROF_edge_counter.36_641;
+  D.1723D.1723_646 = D.1691D.1691_697 + pretmp.971_1514;
+  D.1850D.1850_647 = (real(kind=8)) sum_377;
+  dm[D.1723D.1723_646] = D.1850D.1850_647;
+  if (i_22 == D.1604D.1604_426)
+    goto <bb 111>;
+  else
+    goto <bb 110>;
+
+<bb 110>:
+  i_649 = i_22 + 1;
+  PROF_edge_counter.36_650 = *.LPBX1[117];
+  PROF_edge_counter.36_651 = PROF_edge_counter.36_650 + 1;
+  *.LPBX1[117] = PROF_edge_counter.36_651;
+  goto <bb 104>;
+
+<bb 111>:
+  PROF_edge_counter.36_652 = *.LPBX1[116];
+  PROF_edge_counter.36_653 = PROF_edge_counter.36_652 + 1;
+  *.LPBX1[116] = PROF_edge_counter.36_653;
+  if (j_32 == D.1604D.1604_426)
+    goto <bb 113>;
+  else
+    goto <bb 112>;
+
+<bb 112>:
+  j_655 = j_32 + 1;
+  PROF_edge_counter.36_656 = *.LPBX1[119];
+  PROF_edge_counter.36_657 = PROF_edge_counter.36_656 + 1;
+  *.LPBX1[119] = PROF_edge_counter.36_657;
+  goto <bb 103>;
+
+<bb 113>:
+  PROF_edge_counter.36_658 = *.LPBX1[118];
+  PROF_edge_counter.36_659 = PROF_edge_counter.36_658 + 1;
+  *.LPBX1[118] = PROF_edge_counter.36_659;
+  D.1884D.1884_264 = am[0];
+  holda_268 = ABS_EXPR <D.1884D.1884_264>;
+  D.1885D.1885_269 = bm[0];
+  holdb_272 = ABS_EXPR <D.1885D.1885_269>;
+  *.LPBX1_I_lsm.1042_668 = *.LPBX1[122];
+
+<bb 114>:
+  # holda_1 = PHI <holda_268(113), holda_1552(122)>
+  # holdb_5 = PHI <holdb_272(113), holdb_1547(122)>
+  # i_23 = PHI <1(113), i_705(122)>
+  # prephitmp.952_1523 = PHI <D.1884D.1884_264(113), pretmp.976_1522(122)>
+  # prephitmp.952_1527 = PHI <D.1885D.1885_269(113), pretmp.978_1526(122)>
+  # *.LPBX1_I_lsm.1042_1608 = PHI <*.LPBX1_I_lsm.1042_668(113), *.LPBX1_I_lsm.1042_724(122)>
+  pretmp.980_1530 = (integer(kind=8)) i_23;
+  pretmp.980_1533 = pretmp.980_1530 + -51;
+
+<bb 115>:
+  # holda_2 = PHI <holda_1(114), holda_43(120)>
+  # holdb_6 = PHI <holdb_5(114), holdb_44(120)>
+  # j_33 = PHI <1(114), j_699(120)>
+  # prephitmp.952_1536 = PHI <prephitmp.952_1523(114), pretmp.981_1535(120)>
+  # prephitmp.952_1538 = PHI <prephitmp.952_1527(114), pretmp.981_1537(120)>
+  holda_675 = ABS_EXPR <prephitmp.952_1536>;
+  D.1893D.1893_676 = holda_2 < holda_675;
+  D.1894D.1894_677 = holda_2 unord holda_2;
+  D.1895D.1895_678 = D.1894D.1894_677 | D.1893D.1893_676;
+  if (D.1895D.1895_678 != 0)
+    goto <bb 116>;
+  else
+    goto <bb 117>;
+
+<bb 116>:
+  PROF_edge_counter.36_680 = *.LPBX1[120];
+  PROF_edge_counter.36_681 = PROF_edge_counter.36_680 + 1;
+  *.LPBX1[120] = PROF_edge_counter.36_681;
+
+<bb 117>:
+  # holda_43 = PHI <holda_2(115), holda_675(116)>
+  holdb_690 = ABS_EXPR <prephitmp.952_1538>;
+  D.1900D.1900_691 = holdb_6 < holdb_690;
+  D.1901D.1901_692 = holdb_6 unord holdb_6;
+  D.1902D.1902_693 = D.1900D.1900_691 | D.1901D.1901_692;
+  if (D.1902D.1902_693 != 0)
+    goto <bb 118>;
+  else
+    goto <bb 119>;
+
+<bb 118>:
+  PROF_edge_counter.36_695 = *.LPBX1[121];
+  PROF_edge_counter.36_696 = PROF_edge_counter.36_695 + 1;
+  *.LPBX1[121] = PROF_edge_counter.36_696;
+
+<bb 119>:
+  # holdb_44 = PHI <holdb_6(117), holdb_690(118)>
+  if (j_33 == D.1604D.1604_426)
+    goto <bb 121>;
+  else
+    goto <bb 120>;
+
+<bb 120>:
+  j_699 = j_33 + 1;
+  PROF_edge_counter.36_700 = *.LPBX1[123];
+  PROF_edge_counter.36_701 = PROF_edge_counter.36_700 + 1;
+  *.LPBX1[123] = PROF_edge_counter.36_701;
+  pretmp.980_1531 = (integer(kind=8)) j_699;
+  pretmp.980_1532 = pretmp.980_1531 * 50;
+  pretmp.980_1534 = pretmp.980_1532 + pretmp.980_1533;
+  pretmp.981_1535 = am[pretmp.980_1534];
+  pretmp.981_1537 = bm[pretmp.980_1534];
+  goto <bb 115>;
+
+<bb 121>:
+  # holda_1552 = PHI <holda_43(119)>
+  # holdb_1547 = PHI <holdb_44(119)>
+  PROF_edge_counter.36_702 = *.LPBX1_I_lsm.1042_1608;
+  PROF_edge_counter.36_703 = PROF_edge_counter.36_702 + 1;
+  *.LPBX1_I_lsm.1042_724 = PROF_edge_counter.36_703;
+  if (i_23 == D.1604D.1604_426)
+    goto <bb 123>;
+  else
+    goto <bb 122>;
+
+<bb 122>:
+  i_705 = i_23 + 1;
+  PROF_edge_counter.36_706 = *.LPBX1[125];
+  PROF_edge_counter.36_707 = PROF_edge_counter.36_706 + 1;
+  *.LPBX1[125] = PROF_edge_counter.36_707;
+  pretmp.973_1518 = (integer(kind=8)) i_705;
+  pretmp.973_1519 = pretmp.973_1518 + -51;
+  pretmp.975_1521 = pretmp.973_1519 + 50;
+  pretmp.976_1522 = am[pretmp.975_1521];
+  pretmp.978_1526 = bm[pretmp.975_1521];
+  goto <bb 114>;
+
+<bb 123>:
+  # holdb_93 = PHI <holdb_1547(121)>
+  # holda_1525 = PHI <holda_1552(121)>
+  D.3518D.3518_1515 = *.LPBX1_I_lsm.1042_668 + 1;
+  D.3519D.3519_1512 = (character(kind=4)) D.1604D.1604_426;
+  D.3520D.3520_1508 = D.3519D.3519_1512 + 4294967295;
+  D.3521D.3521_1507 = (integer(kind=8)) D.3520D.3520_1508;
+  *.LPBX1_I_lsm.1042_85 = D.3518D.3518_1515 + D.3521D.3521_1507;
+  *.LPBX1[122] = *.LPBX1_I_lsm.1042_85;
+  PROF_edge_counter.36_708 = *.LPBX1[124];
+  PROF_edge_counter.36_709 = PROF_edge_counter.36_708 + 1;
+  *.LPBX1[124] = PROF_edge_counter.36_709;
+
+<bb 124>:
+  # holda_4 = PHI <holda_661(72), holda_1525(123)>
+  # holdb_8 = PHI <holdb_663(72), holdb_93(123)>
+  trace3 = 0.0;
+  D.1673D.1673_711 = n;
+  if (D.1673D.1673_711 > 0)
+    goto <bb 125>;
+  else
+    goto <bb 126>;
+
+<bb 125>:
+  sub_710 = holda_4 * holdb_8;
+  D.1749D.1749_430 = ia[0];
+  D.1750D.1750_485 = (integer(kind=8)) D.1749D.1749_430;
+  D.1751D.1751_723 = D.1750D.1750_485 + -1;
+  D.1911D.1911_722 = D.1751D.1751_723 * 51;
+  D.1912D.1912_952 = am[D.1911D.1911_722];
+  D.1913D.1913_895 = bm[D.1911D.1911_722];
+  D.1914D.1914_942 = D.1912D.1912_952 + D.1913D.1913_895;
+  D.1915D.1915_891 = dm[D.1911D.1911_722];
+  D.1916D.1916_734 = D.1914D.1914_942 - D.1915D.1915_891;
+  D.1917D.1917_733 = ((D.1916D.1916_734));
+  D.1918D.1918_957 = D.1917D.1917_733 / sub_710;
+  trace3.15_3 = D.1918D.1918_957 + 0.0;
+  trace3 = trace3.15_3;
+  if (D.1673D.1673_711 == 1)
+    goto <bb 131>;
+  else
+    goto <bb 127>;
+
+<bb 126>:
+  PROF_edge_counter.36_713 = *.LPBX1[126];
+  PROF_edge_counter.36_714 = PROF_edge_counter.36_713 + 1;
+  *.LPBX1[126] = PROF_edge_counter.36_714;
+  goto <bb 132>;
+
+<bb 127>:
+  pretmp.948_1464 = *.LPBX1[128];
+  *.LPBX1_I_lsm.1040_523 = *.LPBX1[128];
+  trace3_lsm.1041_504 = trace3;
+
+<bb 128>:
+  # i_587 = PHI <i_743(129), 2(127)>
+  # prephitmp.946_1462 = PHI <trace3.15_741(129), trace3.15_3(127)>
+  # prephitmp.949_1465 = PHI <PROF_edge_counter.36_745(129), pretmp.948_1464(127)>
+  PROF_edge_counter.36_745 = prephitmp.949_1465 + 1;
+  *.LPBX1_I_lsm.1040_508 = PROF_edge_counter.36_745;
+  D.1691D.1691_715 = (integer(kind=8)) i_587;
+  D.1692D.1692_716 = D.1691D.1691_715 + -1;
+  D.1749D.1749_717 = ia[D.1692D.1692_716];
+  D.1750D.1750_718 = (integer(kind=8)) D.1749D.1749_717;
+  D.1751D.1751_719 = D.1750D.1750_718 + -1;
+  D.1911D.1911_720 = D.1751D.1751_719 * 51;
+  D.1912D.1912_721 = am[D.1911D.1911_720];
+  D.1913D.1913_728 = bm[D.1911D.1911_720];
+  D.1914D.1914_729 = D.1912D.1912_721 + D.1913D.1913_728;
+  D.1915D.1915_736 = dm[D.1911D.1911_720];
+  D.1916D.1916_737 = D.1914D.1914_729 - D.1915D.1915_736;
+  D.1917D.1917_738 = ((D.1916D.1916_737));
+  D.1918D.1918_739 = D.1917D.1917_738 / sub_710;
+  trace3.15_741 = D.1918D.1918_739 + prephitmp.946_1462;
+  trace3_lsm.1041_514 = trace3.15_741;
+  i_743 = i_587 + 1;
+  if (i_587 == D.1673D.1673_711)
+    goto <bb 130>;
+  else
+    goto <bb 129>;
+
+<bb 129>:
+  goto <bb 128>;
+
+<bb 130>:
+  # trace3_lsm.1041_452 = PHI <trace3_lsm.1041_514(128)>
+  D.3514D.3514_1524 = pretmp.948_1464 + 1;
+  D.3515D.3515_1520 = (character(kind=4)) D.1673D.1673_711;
+  D.3516D.3516_1517 = D.3515D.3515_1520 + 4294967294;
+  D.3517D.3517_1516 = (integer(kind=8)) D.3516D.3516_1517;
+  *.LPBX1_I_lsm.1040_448 = D.3514D.3514_1524 + D.3517D.3517_1516;
+  *.LPBX1[128] = *.LPBX1_I_lsm.1040_448;
+  trace3 = trace3_lsm.1041_452;
+
+<bb 131>:
+  PROF_edge_counter.36_746 = *.LPBX1[127];
+  PROF_edge_counter.36_747 = PROF_edge_counter.36_746 + 1;
+  *.LPBX1[127] = PROF_edge_counter.36_747;
+
+<bb 132>:
+  _gfortran_cpu_time_4 (&finish);
+  PROF_edge_counter.36_748 = *.LPBX1[129];
+  PROF_edge_counter.36_749 = PROF_edge_counter.36_748 + 1;
+  *.LPBX1[129] = PROF_edge_counter.36_749;
+  dt_parm.4.common.filename = &"mainf.f90"[1]{lb: 1 sz: 1};
+  dt_parm.4.common.line = 263;
+  dt_parm.4.common.flags = 128;
+  dt_parm.4.common.unit = 6;
+  _gfortran_st_write (&dt_parm.4);
+  PROF_edge_counter.36_750 = *.LPBX1[130];
+  PROF_edge_counter.36_751 = PROF_edge_counter.36_750 + 1;
+  *.LPBX1[130] = PROF_edge_counter.36_751;
+  _gfortran_transfer_character (&dt_parm.4, &"Final trace = "[1]{lb: 1 sz: 1}, 14);
+  PROF_edge_counter.36_752 = *.LPBX1[131];
+  PROF_edge_counter.36_753 = PROF_edge_counter.36_752 + 1;
+  *.LPBX1[131] = PROF_edge_counter.36_753;
+  _gfortran_transfer_real (&dt_parm.4, &trace3, 8);
+  PROF_edge_counter.36_754 = *.LPBX1[132];
+  PROF_edge_counter.36_755 = PROF_edge_counter.36_754 + 1;
+  *.LPBX1[132] = PROF_edge_counter.36_755;
+  _gfortran_transfer_character (&dt_parm.4, &" and IDCHECK "[1]{lb: 1 sz: 1}, 13);
+  PROF_edge_counter.36_756 = *.LPBX1[133];
+  PROF_edge_counter.36_757 = PROF_edge_counter.36_756 + 1;
+  *.LPBX1[133] = PROF_edge_counter.36_757;
+  _gfortran_transfer_real (&dt_parm.4, &check, 8);
+  PROF_edge_counter.36_758 = *.LPBX1[134];
+  PROF_edge_counter.36_759 = PROF_edge_counter.36_758 + 1;
+  *.LPBX1[134] = PROF_edge_counter.36_759;
+  _gfortran_st_write_done (&dt_parm.4);
+  PROF_edge_counter.36_760 = *.LPBX1[135];
+  PROF_edge_counter.36_761 = PROF_edge_counter.36_760 + 1;
+  *.LPBX1[135] = PROF_edge_counter.36_761;
+  dt_parm.5.common.filename = &"mainf.f90"[1]{lb: 1 sz: 1};
+  dt_parm.5.common.line = 264;
+  dt_parm.5.common.flags = 128;
+  dt_parm.5.common.unit = 6;
+  _gfortran_st_write (&dt_parm.5);
+  PROF_edge_counter.36_762 = *.LPBX1[136];
+  PROF_edge_counter.36_763 = PROF_edge_counter.36_762 + 1;
+  *.LPBX1[136] = PROF_edge_counter.36_763;
+  _gfortran_transfer_character (&dt_parm.5, &"-- RUNTIME -> "[1]{lb: 1 sz: 1}, 14);
+  PROF_edge_counter.36_764 = *.LPBX1[137];
+  PROF_edge_counter.36_765 = PROF_edge_counter.36_764 + 1;
+  *.LPBX1[137] = PROF_edge_counter.36_765;
+  finish.16_766 = finish;
+  start.17_767 = start;
+  D.1924D.1924_768 = finish.16_766 - start.17_767;
+  D.1679D.1679 = D.1924D.1924_768;
+  _gfortran_transfer_real (&dt_parm.5, &D.1679D.1679, 4);
+  PROF_edge_counter.36_769 = *.LPBX1[138];
+  PROF_edge_counter.36_770 = PROF_edge_counter.36_769 + 1;
+  *.LPBX1[138] = PROF_edge_counter.36_770;
+  _gfortran_transfer_character (&dt_parm.5, &" seconds"[1]{lb: 1 sz: 1}, 8);
+  PROF_edge_counter.36_771 = *.LPBX1[139];
+  PROF_edge_counter.36_772 = PROF_edge_counter.36_771 + 1;
+  *.LPBX1[139] = PROF_edge_counter.36_772;
+  _gfortran_st_write_done (&dt_parm.5);
+  PROF_edge_counter.36_773 = *.LPBX1[140];
+  PROF_edge_counter.36_774 = PROF_edge_counter.36_773 + 1;
+  *.LPBX1[140] = PROF_edge_counter.36_774;
+  return;
+
+<bb 133>:
+  check = 0.0;
+
+<bb 134>:
+
+<bb 135>:
+  pretmp.943_1449 = n;
+
+<bb 136>:
+  # prephitmp.944_1450 = PHI <pretmp.943_1449(135), D.1579D.1579_157(26)>
+  goto <bb 40>;
+
+}
+
+
+
+;; Function _GLOBAL__I_65535_0_MAIN__ (_GLOBAL__I_65535_0_MAIN__)
+
+_GLOBAL__I_65535_0_MAIN__ ()
+{
+<bb 2>:
+  __gcov_init (&*.LPBX0);
+  return;
+
+}
+
+

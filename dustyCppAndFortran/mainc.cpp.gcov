@@ -1,0 +1,520 @@
+        -:    0:Source:mainc.cpp
+        -:    0:Graph:mainc.gcno
+        -:    0:Data:mainc.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:    #define MAXDIM 50   
+        -:    2:    #include <cstdlib>   
+        -:    3:    #include <math.h>
+        -:    4:    #include <algorithm>  
+        -:    5:    #include <iostream>
+        -:    6:    #include <stddef.h> /* defines NULL */
+        -:    7:    #include <sys/time.h>
+        -:    8:    #include <cstdio>
+        -:    9:
+        -:   10:    using namespace std;
+        -:   11:
+        -:   12:    /*Initial variable declaration*/
+        -:   13:    int IA[MAXDIM], N = MAXDIM;
+        -:   14:    double AV[MAXDIM], BV[MAXDIM], CV[MAXDIM];
+        -:   15:    double OP[MAXDIM][MAXDIM], ID[MAXDIM][MAXDIM];
+        -:   16:    double AM[MAXDIM][MAXDIM], BM[MAXDIM][MAXDIM];
+        -:   17:    double CM[MAXDIM][MAXDIM], DM[MAXDIM][MAXDIM];
+        -:   18:
+        -:   19:    #ifdef NOPRECISIONLOSS
+        -:   20:        double start, finish, sum;
+        -:   21:    #else
+        -:   22:        float start, finish, sum;
+        -:   23:    #endif
+        -:   24:
+        -:   25:    /*Function Prototypes*/
+        -:   26:    double walltime_();
+        -:   27:    double cputime_();
+        -:   28:    void idcheck(int N, double *check, double AV[], double BV[], double ID[][MAXDIM]);
+        -:   29:    double trig(int i, int j);
+        -:   30:
+        -:   31:    /* cputime.cc */
+        -:   32:
+        2:   33:    double cputime_()
+        -:   34:    {
+        2:   35:        return  (double)clock() / (double)CLOCKS_PER_SEC;
+        -:   36:    }
+        -:   37:
+        -:   38:    double factor = 1.0e-6;
+        -:   39:
+        -:   40:    /* walltime.cc */
+    #####:   41:  	double walltime_() 
+        -:   42:  	{
+        -:   43:  		struct timeval tp;
+        -:   44:  		int rtn;
+        -:   45:  		double seconds;
+        -:   46:  
+    #####:   47:  		rtn=gettimeofday(&tp, NULL);
+        -:   48:  
+    #####:   49:  		seconds = tp.tv_sec + factor * tp.tv_usec;
+        -:   50:  
+    #####:   51:  		return  seconds ; 
+        -:   52:  	}
+        -:   53:  
+        -:   54:  	/* conrand.c */
+      200:   55:  	double conrand(double *seed) 
+        -:   56:  	{
+        -:   57:  		double a, m;
+        -:   58:  		double temp;
+      200:   59:  		a = 16807.00000000000;
+      200:   60:  		m = 2147483647.000000;
+      200:   61:  		temp = a* *seed; 
+      200:   62:  		*seed = temp - m * (int) (temp/m);
+      200:   63:  		return *seed / m; 
+        -:   64:  	}
+        -:   65:
+        1:   66:    int main()
+        -:   67:    {
+        -:   68:		double check, BOT, TOP, HOLDA, HOLDB, TRACE3, seed, sub, jn0, jn1;
+        -:   69:		int jn2;
+        -:   70:		cout.precision(17);
+        1:   71:		start = cputime_();
+        1:   72:		seed = 1;
+        -:   73:
+        -:   74:      /*Loop 10 Series -- Filling Arrays*/
+        -:   75:
+       51:   76:      for (int i = 0; i < N; i++)
+        -:   77:      {
+       50:   78:        jn1 = conrand(&seed);
+       50:   79:        jn2 = 10 * conrand(&seed);
+       50:   80:        jn0 = jn1 * pow(-1, jn2 % N);
+       50:   81:        AV[i] = jn(0, jn0);
+        -:   82:      }
+        -:   83:
+       51:   84:      for (int i = 0; i < N; i++)
+        -:   85:      {
+       50:   86:        jn1 = conrand(&seed);
+       50:   87:        jn2 = 10 * conrand(&seed);
+       50:   88:        jn0 = jn1 * pow(-1, jn2 % N);
+       50:   89:        BV[i] = jn(1, jn0);
+        -:   90:      }
+        -:   91:
+        1:   92:      check = 0.0;
+        -:   93:
+       51:   94:      for (int i = 0; i < N; i++)
+        -:   95:      {
+       50:   96:        int ival = N;
+       50:   97:        check = check + AV[i] * BV[i];
+       50:   98:        idcheck(ival, &check, AV, BV, ID);
+        -:   99:      }
+        -:  100:
+        -:  101:    /*Compute |AV><BV|*/
+        -:  102:
+       51:  103:        for (int i = 0; i < N; i++)
+        -:  104:        {
+     2550:  105:            for (int j = 0; j < N; j++)
+        -:  106:            {
+     2500:  107:                idcheck(N, &check, AV, BV, ID);
+     2500:  108:                if (check > 0.5)
+    #####:  109:                    OP[i][j] = AV[i] * BV[j] / BV[i];
+        -:  110:                else
+     2500:  111:                    OP[i][j] = AV[j] * BV[i] / BV[j];
+        -:  112:            }
+       50:  113:            IA[i] = i + 1;
+        -:  114:        }
+        -:  115:
+       51:  116:        for (int i = 0; i < N; i++)
+        -:  117:        {
+      238:  118:            for (int j = -1; j <= i; j += 8)
+        -:  119:            {
+      188:  120:                IA[i] = ((((i + 1) + (j + 1)) % N) % N);
+        -:  121:            }
+        -:  122:        }
+        -:  123:		
+        -:  124:    /* Loop 20 */
+        -:  125:
+       51:  126:        for (int i = 0; i < N; i++)
+        -:  127:        {
+       50:  128:            idcheck(N, &check, AV, BV, ID);
+       50:  129:            CV[IA[i]] = (AV[IA[i]] + BV[IA[i]]) / check;
+        -:  130:		}
+        -:  131:		
+        -:  132:    /* Loop 30 */
+        -:  133: 
+       50:  134:        for (int i = 1; i < N; i++)
+        -:  135:        {
+       49:  136:            idcheck(N, &check, AV, BV, ID);
+       49:  137:            AV[i] = AV[i - 1] * BV[i] + CV[i];  
+        -:  138:        }
+        -:  139:		
+        -:  140:    /* Loop 40 */
+       51:  141:        for (int i = 0; i < N; i++)
+        -:  142:        {
+       50:  143:            idcheck(N, &check, AV, BV, ID);
+     2550:  144:			for (int j = 0; j < N; j++)
+        -:  145:            {
+     2500:  146:                if (check > 0.5)
+        -:  147:                {
+      200:  148:                    BOT = OP[i][j];
+      200:  149:                    TOP = AV[j] * BV[j];
+      200:  150:                    HOLDA = AV[j];
+      200:  151:                    AV[j] = BV[j] + CV[j] / (TOP - BOT) * ID[i][i];
+      200:  152:                    BV[j] = HOLDA + CV[j] / (TOP - BOT) * ID[j][j];
+      200:  153:                    AM[i][j] = AV[j] * trig(IA[i], IA[j]);
+      200:  154:                    BM[i][j] = BV[j] * trig(IA[j], IA[i]);
+        -:  155:                }
+        -:  156:                else
+        -:  157:                {
+     2300:  158:                    BOT = OP[i][j];
+     2300:  159:                    TOP = AV[j] * BV[j];
+     2300:  160:                    HOLDA = AV[j];
+     2300:  161:                    AV[j] = BV[j] - CV[j] / (TOP - BOT) * ID[j][j];
+     2300:  162:                    BV[j] = HOLDA - CV[j] / (TOP - BOT) * ID[i][i];
+     2300:  163:                    AM[i][j] = AV[j] / trig(IA[i], IA[j]);
+     2300:  164:                    BM[i][j] = BV[j] / trig(IA[j], IA[i]);
+        -:  165:                }
+        -:  166:            }
+        -:  167:        }
+        -:  168:
+        -:  169:#ifdef FOUR
+        -:  170:    /* Loop 50 */
+       51:  171:		for (int i = 0; i < N; i++)
+        -:  172:		{
+     1275:  173:			for (int j = i + 1; j < N; j++)
+        -:  174:			{
+     1225:  175:				CM[i][j] = 0.0;
+    62475:  176:				for (int k = 0; k < N; k++)
+        -:  177:				{
+    61250:  178:					CM[i][j] = CM[i][j] - AM[i][k] * BM[k][j] / check;
+        -:  179:				}
+        -:  180:			}
+        -:  181:		}
+        -:  182:		
+       51:  183:        for (int i = 0; i < N; i++)
+        -:  184:        {
+     1325:  185:            for (int j = i; j >= 0; j--)
+        -:  186:            {
+     1275:  187:                CM[i][j] = 0.0;
+    65025:  188:                for (int k = 0; k < N; k++)
+        -:  189:                {
+    63750:  190:					CM[i][j] = CM[i][j] + AM[i][k] * BM[k][j] / check;
+        -:  191:                }
+        -:  192:            }
+        -:  193:        }
+        -:  194:#else
+        -:  195:		for (int i = 0; i < N; i++)
+        -:  196:        {
+        -:  197:            for (int j = 0; j < N; j++)
+        -:  198:            {
+        -:  199:                CM[i][j] = 0.0;
+        -:  200:                for (int k = 0; k < N; k++)
+        -:  201:                {
+        -:  202:                    if (i < j)
+        -:  203:                        CM[i][j] = CM[i][j] - AM[i][k] * BM[k][j] / check;
+        -:  204:                    else
+        -:  205:                        CM[i][j] = CM[i][j] + AM[i][k] * BM[k][j] / check;
+        -:  206:                }
+        -:  207:            }
+        -:  208:        }
+        -:  209:#endif
+        -:  210:
+        -:  211:    /* Loop 60 */
+       51:  212:        for (int i = 0; i < N; i++)
+        -:  213:        {
+     2550:  214:            for (int j = 0; j < N; j++)
+        -:  215:            {
+     2500:  216:                sum = 0.0;
+   127500:  217:                for (int k = 0; k < N; k++)
+   125000:  218:                    sum = sum + CM[i][k] * AM[j][k];
+     2500:  219:                DM[i][j] = sum;
+        -:  220:            }
+        -:  221:        }
+        -:  222:
+       51:  223:        for (int i = 0; i < N; i++)
+        -:  224:        {
+     2550:  225:            for (int j = 0; j < N; j++)
+     2500:  226:                CM[i][j] = DM[i][j];
+        -:  227:        }
+        -:  228:
+        -:  229:    /* Loop 70 */
+       51:  230:        for (int i = 0; i < N; i++)
+        -:  231:        {
+     2550:  232:            for (int j = 0; j < N; j++)
+        -:  233:            {
+     2500:  234:                sum = 0.0;
+   127500:  235:                for (int k = 0; k < N; k++)
+        -:  236:				{
+   125000:  237:					sum = sum - CM[i][k] * BM[j][k];
+        -:  238:				}          
+     2500:  239:                DM[i][j] = sum;
+        -:  240:            }
+        -:  241:        }
+        -:  242:
+        -:  243:
+        1:  244:        HOLDA = fabs(AM[1][1]);
+        1:  245:        HOLDB = fabs(BM[1][1]);
+        -:  246:
+       51:  247:        for (int i = 0; i < N; i++)
+        -:  248:        {
+     2550:  249:            for (int j = 0; j < N; j++)
+        -:  250:            {
+     5000:  251:                HOLDA = max(HOLDA, fabs(AM[i][j]));
+     5000:  252:                HOLDB = max(HOLDB, fabs(BM[i][j]));
+        -:  253:            }
+        -:  254:        }
+        -:  255:
+        1:  256:        TRACE3 = 0.0;
+        -:  257:
+        -:  258:    /* Loop 80 */
+        -:  259:#ifdef TWO
+        1:  260:		sub = HOLDA * HOLDB;
+        -:  261:#else
+        -:  262:#endif
+       51:  263:        for (int i = 0; i < N; i++)
+        -:  264:        {
+        -:  265:#ifdef TWO
+       50:  266:            TRACE3 = TRACE3 + (AM[IA[i]][IA[i]] + BM[IA[i]][IA[i]]
+       50:  267:                - DM[IA[i]][IA[i]]) / sub;
+        -:  268:#else
+        -:  269:            TRACE3 = TRACE3 + (AM[IA[i]][IA[i]] + BM[IA[i]][IA[i]]
+        -:  270:                - DM[IA[i]][IA[i]]) / (HOLDA * HOLDB);
+        -:  271:#endif
+        -:  272:        }
+        -:  273:
+        1:  274:        finish = cputime_();
+        -:  275:		
+        2:  276:        cout << "*" << "Final trace = " << TRACE3 << " and IDCHECK " << check << endl;
+        2:  277:        cout << "*" << "-- RUNTIME -> " << finish - start << " second" << endl;
+        1:  278:        return 0;
+        -:  279:    }
+        -:  280:
+     5000:  281:    double trig(int i, int j)
+        -:  282:    {
+        -:  283:        double x, y, z;
+        -:  284:#ifdef NOPRECISIONLOSS
+        -:  285:		double pi = acos(-1.0);
+        -:  286:#else
+     5000:  287:		float pi = acos(-1.0);
+        -:  288:#endif
+     5000:  289:        x = double(i + 1) - double(j + 1);
+     5000:  290:        y = double(i + 1) + double(j + 1);
+        -:  291:#ifdef ONE
+     5000:  292:        z = exp(sin(sqrt(x*x + y*y)*pi));
+        -:  293:#else
+        -:  294:        z = exp(sin(sqrt(pow(x, 2) + pow(y, 2))*pi));
+        -:  295:#endif // ONE
+     5000:  296:        double trig = x + y + log10(fabs(1.0 + z + (x*y*z))) / (fabs(x) + fabs(y));
+     5000:  297:        return trig;
+        -:  298:    }
+        -:  299:
+     2699:  300:    void idcheck(int N, double *check, double AV[], double BV[], double ID[][MAXDIM])
+        -:  301:    {
+     2699:  302:        double l2 = 0, check2 = 0, a = 0, b = 0, c = 0, d = 0, pastA = 0, pastB = 0, pastC = 0, sub = 0, dcheck = *check;
+     2699:  303:        int aux = 0; 
+     2699:  304:		float twoPi = 2.0 * acos(-1.0);
+        -:  305:
+        -:  306:#ifdef FOUR
+   137649:  307:		for (int i = 0; i < N; i++)
+        -:  308:		{
+  6882450:  309:			for (int j = 0; j < N; j++)
+        -:  310:			{
+  6747500:  311:				ID[i][j] = cos(dcheck + (i + 1) * twoPi / N) + 2.0 * sin(dcheck + (j + 1) * twoPi / N);
+        -:  312:			}
+        -:  313:		}
+        -:  314:
+     2699:  315:        int j = 0;
+   137649:  316:        for (int i = 0; i < N; i++)
+        -:  317:        {
+   134950:  318:            if (((AV[i] < 0) && (BV[j] > 0)) || ((AV[i] > 0) && (BV[j] < 0))) ID[i][j] = -1.0;
+    78394:  319:            else ID[i][j] = 1.0;
+   134950:  320:			j += 1;
+        -:  321:        }
+        -:  322:#else
+        -:  323:		for (int i = 0; i < N; i++)
+        -:  324:		{
+        -:  325:			for (int j = 0; j < N; j++)
+        -:  326:			{
+        -:  327:				if (i == j)
+        -:  328:				{
+        -:  329:					if ((AV[i] < 0) && (BV[j] < 0)) ID[i][j] = 1.0;
+        -:  330:					else if ((AV[i] < 0) && (BV[j] > 0)) ID[i][j] = -1.0;
+        -:  331:					else if ((AV[i] > 0) && (BV[j] < 0)) ID[i][j] = -1.0;
+        -:  332:					else ID[i][j] = 1.0;
+        -:  333:				}
+        -:  334:				else if (i != j)
+        -:  335:				{
+        -:  336:					ID[i][j] = cos(dcheck + (i + 1) * twoPi / N) + 2.0 * sin(dcheck + (j + 1) * twoPi / N);
+        -:  337:				}				
+        -:  338:			}
+        -:  339:		}
+        -:  340:#endif
+        -:  341:		
+     2699:  342:        l2 = 0.0;
+        -:  343:#ifdef ONE
+   137649:  344:        for (int i = 0; i < N; i++)
+   134950:  345:            l2 = l2 + AV[i] * AV[i];
+        -:  346:#else
+        -:  347:        for (int i = 0; i < N; i++)
+        -:  348:            l2 = l2 + pow(AV[i],2);
+        -:  349:#endif
+        -:  350:
+     2699:  351:        l2 = sqrt(l2);
+   137649:  352:        for (int i = 0; i < N; i++)
+   134950:  353:            AV[i] = AV[i] / l2;
+        -:  354:
+        -:  355:#ifdef ONE
+     2699:  356:        l2 = 0.0;
+   137649:  357:        for (int i = 0; i < N; i++)
+   134950:  358:            l2 = l2 + BV[i] * BV[i];
+        -:  359:#else
+        -:  360:        l2 = 0.0;
+        -:  361:        for (int i = 0; i < N; i++)
+        -:  362:            l2 = l2 + pow(BV[i], 2);
+        -:  363:#endif
+        -:  364:
+     2699:  365:        l2 = sqrt(l2);
+   137649:  366:        for (int i = 0; i < N; i++)
+   134950:  367:            BV[i] = BV[i] / l2;
+        -:  368:
+        -:  369:#ifdef FOUR	  	 
+   137649:  370:        for (int i = 0; i < N; i++)
+        -:  371:        {
+  6882450:  372:            for (int j = 0; j < N; j++)
+        -:  373:            {
+        -:  374:#ifdef TWO
+  6747500:  375:				sub = AV[i] * BV[j];
+        -:  376:#else
+        -:  377:#endif
+ 91093949:  378:				for (int k = 3 - (((j + i) + 2) % 4); k < N; k += 4)
+        -:  379:				{
+ 84346449:  380:				    pastA = a;
+        -:  381:#ifdef TWO
+ 84346449:  382:				    a = a + sub * ID[j][k];
+        -:  383:#else
+        -:  384:				    a = a + AV[i] * BV[j] * ID[j][k];
+        -:  385:#endif
+        -:  386:				}
+        -:  387:            }
+        -:  388:        }
+        -:  389:		
+        -:  390:		
+   137649:  391:        for (int i = 0; i < N; i++)
+        -:  392:        {
+  6882450:  393:            for (int j = 0; j < N; j++)
+        -:  394:            {
+        -:  395:#ifdef TWO
+  6747500:  396:				sub = AV[j] * BV[i];
+        -:  397:#else
+        -:  398:#endif
+ 91093949:  399:				for (int k = 3 - ((j + i + 1) % 4); k < N; k += 4)
+        -:  400:				{
+ 84346449:  401:				    pastB = b;
+        -:  402:#ifdef TWO
+ 84346449:  403:				    b = b + sub * ID[k][j];
+        -:  404:#else
+        -:  405:				    b = b + AV[j] * BV[i] * ID[k][j];
+        -:  406:#endif
+        -:  407:                }
+        -:  408:			}
+        -:  409:		}
+        -:  410:
+   137649:  411:        for (int i = 0; i < N; i++)
+        -:  412:        {
+  6882450:  413:            for (int j = 0; j < N; j++)
+        -:  414:            {
+        -:  415:#ifdef TWO
+  6747500:  416:				sub = AV[i] * BV[j];
+        -:  417:#else
+        -:  418:#endif
+ 91088551:  419:				for (int k = 3 - ((j + i) % 4); k < N; k += 4)
+        -:  420:				{
+ 84341051:  421:				    pastC = c;
+        -:  422:#ifdef TWO
+ 84341051:  423:				    c = c - sub * ID[k][j];
+        -:  424:#else
+        -:  425:				    c = c - AV[i] * BV[j] * ID[k][j];
+        -:  426:#endif
+        -:  427:				}
+        -:  428:			}
+        -:  429:        }
+        -:  430:
+   137649:  431:        for (int i = 0; i < N; i++)
+        -:  432:        {
+  6882450:  433:            for (int j = 0; j < N; j++)
+        -:  434:            {
+        -:  435:#ifdef TWO
+  6747500:  436:				sub = AV[j] * BV[i];
+        -:  437:#else
+        -:  438:#endif
+ 91088551:  439:				for (int k = 3 - ((j + i + 3) % 4); k < N; k += 4)
+        -:  440:				{
+        -:  441:#ifdef TWO
+ 84341051:  442:					d = d - sub * ID[j][k];
+        -:  443:#else
+        -:  444:				    d = d - AV[j] * BV[i] * ID[j][k];
+        -:  445:#endif
+        -:  446:				}
+        -:  447:            }
+        -:  448:        }
+        -:  449:		
+     2699:  450:        aux = 3 * N;
+     2699:  451:        aux = aux % 4;
+     2699:  452:		switch(aux)
+        -:  453:		{
+        -:  454:			case 0:
+    #####:  455:		        dcheck = sqrt(b*b + c*c) + a;
+    #####:  456:		        check2 = pastA + b + c + d;
+    #####:  457:				break;
+        -:  458:			case 1:
+    #####:  459:		        dcheck = sqrt(pastB*pastB + c*c) + a - b;
+    #####:  460:		        check2 = pastA + pastB + c + d;
+    #####:  461:				break;
+        -:  462:			case 2:
+     2699:  463:		        dcheck = sqrt(b*b + c*c);
+     2699:  464:		        check2 = pastA + pastB + pastC + d; 
+     2699:  465:				break;
+        -:  466:			case 3:
+    #####:  467:		        dcheck = sqrt(b*b + c*c);
+    #####:  468:		        check2 = a + b + c + d;
+        -:  469:				break;
+        -:  470:			default:
+        -:  471:				break;	
+        -:  472:		}
+        -:  473:#else  //FOUR
+        -:  474:		for (int i = 0; i < N; i++)
+        -:  475:		{
+        -:  476:			for (int j = 0; j < N; j++)
+        -:  477:			{
+        -:  478:				for (int k = 0; k < N; k++)
+        -:  479:				{
+        -:  480:					int number = int((i + j + k + 3) % 4);
+        -:  481:					//cout << number << endl;
+        -:  482:					//getchar();
+        -:  483:					if (number == 0)
+        -:  484:					{ 
+        -:  485:						a = a + AV[i] * BV[j] * ID[j][k];
+        -:  486:						dcheck = dcheck + a;
+        -:  487:					}
+        -:  488:					else if (number == 1)
+        -:  489:					{
+        -:  490:						b = b + AV[j] * BV[i] * ID[k][j];
+        -:  491:						dcheck = dcheck - b;
+        -:  492:					} 
+        -:  493:					else if (number == 2)
+        -:  494:					{
+        -:  495:						c = c - AV[i] * BV[j] * ID[k][j];
+        -:  496:#ifdef ONE
+        -:  497:						dcheck = sqrt(b*b + c*c);
+        -:  498:#else
+        -:  499:						dcheck = sqrt(pow(b, 2) + pow(c, 2));
+        -:  500:#endif
+        -:  501:					}
+        -:  502:					else if (number == 3)
+        -:  503:					{
+        -:  504:						d = d - AV[j] * BV[i] * ID[j][k]; 
+        -:  505:						check2 = a + b + c + d;
+        -:  506:					}
+        -:  507:                }
+        -:  508:            }
+        -:  509:        }
+        -:  510:#endif // FOUR
+        -:  511:		
+     8097:  512:        *check = min(fabs(check2), fabs(dcheck)) / max(fabs(check2), fabs(dcheck));
+        -:  513:		/*cout << *check << ' ' << check2 << " " << a << " " << b << ' ' << c <<  ' ' << d << ' ' << endl;
+        -:  514:		getchar();*/
+     2701:  515:    }/*EOF*/

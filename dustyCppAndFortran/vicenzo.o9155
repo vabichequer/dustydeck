@@ -1,0 +1,9 @@
+ Final trace =   -1569865.0344007716       and IDCHECK   0.44823542022400786     
+ -- RUNTIME ->    845.89441      seconds
+ Final trace =   -1569865.0344007716       and IDCHECK   0.44823542022400786     
+ -- RUNTIME ->    845.16553      seconds
+ Final trace =   -1569865.0344007716       and IDCHECK   0.44823542022400786     
+ -- RUNTIME ->    298.67560      seconds
+ Final trace =   -1569865.0344007716       and IDCHECK   0.44823542022400786     
+ -- RUNTIME ->    843.80573      seconds
+=>> PBS: job killed: walltime 3633 exceeded limit 3600

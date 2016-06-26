@@ -1,0 +1,3381 @@
+
+;; Function double conrand(double*) (_Z7conrandPd)
+
+double conrand(double*) (double * seed)
+{
+  long int PROF_edge_counter.136;
+  double temp;
+  double D.27040D.27040;
+  double D.27039D.27039;
+  double D.27038D.27038;
+  double D.27037D.27037;
+  int D.27036D.27036;
+  double D.27035D.27035;
+  double D.27034D.27034;
+
+<bb 2>:
+  PROF_edge_counter.136_1 = *.LPBX1[1];
+  PROF_edge_counter.136_2 = PROF_edge_counter.136_1 + 1;
+  *.LPBX1[1] = PROF_edge_counter.136_2;
+  D.27034D.27034_6 = *seed_5(D);
+  temp_7 = D.27034D.27034_6 * 1.6807e+4;
+  D.27035D.27035_8 = temp_7 / 2.147483647e+9;
+  D.27036D.27036_9 = (int) D.27035D.27035_8;
+  D.27037D.27037_10 = (double) D.27036D.27036_9;
+  D.27038D.27038_11 = D.27037D.27037_10 * 2.147483647e+9;
+  D.27039D.27039_12 = temp_7 - D.27038D.27038_11;
+  *seed_5(D) = D.27039D.27039_12;
+  D.27040D.27040_14 = D.27039D.27039_12 / 2.147483647e+9;
+  return D.27040D.27040_14;
+
+}
+
+
+
+;; Function (static initializers for mainc.cpp) (_GLOBAL__I_IA)
+
+(static initializers for mainc.cpp) ()
+{
+  long int PROF_edge_counter.137;
+  void (*<Tbe>) (void *) __comp_dtor .134;
+  int __priority;
+
+<bb 2>:
+  PROF_edge_counter.137_1 = *.LPBX1[2];
+  PROF_edge_counter.137_2 = PROF_edge_counter.137_1 + 1;
+  *.LPBX1[2] = PROF_edge_counter.137_2;
+  PROF_edge_counter.137_5 = *.LPBX1[3];
+  PROF_edge_counter.137_6 = PROF_edge_counter.137_5 + 1;
+  *.LPBX1[3] = PROF_edge_counter.137_6;
+  PROF_edge_counter.137_7 = *.LPBX1[4];
+  PROF_edge_counter.137_8 = PROF_edge_counter.137_7 + 1;
+  *.LPBX1[4] = PROF_edge_counter.137_8;
+  __comp_ctor  (&__ioinit);
+  PROF_edge_counter.137_9 = *.LPBX1[5];
+  PROF_edge_counter.137_10 = PROF_edge_counter.137_9 + 1;
+  *.LPBX1[5] = PROF_edge_counter.137_10;
+  __comp_dtor .134_11 = (void (*<Tbe>) (void *)) __comp_dtor ;
+  __cxa_atexit (__comp_dtor .134_11, &__ioinit, &__dso_handle);
+  PROF_edge_counter.137_12 = *.LPBX1[6];
+  PROF_edge_counter.137_13 = PROF_edge_counter.137_12 + 1;
+  *.LPBX1[6] = PROF_edge_counter.137_13;
+  return;
+
+}
+
+
+
+;; Function void idcheck(int, double*, double*, double*, double (*)[50]) (_Z7idcheckiPdS_S_PA50_d)
+
+
+mainc.cpp:439: note: not vectorized: unsupported use in stmt.
+mainc.cpp:419: note: not vectorized: unsupported use in stmt.
+mainc.cpp:399: note: not vectorized: unsupported use in stmt.
+mainc.cpp:378: note: not vectorized: unsupported use in stmt.
+mainc.cpp:366: note: dependence distance  = 0.
+mainc.cpp:366: note: accesses have the same alignment.
+mainc.cpp:366: note: dependence distance modulo vf == 0 between *D.27584D.27584_199 and *D.27584D.27584_199
+mainc.cpp:366: note: Alignment of access forced using peeling.
+mainc.cpp:366: note: vect_model_load_cost: aligned.
+mainc.cpp:366: note: vect_model_load_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:366: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainc.cpp:366: note: vect_model_store_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:366: note: cost model: prologue peel iters set to vf/2.
+mainc.cpp:366: note: cost model: epilogue peel iters set to vf/2 because peeling for alignment is unknown .
+mainc.cpp:366: note: Cost model analysis: 
+  Vector inside of loop cost: 3
+  Vector outside of loop cost: 15
+  Scalar iteration cost: 3
+  Scalar outside cost: 7
+  prologue iterations: 1
+  epilogue iterations: 1
+  Calculated minimum iters for profitability: 4
+
+mainc.cpp:366: note:   Profitability threshold = 3
+
+mainc.cpp:366: note: Vectorization may not be profitable.
+
+Symbols to be put in SSA form
+
+{ *.LPBX1 SMT.213 }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 104
+Number of blocks to update: 103 ( 99%)
+
+
+
+
+mainc.cpp:366: note: LOOP VECTORIZED.
+mainc.cpp:357: note: not vectorized: unsupported use in stmt.
+mainc.cpp:352: note: dependence distance  = 0.
+mainc.cpp:352: note: accesses have the same alignment.
+mainc.cpp:352: note: dependence distance modulo vf == 0 between *D.27563D.27563_168 and *D.27563D.27563_168
+mainc.cpp:352: note: Alignment of access forced using peeling.
+mainc.cpp:352: note: vect_model_load_cost: aligned.
+mainc.cpp:352: note: vect_model_load_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:352: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainc.cpp:352: note: vect_model_store_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:352: note: cost model: prologue peel iters set to vf/2.
+mainc.cpp:352: note: cost model: epilogue peel iters set to vf/2 because peeling for alignment is unknown .
+mainc.cpp:352: note: Cost model analysis: 
+  Vector inside of loop cost: 3
+  Vector outside of loop cost: 15
+  Scalar iteration cost: 3
+  Scalar outside cost: 7
+  prologue iterations: 1
+  epilogue iterations: 1
+  Calculated minimum iters for profitability: 4
+
+mainc.cpp:352: note:   Profitability threshold = 3
+
+mainc.cpp:352: note: Vectorization may not be profitable.
+
+Symbols to be put in SSA form
+
+{ *.LPBX1 SMT.213 }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 121
+Number of blocks to update: 120 ( 99%)
+
+
+
+
+mainc.cpp:352: note: LOOP VECTORIZED.
+mainc.cpp:344: note: not vectorized: unsupported use in stmt.
+mainc.cpp:307: note: not vectorized: unsupported use in stmt.
+mainc.cpp:309: note: Alignment of access forced using peeling.
+mainc.cpp:309: note: vect_model_induction_cost: inside_cost = 1, outside_cost = 2 .
+mainc.cpp:309: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainc.cpp:309: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainc.cpp:309: note: vect_model_simple_cost: inside_cost = 1, outside_cost = 1 .
+mainc.cpp:309: note: vect_model_simple_cost: inside_cost = 2, outside_cost = 0 .
+mainc.cpp:309: note: vect_model_simple_cost: inside_cost = 2, outside_cost = 1 .
+mainc.cpp:309: note: not vectorized: relevant stmt not supported: D.27516D.27516_91 = sin (D.27515D.27515_90);
+
+mainc.cpp:300: note: vectorized 2 loops in function.
+Merging blocks 22 and 108
+Merging blocks 28 and 91
+Merging blocks 90 and 98
+Merging blocks 94 and 31
+Removing basic block 95
+Removing basic block 102
+Merging blocks 107 and 115
+Merging blocks 111 and 25
+Removing basic block 112
+Removing basic block 119
+Created preheader block for loop 22
+Created preheader block for loop 20
+void idcheck(int, double*, double*, double*, double (*)[50]) (int N, double * check, double * AV, double * BV, double[50] * ID)
+{
+  unsigned int ivtmp.478;
+  double * D.28454D.28454;
+  vector double * vect_p.477;
+  long unsigned int D.28451D.28451;
+  long unsigned int base_off.475;
+  vector double * vect_p.473;
+  vector double vect_cst_.472;
+  vector double vect_var_.471;
+  vector double vect_var_.470;
+  double * D.28442D.28442;
+  vector double * vect_p.469;
+  long unsigned int D.28439D.28439;
+  long unsigned int base_off.467;
+  vector double * vect_p.465;
+  long int D.28435D.28435;
+  long int tmp.464;
+  int D.28433D.28433;
+  int tmp.463;
+  bool D.28431D.28431;
+  bool D.28430D.28430;
+  unsigned int ratio_mult_vf.462;
+  unsigned int bnd.461;
+  unsigned int D.28427D.28427;
+  unsigned int niters.460;
+  unsigned int ivtmp.459;
+  bool D.28424D.28424;
+  bool D.28423D.28423;
+  unsigned int prologue_after_cost_adjust.458;
+  unsigned int D.28420D.28420;
+  bool D.28421D.28421;
+  long unsigned int D.28414D.28414;
+  long unsigned int D.28415D.28415;
+  long unsigned int D.28416D.28416;
+  long unsigned int D.28417D.28417;
+  unsigned int D.28418D.28418;
+  unsigned int D.28419D.28419;
+  unsigned int prolog_loop_niters.457;
+  vector double * vect_p.456;
+  unsigned int niters.452;
+  unsigned int ivtmp.451;
+  double * D.28400D.28400;
+  vector double * vect_p.450;
+  long unsigned int D.28397D.28397;
+  long unsigned int base_off.448;
+  vector double * vect_p.446;
+  vector double vect_cst_.445;
+  vector double vect_var_.444;
+  vector double vect_var_.443;
+  double * D.28388D.28388;
+  vector double * vect_p.442;
+  long unsigned int D.28385D.28385;
+  long unsigned int base_off.440;
+  vector double * vect_p.438;
+  long int D.28381D.28381;
+  long int tmp.437;
+  int D.28379D.28379;
+  int tmp.436;
+  bool D.28377D.28377;
+  bool D.28376D.28376;
+  unsigned int ratio_mult_vf.435;
+  unsigned int bnd.434;
+  unsigned int D.28373D.28373;
+  unsigned int niters.433;
+  unsigned int ivtmp.432;
+  bool D.28370D.28370;
+  bool D.28369D.28369;
+  unsigned int prologue_after_cost_adjust.431;
+  unsigned int D.28366D.28366;
+  bool D.28367D.28367;
+  long unsigned int D.28360D.28360;
+  long unsigned int D.28361D.28361;
+  long unsigned int D.28362D.28362;
+  long unsigned int D.28363D.28363;
+  unsigned int D.28364D.28364;
+  unsigned int D.28365D.28365;
+  unsigned int prolog_loop_niters.430;
+  vector double * vect_p.429;
+  unsigned int niters.425;
+  long int D.28341D.28341;
+  unsigned int D.28342D.28342;
+  unsigned int D.28343D.28343;
+  long int D.28344D.28344;
+  long int D.28337D.28337;
+  unsigned int D.28338D.28338;
+  unsigned int D.28339D.28339;
+  long int D.28340D.28340;
+  long int D.28333D.28333;
+  unsigned int D.28334D.28334;
+  unsigned int D.28335D.28335;
+  long int D.28336D.28336;
+  long int D.28329D.28329;
+  unsigned int D.28330D.28330;
+  unsigned int D.28331D.28331;
+  long int D.28332D.28332;
+  long int D.28325D.28325;
+  unsigned int D.28326D.28326;
+  unsigned int D.28327D.28327;
+  long int D.28328D.28328;
+  long int D.28321D.28321;
+  unsigned int D.28322D.28322;
+  unsigned int D.28323D.28323;
+  long int D.28324D.28324;
+  long int D.28317D.28317;
+  unsigned int D.28318D.28318;
+  unsigned int D.28319D.28319;
+  long int D.28320D.28320;
+  long int D.28313D.28313;
+  unsigned int D.28314D.28314;
+  unsigned int D.28315D.28315;
+  long int D.28316D.28316;
+  long int D.28309D.28309;
+  unsigned int D.28310D.28310;
+  unsigned int D.28311D.28311;
+  long int D.28312D.28312;
+  long int D.28302D.28302;
+  unsigned int D.28303D.28303;
+  unsigned int D.28304D.28304;
+  unsigned int D.28305D.28305;
+  unsigned int D.28306D.28306;
+  unsigned int D.28307D.28307;
+  long int D.28308D.28308;
+  long int D.28295D.28295;
+  unsigned int D.28296D.28296;
+  unsigned int D.28297D.28297;
+  unsigned int D.28298D.28298;
+  unsigned int D.28299D.28299;
+  unsigned int D.28300D.28300;
+  long int D.28301D.28301;
+  long int D.28288D.28288;
+  unsigned int D.28289D.28289;
+  unsigned int D.28290D.28290;
+  unsigned int D.28291D.28291;
+  unsigned int D.28292D.28292;
+  unsigned int D.28293D.28293;
+  long int D.28294D.28294;
+  long int D.28281D.28281;
+  unsigned int D.28282D.28282;
+  unsigned int D.28283D.28283;
+  unsigned int D.28284D.28284;
+  unsigned int D.28285D.28285;
+  unsigned int D.28286D.28286;
+  long int D.28287D.28287;
+  long int *.LPBX1_I_lsm.424;
+  long int *.LPBX1_I_lsm.423;
+  long int *.LPBX1_I_lsm.422;
+  long int *.LPBX1_I_lsm.421;
+  long int *.LPBX1_I_lsm.420;
+  long int *.LPBX1_I_lsm.419;
+  long int *.LPBX1_I_lsm.418;
+  long int *.LPBX1_I_lsm.417;
+  long int *.LPBX1_I_lsm.416;
+  long int *.LPBX1_I_lsm.415;
+  long int *.LPBX1_I_lsm.414;
+  long int *.LPBX1_I_lsm.413;
+  long int *.LPBX1_I_lsm.412;
+  long int *.LPBX1_I_lsm.411;
+  long int *.LPBX1_I_lsm.410;
+  long int *.LPBX1_I_lsm.409;
+  long int *.LPBX1_I_lsm.408;
+  long int *.LPBX1_I_lsm.407;
+  long int *.LPBX1_I_lsm.406;
+  double[50] * pretmp.395;
+  long unsigned int pretmp.394;
+  long int pretmp.393;
+  double[50] * pretmp.392;
+  long unsigned int pretmp.391;
+  long int prephitmp.390;
+  long int pretmp.389;
+  int pretmp.388;
+  double pretmp.387;
+  double * pretmp.386;
+  long unsigned int pretmp.385;
+  double pretmp.380;
+  double * pretmp.379;
+  long unsigned int pretmp.378;
+  int pretmp.375;
+  double pretmp.374;
+  double * pretmp.373;
+  long unsigned int pretmp.372;
+  int pretmp.369;
+  double pretmp.366;
+  double * pretmp.365;
+  long unsigned int pretmp.364;
+  long int pretmp.359;
+  long int pretmp.356;
+  long int pretmp.353;
+  long int prephitmp.350;
+  long int pretmp.349;
+  double D.28200D.28200;
+  double pretmp.344;
+  float pretmp.343;
+  int pretmp.342;
+  double[50] * pretmp.341;
+  long unsigned int pretmp.340;
+  long int prephitmp.339;
+  long int pretmp.338;
+  const double prephitmp.335;
+  const double pretmp.334;
+  long int PROF_edge_counter.138;
+  bool D.27878D.27878;
+  bool D.27872D.27872;
+  int k;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int i;
+  int i;
+  int i;
+  int i;
+  int i;
+  int j;
+  int i;
+  int j;
+  int aux;
+  double dcheck;
+  double sub;
+  double pastC;
+  double pastB;
+  double pastA;
+  double d;
+  double c;
+  double b;
+  double a;
+  double check2;
+  double l2;
+  double D.27736D.27736;
+  const double D.27733D.27733;
+  double D.27729D.27729;
+  double D.27728D.27728;
+  double D.27726D.27726;
+  double D.27724D.27724;
+  double D.27723D.27723;
+  double D.27722D.27722;
+  double D.27721D.27721;
+  double D.27720D.27720;
+  double D.27719D.27719;
+  double D.27718D.27718;
+  double D.27717D.27717;
+  double D.27716D.27716;
+  double D.27715D.27715;
+  double D.27714D.27714;
+  double D.27713D.27713;
+  double D.27711D.27711;
+  double D.27710D.27710;
+  int D.27701D.27701;
+  int D.27700D.27700;
+  double D.27694D.27694;
+  double * D.27693D.27693;
+  long unsigned int D.27692D.27692;
+  long unsigned int D.27691D.27691;
+  double D.27680D.27680;
+  double D.27679D.27679;
+  double[50] * D.27677D.27677;
+  long unsigned int D.27676D.27676;
+  long unsigned int D.27675D.27675;
+  int D.27669D.27669;
+  int D.27668D.27668;
+  double D.27667D.27667;
+  double * D.27666D.27666;
+  long unsigned int D.27665D.27665;
+  long unsigned int D.27664D.27664;
+  double D.27649D.27649;
+  double D.27648D.27648;
+  double[50] * D.27646D.27646;
+  long unsigned int D.27645D.27645;
+  long unsigned int D.27644D.27644;
+  int D.27638D.27638;
+  int D.27637D.27637;
+  double D.27631D.27631;
+  double * D.27630D.27630;
+  long unsigned int D.27629D.27629;
+  long unsigned int D.27628D.27628;
+  double D.27617D.27617;
+  double D.27616D.27616;
+  int D.27607D.27607;
+  int D.27606D.27606;
+  double D.27604D.27604;
+  double * D.27603D.27603;
+  long unsigned int D.27602D.27602;
+  long unsigned int D.27601D.27601;
+  double D.27586D.27586;
+  double D.27585D.27585;
+  double * D.27584D.27584;
+  long unsigned int D.27583D.27583;
+  long unsigned int D.27582D.27582;
+  double D.27575D.27575;
+  double D.27574D.27574;
+  double * D.27573D.27573;
+  long unsigned int D.27572D.27572;
+  long unsigned int D.27571D.27571;
+  double D.27565D.27565;
+  double D.27564D.27564;
+  double * D.27563D.27563;
+  long unsigned int D.27562D.27562;
+  long unsigned int D.27561D.27561;
+  double D.27554D.27554;
+  double D.27553D.27553;
+  double * D.27552D.27552;
+  long unsigned int D.27551D.27551;
+  long unsigned int D.27550D.27550;
+  double[50] * D.27543D.27543;
+  long unsigned int D.27542D.27542;
+  bool D.27541D.27541;
+  bool D.27539D.27539;
+  bool D.27538D.27538;
+  double D.27537D.27537;
+  double * D.27536D.27536;
+  long unsigned int D.27535D.27535;
+  long unsigned int D.27534D.27534;
+  bool D.27532D.27532;
+  double D.27531D.27531;
+  double * D.27530D.27530;
+  long unsigned int D.27529D.27529;
+  long unsigned int D.27528D.27528;
+  double D.27518D.27518;
+  double D.27517D.27517;
+  double D.27516D.27516;
+  double D.27515D.27515;
+  double D.27514D.27514;
+  float D.27513D.27513;
+  float D.27512D.27512;
+  float D.27511D.27511;
+
+<bb 2>:
+  dcheck_59 = *check_58(D);
+  if (N_63(D) > 0)
+    goto <bb 3>;
+  else
+    goto <bb 100>;
+
+<bb 3>:
+  *.LPBX1_I_lsm.423_656 = *.LPBX1[8];
+  *.LPBX1_I_lsm.424_654 = *.LPBX1[7];
+
+<bb 4>:
+  # i_726 = PHI <pretmp.342_839(8), 0(3)>
+  # *.LPBX1_I_lsm.423_660 = PHI <*.LPBX1_I_lsm.423_687(8), *.LPBX1_I_lsm.423_656(3)>
+  # *.LPBX1_I_lsm.424_658 = PHI <*.LPBX1_I_lsm.424_95(8), *.LPBX1_I_lsm.424_654(3)>
+  PROF_edge_counter.138_65 = *.LPBX1_I_lsm.423_660;
+  PROF_edge_counter.138_66 = PROF_edge_counter.138_65 + 1;
+  *.LPBX1_I_lsm.423_687 = PROF_edge_counter.138_66;
+  pretmp.338_834 = *.LPBX1_I_lsm.424_658;
+  pretmp.340_836 = (long unsigned int) i_726;
+  pretmp.340_837 = pretmp.340_836 * 400;
+  pretmp.341_838 = ID_73(D) + pretmp.340_837;
+  pretmp.342_839 = i_726 + 1;
+  pretmp.343_840 = (float) pretmp.342_839;
+  pretmp.343_841 = pretmp.343_840 * 6.283185482025146484375e+0;
+  pretmp.343_842 = (float) N_63(D);
+  pretmp.343_843 = pretmp.343_841 / pretmp.343_842;
+  pretmp.344_844 = (double) pretmp.343_843;
+  pretmp.344_845 = dcheck_59 + pretmp.344_844;
+  D.28200D.28200_846 = cos (pretmp.344_845);
+
+<bb 5>:
+  # j_740 = PHI <j_84(6), 0(4)>
+  # prephitmp.339_835 = PHI <PROF_edge_counter.138_70(6), pretmp.338_834(4)>
+  PROF_edge_counter.138_70 = prephitmp.339_835 + 1;
+  *.LPBX1_I_lsm.424_685 = PROF_edge_counter.138_70;
+  j_84 = j_740 + 1;
+  D.27511D.27511_85 = (float) j_84;
+  D.27512D.27512_86 = D.27511D.27511_85 * 6.283185482025146484375e+0;
+  D.27513D.27513_88 = D.27512D.27512_86 / pretmp.343_842;
+  D.27514D.27514_89 = (double) D.27513D.27513_88;
+  D.27515D.27515_90 = D.27514D.27514_89 + dcheck_59;
+  D.27516D.27516_91 = sin (D.27515D.27515_90);
+  D.27517D.27517_92 = D.27516D.27516_91 * 2.0e+0;
+  D.27518D.27518_93 = D.27517D.27517_92 + D.28200D.28200_846;
+  (*pretmp.341_838)[j_740] = D.27518D.27518_93;
+  if (N_63(D) > j_84)
+    goto <bb 6>;
+  else
+    goto <bb 7>;
+
+<bb 6>:
+  goto <bb 5>;
+
+<bb 7>:
+  D.28337D.28337_967 = pretmp.338_834 + 1;
+  D.28338D.28338_968 = (unsigned int) N_63(D);
+  D.28339D.28339_969 = D.28338D.28338_968 + 4294967295;
+  D.28340D.28340_970 = (long int) D.28339D.28339_969;
+  *.LPBX1_I_lsm.424_95 = D.28337D.28337_967 + D.28340D.28340_970;
+  if (N_63(D) > pretmp.342_839)
+    goto <bb 8>;
+  else
+    goto <bb 9>;
+
+<bb 8>:
+  goto <bb 4>;
+
+<bb 9>:
+Invalid sum of outgoing probabilities 0.0%
+  # *.LPBX1_I_lsm.424_69 = PHI <*.LPBX1_I_lsm.424_95(7)>
+  D.28341D.28341_971 = *.LPBX1_I_lsm.423_656 + 1;
+  D.28342D.28342_972 = (unsigned int) N_63(D);
+  D.28343D.28343_973 = D.28342D.28342_972 + 4294967295;
+  D.28344D.28344_974 = (long int) D.28343D.28343_973;
+  *.LPBX1_I_lsm.423_71 = D.28341D.28341_971 + D.28344D.28344_974;
+  *.LPBX1[8] = *.LPBX1_I_lsm.423_71;
+  *.LPBX1[7] = *.LPBX1_I_lsm.424_69;
+  *.LPBX1_I_lsm.422_686 = *.LPBX1[13];
+
+<bb 10>:
+  # j_706 = PHI <j_139(18), 0(9)>
+  # i_707 = PHI <i_140(18), 0(9)>
+  # *.LPBX1_I_lsm.422_655 = PHI <*.LPBX1_I_lsm.422_684(18), *.LPBX1_I_lsm.422_686(9)>
+  PROF_edge_counter.138_99 = *.LPBX1_I_lsm.422_655;
+  PROF_edge_counter.138_100 = PROF_edge_counter.138_99 + 1;
+  *.LPBX1_I_lsm.422_684 = PROF_edge_counter.138_100;
+  D.27528D.27528_101 = (long unsigned int) i_707;
+  D.27529D.27529_102 = D.27528D.27528_101 * 8;
+  D.27530D.27530_104 = AV_103(D) + D.27529D.27529_102;
+  D.27531D.27531_105 = *D.27530D.27530_104;
+  D.27532D.27532_106 = D.27531D.27531_105 < 0.0;
+  if (D.27532D.27532_106 != 0)
+    goto <bb 11>;
+  else
+    goto <bb 12>;
+
+<bb 11>:
+  PROF_edge_counter.138_107 = *.LPBX1[9];
+  PROF_edge_counter.138_108 = PROF_edge_counter.138_107 + 1;
+  *.LPBX1[9] = PROF_edge_counter.138_108;
+  D.27534D.27534_109 = (long unsigned int) j_706;
+  D.27535D.27535_110 = D.27534D.27534_109 * 8;
+  D.27536D.27536_112 = BV_111(D) + D.27535D.27535_110;
+  D.27537D.27537_113 = *D.27536D.27536_112;
+  D.27538D.27538_114 = D.27537D.27537_113 > 0.0;
+  if (D.27538D.27538_114 != 0)
+    goto <bb 14>;
+  else
+    goto <bb 12>;
+
+<bb 12>:
+  D.27539D.27539_119 = D.27531D.27531_105 > 0.0;
+  if (D.27539D.27539_119 != 0)
+    goto <bb 13>;
+  else
+    goto <bb 16>;
+
+<bb 13>:
+  PROF_edge_counter.138_120 = *.LPBX1[10];
+  PROF_edge_counter.138_121 = PROF_edge_counter.138_120 + 1;
+  *.LPBX1[10] = PROF_edge_counter.138_121;
+  D.27534D.27534_122 = (long unsigned int) j_706;
+  D.27535D.27535_123 = D.27534D.27534_122 * 8;
+  D.27536D.27536_124 = BV_111(D) + D.27535D.27535_123;
+  D.27537D.27537_125 = *D.27536D.27536_124;
+  D.27541D.27541_126 = D.27537D.27537_125 < 0.0;
+  if (D.27541D.27541_126 != 0)
+    goto <bb 14>;
+  else
+    goto <bb 15>;
+
+<bb 14>:
+  D.27542D.27542_136 = D.27528D.27528_101 * 400;
+  D.27543D.27543_137 = ID_73(D) + D.27542D.27542_136;
+  (*D.27543D.27543_137)[j_706] = -1.0e+0;
+  goto <bb 17>;
+
+<bb 15>:
+  PROF_edge_counter.138_127 = *.LPBX1[11];
+  PROF_edge_counter.138_128 = PROF_edge_counter.138_127 + 1;
+  *.LPBX1[11] = PROF_edge_counter.138_128;
+
+<bb 16>:
+  D.27542D.27542_130 = D.27528D.27528_101 * 400;
+  D.27543D.27543_131 = ID_73(D) + D.27542D.27542_130;
+  (*D.27543D.27543_131)[j_706] = 1.0e+0;
+  PROF_edge_counter.138_133 = *.LPBX1[12];
+  PROF_edge_counter.138_134 = PROF_edge_counter.138_133 + 1;
+  *.LPBX1[12] = PROF_edge_counter.138_134;
+
+<bb 17>:
+  i_140 = i_707 + 1;
+  if (N_63(D) > i_140)
+    goto <bb 18>;
+  else
+    goto <bb 19>;
+
+<bb 18>:
+  j_139 = j_706 + 1;
+  goto <bb 10>;
+
+<bb 19>:
+Invalid sum of outgoing probabilities 0.0%
+  D.28333D.28333_963 = *.LPBX1_I_lsm.422_686 + 1;
+  D.28334D.28334_964 = (unsigned int) N_63(D);
+  D.28335D.28335_965 = D.28334D.28334_964 + 4294967295;
+  D.28336D.28336_966 = (long int) D.28335D.28335_965;
+  *.LPBX1_I_lsm.422_144 = D.28333D.28333_963 + D.28336D.28336_966;
+  *.LPBX1[13] = *.LPBX1_I_lsm.422_144;
+  pretmp.349_855 = *.LPBX1[14];
+  *.LPBX1_I_lsm.421_680 = *.LPBX1[14];
+
+<bb 20>:
+  # l2_694 = PHI <l2_155(21), 0.0(19)>
+  # i_695 = PHI <i_156(21), 0(19)>
+  # prephitmp.350_856 = PHI <PROF_edge_counter.138_145(21), pretmp.349_855(19)>
+  PROF_edge_counter.138_145 = prephitmp.350_856 + 1;
+  *.LPBX1_I_lsm.421_715 = PROF_edge_counter.138_145;
+  D.27550D.27550_150 = (long unsigned int) i_695;
+  D.27551D.27551_151 = D.27550D.27550_150 * 8;
+  D.27552D.27552_152 = AV_103(D) + D.27551D.27551_151;
+  D.27553D.27553_153 = *D.27552D.27552_152;
+  D.27554D.27554_154 = D.27553D.27553_153 * D.27553D.27553_153;
+  l2_155 = D.27554D.27554_154 + l2_694;
+  i_156 = i_695 + 1;
+  if (N_63(D) > i_156)
+    goto <bb 21>;
+  else
+    goto <bb 22>;
+
+<bb 21>:
+  goto <bb 20>;
+
+<bb 22>:
+Invalid sum of outgoing probabilities 200.0%
+  # l2_260 = PHI <l2_155(20)>
+  D.28329D.28329_959 = pretmp.349_855 + 1;
+  D.28330D.28330_960 = (unsigned int) N_63(D);
+  D.28331D.28331_961 = D.28330D.28330_960 + 4294967295;
+  D.28332D.28332_962 = (long int) D.28331D.28331_961;
+  *.LPBX1_I_lsm.421_76 = D.28329D.28329_959 + D.28332D.28332_962;
+  *.LPBX1[14] = *.LPBX1_I_lsm.421_76;
+  l2_157 = sqrt (l2_260);
+  pretmp.353_860 = *.LPBX1[15];
+  *.LPBX1_I_lsm.420_711 = *.LPBX1[15];
+  niters.452_1035 = (unsigned int) N_63(D);
+  vect_p.456_1036 = (vector double *) AV_103(D);
+  D.28414D.28414_1037 = (long unsigned int) vect_p.456_1036;
+  D.28415D.28415_1038 = D.28414D.28414_1037 & 15;
+  D.28416D.28416_1039 = D.28415D.28415_1038 >> 3;
+  D.28417D.28417_1040 = 2 - D.28416D.28416_1039;
+  D.28418D.28418_1041 = (unsigned int) D.28417D.28417_1040;
+  D.28419D.28419_1042 = D.28418D.28418_1041 & 1;
+  prolog_loop_niters.457_1043 = MIN_EXPR <D.28419D.28419_1042, niters.452_1035>;
+  D.28420D.28420_1057 = (unsigned int) N_63(D);
+  D.28421D.28421_1058 = D.28420D.28420_1057 <= 3;
+  if (D.28421D.28421_1058 != 0)
+    goto <bb 23>;
+  else
+    goto <bb 24>;
+
+<bb 23>:
+  prologue_after_cost_adjust.458_1059 = (unsigned int) N_63(D);
+
+<bb 24>:
+  # prologue_after_cost_adjust.458_1060 = PHI <prologue_after_cost_adjust.458_1059(23), prolog_loop_niters.457_1043(22)>
+  D.28423D.28423_1061 = prolog_loop_niters.457_1043 == 0;
+  if (D.28423D.28423_1061 != 0)
+    goto <bb 28>;
+  else
+    goto <bb 25>;
+
+<bb 25>:
+  # i_1124 = PHI <0(24)>
+  # prephitmp.350_1127 = PHI <pretmp.353_860(24)>
+  # ivtmp.459_1128 = PHI <0(24)>
+
+<bb 111>:
+  # i_1044 = PHI <i_1124(25), i_1056(26)>
+  # prephitmp.350_1047 = PHI <prephitmp.350_1127(25), PROF_edge_counter.138_1048(26)>
+  # ivtmp.459_1069 = PHI <ivtmp.459_1128(25), ivtmp.459_1070(26)>
+  PROF_edge_counter.138_1048 = prephitmp.350_1047 + 1;
+  *.LPBX1_I_lsm.420_1049 = PROF_edge_counter.138_1048;
+  D.27561D.27561_1050 = (long unsigned int) i_1044;
+  D.27562D.27562_1051 = D.27561D.27561_1050 * 8;
+  D.27563D.27563_1052 = AV_103(D) + D.27562D.27562_1051;
+  D.27564D.27564_1053 = *D.27563D.27563_1052;
+  D.27565D.27565_1054 = D.27564D.27564_1053 / l2_157;
+  *D.27563D.27563_1052 = D.27565D.27565_1054;
+  i_1056 = i_1044 + 1;
+  ivtmp.459_1070 = ivtmp.459_1069 + 1;
+  if (ivtmp.459_1070 < prolog_loop_niters.457_1043)
+    goto <bb 26>;
+  else
+    goto <bb 27>;
+
+<bb 26>:
+  goto <bb 111>;
+
+<bb 27>:
+  # i_1063 = PHI <i_1056(111)>
+  # prephitmp.350_1067 = PHI <PROF_edge_counter.138_1048(111)>
+  D.28424D.28424_1068 = niters.452_1035 == prolog_loop_niters.457_1043;
+  if (D.28424D.28424_1068 != 0)
+    goto <bb 37>;
+  else
+    goto <bb 28>;
+
+<bb 28>:
+  # i_1062 = PHI <i_1063(27), 0(24)>
+  # prephitmp.350_1066 = PHI <prephitmp.350_1067(27), pretmp.353_860(24)>
+  D.28427D.28427_1071 = (unsigned int) N_63(D);
+  niters.460_1072 = D.28427D.28427_1071 - prolog_loop_niters.457_1043;
+  bnd.461_1073 = niters.460_1072 >> 1;
+  ratio_mult_vf.462_1074 = bnd.461_1073 << 1;
+  D.28430D.28430_1088 = ratio_mult_vf.462_1074 == 0;
+  if (D.28430D.28430_1088 != 0)
+    goto <bb 32>;
+  else
+    goto <bb 29>;
+
+<bb 29>:
+  D.28439D.28439_1100 = (long unsigned int) prolog_loop_niters.457_1043;
+  base_off.467_1101 = D.28439D.28439_1100 * 8;
+  D.28442D.28442_1102 = AV_103(D) + base_off.467_1101;
+  vect_p.469_1103 = (vector double *) D.28442D.28442_1102;
+  vect_p.465_1104 = vect_p.469_1103;
+  vect_cst_.472_1108 = {l2_157, l2_157};
+  D.28451D.28451_1110 = (long unsigned int) prolog_loop_niters.457_1043;
+  base_off.475_1111 = D.28451D.28451_1110 * 8;
+  D.28454D.28454_1112 = AV_103(D) + base_off.475_1111;
+  vect_p.477_1113 = (vector double *) D.28454D.28454_1112;
+  vect_p.473_1114 = vect_p.477_1113;
+
+<bb 30>:
+  # i_679 = PHI <i_171(35), i_1062(29)>
+  # prephitmp.350_861 = PHI <PROF_edge_counter.138_162(35), prephitmp.350_1066(29)>
+  # vect_p.465_1105 = PHI <vect_p.465_1106(35), vect_p.465_1104(29)>
+  # vect_p.473_1115 = PHI <vect_p.473_1116(35), vect_p.473_1114(29)>
+  # ivtmp.478_1117 = PHI <ivtmp.478_1118(35), 0(29)>
+  PROF_edge_counter.138_162 = prephitmp.350_861 + 1;
+  *.LPBX1_I_lsm.420_709 = PROF_edge_counter.138_162;
+  D.27561D.27561_166 = (long unsigned int) i_679;
+  D.27562D.27562_167 = D.27561D.27561_166 * 8;
+  D.27563D.27563_168 = AV_103(D) + D.27562D.27562_167;
+  vect_var_.470_1107 = *vect_p.465_1105;
+  D.27564D.27564_169 = *D.27563D.27563_168;
+  vect_var_.471_1109 = vect_var_.470_1107 / vect_cst_.472_1108;
+  D.27565D.27565_170 = D.27564D.27564_169 / l2_157;
+  *vect_p.473_1115 = vect_var_.471_1109;
+  i_171 = i_679 + 1;
+  vect_p.465_1106 = vect_p.465_1105 + 16;
+  vect_p.473_1116 = vect_p.473_1115 + 16;
+  ivtmp.478_1118 = ivtmp.478_1117 + 1;
+  if (ivtmp.478_1118 < bnd.461_1073)
+    goto <bb 35>;
+  else
+    goto <bb 31>;
+
+<bb 31>:
+  # i_1090 = PHI <i_171(30)>
+  # prephitmp.350_1094 = PHI <PROF_edge_counter.138_162(30)>
+  D.28431D.28431_1095 = niters.460_1072 == ratio_mult_vf.462_1074;
+  D.28433D.28433_1096 = (int) ratio_mult_vf.462_1074;
+  tmp.463_1097 = i_1062 + D.28433D.28433_1096;
+  D.28435D.28435_1098 = (long int) ratio_mult_vf.462_1074;
+  tmp.464_1099 = D.28435D.28435_1098 + prephitmp.350_1066;
+  if (D.28431D.28431_1095 != 0)
+    goto <bb 36>;
+  else
+    goto <bb 32>;
+
+<bb 32>:
+  # i_1089 = PHI <tmp.463_1097(31), i_1062(28)>
+  # prephitmp.350_1093 = PHI <tmp.464_1099(31), prephitmp.350_1066(28)>
+
+<bb 33>:
+  # i_1075 = PHI <i_1087(34), i_1089(32)>
+  # prephitmp.350_1078 = PHI <PROF_edge_counter.138_1079(34), prephitmp.350_1093(32)>
+  PROF_edge_counter.138_1079 = prephitmp.350_1078 + 1;
+  *.LPBX1_I_lsm.420_1080 = PROF_edge_counter.138_1079;
+  D.27561D.27561_1081 = (long unsigned int) i_1075;
+  D.27562D.27562_1082 = D.27561D.27561_1081 * 8;
+  D.27563D.27563_1083 = AV_103(D) + D.27562D.27562_1082;
+  D.27564D.27564_1084 = *D.27563D.27563_1083;
+  D.27565D.27565_1085 = D.27564D.27564_1084 / l2_157;
+  *D.27563D.27563_1083 = D.27565D.27565_1085;
+  i_1087 = i_1075 + 1;
+  if (N_63(D) > i_1087)
+    goto <bb 34>;
+  else
+    goto <bb 36>;
+
+<bb 34>:
+  goto <bb 33>;
+
+<bb 35>:
+  goto <bb 30>;
+
+<bb 36>:
+
+<bb 37>:
+Invalid sum of outgoing probabilities 0.0%
+  D.28325D.28325_955 = pretmp.353_860 + 1;
+  D.28326D.28326_956 = (unsigned int) N_63(D);
+  D.28327D.28327_957 = D.28326D.28326_956 + 4294967295;
+  D.28328D.28328_958 = (long int) D.28327D.28327_957;
+  *.LPBX1_I_lsm.420_72 = D.28325D.28325_955 + D.28328D.28328_958;
+  *.LPBX1[15] = *.LPBX1_I_lsm.420_72;
+  pretmp.356_865 = *.LPBX1[16];
+  *.LPBX1_I_lsm.419_425 = *.LPBX1[16];
+
+<bb 38>:
+  # l2_668 = PHI <l2_186(39), 0.0(37)>
+  # i_669 = PHI <i_187(39), 0(37)>
+  # prephitmp.350_866 = PHI <PROF_edge_counter.138_176(39), pretmp.356_865(37)>
+  PROF_edge_counter.138_176 = prephitmp.350_866 + 1;
+  *.LPBX1_I_lsm.419_418 = PROF_edge_counter.138_176;
+  D.27571D.27571_181 = (long unsigned int) i_669;
+  D.27572D.27572_182 = D.27571D.27571_181 * 8;
+  D.27573D.27573_183 = BV_111(D) + D.27572D.27572_182;
+  D.27574D.27574_184 = *D.27573D.27573_183;
+  D.27575D.27575_185 = D.27574D.27574_184 * D.27574D.27574_184;
+  l2_186 = D.27575D.27575_185 + l2_668;
+  i_187 = i_669 + 1;
+  if (N_63(D) > i_187)
+    goto <bb 39>;
+  else
+    goto <bb 40>;
+
+<bb 39>:
+  goto <bb 38>;
+
+<bb 40>:
+Invalid sum of outgoing probabilities 200.0%
+  # l2_250 = PHI <l2_186(38)>
+  D.28321D.28321_951 = pretmp.356_865 + 1;
+  D.28322D.28322_952 = (unsigned int) N_63(D);
+  D.28323D.28323_953 = D.28322D.28322_952 + 4294967295;
+  D.28324D.28324_954 = (long int) D.28323D.28323_953;
+  *.LPBX1_I_lsm.419_220 = D.28321D.28321_951 + D.28324D.28324_954;
+  *.LPBX1[16] = *.LPBX1_I_lsm.419_220;
+  l2_188 = sqrt (l2_250);
+  pretmp.359_870 = *.LPBX1[17];
+  *.LPBX1_I_lsm.418_714 = *.LPBX1[17];
+  niters.425_917 = (unsigned int) N_63(D);
+  vect_p.429_922 = (vector double *) BV_111(D);
+  D.28360D.28360_598 = (long unsigned int) vect_p.429_922;
+  D.28361D.28361_586 = D.28360D.28360_598 & 15;
+  D.28362D.28362_273 = D.28361D.28361_586 >> 3;
+  D.28363D.28363_909 = 2 - D.28362D.28362_273;
+  D.28364D.28364_923 = (unsigned int) D.28363D.28363_909;
+  D.28365D.28365_595 = D.28364D.28364_923 & 1;
+  prolog_loop_niters.430_583 = MIN_EXPR <D.28365D.28365_595, niters.425_917>;
+  D.28366D.28366_395 = (unsigned int) N_63(D);
+  D.28367D.28367_697 = D.28366D.28366_395 <= 3;
+  if (D.28367D.28367_697 != 0)
+    goto <bb 41>;
+  else
+    goto <bb 42>;
+
+<bb 41>:
+  prologue_after_cost_adjust.431_117 = (unsigned int) N_63(D);
+
+<bb 42>:
+  # prologue_after_cost_adjust.431_718 = PHI <prologue_after_cost_adjust.431_117(41), prolog_loop_niters.430_583(40)>
+  D.28369D.28369_398 = prolog_loop_niters.430_583 == 0;
+  if (D.28369D.28369_398 != 0)
+    goto <bb 46>;
+  else
+    goto <bb 43>;
+
+<bb 43>:
+  # i_1129 = PHI <0(42)>
+  # prephitmp.350_1132 = PHI <pretmp.359_870(42)>
+  # ivtmp.432_1133 = PHI <0(42)>
+
+<bb 112>:
+  # i_311 = PHI <i_1129(43), i_690(44)>
+  # prephitmp.350_592 = PHI <prephitmp.350_1132(43), PROF_edge_counter.138_580(44)>
+  # ivtmp.432_980 = PHI <ivtmp.432_1133(43), ivtmp.432_981(44)>
+  PROF_edge_counter.138_580 = prephitmp.350_592 + 1;
+  *.LPBX1_I_lsm.418_296 = PROF_edge_counter.138_580;
+  D.27582D.27582_908 = (long unsigned int) i_311;
+  D.27583D.27583_925 = D.27582D.27582_908 * 8;
+  D.27584D.27584_664 = BV_111(D) + D.27583D.27583_925;
+  D.27585D.27585_378 = *D.27584D.27584_664;
+  D.27586D.27586_671 = D.27585D.27585_378 / l2_188;
+  *D.27584D.27584_664 = D.27586D.27586_671;
+  i_690 = i_311 + 1;
+  ivtmp.432_981 = ivtmp.432_980 + 1;
+  if (ivtmp.432_981 < prolog_loop_niters.430_583)
+    goto <bb 44>;
+  else
+    goto <bb 45>;
+
+<bb 44>:
+  goto <bb 112>;
+
+<bb 45>:
+  # i_115 = PHI <i_690(112)>
+  # prephitmp.350_978 = PHI <PROF_edge_counter.138_580(112)>
+  D.28370D.28370_979 = prolog_loop_niters.430_583 == niters.425_917;
+  if (D.28370D.28370_979 != 0)
+    goto <bb 55>;
+  else
+    goto <bb 46>;
+
+<bb 46>:
+  # i_116 = PHI <i_115(45), 0(42)>
+  # prephitmp.350_977 = PHI <prephitmp.350_978(45), pretmp.359_870(42)>
+  D.28373D.28373_982 = (unsigned int) N_63(D);
+  niters.433_983 = D.28373D.28373_982 - prolog_loop_niters.430_583;
+  bnd.434_984 = niters.433_983 >> 1;
+  ratio_mult_vf.435_985 = bnd.434_984 << 1;
+  D.28376D.28376_999 = ratio_mult_vf.435_985 == 0;
+  if (D.28376D.28376_999 != 0)
+    goto <bb 50>;
+  else
+    goto <bb 47>;
+
+<bb 47>:
+  D.28385D.28385_1011 = (long unsigned int) prolog_loop_niters.430_583;
+  base_off.440_1012 = D.28385D.28385_1011 * 8;
+  D.28388D.28388_1013 = BV_111(D) + base_off.440_1012;
+  vect_p.442_1014 = (vector double *) D.28388D.28388_1013;
+  vect_p.438_1015 = vect_p.442_1014;
+  vect_cst_.445_1019 = {l2_188, l2_188};
+  D.28397D.28397_1021 = (long unsigned int) prolog_loop_niters.430_583;
+  base_off.448_1022 = D.28397D.28397_1021 * 8;
+  D.28400D.28400_1023 = BV_111(D) + base_off.448_1022;
+  vect_p.450_1024 = (vector double *) D.28400D.28400_1023;
+  vect_p.446_1025 = vect_p.450_1024;
+
+<bb 48>:
+  # i_653 = PHI <i_202(53), i_116(47)>
+  # prephitmp.350_871 = PHI <PROF_edge_counter.138_193(53), prephitmp.350_977(47)>
+  # vect_p.438_1016 = PHI <vect_p.438_1017(53), vect_p.438_1015(47)>
+  # vect_p.446_1026 = PHI <vect_p.446_1027(53), vect_p.446_1025(47)>
+  # ivtmp.451_1028 = PHI <ivtmp.451_1029(53), 0(47)>
+  PROF_edge_counter.138_193 = prephitmp.350_871 + 1;
+  *.LPBX1_I_lsm.418_712 = PROF_edge_counter.138_193;
+  D.27582D.27582_197 = (long unsigned int) i_653;
+  D.27583D.27583_198 = D.27582D.27582_197 * 8;
+  D.27584D.27584_199 = BV_111(D) + D.27583D.27583_198;
+  vect_var_.443_1018 = *vect_p.438_1016;
+  D.27585D.27585_200 = *D.27584D.27584_199;
+  vect_var_.444_1020 = vect_var_.443_1018 / vect_cst_.445_1019;
+  D.27586D.27586_201 = D.27585D.27585_200 / l2_188;
+  *vect_p.446_1026 = vect_var_.444_1020;
+  i_202 = i_653 + 1;
+  vect_p.438_1017 = vect_p.438_1016 + 16;
+  vect_p.446_1027 = vect_p.446_1026 + 16;
+  ivtmp.451_1029 = ivtmp.451_1028 + 1;
+  if (ivtmp.451_1029 < bnd.434_984)
+    goto <bb 53>;
+  else
+    goto <bb 49>;
+
+<bb 49>:
+  # i_1001 = PHI <i_202(48)>
+  # prephitmp.350_1005 = PHI <PROF_edge_counter.138_193(48)>
+  D.28377D.28377_1006 = niters.433_983 == ratio_mult_vf.435_985;
+  D.28379D.28379_1007 = (int) ratio_mult_vf.435_985;
+  tmp.436_1008 = i_116 + D.28379D.28379_1007;
+  D.28381D.28381_1009 = (long int) ratio_mult_vf.435_985;
+  tmp.437_1010 = D.28381D.28381_1009 + prephitmp.350_977;
+  if (D.28377D.28377_1006 != 0)
+    goto <bb 54>;
+  else
+    goto <bb 50>;
+
+<bb 50>:
+  # i_1000 = PHI <tmp.436_1008(49), i_116(46)>
+  # prephitmp.350_1004 = PHI <tmp.437_1010(49), prephitmp.350_977(46)>
+
+<bb 51>:
+  # i_986 = PHI <i_998(52), i_1000(50)>
+  # prephitmp.350_989 = PHI <PROF_edge_counter.138_990(52), prephitmp.350_1004(50)>
+  PROF_edge_counter.138_990 = prephitmp.350_989 + 1;
+  *.LPBX1_I_lsm.418_991 = PROF_edge_counter.138_990;
+  D.27582D.27582_992 = (long unsigned int) i_986;
+  D.27583D.27583_993 = D.27582D.27582_992 * 8;
+  D.27584D.27584_994 = BV_111(D) + D.27583D.27583_993;
+  D.27585D.27585_995 = *D.27584D.27584_994;
+  D.27586D.27586_996 = D.27585D.27585_995 / l2_188;
+  *D.27584D.27584_994 = D.27586D.27586_996;
+  i_998 = i_986 + 1;
+  if (N_63(D) > i_998)
+    goto <bb 52>;
+  else
+    goto <bb 54>;
+
+<bb 52>:
+  goto <bb 51>;
+
+<bb 53>:
+  goto <bb 48>;
+
+<bb 54>:
+
+<bb 55>:
+Invalid sum of outgoing probabilities 0.0%
+  D.28317D.28317_831 = pretmp.359_870 + 1;
+  D.28318D.28318_948 = (unsigned int) N_63(D);
+  D.28319D.28319_949 = D.28318D.28318_948 + 4294967295;
+  D.28320D.28320_950 = (long int) D.28319D.28319_949;
+  *.LPBX1_I_lsm.418_74 = D.28317D.28317_831 + D.28320D.28320_950;
+  *.LPBX1[17] = *.LPBX1_I_lsm.418_74;
+  *.LPBX1_I_lsm.415_708 = *.LPBX1[20];
+  *.LPBX1_I_lsm.416_135 = *.LPBX1[19];
+
+<bb 56>:
+  # a_601 = PHI <a_926(65), 0.0(55)>
+  # pastA_638 = PHI <pastA_916(65), 0.0(55)>
+  # i_619 = PHI <i_237(65), 0(55)>
+  # *.LPBX1_I_lsm.415_661 = PHI <*.LPBX1_I_lsm.415_129(65), *.LPBX1_I_lsm.415_708(55)>
+  # *.LPBX1_I_lsm.416_659 = PHI <*.LPBX1_I_lsm.416_251(65), *.LPBX1_I_lsm.416_135(55)>
+  PROF_edge_counter.138_205 = *.LPBX1_I_lsm.415_661;
+  PROF_edge_counter.138_206 = PROF_edge_counter.138_205 + 1;
+  *.LPBX1_I_lsm.415_129 = PROF_edge_counter.138_206;
+  pretmp.364_882 = (long unsigned int) i_619;
+  pretmp.364_883 = pretmp.364_882 * 8;
+  pretmp.365_884 = AV_103(D) + pretmp.364_883;
+  pretmp.366_885 = *pretmp.365_884;
+  pretmp.369_889 = i_619 + 2;
+
+<bb 57>:
+  # a_610 = PHI <a_87(63), a_601(56)>
+  # pastA_608 = PHI <pastA_590(63), pastA_638(56)>
+  # j_630 = PHI <j_236(63), 0(56)>
+  # *.LPBX1_I_lsm.416_657 = PHI <*.LPBX1_I_lsm.416_228(63), *.LPBX1_I_lsm.416_659(56)>
+  PROF_edge_counter.138_209 = *.LPBX1_I_lsm.416_657;
+  PROF_edge_counter.138_210 = PROF_edge_counter.138_209 + 1;
+  *.LPBX1_I_lsm.416_228 = PROF_edge_counter.138_210;
+  D.27601D.27601_215 = (long unsigned int) j_630;
+  D.27602D.27602_216 = D.27601D.27601_215 * 8;
+  D.27603D.27603_217 = BV_111(D) + D.27602D.27602_216;
+  D.27604D.27604_218 = *D.27603D.27603_217;
+  sub_219 = D.27604D.27604_218 * pretmp.366_885;
+  D.27606D.27606_221 = j_630 + pretmp.369_889;
+  D.27607D.27607_222 = D.27606D.27606_221 & 3;
+  k_223 = 3 - D.27607D.27607_222;
+  if (N_63(D) > k_223)
+    goto <bb 58>;
+  else
+    goto <bb 62>;
+
+<bb 58>:
+  pretmp.393_944 = *.LPBX1[18];
+  pretmp.394_946 = D.27601D.27601_215 * 400;
+  pretmp.395_947 = ID_73(D) + pretmp.394_946;
+  *.LPBX1_I_lsm.417_331 = *.LPBX1[18];
+
+<bb 59>:
+  # a_642 = PHI <a_234(60), a_610(58)>
+  # k_643 = PHI <k_235(60), k_223(58)>
+  # prephitmp.390_945 = PHI <PROF_edge_counter.138_226(60), pretmp.393_944(58)>
+  PROF_edge_counter.138_226 = prephitmp.390_945 + 1;
+  *.LPBX1_I_lsm.417_748 = PROF_edge_counter.138_226;
+  D.27616D.27616_232 = (*pretmp.395_947)[k_643];
+  D.27617D.27617_233 = D.27616D.27616_232 * sub_219;
+  a_234 = D.27617D.27617_233 + a_642;
+  k_235 = k_643 + 4;
+  if (N_63(D) > k_235)
+    goto <bb 60>;
+  else
+    goto <bb 61>;
+
+<bb 60>:
+  goto <bb 59>;
+
+<bb 61>:
+  # a_253 = PHI <a_234(59)>
+  # a_161 = PHI <a_642(59)>
+  D.28302D.28302_864 = pretmp.393_944 + 1;
+  D.28303D.28303_863 = (unsigned int) N_63(D);
+  D.28304D.28304_862 = (unsigned int) k_223;
+  D.28305D.28305_859 = D.28303D.28303_863 - D.28304D.28304_862;
+  D.28306D.28306_858 = D.28305D.28305_859 + 4294967295;
+  D.28307D.28307_857 = D.28306D.28306_858 / 4;
+  D.28308D.28308_854 = (long int) D.28307D.28307_857;
+  *.LPBX1_I_lsm.417_81 = D.28302D.28302_864 + D.28308D.28308_854;
+  *.LPBX1[18] = *.LPBX1_I_lsm.417_81;
+
+<bb 62>:
+  # a_87 = PHI <a_253(61), a_610(57)>
+  # pastA_590 = PHI <a_161(61), pastA_608(57)>
+  j_236 = j_630 + 1;
+  if (N_63(D) > j_236)
+    goto <bb 63>;
+  else
+    goto <bb 64>;
+
+<bb 63>:
+  goto <bb 57>;
+
+<bb 64>:
+  # a_926 = PHI <a_87(62)>
+  # pastA_916 = PHI <pastA_590(62)>
+  D.28309D.28309_853 = *.LPBX1_I_lsm.416_659 + 1;
+  D.28310D.28310_852 = (unsigned int) N_63(D);
+  D.28311D.28311_851 = D.28310D.28310_852 + 4294967295;
+  D.28312D.28312_850 = (long int) D.28311D.28311_851;
+  *.LPBX1_I_lsm.416_251 = D.28309D.28309_853 + D.28312D.28312_850;
+  i_237 = i_619 + 1;
+  if (N_63(D) > i_237)
+    goto <bb 65>;
+  else
+    goto <bb 66>;
+
+<bb 65>:
+  goto <bb 56>;
+
+<bb 66>:
+Invalid sum of outgoing probabilities 0.0%
+  # *.LPBX1_I_lsm.416_252 = PHI <*.LPBX1_I_lsm.416_251(64)>
+  # pastA_907 = PHI <pastA_916(64)>
+  # a_898 = PHI <a_926(64)>
+  D.28313D.28313_849 = *.LPBX1_I_lsm.415_708 + 1;
+  D.28314D.28314_848 = (unsigned int) N_63(D);
+  D.28315D.28315_833 = D.28314D.28314_848 + 4294967295;
+  D.28316D.28316_832 = (long int) D.28315D.28315_833;
+  *.LPBX1_I_lsm.415_272 = D.28313D.28313_849 + D.28316D.28316_832;
+  *.LPBX1[20] = *.LPBX1_I_lsm.415_272;
+  *.LPBX1[19] = *.LPBX1_I_lsm.416_252;
+  *.LPBX1_I_lsm.412_747 = *.LPBX1[23];
+  *.LPBX1_I_lsm.413_745 = *.LPBX1[22];
+
+<bb 67>:
+  # b_406 = PHI <b_920(76), 0.0(66)>
+  # pastB_368 = PHI <pastB_911(76), 0.0(66)>
+  # i_158 = PHI <pretmp.375_905(76), 0(66)>
+  # *.LPBX1_I_lsm.412_651 = PHI <*.LPBX1_I_lsm.412_743(76), *.LPBX1_I_lsm.412_747(66)>
+  # *.LPBX1_I_lsm.413_652 = PHI <*.LPBX1_I_lsm.413_78(76), *.LPBX1_I_lsm.413_745(66)>
+  PROF_edge_counter.138_240 = *.LPBX1_I_lsm.412_651;
+  PROF_edge_counter.138_241 = PROF_edge_counter.138_240 + 1;
+  *.LPBX1_I_lsm.412_743 = PROF_edge_counter.138_241;
+  pretmp.372_899 = (long unsigned int) i_158;
+  pretmp.372_900 = pretmp.372_899 * 8;
+  pretmp.373_901 = BV_111(D) + pretmp.372_900;
+  pretmp.374_902 = *pretmp.373_901;
+  pretmp.375_905 = i_158 + 1;
+
+<bb 68>:
+  # b_628 = PHI <b_581(74), b_406(67)>
+  # pastB_620 = PHI <pastB_593(74), pastB_368(67)>
+  # j_606 = PHI <j_271(74), 0(67)>
+  # *.LPBX1_I_lsm.413_33 = PHI <*.LPBX1_I_lsm.413_741(74), *.LPBX1_I_lsm.413_652(67)>
+  PROF_edge_counter.138_244 = *.LPBX1_I_lsm.413_33;
+  PROF_edge_counter.138_245 = PROF_edge_counter.138_244 + 1;
+  *.LPBX1_I_lsm.413_741 = PROF_edge_counter.138_245;
+  D.27628D.27628_246 = (long unsigned int) j_606;
+  D.27629D.27629_247 = D.27628D.27628_246 * 8;
+  D.27630D.27630_248 = AV_103(D) + D.27629D.27629_247;
+  D.27631D.27631_249 = *D.27630D.27630_248;
+  sub_254 = D.27631D.27631_249 * pretmp.374_902;
+  D.27637D.27637_256 = j_606 + pretmp.375_905;
+  D.27638D.27638_257 = D.27637D.27637_256 & 3;
+  k_258 = 3 - D.27638D.27638_257;
+  if (N_63(D) > k_258)
+    goto <bb 69>;
+  else
+    goto <bb 73>;
+
+<bb 69>:
+  pretmp.393_942 = *.LPBX1[21];
+  *.LPBX1_I_lsm.414_730 = *.LPBX1[21];
+
+<bb 70>:
+  # b_575 = PHI <b_269(71), b_628(69)>
+  # k_578 = PHI <k_270(71), k_258(69)>
+  # prephitmp.390_943 = PHI <PROF_edge_counter.138_261(71), pretmp.393_942(69)>
+  PROF_edge_counter.138_261 = prephitmp.390_943 + 1;
+  *.LPBX1_I_lsm.414_729 = PROF_edge_counter.138_261;
+  D.27644D.27644_263 = (long unsigned int) k_578;
+  D.27645D.27645_264 = D.27644D.27644_263 * 400;
+  D.27646D.27646_265 = ID_73(D) + D.27645D.27645_264;
+  D.27648D.27648_267 = (*D.27646D.27646_265)[j_606];
+  D.27649D.27649_268 = D.27648D.27648_267 * sub_254;
+  b_269 = D.27649D.27649_268 + b_575;
+  k_270 = k_578 + 4;
+  if (N_63(D) > k_270)
+    goto <bb 71>;
+  else
+    goto <bb 72>;
+
+<bb 71>:
+  goto <bb 70>;
+
+<bb 72>:
+  # b_255 = PHI <b_269(70)>
+  # b_192 = PHI <b_575(70)>
+  D.28295D.28295_875 = pretmp.393_942 + 1;
+  D.28296D.28296_874 = (unsigned int) N_63(D);
+  D.28297D.28297_873 = (unsigned int) k_258;
+  D.28298D.28298_872 = D.28296D.28296_874 - D.28297D.28297_873;
+  D.28299D.28299_869 = D.28298D.28298_872 + 4294967295;
+  D.28300D.28300_868 = D.28299D.28299_869 / 4;
+  D.28301D.28301_867 = (long int) D.28300D.28300_868;
+  *.LPBX1_I_lsm.414_77 = D.28295D.28295_875 + D.28301D.28301_867;
+  *.LPBX1[21] = *.LPBX1_I_lsm.414_77;
+
+<bb 73>:
+  # b_581 = PHI <b_255(72), b_628(68)>
+  # pastB_593 = PHI <b_192(72), pastB_620(68)>
+  j_271 = j_606 + 1;
+  if (N_63(D) > j_271)
+    goto <bb 74>;
+  else
+    goto <bb 75>;
+
+<bb 74>:
+  goto <bb 68>;
+
+<bb 75>:
+  # b_920 = PHI <b_581(73)>
+  # pastB_911 = PHI <pastB_593(73)>
+  # *.LPBX1_I_lsm.413_78 = PHI <*.LPBX1_I_lsm.413_741(73)>
+  if (N_63(D) > pretmp.375_905)
+    goto <bb 76>;
+  else
+    goto <bb 77>;
+
+<bb 76>:
+  goto <bb 67>;
+
+<bb 77>:
+Invalid sum of outgoing probabilities 0.0%
+  # *.LPBX1_I_lsm.413_79 = PHI <*.LPBX1_I_lsm.413_78(75)>
+  # *.LPBX1_I_lsm.412_80 = PHI <*.LPBX1_I_lsm.412_743(75)>
+  # pastB_83 = PHI <pastB_911(75)>
+  # b_903 = PHI <b_920(75)>
+  *.LPBX1[23] = *.LPBX1_I_lsm.412_80;
+  *.LPBX1[22] = *.LPBX1_I_lsm.413_79;
+  *.LPBX1_I_lsm.409_847 = *.LPBX1[26];
+  *.LPBX1_I_lsm.410_928 = *.LPBX1[25];
+
+<bb 78>:
+  # c_626 = PHI <c_919(87), 0.0(77)>
+  # pastC_613 = PHI <pastC_910(87), 0.0(77)>
+  # i_622 = PHI <i_306(87), 0(77)>
+  # *.LPBX1_I_lsm.409_415 = PHI <*.LPBX1_I_lsm.409_927(87), *.LPBX1_I_lsm.409_847(77)>
+  # *.LPBX1_I_lsm.410_3 = PHI <*.LPBX1_I_lsm.410_896(87), *.LPBX1_I_lsm.410_928(77)>
+  PROF_edge_counter.138_275 = *.LPBX1_I_lsm.409_415;
+  PROF_edge_counter.138_276 = PROF_edge_counter.138_275 + 1;
+  *.LPBX1_I_lsm.409_927 = PROF_edge_counter.138_276;
+  pretmp.378_912 = (long unsigned int) i_622;
+  pretmp.378_913 = pretmp.378_912 * 8;
+  pretmp.379_914 = AV_103(D) + pretmp.378_913;
+  pretmp.380_915 = *pretmp.379_914;
+
+<bb 79>:
+  # c_609 = PHI <c_584(85), c_626(78)>
+  # pastC_607 = PHI <pastC_596(85), pastC_613(78)>
+  # j_632 = PHI <j_305(85), 0(78)>
+  # *.LPBX1_I_lsm.410_650 = PHI <*.LPBX1_I_lsm.410_935(85), *.LPBX1_I_lsm.410_3(78)>
+  PROF_edge_counter.138_279 = *.LPBX1_I_lsm.410_650;
+  PROF_edge_counter.138_280 = PROF_edge_counter.138_279 + 1;
+  *.LPBX1_I_lsm.410_935 = PROF_edge_counter.138_280;
+  D.27664D.27664_285 = (long unsigned int) j_632;
+  D.27665D.27665_286 = D.27664D.27664_285 * 8;
+  D.27666D.27666_287 = BV_111(D) + D.27665D.27665_286;
+  D.27667D.27667_288 = *D.27666D.27666_287;
+  sub_289 = D.27667D.27667_288 * pretmp.380_915;
+  D.27668D.27668_290 = j_632 + i_622;
+  D.27669D.27669_291 = D.27668D.27668_290 & 3;
+  k_292 = 3 - D.27669D.27669_291;
+  if (N_63(D) > k_292)
+    goto <bb 80>;
+  else
+    goto <bb 84>;
+
+<bb 80>:
+  pretmp.393_940 = *.LPBX1[24];
+  *.LPBX1_I_lsm.411_933 = *.LPBX1[24];
+
+<bb 81>:
+  # c_621 = PHI <c_303(82), c_609(80)>
+  # k_611 = PHI <k_304(82), k_292(80)>
+  # prephitmp.390_941 = PHI <PROF_edge_counter.138_295(82), pretmp.393_940(80)>
+  PROF_edge_counter.138_295 = prephitmp.390_941 + 1;
+  *.LPBX1_I_lsm.411_329 = PROF_edge_counter.138_295;
+  D.27675D.27675_297 = (long unsigned int) k_611;
+  D.27676D.27676_298 = D.27675D.27675_297 * 400;
+  D.27677D.27677_299 = ID_73(D) + D.27676D.27676_298;
+  D.27679D.27679_301 = (*D.27677D.27677_299)[j_632];
+  D.27680D.27680_302 = D.27679D.27679_301 * sub_289;
+  c_303 = c_621 - D.27680D.27680_302;
+  k_304 = k_611 + 4;
+  if (N_63(D) > k_304)
+    goto <bb 82>;
+  else
+    goto <bb 83>;
+
+<bb 82>:
+  goto <bb 81>;
+
+<bb 83>:
+  # c_229 = PHI <c_303(81)>
+  # c_175 = PHI <c_621(81)>
+  D.28288D.28288_886 = pretmp.393_940 + 1;
+  D.28289D.28289_881 = (unsigned int) N_63(D);
+  D.28290D.28290_880 = (unsigned int) k_292;
+  D.28291D.28291_879 = D.28289D.28289_881 - D.28290D.28290_880;
+  D.28292D.28292_878 = D.28291D.28291_879 + 4294967295;
+  D.28293D.28293_877 = D.28292D.28292_878 / 4;
+  D.28294D.28294_876 = (long int) D.28293D.28293_877;
+  *.LPBX1_I_lsm.411_213 = D.28288D.28288_886 + D.28294D.28294_876;
+  *.LPBX1[24] = *.LPBX1_I_lsm.411_213;
+
+<bb 84>:
+  # c_584 = PHI <c_229(83), c_609(79)>
+  # pastC_596 = PHI <c_175(83), pastC_607(79)>
+  j_305 = j_632 + 1;
+  if (N_63(D) > j_305)
+    goto <bb 85>;
+  else
+    goto <bb 86>;
+
+<bb 85>:
+  goto <bb 79>;
+
+<bb 86>:
+  # c_919 = PHI <c_584(84)>
+  # pastC_910 = PHI <pastC_596(84)>
+  # *.LPBX1_I_lsm.410_896 = PHI <*.LPBX1_I_lsm.410_935(84)>
+  i_306 = i_622 + 1;
+  if (N_63(D) > i_306)
+    goto <bb 87>;
+  else
+    goto <bb 88>;
+
+<bb 87>:
+  goto <bb 78>;
+
+<bb 88>:
+Invalid sum of outgoing probabilities 0.0%
+  # pastC_82 = PHI <pastC_910(86)>
+  # c_904 = PHI <c_919(86)>
+  # *.LPBX1_I_lsm.409_897 = PHI <*.LPBX1_I_lsm.409_927(86)>
+  # *.LPBX1_I_lsm.410_895 = PHI <*.LPBX1_I_lsm.410_896(86)>
+  *.LPBX1[26] = *.LPBX1_I_lsm.409_897;
+  *.LPBX1[25] = *.LPBX1_I_lsm.410_895;
+  *.LPBX1_I_lsm.406_320 = *.LPBX1[29];
+  *.LPBX1_I_lsm.407_321 = *.LPBX1[28];
+
+<bb 89>:
+  # d_623 = PHI <d_918(98), 0.0(88)>
+  # i_617 = PHI <i_340(98), 0(88)>
+  # *.LPBX1_I_lsm.406_436 = PHI <*.LPBX1_I_lsm.406_322(98), *.LPBX1_I_lsm.406_320(88)>
+  # *.LPBX1_I_lsm.407_429 = PHI <*.LPBX1_I_lsm.407_211(98), *.LPBX1_I_lsm.407_321(88)>
+  PROF_edge_counter.138_309 = *.LPBX1_I_lsm.406_436;
+  PROF_edge_counter.138_310 = PROF_edge_counter.138_309 + 1;
+  *.LPBX1_I_lsm.406_322 = PROF_edge_counter.138_310;
+  pretmp.385_929 = (long unsigned int) i_617;
+  pretmp.385_930 = pretmp.385_929 * 8;
+  pretmp.386_931 = BV_111(D) + pretmp.385_930;
+  pretmp.387_932 = *pretmp.386_931;
+  pretmp.388_934 = i_617 + 3;
+
+<bb 90>:
+  # d_631 = PHI <d_587(96), d_623(89)>
+  # j_640 = PHI <j_339(96), 0(89)>
+  # *.LPBX1_I_lsm.407_422 = PHI <*.LPBX1_I_lsm.407_324(96), *.LPBX1_I_lsm.407_429(89)>
+  PROF_edge_counter.138_313 = *.LPBX1_I_lsm.407_422;
+  PROF_edge_counter.138_314 = PROF_edge_counter.138_313 + 1;
+  *.LPBX1_I_lsm.407_324 = PROF_edge_counter.138_314;
+  D.27691D.27691_315 = (long unsigned int) j_640;
+  D.27692D.27692_316 = D.27691D.27691_315 * 8;
+  D.27693D.27693_317 = AV_103(D) + D.27692D.27692_316;
+  D.27694D.27694_318 = *D.27693D.27693_317;
+  sub_323 = D.27694D.27694_318 * pretmp.387_932;
+  D.27700D.27700_325 = j_640 + pretmp.388_934;
+  D.27701D.27701_326 = D.27700D.27700_325 & 3;
+  k_327 = 3 - D.27701D.27701_326;
+  if (N_63(D) > k_327)
+    goto <bb 91>;
+  else
+    goto <bb 95>;
+
+<bb 91>:
+  pretmp.389_936 = *.LPBX1[27];
+  pretmp.391_938 = D.27691D.27691_315 * 400;
+  pretmp.392_939 = ID_73(D) + pretmp.391_938;
+  *.LPBX1_I_lsm.408_294 = *.LPBX1[27];
+
+<bb 92>:
+  # d_627 = PHI <d_337(93), d_631(91)>
+  # k_615 = PHI <k_338(93), k_327(91)>
+  # prephitmp.390_937 = PHI <PROF_edge_counter.138_330(93), pretmp.389_936(91)>
+  PROF_edge_counter.138_330 = prephitmp.390_937 + 1;
+  *.LPBX1_I_lsm.408_281 = PROF_edge_counter.138_330;
+  D.27710D.27710_335 = (*pretmp.392_939)[k_615];
+  D.27711D.27711_336 = D.27710D.27710_335 * sub_323;
+  d_337 = d_627 - D.27711D.27711_336;
+  k_338 = k_615 + 4;
+  if (N_63(D) > k_338)
+    goto <bb 93>;
+  else
+    goto <bb 94>;
+
+<bb 93>:
+  goto <bb 92>;
+
+<bb 94>:
+  # d_214 = PHI <d_337(92)>
+  D.28281D.28281_894 = pretmp.389_936 + 1;
+  D.28282D.28282_893 = (unsigned int) N_63(D);
+  D.28283D.28283_892 = (unsigned int) k_327;
+  D.28284D.28284_891 = D.28282D.28282_893 - D.28283D.28283_892;
+  D.28285D.28285_890 = D.28284D.28284_891 + 4294967295;
+  D.28286D.28286_888 = D.28285D.28285_890 / 4;
+  D.28287D.28287_887 = (long int) D.28286D.28286_888;
+  *.LPBX1_I_lsm.408_225 = D.28281D.28281_894 + D.28287D.28287_887;
+  *.LPBX1[27] = *.LPBX1_I_lsm.408_225;
+
+<bb 95>:
+  # d_587 = PHI <d_214(94), d_631(90)>
+  j_339 = j_640 + 1;
+  if (N_63(D) > j_339)
+    goto <bb 96>;
+  else
+    goto <bb 97>;
+
+<bb 96>:
+  goto <bb 90>;
+
+<bb 97>:
+  # d_918 = PHI <d_587(95)>
+  # *.LPBX1_I_lsm.407_211 = PHI <*.LPBX1_I_lsm.407_324(95)>
+  i_340 = i_617 + 1;
+  if (N_63(D) > i_340)
+    goto <bb 98>;
+  else
+    goto <bb 99>;
+
+<bb 98>:
+  goto <bb 89>;
+
+<bb 99>:
+  # *.LPBX1_I_lsm.406_230 = PHI <*.LPBX1_I_lsm.406_322(97)>
+  # *.LPBX1_I_lsm.407_212 = PHI <*.LPBX1_I_lsm.407_211(97)>
+  # d_906 = PHI <d_918(97)>
+  *.LPBX1[29] = *.LPBX1_I_lsm.406_230;
+  *.LPBX1[28] = *.LPBX1_I_lsm.407_212;
+
+<bb 100>:
+  # d_589 = PHI <d_906(99), 0.0(2)>
+  # a_467 = PHI <a_898(99), 0.0(2)>
+  # b_447 = PHI <b_903(99), 0.0(2)>
+  # c_435 = PHI <c_904(99), 0.0(2)>
+  # pastA_428 = PHI <pastA_907(99), 0.0(2)>
+  # pastB_421 = PHI <pastB_83(99), 0.0(2)>
+  # pastC_414 = PHI <pastC_82(99), 0.0(2)>
+  aux_341 = N_63(D) * 3;
+  aux_342 = aux_341 % 4;
+  switch (aux_342) <default: <L67>, case 0: <L63>, case 1: <L64>, case 2: <L65>, case 3: <L66>>
+
+<L63>:
+  D.27713D.27713_343 = b_447 * b_447;
+  D.27714D.27714_344 = c_435 * c_435;
+  D.27715D.27715_345 = D.27713D.27713_343 + D.27714D.27714_344;
+  D.27716D.27716_346 = sqrt (D.27715D.27715_345);
+  dcheck_347 = D.27716D.27716_346 + a_467;
+  D.27717D.27717_348 = pastA_428 + b_447;
+  D.27718D.27718_349 = D.27717D.27717_348 + c_435;
+  check2_350 = D.27718D.27718_349 + d_589;
+  PROF_edge_counter.138_351 = *.LPBX1[30];
+  PROF_edge_counter.138_352 = PROF_edge_counter.138_351 + 1;
+  *.LPBX1[30] = PROF_edge_counter.138_352;
+  pretmp.334_826 = ABS_EXPR <check2_350>;
+  goto <bb 105> (<L67>);
+
+<L64>:
+  D.27719D.27719_353 = pastB_421 * pastB_421;
+  D.27714D.27714_354 = c_435 * c_435;
+  D.27720D.27720_355 = D.27719D.27719_353 + D.27714D.27714_354;
+  D.27721D.27721_356 = sqrt (D.27720D.27720_355);
+  D.27722D.27722_357 = D.27721D.27721_356 + a_467;
+  dcheck_358 = D.27722D.27722_357 - b_447;
+  D.27723D.27723_359 = pastA_428 + pastB_421;
+  D.27724D.27724_360 = D.27723D.27723_359 + c_435;
+  check2_361 = D.27724D.27724_360 + d_589;
+  PROF_edge_counter.138_362 = *.LPBX1[31];
+  PROF_edge_counter.138_363 = PROF_edge_counter.138_362 + 1;
+  *.LPBX1[31] = PROF_edge_counter.138_363;
+  pretmp.334_827 = ABS_EXPR <check2_361>;
+  goto <bb 105> (<L67>);
+
+<L65>:
+  D.27713D.27713_364 = b_447 * b_447;
+  D.27714D.27714_365 = c_435 * c_435;
+  D.27715D.27715_366 = D.27713D.27713_364 + D.27714D.27714_365;
+  dcheck_367 = sqrt (D.27715D.27715_366);
+  D.27723D.27723_369 = pastA_428 + pastB_421;
+  D.27726D.27726_370 = D.27723D.27723_369 + pastC_414;
+  check2_371 = D.27726D.27726_370 + d_589;
+  PROF_edge_counter.138_372 = *.LPBX1[32];
+  PROF_edge_counter.138_373 = PROF_edge_counter.138_372 + 1;
+  *.LPBX1[32] = PROF_edge_counter.138_373;
+  pretmp.334_828 = ABS_EXPR <check2_371>;
+  goto <bb 105> (<L67>);
+
+<L66>:
+  D.27713D.27713_374 = b_447 * b_447;
+  D.27714D.27714_375 = c_435 * c_435;
+  D.27715D.27715_376 = D.27713D.27713_374 + D.27714D.27714_375;
+  dcheck_377 = sqrt (D.27715D.27715_376);
+  D.27728D.27728_379 = a_467 + b_447;
+  D.27729D.27729_380 = D.27728D.27728_379 + c_435;
+  check2_381 = D.27729D.27729_380 + d_589;
+  PROF_edge_counter.138_382 = *.LPBX1[33];
+  PROF_edge_counter.138_383 = PROF_edge_counter.138_382 + 1;
+  *.LPBX1[33] = PROF_edge_counter.138_383;
+  pretmp.334_829 = ABS_EXPR <check2_381>;
+
+  # dcheck_25 = PHI <dcheck_59(100), dcheck_347(101), dcheck_358(102), dcheck_367(103), dcheck_377(104)>
+  # prephitmp.335_830 = PHI <0.0(100), pretmp.334_826(101), pretmp.334_827(102), pretmp.334_828(103), pretmp.334_829(104)>
+<L67>:
+  D.27733D.27733_384 = ABS_EXPR <dcheck_25>;
+  D.27872D.27872_388 = D.27733D.27733_384 < prephitmp.335_830;
+  if (D.27872D.27872_388 != 0)
+    goto <bb 107>;
+  else
+    goto <bb 106>;
+
+<bb 106>:
+  PROF_edge_counter.138_391 = *.LPBX1[34];
+  PROF_edge_counter.138_392 = PROF_edge_counter.138_391 + 1;
+  *.LPBX1[34] = PROF_edge_counter.138_392;
+
+<bb 107>:
+  # D.27733D.27733_394 = PHI <D.27733D.27733_384(105), prephitmp.335_830(106)>
+  D.27878D.27878_399 = D.27733D.27733_384 > prephitmp.335_830;
+  if (D.27878D.27878_399 != 0)
+    goto <bb 108>;
+  else
+    goto <bb 109>;
+
+<bb 108>:
+  PROF_edge_counter.138_401 = *.LPBX1[35];
+  PROF_edge_counter.138_402 = PROF_edge_counter.138_401 + 1;
+  *.LPBX1[35] = PROF_edge_counter.138_402;
+  goto <bb 110>;
+
+<bb 109>:
+  PROF_edge_counter.138_404 = *.LPBX1[36];
+  PROF_edge_counter.138_405 = PROF_edge_counter.138_404 + 1;
+  *.LPBX1[36] = PROF_edge_counter.138_405;
+
+<bb 110>:
+  # D.27733D.27733_407 = PHI <D.27733D.27733_384(108), prephitmp.335_830(109)>
+  D.27736D.27736_408 = D.27733D.27733_394 / D.27733D.27733_407;
+  *check_58(D) = D.27736D.27736_408;
+  return;
+
+}
+
+
+
+;; Function double trig(int, int) (_Z4trigii)
+
+double trig(int, int) (int i, int j)
+{
+  long int PROF_edge_counter.139;
+  double trig;
+  double z;
+  double y;
+  double x;
+  double D.27434D.27434;
+  double D.27433D.27433;
+  double D.27432D.27432;
+  double D.27431D.27431;
+  double D.27430D.27430;
+  double D.27429D.27429;
+  double D.27428D.27428;
+  double D.27427D.27427;
+  double D.27426D.27426;
+  double D.27425D.27425;
+  double D.27424D.27424;
+  double D.27422D.27422;
+  double D.27421D.27421;
+  double D.27419D.27419;
+  double D.27418D.27418;
+  double D.27417D.27417;
+  double D.27416D.27416;
+  double D.27415D.27415;
+  int D.27414D.27414;
+  double D.27413D.27413;
+  int D.27412D.27412;
+
+<bb 2>:
+  PROF_edge_counter.139_1 = *.LPBX1[37];
+  PROF_edge_counter.139_2 = PROF_edge_counter.139_1 + 1;
+  *.LPBX1[37] = PROF_edge_counter.139_2;
+  D.27412D.27412_5 = i_4(D) + 1;
+  D.27413D.27413_6 = (double) D.27412D.27412_5;
+  D.27414D.27414_8 = j_7(D) + 1;
+  D.27415D.27415_9 = (double) D.27414D.27414_8;
+  x_10 = D.27413D.27413_6 - D.27415D.27415_9;
+  y_15 = D.27413D.27413_6 + D.27415D.27415_9;
+  D.27416D.27416_16 = x_10 * x_10;
+  D.27417D.27417_17 = y_15 * y_15;
+  D.27418D.27418_18 = D.27416D.27416_16 + D.27417D.27417_17;
+  D.27419D.27419_19 = sqrt (D.27418D.27418_18);
+  D.27421D.27421_21 = D.27419D.27419_19 * 3.1415927410125732421875e+0;
+  D.27422D.27422_22 = sin (D.27421D.27421_21);
+  z_23 = exp (D.27422D.27422_22);
+  D.27424D.27424_25 = x_10 + y_15;
+  D.27425D.27425_26 = z_23 + 1.0e+0;
+  D.27426D.27426_27 = x_10 * y_15;
+  D.27427D.27427_28 = z_23 * D.27426D.27426_27;
+  D.27428D.27428_29 = D.27425D.27425_26 + D.27427D.27427_28;
+  D.27429D.27429_30 = ABS_EXPR <D.27428D.27428_29>;
+  D.27430D.27430_31 = log10 (D.27429D.27429_30);
+  D.27431D.27431_32 = ABS_EXPR <x_10>;
+  D.27432D.27432_33 = ABS_EXPR <y_15>;
+  D.27433D.27433_34 = D.27431D.27431_32 + D.27432D.27432_33;
+  D.27434D.27434_35 = D.27430D.27430_31 / D.27433D.27433_34;
+  trig_36 = D.27424D.27424_25 + D.27434D.27434_35;
+  return trig_36;
+
+}
+
+
+
+;; Function double walltime_() (_Z9walltime_v)
+
+double walltime_() ()
+{
+  long int PROF_edge_counter.144;
+  double seconds;
+  struct timeval tp;
+  double D.27026D.27026;
+  double factor.74;
+  double D.27024D.27024;
+  __suseconds_t D.27023D.27023;
+  double D.27022D.27022;
+  __time_t D.27021D.27021;
+
+<bb 2>:
+  PROF_edge_counter.144_1 = *.LPBX1[53];
+  PROF_edge_counter.144_2 = PROF_edge_counter.144_1 + 1;
+  *.LPBX1[53] = PROF_edge_counter.144_2;
+  gettimeofday (&tp, 0B);
+  PROF_edge_counter.144_4 = *.LPBX1[54];
+  PROF_edge_counter.144_5 = PROF_edge_counter.144_4 + 1;
+  *.LPBX1[54] = PROF_edge_counter.144_5;
+  D.27021D.27021_7 = tp.tv_sec;
+  D.27022D.27022_8 = (double) D.27021D.27021_7;
+  D.27023D.27023_9 = tp.tv_usec;
+  D.27024D.27024_10 = (double) D.27023D.27023_9;
+  factor.74_11 = factor;
+  D.27026D.27026_12 = D.27024D.27024_10 * factor.74_11;
+  seconds_13 = D.27022D.27022_8 + D.27026D.27026_12;
+  return seconds_13;
+
+}
+
+
+
+;; Function double cputime_() (_Z8cputime_v)
+
+double cputime_() ()
+{
+  long int PROF_edge_counter.145;
+  double D.27013D.27013;
+  clock_t D.27012D.27012;
+  double D.27011D.27011;
+
+<bb 2>:
+  PROF_edge_counter.145_1 = *.LPBX1[55];
+  PROF_edge_counter.145_2 = PROF_edge_counter.145_1 + 1;
+  *.LPBX1[55] = PROF_edge_counter.145_2;
+  D.27012D.27012_3 = clock ();
+  PROF_edge_counter.145_4 = *.LPBX1[56];
+  PROF_edge_counter.145_5 = PROF_edge_counter.145_4 + 1;
+  *.LPBX1[56] = PROF_edge_counter.145_5;
+  D.27013D.27013_6 = (double) D.27012D.27012_3;
+  D.27011D.27011_7 = D.27013D.27013_6 / 1.0e+6;
+  return D.27011D.27011_7;
+
+}
+
+
+
+;; Function int main() (main)
+
+
+mainc.cpp:225: note: vect_model_load_cost: aligned.
+mainc.cpp:225: note: vect_model_load_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:225: note: vect_model_store_cost: inside_cost = 1, outside_cost = 0 .
+mainc.cpp:225: note: cost model: epilogue peel iters set to vf/2 because loop iterations are unknown .
+mainc.cpp:225: note: Cost model analysis: 
+  Vector inside of loop cost: 2
+  Vector outside of loop cost: 8
+  Scalar iteration cost: 2
+  Scalar outside cost: 6
+  prologue iterations: 0
+  epilogue iterations: 1
+  Calculated minimum iters for profitability: 2
+
+mainc.cpp:225: note:   Profitability threshold = 1
+
+mainc.cpp:225: note: Vectorization may not be profitable.NOTE: no flow-sensitive alias info for vect_pDM.947_1564 in vect_var_.953_1566 = *vect_pDM.947_1564;
+NOTE: no flow-sensitive alias info for vect_pDM.947_1564 in vect_var_.953_1566 = *vect_pDM.947_1564;
+NOTE: no flow-sensitive alias info for vect_pCM.954_1572 in *vect_pCM.954_1572 = vect_var_.953_1566;
+NOTE: no flow-sensitive alias info for vect_pCM.954_1572 in *vect_pCM.954_1572 = vect_var_.953_1566;
+
+
+Symbols to be put in SSA form
+
+{ CM *.LPBX1 MPT.803 SMT.948 SMT.955 }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 139
+Number of blocks to update: 138 ( 99%)
+
+
+
+
+mainc.cpp:225: note: LOOP VECTORIZED.
+mainc.cpp:188: note: not vectorized: unsupported use in stmt.
+mainc.cpp:176: note: not vectorized: unsupported use in stmt.
+mainc.cpp:118: note: not vectorized: unsupported use in stmt.
+mainc.cpp:66: note: vectorized 1 loops in function.
+Merging blocks 86 and 133
+Merging blocks 136 and 89
+Removing basic block 137
+int main() ()
+{
+  unsigned int ivtmp.960;
+  double[50][50] * D.29295D.29295;
+  vector double * vect_pCM.959;
+  long unsigned int D.29292D.29292;
+  long unsigned int base_off.957;
+  vector double * vect_pCM.954;
+  vector double vect_var_.953;
+  double[50][50] * D.29286D.29286;
+  vector double * vect_pDM.952;
+  long unsigned int D.29283D.29283;
+  long unsigned int base_off.950;
+  vector double * vect_pDM.947;
+  long int D.29278D.29278;
+  long int tmp.946;
+  int tmp.945;
+  bool D.29275D.29275;
+  unsigned int D.29271D.29271;
+  bool D.29272D.29272;
+  bool D.29273D.29273;
+  bool D.29274D.29274;
+  unsigned int ratio_mult_vf.944;
+  unsigned int bnd.943;
+  unsigned int niters.942;
+  long int D.29260D.29260;
+  unsigned int D.29261D.29261;
+  unsigned int D.29262D.29262;
+  unsigned int D.29263D.29263;
+  long int D.29264D.29264;
+  long int D.29254D.29254;
+  unsigned int D.29255D.29255;
+  unsigned int D.29256D.29256;
+  unsigned int D.29257D.29257;
+  unsigned int D.29258D.29258;
+  long int D.29259D.29259;
+  long int D.29250D.29250;
+  unsigned int D.29251D.29251;
+  unsigned int D.29252D.29252;
+  long int D.29253D.29253;
+  long int D.29247D.29247;
+  unsigned int D.29248D.29248;
+  long int D.29249D.29249;
+  long int D.29243D.29243;
+  unsigned int D.29244D.29244;
+  unsigned int D.29245D.29245;
+  long int D.29246D.29246;
+  long int D.29239D.29239;
+  unsigned int D.29240D.29240;
+  unsigned int D.29241D.29241;
+  long int D.29242D.29242;
+  int IA_I_lsm.941;
+  long int *.LPBX1_I_lsm.940;
+  long int *.LPBX1_I_lsm.939;
+  double CM_I_I_lsm.938;
+  long int *.LPBX1_I_lsm.937;
+  long int *.LPBX1_I_lsm.936;
+  double CM_I_I_lsm.935;
+  long int *.LPBX1_I_lsm.934;
+  long int *.LPBX1_I_lsm.933;
+  long int *.LPBX1_I_lsm.932;
+  float sum_lsm.931;
+  long int *.LPBX1_I_lsm.930;
+  long int *.LPBX1_I_lsm.929;
+  long int *.LPBX1_I_lsm.928;
+  float sum_lsm.927;
+  long int *.LPBX1_I_lsm.926;
+  int prephitmp.915;
+  int pretmp.914;
+  long int prephitmp.913;
+  long int pretmp.912;
+  double pretmp.909;
+  double prephitmp.908;
+  long int prephitmp.907;
+  long int pretmp.906;
+  double prephitmp.904;
+  long int prephitmp.903;
+  long int pretmp.902;
+  double pretmp.900;
+  float prephitmp.898;
+  long int prephitmp.897;
+  long int pretmp.896;
+  float prephitmp.895;
+  long int prephitmp.892;
+  long int pretmp.891;
+  float prephitmp.889;
+  long int prephitmp.888;
+  long int pretmp.887;
+  float prephitmp.886;
+  int prephitmp.885;
+  int pretmp.884;
+  double D.29099D.29099;
+  double D.29097D.29097;
+  long int PROF_edge_counter.142;
+  char D.29075D.29075;
+  int (*__vtbl_ptr_type) (void) * D.29072D.29072;
+  int (*__vtbl_ptr_type) (void) * D.29071D.29071;
+  int (*__vtbl_ptr_type) (void) D.29070D.29070;
+  const struct ctype * const this;
+  char D.29066D.29066;
+  char D.29066D.29066;
+  struct basic_ios * __os.133;
+  int (*__vtbl_ptr_type) (void) * D.29059D.29059;
+  int (*__vtbl_ptr_type) (void) * D.29058D.29058;
+  long int * D.29057D.29057;
+  long int D.29056D.29056;
+  long unsigned int D.29055D.29055;
+  struct basic_ios * D.29054D.29054;
+  int D.29052D.29052;
+  struct basic_ostream & __os;
+  long int PROF_edge_counter.143;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.142;
+  char D.28973D.28973;
+  int (*__vtbl_ptr_type) (void) * D.28970D.28970;
+  int (*__vtbl_ptr_type) (void) * D.28969D.28969;
+  int (*__vtbl_ptr_type) (void) D.28968D.28968;
+  const struct ctype * const this;
+  char D.28964D.28964;
+  char D.28964D.28964;
+  struct basic_ios * __os.133;
+  int (*__vtbl_ptr_type) (void) * D.28957D.28957;
+  int (*__vtbl_ptr_type) (void) * D.28956D.28956;
+  long int * D.28955D.28955;
+  long int D.28954D.28954;
+  long unsigned int D.28953D.28953;
+  struct basic_ios * D.28952D.28952;
+  int D.28950D.28950;
+  struct basic_ostream & __os;
+  long int PROF_edge_counter.143;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.141;
+  long int PROF_edge_counter.146;
+  struct basic_ostream * const this;
+  double D.27940D.27940;
+  float __f;
+  struct basic_ostream * const this;
+  struct basic_ostream * const this;
+  double __f;
+  bool D.27921D.27921;
+  bool D.27915D.27915;
+  int i;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int k;
+  int j;
+  int i;
+  int j;
+  int i;
+  int i;
+  int i;
+  int j;
+  int i;
+  int j;
+  int i;
+  int i;
+  int i;
+  int i;
+  int jn2;
+  double jn1;
+  double jn0;
+  double sub;
+  double seed;
+  double TRACE3;
+  double HOLDB;
+  double HOLDA;
+  double TOP;
+  double BOT;
+  double check;
+  float start.120;
+  float finish.119;
+  float finish.118;
+  double D.27388D.27388;
+  double D.27387D.27387;
+  double D.27386D.27386;
+  double D.27385D.27385;
+  double D.27384D.27384;
+  double D.27383D.27383;
+  double D.27382D.27382;
+  int D.27381D.27381;
+  double D.27370D.27370;
+  double D.27366D.27366;
+  double HOLDB.111;
+  double D.27352D.27352;
+  double HOLDA.110;
+  double D.27350D.27350;
+  float sum.109;
+  double D.27348D.27348;
+  double D.27347D.27347;
+  double D.27346D.27346;
+  double D.27344D.27344;
+  double D.27326D.27326;
+  float sum.103;
+  double D.27312D.27312;
+  double D.27311D.27311;
+  double D.27310D.27310;
+  double D.27308D.27308;
+  double D.27305D.27305;
+  double D.27288D.27288;
+  double D.27287D.27287;
+  double D.27286D.27286;
+  double D.27285D.27285;
+  double D.27284D.27284;
+  double D.27264D.27264;
+  double D.27263D.27263;
+  double D.27262D.27262;
+  double D.27261D.27261;
+  double D.27260D.27260;
+  double D.27240D.27240;
+  double D.27239D.27239;
+  double D.27238D.27238;
+  double D.27237D.27237;
+  double D.27236D.27236;
+  double D.27235D.27235;
+  double D.27233D.27233;
+  double D.27232D.27232;
+  double D.27231D.27231;
+  double D.27230D.27230;
+  int D.27229D.27229;
+  int D.27228D.27228;
+  double D.27227D.27227;
+  double D.27225D.27225;
+  double D.27224D.27224;
+  double D.27223D.27223;
+  double D.27222D.27222;
+  double D.27221D.27221;
+  double D.27220D.27220;
+  double D.27219D.27219;
+  double D.27218D.27218;
+  double D.27217D.27217;
+  double HOLDA.91;
+  double D.27201D.27201;
+  double D.27200D.27200;
+  double D.27199D.27199;
+  double D.27198D.27198;
+  double D.27197D.27197;
+  int D.27196D.27196;
+  double D.27189D.27189;
+  double D.27188D.27188;
+  double D.27187D.27187;
+  double D.27186D.27186;
+  int D.27185D.27185;
+  int D.27178D.27178;
+  int D.27177D.27177;
+  int D.27176D.27176;
+  double D.27161D.27161;
+  double D.27160D.27160;
+  double D.27159D.27159;
+  double D.27157D.27157;
+  double D.27156D.27156;
+  double D.27155D.27155;
+  double D.27154D.27154;
+  double D.27153D.27153;
+  bool D.27148D.27148;
+  double check.83;
+  double check.82;
+  double D.27135D.27135;
+  double D.27134D.27134;
+  double D.27133D.27133;
+  double D.27126D.27126;
+  double D.27124D.27124;
+  double D.27123D.27123;
+  double D.27122D.27122;
+  double D.27115D.27115;
+  double D.27113D.27113;
+  double D.27112D.27112;
+  int D.27111D.27111;
+  double D.27110D.27110;
+  double D.27109D.27109;
+  int N.76;
+  float start.75;
+  double D.27100D.27100;
+
+<bb 2>:
+  PROF_edge_counter.146_32 = *.LPBX1[57];
+  PROF_edge_counter.146_33 = PROF_edge_counter.146_32 + 1;
+  *.LPBX1[57] = PROF_edge_counter.146_33;
+  cout.D.24378D.24378.D.23695D.23695._M_precision = 17;
+  D.27100D.27100_38 = cputime_ ();
+  start.75_39 = (float) D.27100D.27100_38;
+  start = start.75_39;
+  seed = 1.0e+0;
+  goto <bb 4>;
+
+<bb 3>:
+  PROF_edge_counter.146_43 = *.LPBX1[60];
+  PROF_edge_counter.146_44 = PROF_edge_counter.146_43 + 1;
+  *.LPBX1[60] = PROF_edge_counter.146_44;
+  jn1_45 = conrand (&seed);
+  PROF_edge_counter.146_46 = *.LPBX1[58];
+  PROF_edge_counter.146_47 = PROF_edge_counter.146_46 + 1;
+  *.LPBX1[58] = PROF_edge_counter.146_47;
+  D.27109D.27109_49 = conrand (&seed);
+  D.27110D.27110_50 = D.27109D.27109_49 * 1.0e+1;
+  jn2_51 = (int) D.27110D.27110_50;
+  N.76_52 = N;
+  D.27111D.27111_53 = jn2_51 % N.76_52;
+  D.27112D.27112_54 = (double) D.27111D.27111_53;
+  D.27113D.27113_55 = pow (-1.0e+0, D.27112D.27112_54);
+  jn0_56 = jn1_45 * D.27113D.27113_55;
+  D.27115D.27115_58 = jn (0, jn0_56);
+  AV[i_2] = D.27115D.27115_58;
+  i_59 = i_2 + 1;
+  PROF_edge_counter.146_60 = *.LPBX1[59];
+  PROF_edge_counter.146_61 = PROF_edge_counter.146_60 + 1;
+  *.LPBX1[59] = PROF_edge_counter.146_61;
+
+<bb 4>:
+  # i_2 = PHI <0(2), i_59(3)>
+  N.76_41 = N;
+  if (i_2 < N.76_41)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  # N.76_1450 = PHI <N.76_41(4)>
+  goto <bb 7>;
+
+<bb 6>:
+  PROF_edge_counter.146_65 = *.LPBX1[63];
+  PROF_edge_counter.146_66 = PROF_edge_counter.146_65 + 1;
+  *.LPBX1[63] = PROF_edge_counter.146_66;
+  jn1_67 = conrand (&seed);
+  PROF_edge_counter.146_68 = *.LPBX1[61];
+  PROF_edge_counter.146_69 = PROF_edge_counter.146_68 + 1;
+  *.LPBX1[61] = PROF_edge_counter.146_69;
+  D.27122D.27122_71 = conrand (&seed);
+  D.27123D.27123_72 = D.27122D.27122_71 * 1.0e+1;
+  jn2_73 = (int) D.27123D.27123_72;
+  N.76_74 = N;
+  D.27111D.27111_75 = jn2_73 % N.76_74;
+  D.27112D.27112_76 = (double) D.27111D.27111_75;
+  D.27124D.27124_77 = pow (-1.0e+0, D.27112D.27112_76);
+  jn0_78 = jn1_67 * D.27124D.27124_77;
+  D.27126D.27126_80 = jn (1, jn0_78);
+  BV[i_3] = D.27126D.27126_80;
+  i_81 = i_3 + 1;
+  PROF_edge_counter.146_82 = *.LPBX1[62];
+  PROF_edge_counter.146_83 = PROF_edge_counter.146_82 + 1;
+  *.LPBX1[62] = PROF_edge_counter.146_83;
+  pretmp.884_1190 = N;
+
+<bb 7>:
+  # i_3 = PHI <0(5), i_81(6)>
+  # prephitmp.885_1191 = PHI <N.76_1450(5), pretmp.884_1190(6)>
+  if (i_3 < prephitmp.885_1191)
+    goto <bb 6>;
+  else
+    goto <bb 8>;
+
+<bb 8>:
+  check = 0.0;
+  goto <bb 10>;
+
+<bb 9>:
+  PROF_edge_counter.146_87 = *.LPBX1[65];
+  PROF_edge_counter.146_88 = PROF_edge_counter.146_87 + 1;
+  *.LPBX1[65] = PROF_edge_counter.146_88;
+  D.27133D.27133_91 = AV[i_4];
+  D.27134D.27134_93 = BV[i_4];
+  D.27135D.27135_94 = D.27133D.27133_91 * D.27134D.27134_93;
+  check.82_95 = check;
+  check.83_96 = D.27135D.27135_94 + check.82_95;
+  check = check.83_96;
+  idcheck (N.76_85, &check, &AV[0], &BV[0], &ID[0]);
+  i_97 = i_4 + 1;
+  PROF_edge_counter.146_98 = *.LPBX1[64];
+  PROF_edge_counter.146_99 = PROF_edge_counter.146_98 + 1;
+  *.LPBX1[64] = PROF_edge_counter.146_99;
+
+<bb 10>:
+  # i_4 = PHI <0(8), i_97(9)>
+  N.76_85 = N;
+  if (i_4 < N.76_85)
+    goto <bb 9>;
+  else
+    goto <bb 11>;
+
+<bb 11>:
+  # N.76_1451 = PHI <N.76_85(10)>
+  goto <bb 20>;
+
+<bb 12>:
+  PROF_edge_counter.146_103 = *.LPBX1[69];
+  PROF_edge_counter.146_104 = PROF_edge_counter.146_103 + 1;
+  *.LPBX1[69] = PROF_edge_counter.146_104;
+  if (prephitmp.885_1193 > 0)
+    goto <bb 13>;
+  else
+    goto <bb 19>;
+
+<bb 13>:
+
+<bb 14>:
+  # j_1132 = PHI <j_113(18), 0(13)>
+  # N.76_1133 = PHI <N.76_106(18), prephitmp.885_1193(13)>
+  PROF_edge_counter.146_108 = *.LPBX1[67];
+  PROF_edge_counter.146_109 = PROF_edge_counter.146_108 + 1;
+  *.LPBX1[67] = PROF_edge_counter.146_109;
+  idcheck (N.76_1133, &check, &AV[0], &BV[0], &ID[0]);
+  check.82_111 = check;
+  D.27148D.27148_112 = check.82_111 > 5.0e-1;
+  if (D.27148D.27148_112 != 0)
+    goto <bb 15>;
+  else
+    goto <bb 16>;
+
+<bb 15>:
+  D.27153D.27153_129 = AV[i_5];
+  D.27154D.27154_131 = BV[j_1132];
+  D.27155D.27155_132 = D.27153D.27153_129 * D.27154D.27154_131;
+  D.27156D.27156_134 = BV[i_5];
+  D.27157D.27157_135 = D.27155D.27155_132 / D.27156D.27156_134;
+  OP[i_5][j_1132] = D.27157D.27157_135;
+  goto <bb 17>;
+
+<bb 16>:
+  D.27159D.27159_117 = AV[j_1132];
+  D.27156D.27156_119 = BV[i_5];
+  D.27160D.27160_120 = D.27159D.27159_117 * D.27156D.27156_119;
+  D.27154D.27154_122 = BV[j_1132];
+  D.27161D.27161_123 = D.27160D.27160_120 / D.27154D.27154_122;
+  OP[i_5][j_1132] = D.27161D.27161_123;
+  PROF_edge_counter.146_124 = *.LPBX1[66];
+  PROF_edge_counter.146_125 = PROF_edge_counter.146_124 + 1;
+  *.LPBX1[66] = PROF_edge_counter.146_125;
+
+<bb 17>:
+  j_113 = j_1132 + 1;
+  N.76_106 = N;
+  if (N.76_106 > j_113)
+    goto <bb 18>;
+  else
+    goto <bb 19>;
+
+<bb 18>:
+  goto <bb 14>;
+
+<bb 19>:
+  i_137 = i_5 + 1;
+  IA[i_5] = i_137;
+  PROF_edge_counter.146_139 = *.LPBX1[68];
+  PROF_edge_counter.146_140 = PROF_edge_counter.146_139 + 1;
+  *.LPBX1[68] = PROF_edge_counter.146_140;
+  pretmp.884_1192 = N;
+
+<bb 20>:
+  # i_5 = PHI <0(11), i_137(19)>
+  # prephitmp.885_1193 = PHI <N.76_1451(11), pretmp.884_1192(19)>
+  if (i_5 < prephitmp.885_1193)
+    goto <bb 12>;
+  else
+    goto <bb 21>;
+
+<bb 21>:
+  # prephitmp.885_1455 = PHI <prephitmp.885_1193(20)>
+  pretmp.914_1244 = N;
+  pretmp.884_1194 = N;
+  goto <bb 28>;
+
+<bb 22>:
+  PROF_edge_counter.146_144 = *.LPBX1[71];
+  PROF_edge_counter.146_145 = PROF_edge_counter.146_144 + 1;
+  *.LPBX1[71] = PROF_edge_counter.146_145;
+  if (i_7 >= -1)
+    goto <bb 23>;
+  else
+    goto <bb 27>;
+
+<bb 23>:
+  pretmp.912_1241 = *.LPBX1[70];
+  pretmp.914_1243 = i_7 + 2;
+  *.LPBX1_I_lsm.940_1376 = *.LPBX1[70];
+  IA_I_lsm.941_1374 = IA[i_7];
+
+<bb 24>:
+  # j_1122 = PHI <j_158(25), -1(23)>
+  # prephitmp.913_1242 = PHI <PROF_edge_counter.146_149(25), pretmp.912_1241(23)>
+  # prephitmp.915_1245 = PHI <pretmp.914_1244(25), prephitmp.885_1195(23)>
+  PROF_edge_counter.146_149 = prephitmp.913_1242 + 1;
+  *.LPBX1_I_lsm.940_451 = PROF_edge_counter.146_149;
+  D.27176D.27176_153 = j_1122 + pretmp.914_1243;
+  D.27177D.27177_155 = D.27176D.27176_153 % prephitmp.915_1245;
+  D.27178D.27178_157 = D.27177D.27177_155 % prephitmp.915_1245;
+  IA_I_lsm.941_479 = D.27178D.27178_157;
+  j_158 = j_1122 + 8;
+  if (i_7 >= j_158)
+    goto <bb 25>;
+  else
+    goto <bb 26>;
+
+<bb 25>:
+  goto <bb 24>;
+
+<bb 26>:
+  # IA_I_lsm.941_1498 = PHI <IA_I_lsm.941_479(24)>
+  D.29260D.29260_1535 = pretmp.912_1241 + 1;
+  D.29261D.29261_1536 = (unsigned int) i_7;
+  D.29262D.29262_1537 = D.29261D.29261_1536 + 1;
+  D.29263D.29263_1538 = D.29262D.29262_1537 / 8;
+  D.29264D.29264_1539 = (long int) D.29263D.29263_1538;
+  *.LPBX1_I_lsm.940_1496 = D.29260D.29260_1535 + D.29264D.29264_1539;
+  *.LPBX1[70] = *.LPBX1_I_lsm.940_1496;
+  IA[i_7] = IA_I_lsm.941_1498;
+
+<bb 27>:
+  i_159 = i_7 + 1;
+
+<bb 28>:
+  # i_7 = PHI <0(21), i_159(27)>
+  # prephitmp.885_1195 = PHI <prephitmp.885_1455(21), pretmp.884_1194(27)>
+  if (i_7 < prephitmp.885_1195)
+    goto <bb 22>;
+  else
+    goto <bb 29>;
+
+<bb 29>:
+  # prephitmp.885_1456 = PHI <prephitmp.885_1195(28)>
+  goto <bb 31>;
+
+<bb 30>:
+  PROF_edge_counter.146_163 = *.LPBX1[73];
+  PROF_edge_counter.146_164 = PROF_edge_counter.146_163 + 1;
+  *.LPBX1[73] = PROF_edge_counter.146_164;
+  idcheck (prephitmp.885_1197, &check, &AV[0], &BV[0], &ID[0]);
+  D.27185D.27185_169 = IA[i_9];
+  D.27186D.27186_170 = AV[D.27185D.27185_169];
+  D.27187D.27187_173 = BV[D.27185D.27185_169];
+  D.27188D.27188_174 = D.27186D.27186_170 + D.27187D.27187_173;
+  check.82_175 = check;
+  D.27189D.27189_176 = D.27188D.27188_174 / check.82_175;
+  CV[D.27185D.27185_169] = D.27189D.27189_176;
+  i_177 = i_9 + 1;
+  PROF_edge_counter.146_178 = *.LPBX1[72];
+  PROF_edge_counter.146_179 = PROF_edge_counter.146_178 + 1;
+  *.LPBX1[72] = PROF_edge_counter.146_179;
+  pretmp.884_1196 = N;
+
+<bb 31>:
+  # i_9 = PHI <0(29), i_177(30)>
+  # prephitmp.885_1197 = PHI <prephitmp.885_1456(29), pretmp.884_1196(30)>
+  if (i_9 < prephitmp.885_1197)
+    goto <bb 30>;
+  else
+    goto <bb 32>;
+
+<bb 32>:
+  # prephitmp.885_1457 = PHI <prephitmp.885_1197(31)>
+  goto <bb 34>;
+
+<bb 33>:
+  PROF_edge_counter.146_183 = *.LPBX1[75];
+  PROF_edge_counter.146_184 = PROF_edge_counter.146_183 + 1;
+  *.LPBX1[75] = PROF_edge_counter.146_184;
+  idcheck (prephitmp.885_1199, &check, &AV[0], &BV[0], &ID[0]);
+  D.27196D.27196_187 = i_10 + -1;
+  D.27197D.27197_188 = AV[D.27196D.27196_187];
+  D.27198D.27198_190 = BV[i_10];
+  D.27199D.27199_191 = D.27197D.27197_188 * D.27198D.27198_190;
+  D.27200D.27200_193 = CV[i_10];
+  D.27201D.27201_194 = D.27199D.27199_191 + D.27200D.27200_193;
+  AV[i_10] = D.27201D.27201_194;
+  i_195 = i_10 + 1;
+  PROF_edge_counter.146_196 = *.LPBX1[74];
+  PROF_edge_counter.146_197 = PROF_edge_counter.146_196 + 1;
+  *.LPBX1[74] = PROF_edge_counter.146_197;
+  pretmp.884_1198 = N;
+
+<bb 34>:
+  # i_10 = PHI <1(32), i_195(33)>
+  # prephitmp.885_1199 = PHI <prephitmp.885_1457(32), pretmp.884_1198(33)>
+  if (i_10 < prephitmp.885_1199)
+    goto <bb 33>;
+  else
+    goto <bb 35>;
+
+<bb 35>:
+  # prephitmp.885_1458 = PHI <prephitmp.885_1199(34)>
+  goto <bb 44>;
+
+<bb 36>:
+  PROF_edge_counter.146_201 = *.LPBX1[83];
+  PROF_edge_counter.146_202 = PROF_edge_counter.146_201 + 1;
+  *.LPBX1[83] = PROF_edge_counter.146_202;
+  idcheck (prephitmp.885_1201, &check, &AV[0], &BV[0], &ID[0]);
+  N.76_1111 = N;
+  if (N.76_1111 > 0)
+    goto <bb 37>;
+  else
+    goto <bb 43>;
+
+<bb 37>:
+
+<bb 38>:
+  # j_1112 = PHI <j_325(42), 0(37)>
+  PROF_edge_counter.146_207 = *.LPBX1[81];
+  PROF_edge_counter.146_208 = PROF_edge_counter.146_207 + 1;
+  *.LPBX1[81] = PROF_edge_counter.146_208;
+  check.82_209 = check;
+  D.27148D.27148_210 = check.82_209 > 5.0e-1;
+  if (D.27148D.27148_210 != 0)
+    goto <bb 39>;
+  else
+    goto <bb 40>;
+
+<bb 39>:
+  BOT_213 = OP[i_11][j_1112];
+  HOLDA.91_215 = AV[j_1112];
+  D.27217D.27217_217 = BV[j_1112];
+  TOP_218 = HOLDA.91_215 * D.27217D.27217_217;
+  D.27217D.27217_223 = BV[j_1112];
+  D.27218D.27218_225 = CV[j_1112];
+  D.27219D.27219_226 = TOP_218 - BOT_213;
+  D.27220D.27220_227 = D.27218D.27218_225 / D.27219D.27219_226;
+  D.27221D.27221_230 = ID[i_11][i_11];
+  D.27222D.27222_231 = D.27220D.27220_227 * D.27221D.27221_230;
+  D.27223D.27223_232 = D.27217D.27217_223 + D.27222D.27222_231;
+  AV[j_1112] = D.27223D.27223_232;
+  D.27218D.27218_235 = CV[j_1112];
+  D.27220D.27220_237 = D.27218D.27218_235 / D.27219D.27219_226;
+  D.27224D.27224_240 = ID[j_1112][j_1112];
+  D.27225D.27225_241 = D.27220D.27220_237 * D.27224D.27224_240;
+  D.27227D.27227_243 = HOLDA.91_215 + D.27225D.27225_241;
+  BV[j_1112] = D.27227D.27227_243;
+  D.27228D.27228_249 = IA[j_1112];
+  D.27229D.27229_251 = IA[i_11];
+  D.27230D.27230_252 = trig (D.27229D.27229_251, D.27228D.27228_249);
+  PROF_edge_counter.146_253 = *.LPBX1[77];
+  PROF_edge_counter.146_254 = PROF_edge_counter.146_253 + 1;
+  *.LPBX1[77] = PROF_edge_counter.146_254;
+  D.27231D.27231_255 = D.27223D.27223_232 * D.27230D.27230_252;
+  AM[i_11][j_1112] = D.27231D.27231_255;
+  D.27217D.27217_259 = BV[j_1112];
+  D.27229D.27229_261 = IA[i_11];
+  D.27228D.27228_263 = IA[j_1112];
+  D.27232D.27232_264 = trig (D.27228D.27228_263, D.27229D.27229_261);
+  D.27233D.27233_265 = D.27217D.27217_259 * D.27232D.27232_264;
+  BM[i_11][j_1112] = D.27233D.27233_265;
+  goto <bb 41>;
+
+<bb 40>:
+  PROF_edge_counter.146_266 = *.LPBX1[76];
+  PROF_edge_counter.146_267 = PROF_edge_counter.146_266 + 1;
+  *.LPBX1[76] = PROF_edge_counter.146_267;
+  BOT_270 = OP[i_11][j_1112];
+  HOLDA.91_272 = AV[j_1112];
+  D.27217D.27217_274 = BV[j_1112];
+  TOP_275 = HOLDA.91_272 * D.27217D.27217_274;
+  D.27217D.27217_280 = BV[j_1112];
+  D.27218D.27218_282 = CV[j_1112];
+  D.27219D.27219_283 = TOP_275 - BOT_270;
+  D.27220D.27220_284 = D.27218D.27218_282 / D.27219D.27219_283;
+  D.27224D.27224_287 = ID[j_1112][j_1112];
+  D.27225D.27225_288 = D.27220D.27220_284 * D.27224D.27224_287;
+  D.27235D.27235_289 = D.27217D.27217_280 - D.27225D.27225_288;
+  AV[j_1112] = D.27235D.27235_289;
+  D.27218D.27218_293 = CV[j_1112];
+  D.27220D.27220_295 = D.27218D.27218_293 / D.27219D.27219_283;
+  D.27221D.27221_298 = ID[i_11][i_11];
+  D.27222D.27222_299 = D.27220D.27220_295 * D.27221D.27221_298;
+  D.27236D.27236_300 = HOLDA.91_272 - D.27222D.27222_299;
+  BV[j_1112] = D.27236D.27236_300;
+  D.27228D.27228_306 = IA[j_1112];
+  D.27229D.27229_308 = IA[i_11];
+  D.27237D.27237_309 = trig (D.27229D.27229_308, D.27228D.27228_306);
+  PROF_edge_counter.146_310 = *.LPBX1[78];
+  PROF_edge_counter.146_311 = PROF_edge_counter.146_310 + 1;
+  *.LPBX1[78] = PROF_edge_counter.146_311;
+  D.27238D.27238_312 = D.27235D.27235_289 / D.27237D.27237_309;
+  AM[i_11][j_1112] = D.27238D.27238_312;
+  D.27217D.27217_316 = BV[j_1112];
+  D.27229D.27229_318 = IA[i_11];
+  D.27228D.27228_320 = IA[j_1112];
+  D.27239D.27239_321 = trig (D.27228D.27228_320, D.27229D.27229_318);
+  D.27240D.27240_322 = D.27217D.27217_316 / D.27239D.27239_321;
+  BM[i_11][j_1112] = D.27240D.27240_322;
+  PROF_edge_counter.146_323 = *.LPBX1[79];
+  PROF_edge_counter.146_324 = PROF_edge_counter.146_323 + 1;
+  *.LPBX1[79] = PROF_edge_counter.146_324;
+
+<bb 41>:
+  j_325 = j_1112 + 1;
+  PROF_edge_counter.146_326 = *.LPBX1[80];
+  PROF_edge_counter.146_327 = PROF_edge_counter.146_326 + 1;
+  *.LPBX1[80] = PROF_edge_counter.146_327;
+  N.76_205 = N;
+  if (N.76_205 > j_325)
+    goto <bb 42>;
+  else
+    goto <bb 43>;
+
+<bb 42>:
+  goto <bb 38>;
+
+<bb 43>:
+  i_328 = i_11 + 1;
+  PROF_edge_counter.146_329 = *.LPBX1[82];
+  PROF_edge_counter.146_330 = PROF_edge_counter.146_329 + 1;
+  *.LPBX1[82] = PROF_edge_counter.146_330;
+  pretmp.884_1200 = N;
+
+<bb 44>:
+  # i_11 = PHI <0(35), i_328(43)>
+  # prephitmp.885_1201 = PHI <prephitmp.885_1458(35), pretmp.884_1200(43)>
+  if (i_11 < prephitmp.885_1201)
+    goto <bb 36>;
+  else
+    goto <bb 45>;
+
+<bb 45>:
+  # N.76_236 = PHI <prephitmp.885_1201(44)>
+  # prephitmp.885_1459 = PHI <prephitmp.885_1201(44)>
+  pretmp.909_1234 = check;
+  goto <bb 57>;
+
+<bb 46>:
+  PROF_edge_counter.146_334 = *.LPBX1[86];
+  PROF_edge_counter.146_335 = PROF_edge_counter.146_334 + 1;
+  *.LPBX1[86] = PROF_edge_counter.146_335;
+  j_336 = i_13 + 1;
+  if (N.76_236 > j_336)
+    goto <bb 47>;
+  else
+    goto <bb 56>;
+
+<bb 47>:
+  *.LPBX1_I_lsm.937_441 = *.LPBX1[85];
+
+<bb 48>:
+  # j_1094 = PHI <j_364(54), j_336(47)>
+  # *.LPBX1_I_lsm.937_527 = PHI <*.LPBX1_I_lsm.937_429(54), *.LPBX1_I_lsm.937_441(47)>
+  PROF_edge_counter.146_339 = *.LPBX1_I_lsm.937_527;
+  PROF_edge_counter.146_340 = PROF_edge_counter.146_339 + 1;
+  *.LPBX1_I_lsm.937_429 = PROF_edge_counter.146_340;
+  CM[i_13][j_1094] = 0.0;
+  if (N.76_236 > 0)
+    goto <bb 49>;
+  else
+    goto <bb 53>;
+
+<bb 49>:
+  pretmp.906_1231 = *.LPBX1[84];
+  CM_I_I_lsm.938_413 = CM[i_13][j_1094];
+  *.LPBX1_I_lsm.939_415 = *.LPBX1[84];
+
+<bb 50>:
+  # k_1102 = PHI <k_363(51), 0(49)>
+  # prephitmp.907_1232 = PHI <PROF_edge_counter.146_347(51), pretmp.906_1231(49)>
+  # prephitmp.908_1233 = PHI <D.27264D.27264_362(51), 0.0(49)>
+  PROF_edge_counter.146_347 = prephitmp.907_1232 + 1;
+  *.LPBX1_I_lsm.939_380 = PROF_edge_counter.146_347;
+  D.27260D.27260_355 = AM[i_13][k_1102];
+  D.27261D.27261_358 = BM[k_1102][j_1094];
+  D.27262D.27262_359 = D.27260D.27260_355 * D.27261D.27261_358;
+  D.27263D.27263_361 = D.27262D.27262_359 / pretmp.909_1234;
+  D.27264D.27264_362 = prephitmp.908_1233 - D.27263D.27263_361;
+  CM_I_I_lsm.938_386 = D.27264D.27264_362;
+  k_363 = k_1102 + 1;
+  if (N.76_236 > k_363)
+    goto <bb 51>;
+  else
+    goto <bb 52>;
+
+<bb 51>:
+  goto <bb 50>;
+
+<bb 52>:
+  # CM_I_I_lsm.938_1492 = PHI <CM_I_I_lsm.938_386(50)>
+  D.29250D.29250_1525 = pretmp.906_1231 + 1;
+  D.29251D.29251_1526 = (unsigned int) N.76_236;
+  D.29252D.29252_1527 = D.29251D.29251_1526 + 4294967295;
+  D.29253D.29253_1528 = (long int) D.29252D.29252_1527;
+  *.LPBX1_I_lsm.939_1491 = D.29250D.29250_1525 + D.29253D.29253_1528;
+  CM[i_13][j_1094] = CM_I_I_lsm.938_1492;
+  *.LPBX1[84] = *.LPBX1_I_lsm.939_1491;
+
+<bb 53>:
+  j_364 = j_1094 + 1;
+  if (N.76_236 > j_364)
+    goto <bb 54>;
+  else
+    goto <bb 55>;
+
+<bb 54>:
+  goto <bb 48>;
+
+<bb 55>:
+  D.29254D.29254_1529 = *.LPBX1_I_lsm.937_441 + 1;
+  D.29255D.29255_1530 = (unsigned int) N.76_236;
+  D.29256D.29256_1531 = (unsigned int) i_13;
+  D.29257D.29257_1532 = D.29255D.29255_1530 - D.29256D.29256_1531;
+  D.29258D.29258_1533 = D.29257D.29257_1532 + 4294967294;
+  D.29259D.29259_1534 = (long int) D.29258D.29258_1533;
+  *.LPBX1_I_lsm.937_1495 = D.29254D.29254_1529 + D.29259D.29259_1534;
+  *.LPBX1[85] = *.LPBX1_I_lsm.937_1495;
+
+<bb 56>:
+
+<bb 57>:
+  # i_13 = PHI <0(45), j_336(56)>
+  if (i_13 < N.76_236)
+    goto <bb 46>;
+  else
+    goto <bb 58>;
+
+<bb 58>:
+  pretmp.900_1225 = check;
+  goto <bb 70>;
+
+<bb 59>:
+  PROF_edge_counter.146_369 = *.LPBX1[89];
+  PROF_edge_counter.146_370 = PROF_edge_counter.146_369 + 1;
+  *.LPBX1[89] = PROF_edge_counter.146_370;
+  if (i_16 >= 0)
+    goto <bb 60>;
+  else
+    goto <bb 69>;
+
+<bb 60>:
+  *.LPBX1_I_lsm.934_360 = *.LPBX1[88];
+
+<bb 61>:
+  # j_1067 = PHI <j_398(67), i_16(60)>
+  # *.LPBX1_I_lsm.934_526 = PHI <*.LPBX1_I_lsm.934_1363(67), *.LPBX1_I_lsm.934_360(60)>
+  PROF_edge_counter.146_373 = *.LPBX1_I_lsm.934_526;
+  PROF_edge_counter.146_374 = PROF_edge_counter.146_373 + 1;
+  *.LPBX1_I_lsm.934_1363 = PROF_edge_counter.146_374;
+  CM[i_16][j_1067] = 0.0;
+  if (N.76_236 > 0)
+    goto <bb 62>;
+  else
+    goto <bb 66>;
+
+<bb 62>:
+  pretmp.902_1227 = *.LPBX1[87];
+  CM_I_I_lsm.935_1354 = CM[i_16][j_1067];
+  *.LPBX1_I_lsm.936_181 = *.LPBX1[87];
+
+<bb 63>:
+  # k_1086 = PHI <k_397(64), 0(62)>
+  # prephitmp.903_1228 = PHI <PROF_edge_counter.146_381(64), pretmp.902_1227(62)>
+  # prephitmp.904_1229 = PHI <D.27288D.27288_396(64), 0.0(62)>
+  PROF_edge_counter.146_381 = prephitmp.903_1228 + 1;
+  *.LPBX1_I_lsm.936_161 = PROF_edge_counter.146_381;
+  D.27284D.27284_389 = AM[i_16][k_1086];
+  D.27285D.27285_392 = BM[k_1086][j_1067];
+  D.27286D.27286_393 = D.27284D.27284_389 * D.27285D.27285_392;
+  D.27287D.27287_395 = D.27286D.27286_393 / pretmp.900_1225;
+  D.27288D.27288_396 = D.27287D.27287_395 + prephitmp.904_1229;
+  CM_I_I_lsm.935_142 = D.27288D.27288_396;
+  k_397 = k_1086 + 1;
+  if (N.76_236 > k_397)
+    goto <bb 64>;
+  else
+    goto <bb 65>;
+
+<bb 64>:
+  goto <bb 63>;
+
+<bb 65>:
+  # CM_I_I_lsm.935_1489 = PHI <CM_I_I_lsm.935_142(63)>
+  D.29243D.29243_1518 = pretmp.902_1227 + 1;
+  D.29244D.29244_1519 = (unsigned int) N.76_236;
+  D.29245D.29245_1520 = D.29244D.29244_1519 + 4294967295;
+  D.29246D.29246_1521 = (long int) D.29245D.29245_1520;
+  *.LPBX1_I_lsm.936_1490 = D.29243D.29243_1518 + D.29246D.29246_1521;
+  CM[i_16][j_1067] = CM_I_I_lsm.935_1489;
+  *.LPBX1[87] = *.LPBX1_I_lsm.936_1490;
+
+<bb 66>:
+  j_398 = j_1067 + -1;
+  if (j_398 >= 0)
+    goto <bb 67>;
+  else
+    goto <bb 68>;
+
+<bb 67>:
+  goto <bb 61>;
+
+<bb 68>:
+  D.29247D.29247_1522 = *.LPBX1_I_lsm.934_360 + 1;
+  D.29248D.29248_1523 = (unsigned int) i_16;
+  D.29249D.29249_1524 = (long int) D.29248D.29248_1523;
+  *.LPBX1_I_lsm.934_1504 = D.29247D.29247_1522 + D.29249D.29249_1524;
+  *.LPBX1[88] = *.LPBX1_I_lsm.934_1504;
+
+<bb 69>:
+  i_399 = i_16 + 1;
+
+<bb 70>:
+  # i_16 = PHI <0(58), i_399(69)>
+  if (i_16 < N.76_236)
+    goto <bb 59>;
+  else
+    goto <bb 71>;
+
+<bb 71>:
+  N.76_1047 = N;
+  N.76_411 = N;
+  N.76_406 = N;
+  pretmp.884_1202 = N;
+  sum_lsm.931_101 = sum;
+  goto <bb 83>;
+
+<bb 72>:
+  PROF_edge_counter.146_403 = *.LPBX1[92];
+  PROF_edge_counter.146_404 = PROF_edge_counter.146_403 + 1;
+  *.LPBX1[92] = PROF_edge_counter.146_404;
+  if (prephitmp.885_1203 > 0)
+    goto <bb 73>;
+  else
+    goto <bb 82>;
+
+<bb 73>:
+  *.LPBX1_I_lsm.932_63 = *.LPBX1[91];
+
+<bb 74>:
+  # j_1051 = PHI <j_431(80), 0(73)>
+  # *.LPBX1_I_lsm.932_1377 = PHI <*.LPBX1_I_lsm.932_1465(80), *.LPBX1_I_lsm.932_63(73)>
+  PROF_edge_counter.146_408 = *.LPBX1_I_lsm.932_1377;
+  PROF_edge_counter.146_409 = PROF_edge_counter.146_408 + 1;
+  *.LPBX1_I_lsm.932_1465 = PROF_edge_counter.146_409;
+  sum_lsm.931_1466 = 0.0;
+  if (N.76_1047 > 0)
+    goto <bb 75>;
+  else
+    goto <bb 79>;
+
+<bb 75>:
+  pretmp.896_1221 = *.LPBX1[90];
+  *.LPBX1_I_lsm.933_1467 = *.LPBX1[90];
+
+<bb 76>:
+  # k_1069 = PHI <k_426(77), 0(75)>
+  # prephitmp.897_1222 = PHI <PROF_edge_counter.146_414(77), pretmp.896_1221(75)>
+  # prephitmp.898_1223 = PHI <sum.103_425(77), 0.0(75)>
+  PROF_edge_counter.146_414 = prephitmp.897_1222 + 1;
+  *.LPBX1_I_lsm.933_1468 = PROF_edge_counter.146_414;
+  D.27305D.27305_416 = (double) prephitmp.898_1223;
+  D.27308D.27308_419 = CM[i_19][k_1069];
+  D.27310D.27310_422 = AM[j_1051][k_1069];
+  D.27311D.27311_423 = D.27308D.27308_419 * D.27310D.27310_422;
+  D.27312D.27312_424 = D.27305D.27305_416 + D.27311D.27311_423;
+  sum.103_425 = (float) D.27312D.27312_424;
+  sum_lsm.931_1469 = sum.103_425;
+  k_426 = k_1069 + 1;
+  if (N.76_411 > k_426)
+    goto <bb 77>;
+  else
+    goto <bb 78>;
+
+<bb 77>:
+  goto <bb 76>;
+
+<bb 78>:
+  # sum.103_1494 = PHI <sum.103_425(76)>
+  # *.LPBX1_I_lsm.933_1507 = PHI <*.LPBX1_I_lsm.933_1468(76)>
+  # sum_lsm.931_1508 = PHI <sum_lsm.931_1469(76)>
+  *.LPBX1[90] = *.LPBX1_I_lsm.933_1507;
+
+<bb 79>:
+  # prephitmp.895_1220 = PHI <sum.103_1494(78), 0.0(74)>
+  # sum_lsm.931_501 = PHI <sum_lsm.931_1508(78), sum_lsm.931_1466(74)>
+  D.27305D.27305_430 = (double) prephitmp.895_1220;
+  DM[i_19][j_1051] = D.27305D.27305_430;
+  j_431 = j_1051 + 1;
+  if (N.76_406 > j_431)
+    goto <bb 80>;
+  else
+    goto <bb 81>;
+
+<bb 80>:
+  goto <bb 74>;
+
+<bb 81>:
+  # sum_lsm.931_1499 = PHI <sum_lsm.931_501(79)>
+  # *.LPBX1_I_lsm.932_1506 = PHI <*.LPBX1_I_lsm.932_1465(79)>
+  *.LPBX1[91] = *.LPBX1_I_lsm.932_1506;
+
+<bb 82>:
+  # sum_lsm.931_1375 = PHI <sum_lsm.931_1499(81), sum_lsm.931_514(72)>
+  i_432 = i_19 + 1;
+
+<bb 83>:
+  # i_19 = PHI <0(71), i_432(82)>
+  # prephitmp.885_1203 = PHI <prephitmp.885_1459(71), pretmp.884_1202(82)>
+  # sum_lsm.931_514 = PHI <sum_lsm.931_101(71), sum_lsm.931_1375(82)>
+  if (i_19 < prephitmp.885_1203)
+    goto <bb 72>;
+  else
+    goto <bb 84>;
+
+<bb 84>:
+  # sum_lsm.931_1501 = PHI <sum_lsm.931_514(83)>
+  # prephitmp.885_1503 = PHI <prephitmp.885_1203(83)>
+  sum = sum_lsm.931_1501;
+  goto <bb 96>;
+
+<bb 85>:
+  PROF_edge_counter.146_436 = *.LPBX1[94];
+  PROF_edge_counter.146_437 = PROF_edge_counter.146_436 + 1;
+  *.LPBX1[94] = PROF_edge_counter.146_437;
+  if (prephitmp.885_1503 > 0)
+    goto <bb 86>;
+  else
+    goto <bb 95>;
+
+<bb 86>:
+  pretmp.891_1215 = *.LPBX1[93];
+  *.LPBX1_I_lsm.930_1473 = *.LPBX1[93];
+  niters.942_1464 = (unsigned int) prephitmp.885_1503;
+  bnd.943_1463 = niters.942_1464 >> 1;
+  ratio_mult_vf.944_1454 = bnd.943_1463 << 1;
+  D.29271D.29271_1545 = (unsigned int) prephitmp.885_1503;
+  D.29272D.29272_1546 = D.29271D.29271_1545 <= 1;
+  D.29273D.29273_1547 = ratio_mult_vf.944_1454 == 0;
+  D.29274D.29274_1548 = D.29272D.29272_1546 || D.29273D.29273_1547;
+  if (D.29274D.29274_1548 != 0)
+    goto <bb 90>;
+  else
+    goto <bb 87>;
+
+<bb 87>:
+  D.29283D.29283_1559 = (long unsigned int) i_22;
+  base_off.950_1560 = D.29283D.29283_1559 * 400;
+  D.29286D.29286_1561 = &DM + base_off.950_1560;
+  vect_pDM.952_1562 = (vector double *) D.29286D.29286_1561;
+  vect_pDM.947_1563 = vect_pDM.952_1562;
+  D.29292D.29292_1567 = (long unsigned int) i_22;
+  base_off.957_1568 = D.29292D.29292_1567 * 400;
+  D.29295D.29295_1569 = &CM + base_off.957_1568;
+  vect_pCM.959_1570 = (vector double *) D.29295D.29295_1569;
+  vect_pCM.954_1571 = vect_pCM.959_1570;
+
+<bb 88>:
+  # j_1077 = PHI <j_448(93), 0(87)>
+  # prephitmp.892_1216 = PHI <PROF_edge_counter.146_442(93), pretmp.891_1215(87)>
+  # vect_pDM.947_1564 = PHI <vect_pDM.947_1565(93), vect_pDM.947_1563(87)>
+  # vect_pCM.954_1572 = PHI <vect_pCM.954_1573(93), vect_pCM.954_1571(87)>
+  # ivtmp.960_1574 = PHI <ivtmp.960_1575(93), 0(87)>
+  PROF_edge_counter.146_442 = prephitmp.892_1216 + 1;
+  *.LPBX1_I_lsm.930_1474 = PROF_edge_counter.146_442;
+  vect_var_.953_1566 = *vect_pDM.947_1564;
+  D.27326D.27326_447 = DM[i_22][j_1077];
+  *vect_pCM.954_1572 = vect_var_.953_1566;
+  j_448 = j_1077 + 1;
+  vect_pDM.947_1565 = vect_pDM.947_1564 + 16;
+  vect_pCM.954_1573 = vect_pCM.954_1572 + 16;
+  ivtmp.960_1575 = ivtmp.960_1574 + 1;
+  if (ivtmp.960_1575 < bnd.943_1463)
+    goto <bb 93>;
+  else
+    goto <bb 89>;
+
+<bb 89>:
+  # j_1550 = PHI <j_448(88)>
+  # prephitmp.892_1554 = PHI <PROF_edge_counter.146_442(88)>
+  D.29275D.29275_1555 = ratio_mult_vf.944_1454 == niters.942_1464;
+  tmp.945_1556 = (int) ratio_mult_vf.944_1454;
+  D.29278D.29278_1557 = (long int) ratio_mult_vf.944_1454;
+  tmp.946_1558 = D.29278D.29278_1557 + pretmp.891_1215;
+  if (D.29275D.29275_1555 != 0)
+    goto <bb 94>;
+  else
+    goto <bb 90>;
+
+<bb 90>:
+  # j_1549 = PHI <tmp.945_1556(89), 0(86)>
+  # prephitmp.892_1553 = PHI <tmp.946_1558(89), pretmp.891_1215(86)>
+
+<bb 91>:
+  # j_1453 = PHI <j_1544(92), j_1549(90)>
+  # prephitmp.892_1452 = PHI <PROF_edge_counter.146_1540(92), prephitmp.892_1553(90)>
+  PROF_edge_counter.146_1540 = prephitmp.892_1452 + 1;
+  *.LPBX1_I_lsm.930_1541 = PROF_edge_counter.146_1540;
+  D.27326D.27326_1542 = DM[i_22][j_1453];
+  CM[i_22][j_1453] = D.27326D.27326_1542;
+  j_1544 = j_1453 + 1;
+  if (j_1544 < prephitmp.885_1503)
+    goto <bb 92>;
+  else
+    goto <bb 94>;
+
+<bb 92>:
+  goto <bb 91>;
+
+<bb 93>:
+  goto <bb 88>;
+
+<bb 94>:
+  D.29239D.29239_1514 = pretmp.891_1215 + 1;
+  D.29240D.29240_1515 = (unsigned int) prephitmp.885_1503;
+  D.29241D.29241_1516 = D.29240D.29240_1515 + 4294967295;
+  D.29242D.29242_1517 = (long int) D.29241D.29241_1516;
+  *.LPBX1_I_lsm.930_1509 = D.29239D.29239_1514 + D.29242D.29242_1517;
+  *.LPBX1[93] = *.LPBX1_I_lsm.930_1509;
+
+<bb 95>:
+  i_449 = i_22 + 1;
+
+<bb 96>:
+  # i_22 = PHI <0(84), i_449(95)>
+  if (i_22 < prephitmp.885_1503)
+    goto <bb 85>;
+  else
+    goto <bb 97>;
+
+<bb 97>:
+  N.76_1078 = N;
+  N.76_461 = N;
+  N.76_456 = N;
+  pretmp.884_1204 = N;
+  sum_lsm.927_1476 = sum;
+  goto <bb 109>;
+
+<bb 98>:
+  PROF_edge_counter.146_453 = *.LPBX1[97];
+  PROF_edge_counter.146_454 = PROF_edge_counter.146_453 + 1;
+  *.LPBX1[97] = PROF_edge_counter.146_454;
+  if (prephitmp.885_1205 > 0)
+    goto <bb 99>;
+  else
+    goto <bb 108>;
+
+<bb 99>:
+  *.LPBX1_I_lsm.928_1477 = *.LPBX1[96];
+
+<bb 100>:
+  # j_833 = PHI <j_481(106), 0(99)>
+  # *.LPBX1_I_lsm.928_488 = PHI <*.LPBX1_I_lsm.928_1478(106), *.LPBX1_I_lsm.928_1477(99)>
+  PROF_edge_counter.146_458 = *.LPBX1_I_lsm.928_488;
+  PROF_edge_counter.146_459 = PROF_edge_counter.146_458 + 1;
+  *.LPBX1_I_lsm.928_1478 = PROF_edge_counter.146_459;
+  sum_lsm.927_1479 = 0.0;
+  if (N.76_1078 > 0)
+    goto <bb 101>;
+  else
+    goto <bb 105>;
+
+<bb 101>:
+  pretmp.887_1211 = *.LPBX1[95];
+  *.LPBX1_I_lsm.929_1480 = *.LPBX1[95];
+
+<bb 102>:
+  # k_1064 = PHI <k_476(103), 0(101)>
+  # prephitmp.888_1212 = PHI <PROF_edge_counter.146_464(103), pretmp.887_1211(101)>
+  # prephitmp.889_1213 = PHI <sum.109_475(103), 0.0(101)>
+  PROF_edge_counter.146_464 = prephitmp.888_1212 + 1;
+  *.LPBX1_I_lsm.929_1481 = PROF_edge_counter.146_464;
+  D.27305D.27305_466 = (double) prephitmp.889_1213;
+  D.27344D.27344_469 = CM[i_24][k_1064];
+  D.27346D.27346_472 = BM[j_833][k_1064];
+  D.27347D.27347_473 = D.27344D.27344_469 * D.27346D.27346_472;
+  D.27348D.27348_474 = D.27305D.27305_466 - D.27347D.27347_473;
+  sum.109_475 = (float) D.27348D.27348_474;
+  sum_lsm.927_1482 = sum.109_475;
+  k_476 = k_1064 + 1;
+  if (N.76_461 > k_476)
+    goto <bb 103>;
+  else
+    goto <bb 104>;
+
+<bb 103>:
+  goto <bb 102>;
+
+<bb 104>:
+  # sum.109_1497 = PHI <sum.109_475(102)>
+  # *.LPBX1_I_lsm.929_1511 = PHI <*.LPBX1_I_lsm.929_1481(102)>
+  # sum_lsm.927_1512 = PHI <sum_lsm.927_1482(102)>
+  *.LPBX1[95] = *.LPBX1_I_lsm.929_1511;
+
+<bb 105>:
+  # prephitmp.886_1210 = PHI <sum.109_1497(104), 0.0(100)>
+  # sum_lsm.927_401 = PHI <sum_lsm.927_1512(104), sum_lsm.927_1479(100)>
+  D.27305D.27305_480 = (double) prephitmp.886_1210;
+  DM[i_24][j_833] = D.27305D.27305_480;
+  j_481 = j_833 + 1;
+  if (N.76_456 > j_481)
+    goto <bb 106>;
+  else
+    goto <bb 107>;
+
+<bb 106>:
+  goto <bb 100>;
+
+<bb 107>:
+  # sum_lsm.927_1493 = PHI <sum_lsm.927_401(105)>
+  # *.LPBX1_I_lsm.928_1510 = PHI <*.LPBX1_I_lsm.928_1478(105)>
+  *.LPBX1[96] = *.LPBX1_I_lsm.928_1510;
+
+<bb 108>:
+  # sum_lsm.927_1372 = PHI <sum_lsm.927_1493(107), sum_lsm.927_1373(98)>
+  i_482 = i_24 + 1;
+
+<bb 109>:
+  # i_24 = PHI <0(97), i_482(108)>
+  # prephitmp.885_1205 = PHI <prephitmp.885_1503(97), pretmp.884_1204(108)>
+  # sum_lsm.927_1373 = PHI <sum_lsm.927_1476(97), sum_lsm.927_1372(108)>
+  if (i_24 < prephitmp.885_1205)
+    goto <bb 98>;
+  else
+    goto <bb 110>;
+
+<bb 110>:
+  # sum_lsm.927_1505 = PHI <sum_lsm.927_1373(109)>
+  sum = sum_lsm.927_1505;
+  D.27350D.27350_483 = AM[1][1];
+  HOLDA.110_484 = ABS_EXPR <D.27350D.27350_483>;
+  D.27352D.27352_485 = BM[1][1];
+  HOLDB.111_486 = ABS_EXPR <D.27352D.27352_485>;
+  pretmp.914_1248 = N;
+  N.76_493 = N;
+  goto <bb 121>;
+
+<bb 111>:
+  PROF_edge_counter.146_490 = *.LPBX1[101];
+  PROF_edge_counter.146_491 = PROF_edge_counter.146_490 + 1;
+  *.LPBX1[101] = PROF_edge_counter.146_491;
+  if (prephitmp.915_1249 > 0)
+    goto <bb 112>;
+  else
+    goto <bb 120>;
+
+<bb 112>:
+  *.LPBX1_I_lsm.926_1486 = *.LPBX1[100];
+
+<bb 113>:
+  # j_434 = PHI <j_523(118), 0(112)>
+  # HOLDA_1247 = PHI <D.29097D.29097_509(118), HOLDA_1240(112)>
+  # HOLDB_1239 = PHI <D.29099D.29099_522(118), HOLDB_1237(112)>
+  # *.LPBX1_I_lsm.926_199 = PHI <*.LPBX1_I_lsm.926_1487(118), *.LPBX1_I_lsm.926_1486(112)>
+  PROF_edge_counter.146_495 = *.LPBX1_I_lsm.926_199;
+  PROF_edge_counter.146_496 = PROF_edge_counter.146_495 + 1;
+  *.LPBX1_I_lsm.926_1487 = PROF_edge_counter.146_496;
+  D.27366D.27366_499 = AM[i_27][j_434];
+  D.29097D.29097_500 = ABS_EXPR <D.27366D.27366_499>;
+  D.27915D.27915_503 = D.29097D.29097_500 > HOLDA_1247;
+  if (D.27915D.27915_503 != 0)
+    goto <bb 115>;
+  else
+    goto <bb 114>;
+
+<bb 114>:
+  PROF_edge_counter.146_506 = *.LPBX1[98];
+  PROF_edge_counter.146_507 = PROF_edge_counter.146_506 + 1;
+  *.LPBX1[98] = PROF_edge_counter.146_507;
+
+<bb 115>:
+  # D.29097D.29097_509 = PHI <D.29097D.29097_500(113), HOLDA_1247(114)>
+  D.27370D.27370_512 = BM[i_27][j_434];
+  D.29099D.29099_513 = ABS_EXPR <D.27370D.27370_512>;
+  D.27921D.27921_516 = D.29099D.29099_513 > HOLDB_1239;
+  if (D.27921D.27921_516 != 0)
+    goto <bb 117>;
+  else
+    goto <bb 116>;
+
+<bb 116>:
+  PROF_edge_counter.146_519 = *.LPBX1[99];
+  PROF_edge_counter.146_520 = PROF_edge_counter.146_519 + 1;
+  *.LPBX1[99] = PROF_edge_counter.146_520;
+
+<bb 117>:
+  # D.29099D.29099_522 = PHI <D.29099D.29099_513(115), HOLDB_1239(116)>
+  j_523 = j_434 + 1;
+  if (N.76_493 > j_523)
+    goto <bb 118>;
+  else
+    goto <bb 119>;
+
+<bb 118>:
+  goto <bb 113>;
+
+<bb 119>:
+  # D.29097D.29097_1500 = PHI <D.29097D.29097_509(117)>
+  # D.29099D.29099_1502 = PHI <D.29099D.29099_522(117)>
+  # *.LPBX1_I_lsm.926_1513 = PHI <*.LPBX1_I_lsm.926_1487(117)>
+  *.LPBX1[100] = *.LPBX1_I_lsm.926_1513;
+
+<bb 120>:
+  # prephitmp.885_1206 = PHI <N.76_493(119), prephitmp.915_1249(111)>
+  # HOLDA_1246 = PHI <D.29097D.29097_1500(119), HOLDA_1240(111)>
+  # HOLDB_1238 = PHI <D.29099D.29099_1502(119), HOLDB_1237(111)>
+  i_524 = i_27 + 1;
+
+<bb 121>:
+  # i_27 = PHI <0(110), i_524(120)>
+  # prephitmp.915_1249 = PHI <pretmp.914_1248(110), prephitmp.885_1206(120)>
+  # HOLDA_1240 = PHI <HOLDA.110_484(110), HOLDA_1246(120)>
+  # HOLDB_1237 = PHI <HOLDB.111_486(110), HOLDB_1238(120)>
+  if (i_27 < prephitmp.915_1249)
+    goto <bb 111>;
+  else
+    goto <bb 122>;
+
+<bb 122>:
+  # N.76_247 = PHI <prephitmp.915_1249(121)>
+  # HOLDB_1461 = PHI <HOLDB_1237(121)>
+  # HOLDA_1462 = PHI <HOLDA_1240(121)>
+  sub_528 = HOLDB_1461 * HOLDA_1462;
+  goto <bb 124>;
+
+<bb 123>:
+  PROF_edge_counter.146_532 = *.LPBX1[102];
+  PROF_edge_counter.146_533 = PROF_edge_counter.146_532 + 1;
+  *.LPBX1[102] = PROF_edge_counter.146_533;
+  D.27381D.27381_537 = IA[i_29];
+  D.27382D.27382_538 = AM[D.27381D.27381_537][D.27381D.27381_537];
+  D.27383D.27383_543 = BM[D.27381D.27381_537][D.27381D.27381_537];
+  D.27384D.27384_544 = D.27382D.27382_538 + D.27383D.27383_543;
+  D.27385D.27385_549 = DM[D.27381D.27381_537][D.27381D.27381_537];
+  D.27386D.27386_550 = D.27384D.27384_544 - D.27385D.27385_549;
+  D.27387D.27387_551 = D.27386D.27386_550 / sub_528;
+  TRACE3_552 = D.27387D.27387_551 + TRACE3_1;
+  i_553 = i_29 + 1;
+
+<bb 124>:
+  # TRACE3_1 = PHI <0.0(122), TRACE3_552(123)>
+  # i_29 = PHI <0(122), i_553(123)>
+  if (i_29 < N.76_247)
+    goto <bb 123>;
+  else
+    goto <bb 125>;
+
+<bb 125>:
+  # TRACE3_220 = PHI <TRACE3_1(124)>
+  PROF_edge_counter.146_554 = *.LPBX1[103];
+  PROF_edge_counter.146_555 = PROF_edge_counter.146_554 + 1;
+  *.LPBX1[103] = PROF_edge_counter.146_555;
+  D.27388D.27388_556 = cputime_ ();
+  PROF_edge_counter.146_557 = *.LPBX1[104];
+  PROF_edge_counter.146_558 = PROF_edge_counter.146_557 + 1;
+  *.LPBX1[104] = PROF_edge_counter.146_558;
+  finish.118_559 = (float) D.27388D.27388_556;
+  finish = finish.118_559;
+  __f_560 = check;
+  PROF_edge_counter.141_630 = *.LPBX1[41];
+  PROF_edge_counter.141_631 = PROF_edge_counter.141_630 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_631;
+  __ostream_insert (&cout, &"*"[0], 1);
+  PROF_edge_counter.141_634 = *.LPBX1[43];
+  PROF_edge_counter.141_635 = PROF_edge_counter.141_634 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_635;
+  PROF_edge_counter.146_562 = *.LPBX1[105];
+  PROF_edge_counter.146_563 = PROF_edge_counter.146_562 + 1;
+  *.LPBX1[105] = PROF_edge_counter.146_563;
+  PROF_edge_counter.141_656 = *.LPBX1[41];
+  PROF_edge_counter.141_657 = PROF_edge_counter.141_656 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_657;
+  __ostream_insert (&cout, &"Final trace = "[0], 14);
+  PROF_edge_counter.141_660 = *.LPBX1[43];
+  PROF_edge_counter.141_661 = PROF_edge_counter.141_660 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_661;
+  PROF_edge_counter.146_565 = *.LPBX1[106];
+  PROF_edge_counter.146_566 = PROF_edge_counter.146_565 + 1;
+  *.LPBX1[106] = PROF_edge_counter.146_566;
+  this_569 = _M_insert (&cout, TRACE3_220);
+  PROF_edge_counter.146_570 = *.LPBX1[107];
+  PROF_edge_counter.146_571 = PROF_edge_counter.146_570 + 1;
+  *.LPBX1[107] = PROF_edge_counter.146_571;
+  PROF_edge_counter.141_682 = *.LPBX1[41];
+  PROF_edge_counter.141_683 = PROF_edge_counter.141_682 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_683;
+  __ostream_insert (this_569, &" and IDCHECK "[0], 13);
+  PROF_edge_counter.141_686 = *.LPBX1[43];
+  PROF_edge_counter.141_687 = PROF_edge_counter.141_686 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_687;
+  PROF_edge_counter.146_575 = *.LPBX1[108];
+  PROF_edge_counter.146_576 = PROF_edge_counter.146_575 + 1;
+  *.LPBX1[108] = PROF_edge_counter.146_576;
+  this_579 = _M_insert (this_569, __f_560);
+  PROF_edge_counter.146_580 = *.LPBX1[109];
+  PROF_edge_counter.146_581 = PROF_edge_counter.146_580 + 1;
+  *.LPBX1[109] = PROF_edge_counter.146_581;
+  PROF_edge_counter.143_697 = *.LPBX1[49];
+  PROF_edge_counter.143_698 = PROF_edge_counter.143_697 + 1;
+  *.LPBX1[49] = PROF_edge_counter.143_698;
+  __os.133_699 = (struct basic_ios *) this_579;
+  D.28957D.28957_700 = this_579->_vptr.basic_ostream;
+  D.28956D.28956_701 = D.28957D.28957_700 + -24;
+  D.28955D.28955_702 = (long int *) D.28956D.28956_701;
+  D.28954D.28954_703 = *D.28955D.28955_702;
+  D.28953D.28953_704 = (long unsigned int) D.28954D.28954_703;
+  D.28952D.28952_705 = __os.133_699 + D.28953D.28953_704;
+  this_717 = D.28952D.28952_705->_M_ctype;
+  if (this_717 == 0B)
+    goto <bb 126>;
+  else
+    goto <bb 127>;
+
+<bb 126>:
+  PROF_edge_counter.142_718 = *.LPBX1[44];
+  PROF_edge_counter.142_719 = PROF_edge_counter.142_718 + 1;
+  *.LPBX1[44] = PROF_edge_counter.142_719;
+  __throw_bad_cast ();
+
+<bb 127>:
+  D.28973D.28973_721 = this_717->_M_widen_ok;
+  if (D.28973D.28973_721 != 0)
+    goto <bb 128>;
+  else
+    goto <bb 129>;
+
+<bb 128>:
+  D.28964D.28964_724 = this_717->_M_widen[10];
+  PROF_edge_counter.142_725 = *.LPBX1[46];
+  PROF_edge_counter.142_726 = PROF_edge_counter.142_725 + 1;
+  *.LPBX1[46] = PROF_edge_counter.142_726;
+  goto <bb 130>;
+
+<bb 129>:
+  PROF_edge_counter.142_727 = *.LPBX1[45];
+  PROF_edge_counter.142_728 = PROF_edge_counter.142_727 + 1;
+  *.LPBX1[45] = PROF_edge_counter.142_728;
+  _M_widen_init (this_717);
+  PROF_edge_counter.142_729 = *.LPBX1[47];
+  PROF_edge_counter.142_730 = PROF_edge_counter.142_729 + 1;
+  *.LPBX1[47] = PROF_edge_counter.142_730;
+  D.28970D.28970_731 = this_717->D.20568D.20568._vptr.facet;
+  D.28969D.28969_732 = D.28970D.28970_731 + 48;
+  D.28968D.28968_733 = *D.28969D.28969_732;
+  D.28964D.28964_735 = OBJ_TYPE_REF(D.28968D.28968_733;this_717->6) (this_717, 10);
+  PROF_edge_counter.142_736 = *.LPBX1[48];
+  PROF_edge_counter.142_737 = PROF_edge_counter.142_736 + 1;
+  *.LPBX1[48] = PROF_edge_counter.142_737;
+
+<bb 130>:
+  # D.28964D.28964_738 = PHI <D.28964D.28964_724(128), D.28964D.28964_735(129)>
+  PROF_edge_counter.143_707 = *.LPBX1[50];
+  PROF_edge_counter.143_708 = PROF_edge_counter.143_707 + 1;
+  *.LPBX1[50] = PROF_edge_counter.143_708;
+  D.28950D.28950_709 = (int) D.28964D.28964_738;
+  __os_710 = put (this_579, D.28950D.28950_709);
+  PROF_edge_counter.143_711 = *.LPBX1[51];
+  PROF_edge_counter.143_712 = PROF_edge_counter.143_711 + 1;
+  *.LPBX1[51] = PROF_edge_counter.143_712;
+  flush (__os_710);
+  PROF_edge_counter.143_714 = *.LPBX1[52];
+  PROF_edge_counter.143_715 = PROF_edge_counter.143_714 + 1;
+  *.LPBX1[52] = PROF_edge_counter.143_715;
+  PROF_edge_counter.146_587 = *.LPBX1[110];
+  PROF_edge_counter.146_588 = PROF_edge_counter.146_587 + 1;
+  *.LPBX1[110] = PROF_edge_counter.146_588;
+  finish.119_591 = finish;
+  start.120_592 = start;
+  __f_593 = finish.119_591 - start.120_592;
+  PROF_edge_counter.141_750 = *.LPBX1[41];
+  PROF_edge_counter.141_751 = PROF_edge_counter.141_750 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_751;
+  __ostream_insert (&cout, &"*"[0], 1);
+  PROF_edge_counter.141_754 = *.LPBX1[43];
+  PROF_edge_counter.141_755 = PROF_edge_counter.141_754 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_755;
+  PROF_edge_counter.146_595 = *.LPBX1[111];
+  PROF_edge_counter.146_596 = PROF_edge_counter.146_595 + 1;
+  *.LPBX1[111] = PROF_edge_counter.146_596;
+  PROF_edge_counter.141_776 = *.LPBX1[41];
+  PROF_edge_counter.141_777 = PROF_edge_counter.141_776 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_777;
+  __ostream_insert (&cout, &"-- RUNTIME -> "[0], 14);
+  PROF_edge_counter.141_780 = *.LPBX1[43];
+  PROF_edge_counter.141_781 = PROF_edge_counter.141_780 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_781;
+  PROF_edge_counter.146_598 = *.LPBX1[112];
+  PROF_edge_counter.146_599 = PROF_edge_counter.146_598 + 1;
+  *.LPBX1[112] = PROF_edge_counter.146_599;
+  D.27940D.27940_602 = (double) __f_593;
+  this_603 = _M_insert (&cout, D.27940D.27940_602);
+  PROF_edge_counter.146_604 = *.LPBX1[113];
+  PROF_edge_counter.146_605 = PROF_edge_counter.146_604 + 1;
+  *.LPBX1[113] = PROF_edge_counter.146_605;
+  PROF_edge_counter.141_802 = *.LPBX1[41];
+  PROF_edge_counter.141_803 = PROF_edge_counter.141_802 + 1;
+  *.LPBX1[41] = PROF_edge_counter.141_803;
+  __ostream_insert (this_603, &" second"[0], 7);
+  PROF_edge_counter.141_806 = *.LPBX1[43];
+  PROF_edge_counter.141_807 = PROF_edge_counter.141_806 + 1;
+  *.LPBX1[43] = PROF_edge_counter.141_807;
+  PROF_edge_counter.146_609 = *.LPBX1[114];
+  PROF_edge_counter.146_610 = PROF_edge_counter.146_609 + 1;
+  *.LPBX1[114] = PROF_edge_counter.146_610;
+  PROF_edge_counter.143_817 = *.LPBX1[49];
+  PROF_edge_counter.143_818 = PROF_edge_counter.143_817 + 1;
+  *.LPBX1[49] = PROF_edge_counter.143_818;
+  __os.133_819 = (struct basic_ios *) this_603;
+  D.29059D.29059_820 = this_603->_vptr.basic_ostream;
+  D.29058D.29058_821 = D.29059D.29059_820 + -24;
+  D.29057D.29057_822 = (long int *) D.29058D.29058_821;
+  D.29056D.29056_823 = *D.29057D.29057_822;
+  D.29055D.29055_824 = (long unsigned int) D.29056D.29056_823;
+  D.29054D.29054_825 = __os.133_819 + D.29055D.29055_824;
+  this_837 = D.29054D.29054_825->_M_ctype;
+  if (this_837 == 0B)
+    goto <bb 131>;
+  else
+    goto <bb 132>;
+
+<bb 131>:
+  PROF_edge_counter.142_838 = *.LPBX1[44];
+  PROF_edge_counter.142_839 = PROF_edge_counter.142_838 + 1;
+  *.LPBX1[44] = PROF_edge_counter.142_839;
+  __throw_bad_cast ();
+
+<bb 132>:
+  D.29075D.29075_841 = this_837->_M_widen_ok;
+  if (D.29075D.29075_841 != 0)
+    goto <bb 133>;
+  else
+    goto <bb 134>;
+
+<bb 133>:
+  D.29066D.29066_844 = this_837->_M_widen[10];
+  PROF_edge_counter.142_845 = *.LPBX1[46];
+  PROF_edge_counter.142_846 = PROF_edge_counter.142_845 + 1;
+  *.LPBX1[46] = PROF_edge_counter.142_846;
+  goto <bb 135>;
+
+<bb 134>:
+  PROF_edge_counter.142_847 = *.LPBX1[45];
+  PROF_edge_counter.142_848 = PROF_edge_counter.142_847 + 1;
+  *.LPBX1[45] = PROF_edge_counter.142_848;
+  _M_widen_init (this_837);
+  PROF_edge_counter.142_849 = *.LPBX1[47];
+  PROF_edge_counter.142_850 = PROF_edge_counter.142_849 + 1;
+  *.LPBX1[47] = PROF_edge_counter.142_850;
+  D.29072D.29072_851 = this_837->D.20568D.20568._vptr.facet;
+  D.29071D.29071_852 = D.29072D.29072_851 + 48;
+  D.29070D.29070_853 = *D.29071D.29071_852;
+  D.29066D.29066_855 = OBJ_TYPE_REF(D.29070D.29070_853;this_837->6) (this_837, 10);
+  PROF_edge_counter.142_856 = *.LPBX1[48];
+  PROF_edge_counter.142_857 = PROF_edge_counter.142_856 + 1;
+  *.LPBX1[48] = PROF_edge_counter.142_857;
+
+<bb 135>:
+  # D.29066D.29066_858 = PHI <D.29066D.29066_844(133), D.29066D.29066_855(134)>
+  PROF_edge_counter.143_827 = *.LPBX1[50];
+  PROF_edge_counter.143_828 = PROF_edge_counter.143_827 + 1;
+  *.LPBX1[50] = PROF_edge_counter.143_828;
+  D.29052D.29052_829 = (int) D.29066D.29066_858;
+  __os_830 = put (this_603, D.29052D.29052_829);
+  PROF_edge_counter.143_831 = *.LPBX1[51];
+  PROF_edge_counter.143_832 = PROF_edge_counter.143_831 + 1;
+  *.LPBX1[51] = PROF_edge_counter.143_832;
+  flush (__os_830);
+  PROF_edge_counter.143_834 = *.LPBX1[52];
+  PROF_edge_counter.143_835 = PROF_edge_counter.143_834 + 1;
+  *.LPBX1[52] = PROF_edge_counter.143_835;
+  PROF_edge_counter.146_614 = *.LPBX1[115];
+  PROF_edge_counter.146_615 = PROF_edge_counter.146_614 + 1;
+  *.LPBX1[115] = PROF_edge_counter.146_615;
+  return 0;
+
+}
+
+
+
+;; Function <built-in> (_GLOBAL__I_65535_0_IA)
+
+<built-in> ()
+{
+<bb 2>:
+  __gcov_init (&*.LPBX0);
+  return;
+
+}
+
+
